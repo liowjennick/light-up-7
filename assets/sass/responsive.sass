@@ -1,0 +1,38 @@
+$mobile-breakpoint: 300px
+$large-mobile-breakpoint: 600px
+$desktop-breakpoint: 1200px
+$large-desktop-breakpoint: 2000px
+
+=mobile
+  @media screen and (max-width: $mobile-breakpoint)
+    @content
+
+=large-mobile
+  @media only screen and (max-width: $large-mobile-breakpoint)
+    @content
+
+=desktop
+  @media only screen and (max-width: $desktop-breakpoint)
+    @content
+
+=large-desktop
+  @media only screen and (max-width: $large-desktop-breakpoint)
+    @content
+
+// ONLY SHOW ON MOBILE
+.mobile
+  @media only screen and (min-width: $mobile-breakpoint)
+    display: none
+
+// ONLY SHOW ON MOBILE AND LARGE MOBILE
+.large-mobile
+  @media only screen and (min-width: $large-mobile-breakpoint)
+    display: none
+
+.desktop
+  @media only screen and (min-width: $desktop-breakpoint)
+    display: none
+
+.large-desktop
+  @media only screen and (min-width: $large-desktop-breakpoint)
+    display: none

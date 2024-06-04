@@ -1,0 +1,28 @@
+@import "responsive.sass"
+  
+@font-face
+  font-family: "JustSans"
+  src: url("/assets/fonts/just_sans_regular.otf") format("opentype")
+  font-weight: normal
+
+@font-face
+  font-family: "JustSans"
+  src: url("/assets/fonts/just_sans_ex_bold.otf") format("opentype")
+  font-weight: 900
+
+.just-sans
+  font-family: "JustSans"
+
+// font-x up to 80
+// has responsiveness, will multiply by 1.4 / 1 / 0.75 / 0.5
+@for $i from 4 through 40
+  .font-#{2 * $i}
+    font-size: #{2 * $i}px
+    +large-desktop
+      font-size: #{2 * $i * 1.4}px
+    +desktop
+      font-size: #{2 * $i}px
+    +large-mobile
+      font-size: #{2 * $i * 0.75}px
+    +mobile
+      font-size: #{2 * $i * 0.5}px
