@@ -1,5 +1,7 @@
 @import "responsive.sass"
-  
+
+$orange: #DC9F41
+
 @font-face
   font-family: "JustSans"
   src: url("/assets/fonts/just_sans_regular.otf") format("opentype")
@@ -12,6 +14,12 @@
 
 .just-sans
   font-family: "JustSans"
+
+.font-white
+  color: white
+
+.font-orange
+  color: $orange
 
 // font-x up to 80
 // has responsiveness, will multiply by 1.4 / 1 / 0.75 / 0.5
@@ -26,3 +34,39 @@
       font-size: #{2 * $i * 0.75}px
     +mobile
       font-size: #{2 * $i * 0.5}px
+
+@for $i from 1 through 20
+  .mb-#{2 * $i}
+    margin-bottom: #{2 * $i}px
+    +large-desktop
+      margin-bottom: #{2 * $i * 1.4}px
+    +desktop
+      margin-bottom: #{2 * $i}px
+    +large-mobile
+      margin-bottom: #{2 * $i * 0.75}px
+    +mobile
+      margin-bottom: #{2 * $i * 0.5}px
+
+@for $i from 1 through 20
+  .pb-#{2 * $i}
+    padding-bottom: #{2 * $i}px
+    +large-desktop
+      padding-bottom: #{2 * $i * 1.4}px
+    +desktop
+      padding-bottom: #{2 * $i}px
+    +large-mobile
+      padding-bottom: #{2 * $i * 0.75}px
+    +mobile
+      padding-bottom: #{2 * $i * 0.5}px
+
+@for $i from 1 through 20
+  .pt-#{2 * $i}
+    padding-top: #{2 * $i}px
+    +large-desktop
+      padding-top: #{2 * $i * 1.4}px
+    +desktop
+      padding-top: #{2 * $i}px
+    +large-mobile
+      padding-top: #{2 * $i * 0.75}px
+    +mobile
+      padding-top: #{2 * $i * 0.5}px
