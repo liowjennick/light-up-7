@@ -343,7 +343,7 @@ onMounted(() => {
     // ease: "bounce",
     scrollTrigger: {
       trigger: ".plug-to-left",
-      start: "top-=200 bottom",
+      start: "top bottom",
       end: "center center",
       // markers: true,
       scrub: 1,
