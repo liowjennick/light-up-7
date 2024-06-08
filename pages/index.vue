@@ -13,47 +13,65 @@
         <p class="font-white font-24 just-sans">A creative solutions agency lighting up the Asia-Pacific region, one bright idea at a time.</p>
       </div>
     </div>
-
     <!-- YELLOW OUTLINE TEXT SECTION -->
-    <div
-      class="full-screen-section-container section-container full-screen-center-content"
-      id="yellow-outline-first-banner-container"
-    >
-      <div class="flex-row">
-        <img
-          class="yellow-outline-text"
-          src="../assets/images/home/illuminate-brands-yellow-outline.png"
-        />
-        <p class="font-white font-18 just-sans">Make the best parts of your business <b>shine bright</b> with our strategy, branding and growth services.</p>
+    <div id="outline-container">
+      <div
+        class="full-screen-section-container section-container"
+        id="yellow-outline-first-banner-trigger"
+      >
+        <div class="full-screen-center-content" id="yellow-outline-first-banner-container">
+          <div class="flex-row">
+            <img
+              class="yellow-outline-text"
+              src="../assets/images/home/illuminate-brands-yellow-outline.png"
+            />
+            <p class="font-white font-18 just-sans">Make the best parts of your business <b>shine bright</b> with our strategy, branding and growth services.</p>
+          </div>
+        </div>
       </div>
+
+      <div
+        class="full-screen-section-container section-container"
+        id="yellow-outline-second-banner-trigger"
+      >
+        <div id="yellow-outline-second-banner-container" class="full-screen-center-content">
+          <div class="flex-row">
+            <img
+              class="yellow-outline-text"
+              src="../assets/images/home/spark-creativity-yellow-outline.png"
+            />
+            <!-- <p class="font-white">{{ scrollText }}</p> -->
+            <p class="font-white font-18 just-sans">We specialise in bringing <b>ideas to life</b>, spanning from design and video production to event planning, all to <b>ignite transformative branding experiences.</b></p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="full-screen-section-container section-container"
+        id="yellow-outline-third-banner-trigger"
+      >
+        <div id="yellow-outline-third-banner-container" class="full-screen-center-content">
+          <div class="flex-row">
+            <img
+              class="yellow-outline-text"
+              src="../assets/images/home/visible-marketing-yellow-outline.png"
+            />
+            <!-- <p class="font-white">{{ scrollText }}</p> -->
+            <p class="font-white font-18 just-sans">Seeking effective marketing solutions? Look no further! Our custom-made digital strategies <b>deliver results tailored to your audience.</b></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div
+        class="full-screen-section-container section-container"
+      >
+      </div> -->
     </div>
 
     <div
       class="full-screen-section-container section-container full-screen-center-content"
-      id="yellow-outline-second-banner-container"
+      style="background-color: black"
     >
-      <div class="flex-row">
-        <img
-          class="yellow-outline-text"
-          src="../assets/images/home/spark-creativity-yellow-outline.png"
-        />
-        <!-- <p class="font-white">{{ scrollText }}</p> -->
-        <p class="font-white font-18 just-sans">We specialise in bringing <b>ideas to life</b>, spanning from design and video production to event planning, all to <b>ignite transformative branding experiences.</b></p>
-      </div>
-    </div>
-
-    <div
-      class="full-screen-section-container section-container full-screen-center-content"
-      id="yellow-outline-third-banner-container"
-    >
-      <div class="flex-row">
-        <img
-          class="yellow-outline-text"
-          src="../assets/images/home/visible-marketing-yellow-outline.png"
-        />
-        <!-- <p class="font-white">{{ scrollText }}</p> -->
-        <p class="font-white font-18 just-sans">Seeking effective marketing solutions? Look no further! Our custom-made digital strategies <b>deliver results tailored to your audience.</b></p>
-      </div>
     </div>
 
     <!-- OUR SERVICES SECTION -->
@@ -116,7 +134,7 @@
       />
       <div class="section-container mb-20">
         <p class="font-orange font-20 just-sans mb-10">our distinguished clients:</p>
-        <p class="font-white font-30 just-sans">brand growth specialists delivering quality without compromise.</p>
+        <p class="font-white font-30 just-sans mb-40">brand growth specialists delivering quality without compromise.</p>
       </div>
 
       <div class="clients-list-container mb-40">
@@ -168,7 +186,7 @@
 
       <div class="section-container mb-20">
         <p class="font-orange font-20 just-sans mb-10">our prestigious achievements:</p>
-        <p class="font-white font-30 just-sans">awards and recognition by</p>
+        <p class="font-white font-30 just-sans mb-40">awards and recognition by</p>
       </div>
 
       <div class="award-list-container mb-40">
@@ -238,7 +256,7 @@
     >
       <div class="flex-row">
         <div class="text-container">
-          <p class="font-white just-sans font-60"><b>light up</b> your</p>
+          <p class="font-white just-sans font-46"><b>light up</b> your</p>
         </div>
         <div class="large-bulb-container">
           <div class="large-bulb-image-container">
@@ -250,6 +268,7 @@
 
               <img
                 class="large-bulb-glow"
+                :class="{ active: lightUpYourIdeasBulbActive }"
                 src="../assets/images/home/light-up-your-idea-large-bulb-glow.png"
               />
             </div>
@@ -258,7 +277,7 @@
             </div>
           </div>
           <div class="bulb-text-container">
-            <p class="font-white just-sans font-60"><b>ideas</b></p>
+            <p class="font-white just-sans font-46" :class="{ active: lightUpYourIdeasBulbActive}"><b>ideas</b></p>
           </div>
         </div>
       </div>
@@ -268,9 +287,9 @@
 
 <script setup lang="ts">
 import gsap from "gsap";
-import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
+import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
 // OUR SERVICES
 const ourServicesItems = ["Growth Strategy", "Digital Marketing", "Video & Photography", "Branding & Creative Design", "Websites & Apps", "Event Management", "Media Buying"];
@@ -287,6 +306,9 @@ const onMouseLeaveServiceItem = (index: Number) => {
   }
 };
 
+const lightUpYourIdeasBulbActive = ref(false)
+const bulbInitialY = ref(0)
+
 useHead({
   title: "Test Home Title",
   meta: [{ name: "description", content: "Amazing" }],
@@ -294,34 +316,95 @@ useHead({
 
 onMounted(() => {
   console.log("setup mounted");
+
+  // gsap.from("#outline-container", {
+  //   // y: 0,
+  //   opacity: 1,
+  //   duration: 1.5,
+  //   ease: "bounce",
+  //   scrollTrigger: {
+  //     trigger: "#outline-container",
+  //     start: "top top",
+  //     end: "bottom+=300vh top",
+  //     pin: true,
+  //     markers: true,
+  //     toggleActions: "play reverse play reverse",
+  //   },
+  // });
+
   gsap.to("#yellow-outline-first-banner-container .flex-row", {
-    y: 0,
+    top: 0,
     opacity: 1,
-    duration: 1.5,
+    duration: 1,
     ease: "bounce",
     scrollTrigger: {
-      trigger: "#yellow-outline-first-banner-container",
-      start: "top top",
+      trigger: "#yellow-outline-first-banner-container .flex-row",
+      start: "top top+=200",
       end: "bottom top",
-      // pin: true,
-      // markers: true,
-      toggleActions: "play reverse play reverse",
+      pin: true,
+      markers: true,
+      toggleActions: "play reverse restart reverse",
     },
   });
 
   gsap.to("#yellow-outline-second-banner-container .flex-row", {
-    y: 0,
+    top: 0,
     opacity: 1,
-    duration: 1.5,
+    duration: 1,
     ease: "bounce",
     scrollTrigger: {
-      trigger: "#yellow-outline-second-banner-container",
-      start: "top top",
+      trigger: "#yellow-outline-second-banner-container .flex-row",
+      start: "top top+=200",
       end: "bottom top",
-      // pin: true,
+      pin: true,
       markers: true,
+      toggleActions: "play reverse restart reverse",
     },
   });
+
+  gsap.to("#yellow-outline-third-banner-container .flex-row", {
+    top: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "bounce",
+    scrollTrigger: {
+      trigger: "#yellow-outline-third-banner-container .flex-row",
+      start: "top top+=200",
+      end: "bottom top",
+      pin: true,
+      markers: true,
+      toggleActions: "play reverse restart reverse",
+    },
+  });
+
+  // gsap.from("#yellow-outline-third-banner-container .flex-row", {
+  //   y: 0,
+  //   opacity: 1,
+  //   duration: 1.5,
+  //   ease: "bounce",
+  //   scrollTrigger: {
+  //     trigger: "#yellow-outline-third-banner-trigger",
+  //     start: "top top",
+  //     end: "bottom top",
+  //     pin: true,
+  //     markers: true,
+  //     toggleActions: "play reverse play reverse",
+  //   },
+  // });
+
+  // gsap.to("#yellow-outline-second-banner-container .flex-row", {
+  //   y: 0,
+  //   opacity: 1,
+  //   duration: 1.5,
+  //   ease: "bounce",
+  //   scrollTrigger: {
+  //     trigger: "#yellow-outline-second-banner-container",
+  //     start: "top top",
+  //     end: "bottom top",
+  //     // pin: true,
+  //     markers: true,
+  //   },
+  // });
 
   gsap.from(".plug-to-right", {
     x: "-50vw",
@@ -350,6 +433,32 @@ onMounted(() => {
       toggleActions: "play reverse play reverse",
     },
   });
+
+  // const bulbInitialY = document.querySelector(".large-bulb-pull-image")?.getBoundingClientRect().y
+  const bulbMaxDragY = 60
+  const bulbClickAudio = new Audio("https://assets.codepen.io/605876/click.mp3")
+
+  Draggable.create(".large-bulb-pull-image", {
+    type: "y",
+    inertia: true,
+    dragResistance: 0.5,
+    bounds: { minY: 0, maxY: bulbMaxDragY },
+    overshootTolerance: 1,
+    onDragStart: function (e) {
+      bulbInitialY.value = this.target.getBoundingClientRect().top
+    },
+    onDragEnd: function (e) {
+      if (this.target.getBoundingClientRect().top - bulbInitialY.value > (60 * 0.90)) {
+        lightUpYourIdeasBulbActive.value = !lightUpYourIdeasBulbActive.value
+        bulbClickAudio.play()
+      }
+
+      gsap.to(this.target, {
+        y: 0,
+        duration: 0.1
+      });
+    },
+  })
 });
 </script>
 
@@ -388,29 +497,63 @@ onMounted(() => {
       +large-mobile
         width: 100%
 
-#yellow-outline-first-banner-container, #yellow-outline-second-banner-container, #yellow-outline-third-banner-container
-  background-color: black
+#outline-container
   position: relative
+  height: 300vh
+  background-color: black
+
+#yellow-outline-first-banner-trigger
+  // height: 100vh
+  // background-color: red
+  position: relative
+
+#yellow-outline-second-banner-trigger
+  // height: 100vh
+  // background-color: blue
+  position: relative
+
+#yellow-outline-third-banner-trigger
+  // height: 100vh
+  // background-color: purple
+  position: relative
+
+#yellow-outline-first-banner-container
+  // top: 0
+#yellow-outline-second-banner-container
+  // top: -100vh
+#yellow-outline-third-banner-container
+  // top: -200vh
+
+#yellow-outline-first-banner-container, #yellow-outline-second-banner-container, #yellow-outline-third-banner-container
+  height: 100vh
+  // width: 100vw
+  // position: absolute
+  left: 0
   .flex-row
     display: flex
     align-items: center
     justify-content: center
     opacity: 0
-    transform: translateY(-150px)
+    height: 100vh
+    // transform: translateY(-200px)
+    top: -200px
     // position: absolute
     .yellow-outline-text
       width: 65%
     p
       width: 25%
   // #yellow-outline-first-banner-container
-  //   opacity: 0
-  //   bottom: -50px
+  //   opacity: 1
+  //   // bottom: -50px
   // #yellow-outline-second-banner-container
-  //   opacity: 0
-  //   bottom: -50px
+  //   opacity: 1
+  //   // bottom: -50px
   // #yellow-outline-third-banner-container
-  //   opacity: 0
-  //   bottom: -50px
+  //   opacity: 1
+  //   // bottom: -50px
+
+// #yellow-outline-first-banner-container .flex-row
+//   opacity: 1
 
 #our-services-section
   background-color: black
@@ -488,8 +631,12 @@ onMounted(() => {
   background-color: black
   .plug-to-right
     width: 90%
+    padding-top: 80px
+    padding-bottom: 80px
   .plug-to-left
     width: 90%
+    padding-top: 80px
+    padding-bottom: 80px
     display: block
     margin-left: auto
   .clients-list-container
@@ -534,11 +681,12 @@ onMounted(() => {
   .flex-row
     display: flex
     align-content: center
-    justify-content: flex-end
+    // justify-content: flex-end
+    width: 100%
     .text-container
       flex: 1
       display: flex
-      margin-top: 20%
+      margin-top: 6%
       padding-right: 3%
       // align-content: center
       // justify-content: center
@@ -561,20 +709,29 @@ onMounted(() => {
           .large-bulb
             height: 50vh
             display: block
-            margin: 0 auto
+            // margin: 0 auto
         .large-bulb-glow
           position: absolute
-          top: -12%
+          top: -15%
           left: -8%
+          margin: 0 auto
           height: 65vh
+          // width: 100%
+          opacity: 0
+          transition: 0.3s all
+          &.active
+            opacity: 1
         .large-bulb-pull-image
           flex: 1
-          overflow: hidden
+          // overflow: hidden
           img
             // width: 20px
             height: 15vh
             display: block
-            margin: 0 auto
+            // margin: 0 auto
+            position: absolute
+            top: 0
+            left: 19%
             transform: translateY(-20%)
             overflow: hidden
             cursor: pointer
@@ -585,9 +742,13 @@ onMounted(() => {
             user-drag: none
       .bulb-text-container
         position: absolute
-        top: 20%
-        left: 0
+        top: 23%
+        left: 7%
         width: 100%
         p
-          text-align: center
+          // text-align: center
+          opacity: 0
+          transition: 0.3s all
+          &.active
+            opacity: 1
 </style>
