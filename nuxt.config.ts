@@ -1,9 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-import newsData from "./static/data/news_data.json";
+import newsData from "./public/data/news_data.json";
+import projectsData from "./public/data/projects_data.json";
 
 const generate_routes:string[] = []
 newsData.map((item) => generate_routes.push(`/news/${item.slug}`))
+projectsData.map((item) => generate_routes.push(`/work/${item.slug}`))
 
 export default defineNuxtConfig({
   devtools: { enabled: true },

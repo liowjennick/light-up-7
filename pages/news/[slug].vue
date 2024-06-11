@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { useRoute } from "vue-router"
-import newsData from "../../static/data/news_data.json"
+import newsData from "../../public/data/news_data.json"
 
 interface News {
   title?: string,

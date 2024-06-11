@@ -465,20 +465,8 @@ onMounted(() => {
 <style lang="sass">
 @import "../assets/sass/responsive.sass"
 @import "../assets/sass/fonts.sass"
-
-.full-screen-section-container
-  height: 100vh
-  width: 100vw
-
-.full-screen-center-content
-  display: flex
-  align-items: center
-  justify-content: center
-  box-sizing: border-box
-
-.section-container
-  padding: 0 80px
-  box-sizing: border-box
+@import "../assets/sass/animations.sass"
+@import "../assets/sass/layout.sass"
 
 #home-banner-section
   background-color: black
@@ -542,18 +530,6 @@ onMounted(() => {
       width: 65%
     p
       width: 25%
-  // #yellow-outline-first-banner-container
-  //   opacity: 1
-  //   // bottom: -50px
-  // #yellow-outline-second-banner-container
-  //   opacity: 1
-  //   // bottom: -50px
-  // #yellow-outline-third-banner-container
-  //   opacity: 1
-  //   // bottom: -50px
-
-// #yellow-outline-first-banner-container .flex-row
-//   opacity: 1
 
 #our-services-section
   background-color: black
