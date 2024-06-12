@@ -36,8 +36,10 @@ onMounted(() => {
 
 </script>
 
-<style lang="sass">
-@import "../assets/sass/fonts.sass"
+<style lang="sass" scoped>
+@import "../assets/sass/fonts"
+@import "../assets/sass/responsive"
+@import "../assets/sass/layout"
 
 #navbar-container
   position: fixed
@@ -59,15 +61,24 @@ onMounted(() => {
     display: flex
     align-items: center
     z-index: 100
+    +desktop
+      display: block
     .logo-container
       flex: 1
       display: flex
       align-content: center
+      +desktop
+        align-content: center
+        justify-content: center
+        padding-top: 20px
       img
         width: 150px
         transition: 0.2s all
     .navigation-list-container
       display: flex
+      +desktop
+        align-content: center
+        justify-content: center
       .nav-item
         transition: 0.2s all
         padding: 40px 40px
@@ -77,9 +88,19 @@ onMounted(() => {
         font-weight: normal
         &:hover
           font-weight: bold
+        +desktop
+          padding: 20px 20px
+        +large-mobile
+          padding: 15px 10px
+        +mobile
+          padding: 15px 10px
         p
           font-size: 20px
           transition: 0.2s font-size
+          +desktop
+            font-size: 16px
+          +mobile
+            font-size: 14px
   &.minimized
     .opacity-background
       opacity: 0.5
@@ -90,6 +111,12 @@ onMounted(() => {
       .navigation-list-container
         .nav-item
           padding: 20px 30px
+          +desktop
+            padding: 20px 20px
+          +large-mobile
+            padding: 15px 10px
+          +mobile
+            padding: 15px 10px
           p
             font-size: 16px
 </style>

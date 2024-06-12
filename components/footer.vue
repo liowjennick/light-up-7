@@ -68,15 +68,25 @@
 <script setup lang="ts">
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
+@import "../assets/sass/layout"
+@import "../assets/sass/fonts"
+
 #footer-container
   background-color: black
   .section-container
     padding-top: 40px
     padding-bottom: 40px
     display: flex
+    +desktop
+      display: block
+    p
+      +desktop
+        text-align: center
     .logo-image-container
       flex: 2
+      +desktop
+        margin-bottom: 20px
       img
         width: 120px
         display: block
@@ -85,10 +95,14 @@
       flex: 2
       display: flex
       flex-direction: column
+      +desktop
+        margin-bottom: 20px
       .top
         flex: 1
     .address-column
       flex: 3
+      +desktop
+        margin-bottom: 20px
     .social-media-column
       flex: 2
       display: flex
@@ -97,9 +111,15 @@
         flex: 1
       .social-media-list-container
         display: flex
+        +desktop
+          justify-content: center
+          margin-bottom: 20px
         .social-media-item
           // flex: 1
           margin-right: 10px
+          +desktop
+            margin-right: 5px
+            margin-left: 5px
           a
             height: 40px
             width: 40px

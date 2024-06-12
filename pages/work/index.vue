@@ -42,7 +42,7 @@
         <div class="project-list-banner-container">
           <div class="project-banner-item" v-for="(item, i) in ProjectData" :key="i">
             <NuxtLink :to="`work/${item.slug}`">
-              <img :src="`/images/work/projects/${item.banner_image_slug}.png`" />
+              <img :src="`/images/work/projects/${item.banner_image_slug}`" />
             </NuxtLink>
           </div>
         </div>
