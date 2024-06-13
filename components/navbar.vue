@@ -10,7 +10,7 @@
         <div class="navigation-list-container">
           <NuxtLink class="nav-item" to="/news/news_1"><p>services</p></NuxtLink>
           <NuxtLink class="nav-item" to="/work"><p>work</p></NuxtLink>
-          <NuxtLink class="nav-item" to="/news/news_1"><p>about</p></NuxtLink>
+          <NuxtLink class="nav-item" to="/about"><p>about</p></NuxtLink>
           <NuxtLink class="nav-item" to="/news/news_1"><p>news</p></NuxtLink>
           <NuxtLink class="nav-item" to="/news/news_1"><p>careers</p></NuxtLink>
           <NuxtLink class="nav-item" to="/news/news_1"><p>contact</p></NuxtLink>  
