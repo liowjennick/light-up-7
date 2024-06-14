@@ -4,7 +4,9 @@
       <div class="opacity-background" />
       <div class="navbar-contents">
         <div class="logo-container">
-          <img src="../assets/images/light-up-7-logo.png" />
+          <NuxtLink to="/">
+            <img src="../assets/images/light-up-7-logo.png" />
+          </NuxtLink>
         </div>
 
         <div class="navigation-list-container">

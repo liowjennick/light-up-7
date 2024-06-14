@@ -1,5 +1,9 @@
 <template>
   <div id="homepage">
+    <video id="intro-video" autoplay muted>
+      <source src="../assets/images/home/light-up-7-intro-video.mp4" type="video/mp4" />
+    </video>
+
     <!-- BANNER SECTION -->
     <div
       class="full-screen-section-container section-container full-screen-center-content"
@@ -10,7 +14,7 @@
           src="../assets/images/home/banner-bulb.png"
           class="bulb"
         />
-        <p class="font-white font-24 just-sans">A creative solutions agency lighting up the Asia-Pacific region, one bright idea at a time.</p>
+        <p class="font-white font-16 just-sans">A creative solutions agency lighting up the Asia-Pacific region, one bright idea at a time.</p>
       </div>
     </div>
     <!-- YELLOW OUTLINE TEXT SECTION -->
@@ -129,7 +133,7 @@
     <!-- DISTINGUISHED CLIENTS SECTION -->
     <div id="distinguished-clients-section">
       <img
-        class="plug-to-right"
+        class="plug-to-right one"
         src="../assets/images/home/client-section-plug-to-right.png"
       />
       <div class="section-container mb-20">
@@ -244,7 +248,7 @@
       </div>
 
       <img
-        class="plug-to-right"
+        class="plug-to-right two"
         src="../assets/images/home/client-section-plug-to-right.png"
       />
     </div>
@@ -258,26 +262,28 @@
         <div class="text-container">
           <p class="font-white just-sans font-46"><b>light up</b> your</p>
         </div>
-        <div class="large-bulb-container">
-          <div class="large-bulb-image-container">
-            <div class="large-bulb-image">
-              <img
-                class="large-bulb"
-                src="../assets/images/home/light-up-your-idea-large-bulb.png"
-              />
 
-              <img
-                class="large-bulb-glow"
-                :class="{ active: lightUpYourIdeasBulbActive }"
-                src="../assets/images/home/light-up-your-idea-large-bulb-glow.png"
-              />
-            </div>
-            <div class="large-bulb-pull-image">
-              <img src="../assets/images/home/light-up-your-idea-large-bulb-pull.png" />
-            </div>
+        <div class="bulb-container">
+          <img
+            class="large-bulb"
+            src="../assets/images/home/light-up-your-idea-large-bulb.png"
+          />
+          <img
+            class="large-bulb-glow"
+            :class="{ active: lightUpYourIdeasBulbActive }"
+            src="../assets/images/home/light-up-your-idea-large-bulb-glow.png"
+          />
+          <div class="large-bulb-pull-image">
+            <img src="../assets/images/home/light-up-your-idea-large-bulb-pull.png" />
           </div>
           <div class="bulb-text-container">
             <p class="font-white just-sans font-46" :class="{ active: lightUpYourIdeasBulbActive}"><b>ideas</b></p>
+
+            <NuxtLink to="#" class="cta-circle" :class="{ active: lightUpYourIdeasBulbActive}">
+              <div class="arrow-container">
+                <img src="../assets/images/home/arrow-diagonal.png" />
+              </div>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -317,6 +323,32 @@ useHead({
 onMounted(() => {
   console.log("setup mounted");
 
+  // INTRO END 
+  document.getElementById('intro-video')?.addEventListener('ended', () => {
+    console.log("Video ended")
+    gsap.to("#intro-video", {
+      opacity: 0,
+      onComplete: () => {
+        document.getElementById("intro-video").style.display = "none"
+      }
+    })
+    gsap.to("#home-banner-section .bulb", {
+      opacity: 0.8,
+      duration: 1,
+      ease: "power2",
+      delay: 1,
+      onComplete: () => {
+        document.querySelector('#home-banner-section .bulb')?.classList.add("image-glow")
+      }
+    })
+    gsap.to("#home-banner-section p", {
+      opacity: 1,
+      duration: 1,
+      ease: "power2",
+      delay: 1,
+    })
+  },false);
+
   // gsap.from("#outline-container", {
   //   // y: 0,
   //   opacity: 1,
@@ -339,8 +371,8 @@ onMounted(() => {
     ease: "bounce",
     scrollTrigger: {
       trigger: "#yellow-outline-first-banner-container .flex-row",
-      start: "top top+=200",
-      end: "bottom top",
+      start: "top top",
+      end: "bottom-=200 top",
       pin: true,
       markers: true,
       toggleActions: "play reverse restart reverse",
@@ -354,7 +386,7 @@ onMounted(() => {
     ease: "bounce",
     scrollTrigger: {
       trigger: "#yellow-outline-second-banner-container .flex-row",
-      start: "top top+=200",
+      start: "top top",
       end: "bottom top",
       pin: true,
       markers: true,
@@ -369,7 +401,7 @@ onMounted(() => {
     ease: "bounce",
     scrollTrigger: {
       trigger: "#yellow-outline-third-banner-container .flex-row",
-      start: "top top+=200",
+      start: "top top",
       end: "bottom top",
       pin: true,
       markers: true,
@@ -406,12 +438,12 @@ onMounted(() => {
   //   },
   // });
 
-  gsap.from(".plug-to-right", {
+  gsap.from(".plug-to-right.one", {
     x: "-50vw",
     duration: 2,
     // ease: "bounce",
     scrollTrigger: {
-      trigger: ".plug-to-right",
+      trigger: ".plug-to-right.one",
       start: "top-=200 center",
       end: "top top",
       // markers: true,
@@ -434,11 +466,25 @@ onMounted(() => {
     },
   });
 
+  gsap.from(".plug-to-right.two", {
+    x: "-50vw",
+    duration: 2,
+    // ease: "bounce",
+    scrollTrigger: {
+      trigger: ".plug-to-right.two",
+      start: "top-=200 center",
+      end: "top top",
+      // markers: true,
+      scrub: 1,
+      toggleActions: "play reverse play reverse",
+    },
+  });
+
   // const bulbInitialY = document.querySelector(".large-bulb-pull-image")?.getBoundingClientRect().y
   const bulbMaxDragY = 60
   const bulbClickAudio = new Audio("https://assets.codepen.io/605876/click.mp3")
 
-  Draggable.create(".large-bulb-pull-image", {
+  Draggable.create(".large-bulb-pull-image img", {
     type: "y",
     inertia: true,
     dragResistance: 0.5,
@@ -468,6 +514,16 @@ onMounted(() => {
 @import "../assets/sass/animations.sass"
 @import "../assets/sass/layout.sass"
 
+
+#homepage
+
+#intro-video
+  width: 100vw
+  height: 100vh
+  background: black
+  position: fixed
+  z-index: 100
+
 #home-banner-section
   background-color: black
   .flex-row
@@ -478,12 +534,21 @@ onMounted(() => {
       display: block
     .bulb
       width: 40%
+      opacity: 0.2
+      transform: translateX(10px)
       +large-mobile
         width: 100%
+        transform: translateX(0px)
     p
       width: 30%
+      transform: translateX(-10px)
+      opacity: 0
       +large-mobile
         width: 100%
+        transform: translateX(0px)
+        text-align: center
+        font-size: 20px
+        margin-top: -40px
 
 #outline-container
   position: relative
@@ -533,13 +598,24 @@ onMounted(() => {
 
 #our-services-section
   background-color: black
+  +desktop
+    flex-direction: column-reverse
   .bullet-container
     flex: 2
+    +desktop
+      // flex: 1
+      width: 100%
+      padding-top: 20px
+    p
+      +desktop
+        font-size: 20px
     .services-list-container
       .services-item
         display: flex
         p
           transition: 0.2s all
+          +desktop
+            font-size: 20px
         &.active
           p
             color: $orange
@@ -550,6 +626,9 @@ onMounted(() => {
   .bulb-container
     flex: 3
     transform: translateY(25%)
+    +desktop
+      flex: 1
+      transform: translateY(0)
     .bulb-image-container
       position: relative
       .bulb-base
@@ -654,77 +733,94 @@ onMounted(() => {
 
 #light-up-your-ideas-section
   background-color: black
+  +desktop
+    padding-top: 60px
+    padding-bottom: 180px
   .flex-row
     display: flex
-    align-content: center
-    // justify-content: flex-end
-    width: 100%
+    +desktop
+      display: block
     .text-container
-      flex: 1
-      display: flex
-      margin-top: 6%
-      padding-right: 3%
-      // align-content: center
-      // justify-content: center
+      position: relative
+      height: 50vh
+      width: 40vw
+      +desktop
+        height: initial
+        width: 100%
       p
+        position: absolute
+        top: 35%
+        right: 20px
+        transform: translate(0, -50%)
         width: 100%
         text-align: right
-    .large-bulb-container
-      flex: 1
+        +desktop
+          position: initial
+          text-align: center
+          font-size: 50px
+    .bulb-container
       position: relative
-      height: 100%
-      width: 100%
-      .large-bulb-image-container
-        flex: 1
-        display: flex
-        flex-direction: column
-        position: relative
-        .large-bulb-image
-          flex: 2
-          height: 50vh
-          .large-bulb
-            height: 50vh
-            display: block
-            // margin: 0 auto
-        .large-bulb-glow
-          position: absolute
-          top: -15%
-          left: -8%
-          margin: 0 auto
-          height: 65vh
-          // width: 100%
-          opacity: 0
-          transition: 0.3s all
-          &.active
-            opacity: 1
-        .large-bulb-pull-image
-          flex: 1
-          // overflow: hidden
-          img
-            // width: 20px
-            height: 15vh
-            display: block
-            // margin: 0 auto
-            position: absolute
-            top: 0
-            left: 19%
-            transform: translateY(-20%)
-            overflow: hidden
-            cursor: pointer
-            -webkit-user-drag: none
-            -khtml-user-drag: none
-            -moz-user-drag: none
-            -o-user-drag: none
-            user-drag: none
+      height: 50vh
+      width: 20vw
+      +desktop
+        max-width: 400px
+        width: 100%
+        height: initial
+      .large-bulb
+        width: 100%
       .bulb-text-container
         position: absolute
-        top: 23%
-        left: 7%
-        width: 100%
+        top: 35%
+        left: 50%
+        transform: translate(-50%, -50%)
+        opacity: 1
+        transition: 0.4s all
+        +desktop
+          top: 30%
         p
-          // text-align: center
-          opacity: 0
-          transition: 0.3s all
           &.active
-            opacity: 1
+            // opacity: 0
+          +desktop
+            font-size: 50px
+      .large-bulb-pull-image
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        overflow: hidden
+        img
+          width: 20px
+          transform: translateY(-50%)
+      .large-bulb-glow
+        opacity: 0
+        position: absolute
+        width: 142%
+        top: -16%
+        left: -21%
+        transition: 0.1s all
+        &.active
+          opacity: 1
+        +desktop
+          top: -14.8%
+          width: 142%
+      .cta-circle
+        background-color: #DC9F41
+        border-radius: 50%
+        width: 80px
+        height: 80px
+        // display: flex
+        align-items: center
+        justify-content: center
+        position: absolute
+        left: 50%
+        top: 120%
+        transform: translateX(-50%)
+        display: none
+        &:hover
+          box-shadow: 0 0 8px yellow
+        &.active
+          display: flex
+        .arrow-container
+          img
+            width: 50px
+            height: 50px
 </style>
