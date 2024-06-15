@@ -1,5 +1,8 @@
 <template>
-  <div id="navbar-container" :class="{ minimized: navbarMinimized }">
+  <div
+    id="navbar-container"
+    :class="{ minimized: navbarMinimized }"
+  >
     <div class="section-container">
       <div class="opacity-background" />
       <div class="navbar-contents">
@@ -10,12 +13,36 @@
         </div>
 
         <div class="navigation-list-container">
-          <NuxtLink class="nav-item" to="/news/news_1"><p>services</p></NuxtLink>
-          <NuxtLink class="nav-item" to="/work"><p>work</p></NuxtLink>
-          <NuxtLink class="nav-item" to="/about"><p>about</p></NuxtLink>
-          <NuxtLink class="nav-item" to="/news/news_1"><p>news</p></NuxtLink>
-          <NuxtLink class="nav-item" to="/news/news_1"><p>careers</p></NuxtLink>
-          <NuxtLink class="nav-item" to="/news/news_1"><p>contact</p></NuxtLink>  
+          <NuxtLink
+            class="nav-item"
+            to="/news/news_1"
+            ><p>services</p></NuxtLink
+          >
+          <NuxtLink
+            class="nav-item"
+            to="/work"
+            ><p>work</p></NuxtLink
+          >
+          <NuxtLink
+            class="nav-item"
+            to="/about"
+            ><p>about</p></NuxtLink
+          >
+          <NuxtLink
+            class="nav-item"
+            to="/news/news_1"
+            ><p>news</p></NuxtLink
+          >
+          <NuxtLink
+            class="nav-item"
+            to="/news/news_1"
+            ><p>careers</p></NuxtLink
+          >
+          <NuxtLink
+            class="nav-item"
+            to="/news/news_1"
+            ><p>contact</p></NuxtLink
+          >
         </div>
       </div>
     </div>
@@ -23,19 +50,17 @@
 </template>
 
 <script setup lang="ts">
-const navbarMinimized = ref(false)
+const navbarMinimized = ref(false);
 
 onMounted(() => {
   window.addEventListener("scroll", (event) => {
     if (scrollY <= 0) {
-      navbarMinimized.value = false
+      navbarMinimized.value = false;
     } else {
-      navbarMinimized.value = true
+      navbarMinimized.value = true;
     }
-  })
-})
-
-
+  });
+});
 </script>
 
 <style lang="sass" scoped>
@@ -45,10 +70,11 @@ onMounted(() => {
 
 #navbar-container
   position: fixed
-  width: 100%
+  width: 100vw
   z-index: 1000
   transition: 0.2s all
   // background: red
+  padding: 10px
   .opacity-background
     background-color: #474747
     opacity: 0
@@ -73,9 +99,12 @@ onMounted(() => {
         align-content: center
         justify-content: center
         padding-top: 20px
-      img
+      a
         width: 150px
         transition: 0.2s all
+        img
+          transition: 0.2s all
+          width: 100%
     .navigation-list-container
       display: flex
       +desktop
@@ -99,6 +128,7 @@ onMounted(() => {
         p
           font-size: 20px
           transition: 0.2s font-size
+          // text-decoration: none
           +desktop
             font-size: 16px
           +mobile

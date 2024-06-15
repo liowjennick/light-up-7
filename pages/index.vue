@@ -1,7 +1,14 @@
 <template>
   <div id="homepage">
-    <video id="intro-video" autoplay muted>
-      <source src="../assets/images/home/light-up-7-intro-video.mp4" type="video/mp4" />
+    <video
+      id="intro-video"
+      autoplay
+      muted
+    >
+      <source
+        src="../assets/images/home/light-up-7-intro-video.mp4"
+        type="video/mp4"
+      />
     </video>
 
     <!-- BANNER SECTION -->
@@ -19,64 +26,95 @@
     </div>
     <!-- YELLOW OUTLINE TEXT SECTION -->
     <div id="outline-container">
+      <!-- FIRST -->
       <div
-        class="full-screen-section-container section-container"
+        class="full-screen-section-container section-container yellow-outline-banner-trigger"
         id="yellow-outline-first-banner-trigger"
       >
-        <div class="full-screen-center-content" id="yellow-outline-first-banner-container">
+        <div class="full-screen-center-content">
           <div class="flex-row">
-            <img
-              class="yellow-outline-text"
-              src="../assets/images/home/illuminate-brands-yellow-outline.png"
-            />
-            <p class="font-white font-18 just-sans">Make the best parts of your business <b>shine bright</b> with our strategy, branding and growth services.</p>
+            <div class="yellow-outline-text-container">
+              <img
+                class="background"
+                src="../assets/images/home/quarter-circle-black-background.png"
+              />
+              <img
+                class="floating-shapes"
+                src="../assets/images/home/double-diamond.png"
+              />
+              <img
+                class="yellow-outline-text"
+                src="../assets/images/home/illuminate-brands-yellow-outline.png"
+              />
+            </div>
+            <div class="text-container">
+              <p class="font-white font-18 just-sans">Make the best parts of your business <b>shine bright</b> with our strategy, branding and growth services.</p>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- SECOND -->
       <div
-        class="full-screen-section-container section-container"
+        class="full-screen-section-container section-container yellow-outline-banner-trigger"
         id="yellow-outline-second-banner-trigger"
       >
-        <div id="yellow-outline-second-banner-container" class="full-screen-center-content">
+        <div class="full-screen-center-content">
           <div class="flex-row">
-            <img
-              class="yellow-outline-text"
-              src="../assets/images/home/spark-creativity-yellow-outline.png"
-            />
-            <!-- <p class="font-white">{{ scrollText }}</p> -->
-            <p class="font-white font-18 just-sans">We specialise in bringing <b>ideas to life</b>, spanning from design and video production to event planning, all to <b>ignite transformative branding experiences.</b></p>
+            <div class="yellow-outline-text-container">
+              <img
+                class="background"
+                src="../assets/images/home/star-black-background.png"
+              />
+              <img
+                class="floating-shapes"
+                src="../assets/images/home/double-star.png"
+              />
+              <img
+                class="yellow-outline-text"
+                src="../assets/images/home/spark-creativity-yellow-outline.png"
+              />
+            </div>
+            <div class="text-container">
+              <p class="font-white font-18 just-sans">Seeking effective marketing solutions? Look no further! Our custom-made digital strategies <b>deliver results tailored to your audience.</b></p>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- THIRD -->
       <div
-        class="full-screen-section-container section-container"
+        class="full-screen-section-container section-container yellow-outline-banner-trigger"
         id="yellow-outline-third-banner-trigger"
       >
-        <div id="yellow-outline-third-banner-container" class="full-screen-center-content">
+        <div class="full-screen-center-content">
           <div class="flex-row">
-            <img
-              class="yellow-outline-text"
-              src="../assets/images/home/visible-marketing-yellow-outline.png"
-            />
-            <!-- <p class="font-white">{{ scrollText }}</p> -->
-            <p class="font-white font-18 just-sans">Seeking effective marketing solutions? Look no further! Our custom-made digital strategies <b>deliver results tailored to your audience.</b></p>
+            <div class="yellow-outline-text-container">
+              <img
+                class="background"
+                src="../assets/images/home/circle-black-background.png"
+              />
+              <img
+                class="floating-shapes"
+                src="../assets/images/home/double-circle.png"
+              />
+              <img
+                class="yellow-outline-text"
+                src="../assets/images/home/visible-marketing-yellow-outline.png"
+              />
+            </div>
+            <div class="text-container">
+              <p class="font-white font-18 just-sans">Make the best parts of your business <b>shine bright</b> with our strategy, branding and growth services.</p>
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- <div
-        class="full-screen-section-container section-container"
-      >
-      </div> -->
     </div>
 
     <div
       class="full-screen-section-container section-container full-screen-center-content"
       style="background-color: black"
-    >
-    </div>
+    ></div>
 
     <!-- OUR SERVICES SECTION -->
     <div
@@ -105,6 +143,11 @@
           <img
             class="bulb-base"
             src="../assets/images/home/our-services-bulb-base.png"
+          />
+
+          <img
+            class="bulb-base-background image-glow"
+            src="../assets/images/home/our-services-bulb-background.png"
           />
 
           <div
@@ -276,10 +319,23 @@
           <div class="large-bulb-pull-image">
             <img src="../assets/images/home/light-up-your-idea-large-bulb-pull.png" />
           </div>
+          <div class="pull-me-text-container">
+            <img src="../assets/images/home/arrow-down.png" />
+            <p class="font-white just-sans">pull me</p>
+          </div>
           <div class="bulb-text-container">
-            <p class="font-white just-sans font-46" :class="{ active: lightUpYourIdeasBulbActive}"><b>ideas</b></p>
+            <p
+              class="font-white just-sans font-46"
+              :class="{ active: lightUpYourIdeasBulbActive }"
+            >
+              <b>ideas</b>
+            </p>
 
-            <NuxtLink to="#" class="cta-circle" :class="{ active: lightUpYourIdeasBulbActive}">
+            <NuxtLink
+              to="#"
+              class="cta-circle"
+              :class="{ active: lightUpYourIdeasBulbActive }"
+            >
               <div class="arrow-container">
                 <img src="../assets/images/home/arrow-diagonal.png" />
               </div>
@@ -297,6 +353,70 @@ import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
+// YELLOW OUTLINE SCROLL
+const yellowOutlineIndex = ref(0);
+watch(yellowOutlineIndex, (newIndex, oldIndex) => {
+  if (newIndex !== oldIndex) {
+    const enterDuration = 0.6;
+    const exitDuration = 0.2;
+    switch (newIndex) {
+      case 1:
+        gsap.to("#yellow-outline-first-banner-trigger .flex-row", {
+          opacity: 1,
+          duration: enterDuration,
+          y: 0,
+        });
+        gsap.to("#yellow-outline-second-banner-trigger .flex-row", {
+          opacity: 0,
+          duration: exitDuration,
+          y: -200,
+        });
+        gsap.to("#yellow-outline-third-banner-trigger .flex-row", {
+          opacity: 0,
+          duration: exitDuration,
+          y: -200,
+        });
+        break;
+      case 2:
+        gsap.to("#yellow-outline-first-banner-trigger .flex-row", {
+          opacity: 0,
+          duration: exitDuration,
+          y: -200,
+        });
+        gsap.to("#yellow-outline-second-banner-trigger .flex-row", {
+          opacity: 1,
+          duration: enterDuration,
+          y: 0,
+        });
+        gsap.to("#yellow-outline-third-banner-trigger .flex-row", {
+          opacity: 0,
+          duration: exitDuration,
+          y: -200,
+        });
+        break;
+      case 3:
+        gsap.to("#yellow-outline-first-banner-trigger .flex-row", {
+          opacity: 0,
+          duration: exitDuration,
+          y: -200,
+        });
+        gsap.to("#yellow-outline-second-banner-trigger .flex-row", {
+          opacity: 0,
+          duration: exitDuration,
+          y: -200,
+        });
+        gsap.to("#yellow-outline-third-banner-trigger .flex-row", {
+          opacity: 1,
+          duration: enterDuration,
+          y: 0,
+        });
+        break;
+      default:
+        break;
+    }
+  }
+});
+
 // OUR SERVICES
 const ourServicesItems = ["Growth Strategy", "Digital Marketing", "Video & Photography", "Branding & Creative Design", "Websites & Apps", "Event Management", "Media Buying"];
 const ourServicesItemsHighlightedSection = ref(-1);
@@ -312,8 +432,8 @@ const onMouseLeaveServiceItem = (index: Number) => {
   }
 };
 
-const lightUpYourIdeasBulbActive = ref(false)
-const bulbInitialY = ref(0)
+const lightUpYourIdeasBulbActive = ref(false);
+const bulbInitialY = ref(0);
 
 useHead({
   title: "Test Home Title",
@@ -323,130 +443,61 @@ useHead({
 onMounted(() => {
   console.log("setup mounted");
 
-  // INTRO END 
-  document.getElementById('intro-video')?.addEventListener('ended', () => {
-    console.log("Video ended")
-    gsap.to("#intro-video", {
-      opacity: 0,
-      onComplete: () => {
-        document.getElementById("intro-video").style.display = "none"
+  // INTRO END
+  document.getElementById("intro-video")?.addEventListener(
+    "ended",
+    () => {
+      console.log("Video ended");
+      gsap.to("#intro-video", {
+        opacity: 0,
+        onComplete: () => {
+          document.getElementById("intro-video").style.display = "none";
+        },
+      });
+      gsap.to("#home-banner-section .bulb", {
+        opacity: 0.8,
+        duration: 1,
+        ease: "power2",
+        delay: 1,
+        onComplete: () => {
+          document.querySelector("#home-banner-section .bulb")?.classList.add("image-glow");
+        },
+      });
+      gsap.to("#home-banner-section p", {
+        opacity: 1,
+        duration: 1,
+        ease: "power2",
+        delay: 1,
+      });
+    },
+    false
+  );
+
+  ScrollTrigger.create({
+    trigger: "#outline-container",
+    start: "top top",
+    end: "bottom+=3000 bottom",
+    pin: true,
+    onUpdate: (self) => {
+      console.log(self.progress);
+
+      if (self.progress > 0.66) {
+        yellowOutlineIndex.value = 3;
+      } else if (self.progress > 0.33) {
+        yellowOutlineIndex.value = 2;
+      } else {
+        yellowOutlineIndex.value = 1;
       }
-    })
-    gsap.to("#home-banner-section .bulb", {
-      opacity: 0.8,
-      duration: 1,
-      ease: "power2",
-      delay: 1,
-      onComplete: () => {
-        document.querySelector('#home-banner-section .bulb')?.classList.add("image-glow")
-      }
-    })
-    gsap.to("#home-banner-section p", {
-      opacity: 1,
-      duration: 1,
-      ease: "power2",
-      delay: 1,
-    })
-  },false);
-
-  // gsap.from("#outline-container", {
-  //   // y: 0,
-  //   opacity: 1,
-  //   duration: 1.5,
-  //   ease: "bounce",
-  //   scrollTrigger: {
-  //     trigger: "#outline-container",
-  //     start: "top top",
-  //     end: "bottom+=300vh top",
-  //     pin: true,
-  //     markers: true,
-  //     toggleActions: "play reverse play reverse",
-  //   },
-  // });
-
-  gsap.to("#yellow-outline-first-banner-container .flex-row", {
-    top: 0,
-    opacity: 1,
-    duration: 1,
-    ease: "bounce",
-    scrollTrigger: {
-      trigger: "#yellow-outline-first-banner-container .flex-row",
-      start: "top top",
-      end: "bottom-=200 top",
-      pin: true,
-      markers: true,
-      toggleActions: "play reverse restart reverse",
     },
   });
-
-  gsap.to("#yellow-outline-second-banner-container .flex-row", {
-    top: 0,
-    opacity: 1,
-    duration: 1,
-    ease: "bounce",
-    scrollTrigger: {
-      trigger: "#yellow-outline-second-banner-container .flex-row",
-      start: "top top",
-      end: "bottom top",
-      pin: true,
-      markers: true,
-      toggleActions: "play reverse restart reverse",
-    },
-  });
-
-  gsap.to("#yellow-outline-third-banner-container .flex-row", {
-    top: 0,
-    opacity: 1,
-    duration: 1,
-    ease: "bounce",
-    scrollTrigger: {
-      trigger: "#yellow-outline-third-banner-container .flex-row",
-      start: "top top",
-      end: "bottom top",
-      pin: true,
-      markers: true,
-      toggleActions: "play reverse restart reverse",
-    },
-  });
-
-  // gsap.from("#yellow-outline-third-banner-container .flex-row", {
-  //   y: 0,
-  //   opacity: 1,
-  //   duration: 1.5,
-  //   ease: "bounce",
-  //   scrollTrigger: {
-  //     trigger: "#yellow-outline-third-banner-trigger",
-  //     start: "top top",
-  //     end: "bottom top",
-  //     pin: true,
-  //     markers: true,
-  //     toggleActions: "play reverse play reverse",
-  //   },
-  // });
-
-  // gsap.to("#yellow-outline-second-banner-container .flex-row", {
-  //   y: 0,
-  //   opacity: 1,
-  //   duration: 1.5,
-  //   ease: "bounce",
-  //   scrollTrigger: {
-  //     trigger: "#yellow-outline-second-banner-container",
-  //     start: "top top",
-  //     end: "bottom top",
-  //     // pin: true,
-  //     markers: true,
-  //   },
-  // });
 
   gsap.from(".plug-to-right.one", {
     x: "-50vw",
     duration: 2,
-    // ease: "bounce",
     scrollTrigger: {
       trigger: ".plug-to-right.one",
       start: "top-=200 center",
       end: "top top",
-      // markers: true,
       scrub: 1,
       toggleActions: "play reverse play reverse",
     },
@@ -460,7 +511,6 @@ onMounted(() => {
       trigger: ".plug-to-left",
       start: "top bottom",
       end: "center center",
-      // markers: true,
       scrub: 1,
       toggleActions: "play reverse play reverse",
     },
@@ -469,20 +519,26 @@ onMounted(() => {
   gsap.from(".plug-to-right.two", {
     x: "-50vw",
     duration: 2,
-    // ease: "bounce",
     scrollTrigger: {
       trigger: ".plug-to-right.two",
       start: "top-=200 center",
       end: "top top",
-      // markers: true,
       scrub: 1,
       toggleActions: "play reverse play reverse",
     },
   });
 
+  // PULL ARROW ANIMATE
+  gsap.to(".pull-me-text-container img", {
+    y: 10,
+    duration: 1,
+    yoyo: true,
+    repeat: -1,
+  });
+
   // const bulbInitialY = document.querySelector(".large-bulb-pull-image")?.getBoundingClientRect().y
-  const bulbMaxDragY = 60
-  const bulbClickAudio = new Audio("https://assets.codepen.io/605876/click.mp3")
+  const bulbMaxDragY = 60;
+  const bulbClickAudio = new Audio("https://assets.codepen.io/605876/click.mp3");
 
   Draggable.create(".large-bulb-pull-image img", {
     type: "y",
@@ -491,31 +547,31 @@ onMounted(() => {
     bounds: { minY: 0, maxY: bulbMaxDragY },
     overshootTolerance: 1,
     onDragStart: function (e) {
-      bulbInitialY.value = this.target.getBoundingClientRect().top
+      bulbInitialY.value = this.target.getBoundingClientRect().top;
     },
     onDragEnd: function (e) {
-      if (this.target.getBoundingClientRect().top - bulbInitialY.value > (60 * 0.90)) {
-        lightUpYourIdeasBulbActive.value = !lightUpYourIdeasBulbActive.value
-        bulbClickAudio.play()
+      if (this.target.getBoundingClientRect().top - bulbInitialY.value > 60 * 0.9) {
+        lightUpYourIdeasBulbActive.value = !lightUpYourIdeasBulbActive.value;
+        bulbClickAudio.play();
       }
 
       gsap.to(this.target, {
         y: 0,
-        duration: 0.1
+        duration: 0.1,
       });
     },
-  })
+  });
 });
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 @import "../assets/sass/responsive.sass"
 @import "../assets/sass/fonts.sass"
 @import "../assets/sass/animations.sass"
 @import "../assets/sass/layout.sass"
 
-
 #homepage
+  background-color: black
 
 #intro-video
   width: 100vw
@@ -552,49 +608,48 @@ onMounted(() => {
 
 #outline-container
   position: relative
-  height: 300vh
-  background-color: black
-
-#yellow-outline-first-banner-trigger
-  // height: 100vh
-  // background-color: red
-  position: relative
-
-#yellow-outline-second-banner-trigger
-  // height: 100vh
-  // background-color: blue
-  position: relative
-
-#yellow-outline-third-banner-trigger
-  // height: 100vh
-  // background-color: purple
-  position: relative
-
-#yellow-outline-first-banner-container
-  // top: 0
-#yellow-outline-second-banner-container
-  // top: -100vh
-#yellow-outline-third-banner-container
-  // top: -200vh
-
-#yellow-outline-first-banner-container, #yellow-outline-second-banner-container, #yellow-outline-third-banner-container
   height: 100vh
-  // width: 100vw
-  // position: absolute
-  left: 0
+  background-color: black
+  .yellow-outline-banner-trigger
+    height: 100vh
+    display: flex
+    position: absolute
   .flex-row
     display: flex
-    align-items: center
-    justify-content: center
     opacity: 0
-    height: 100vh
-    // transform: translateY(-200px)
-    top: -200px
-    // position: absolute
-    .yellow-outline-text
-      width: 65%
-    p
-      width: 25%
+    transform: translateY(-200px)
+    +desktop
+      display: block
+    .yellow-outline-text-container
+      position: relative
+      flex: 2
+      .background
+        width: 60%
+        position: absolute
+        top: -15%
+        left: 50%
+        transform: translateX(-50%)
+        z-index: 0
+      .floating-shapes
+        position: absolute
+        width: 12%
+        top: 0
+        left: 27%
+      .yellow-outline-text
+        z-index: 2
+        width: 100%
+        position: relative
+    .text-container
+      flex: 1
+      display: flex
+      align-items: center
+      justify-content: center
+      +desktop
+        margin-top: 25px
+      p
+        +desktop
+          font-size: 22px
+          text-align: center
 
 #our-services-section
   background-color: black
@@ -633,9 +688,19 @@ onMounted(() => {
       position: relative
       .bulb-base
         width: 100%
+        position: relative
+        z-index: 1
+      .bulb-base-background
+        position: absolute
+        width: 100%
+        left: 50%
+        top: -60%
+        z-index: 0
+        transform: translateX(-50%)
       .bulb-image-text-container
         position: absolute
         width: 20%
+        z-index: 2
         &[data-bulb-number="0"]
           top: -3%
           left: -0.5%
@@ -790,6 +855,20 @@ onMounted(() => {
         img
           width: 20px
           transform: translateY(-50%)
+      .pull-me-text-container
+        display: flex
+        position: absolute
+        align-items: center
+        justify-content: center
+        right: -20%
+        +desktop
+          right: 0
+        img
+          width: 20px
+          transform: translateY(0)
+        p
+          margin-left: 10px
+          font-size: 20px
       .large-bulb-glow
         opacity: 0
         position: absolute

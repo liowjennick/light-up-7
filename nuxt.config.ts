@@ -3,12 +3,12 @@
 import newsData from "./public/data/news_data.json";
 import projectsData from "./public/data/projects_data.json";
 
-const generate_routes:string[] = []
-newsData.map((item) => generate_routes.push(`/news/${item.slug}`))
-projectsData.map((item) => generate_routes.push(`/work/${item.slug}`))
+const generate_routes: string[] = [];
+newsData.map((item) => generate_routes.push(`/news/${item.slug}`));
+projectsData.map((item) => generate_routes.push(`/work/${item.slug}`));
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   ssr: true,
   nitro: {
     static: true,
@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     transpile: ["gsap"],
   },
   generate: {
-    routes: generate_routes
+    routes: generate_routes,
   },
   vite: {
     css: {
