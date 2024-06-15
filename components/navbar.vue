@@ -7,41 +7,41 @@
       <div class="opacity-background" />
       <div class="navbar-contents">
         <div class="logo-container">
-          <NuxtLink to="/">
+          <a href="/">
             <img src="../assets/images/light-up-7-logo.png" />
-          </NuxtLink>
+          </a>
         </div>
 
         <div class="navigation-list-container">
-          <NuxtLink
+          <a
             class="nav-item"
-            to="/news/news_1"
-            ><p>services</p></NuxtLink
+            href="/news/news_1"
+            ><p>services</p></a
           >
-          <NuxtLink
+          <a
             class="nav-item"
-            to="/work"
-            ><p>work</p></NuxtLink
+            href="/work"
+            ><p>work</p></a
           >
-          <NuxtLink
+          <a
             class="nav-item"
-            to="/about"
-            ><p>about</p></NuxtLink
+            href="/about"
+            ><p>about</p></a
           >
-          <NuxtLink
+          <a
             class="nav-item"
-            to="/news/news_1"
-            ><p>news</p></NuxtLink
+            href="/news/news_1"
+            ><p>news</p></a
           >
-          <NuxtLink
+          <a
             class="nav-item"
-            to="/news/news_1"
-            ><p>careers</p></NuxtLink
+            href="/news/news_1"
+            ><p>careers</p></a
           >
-          <NuxtLink
+          <a
             class="nav-item"
-            to="/news/news_1"
-            ><p>contact</p></NuxtLink
+            href="/news/news_1"
+            ><p>contact</p></a
           >
         </div>
       </div>
@@ -115,7 +115,8 @@ onMounted(() => {
         padding: 40px 40px
         color: white
         text-decoration: none
-        font-family: "JustSans"
+        display: block
+        // font-family: "JustSans"
         font-weight: normal
         &:hover
           font-weight: bold
@@ -129,6 +130,7 @@ onMounted(() => {
           font-size: 20px
           transition: 0.2s font-size
           // text-decoration: none
+          font-family: "JustSans"
           +desktop
             font-size: 16px
           +mobile

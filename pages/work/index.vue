@@ -1,17 +1,25 @@
 <template>
   <div id="work">
-    <div
-      id="light-bulb-section"
-    >
-      <div class="light-background-triangle"/>
+    <div id="light-bulb-section">
+      <div class="light-background-triangle" />
       <div class="light-bulb-container">
-        <img class="bulb" src="../../assets/images/work/light-bulb.png" />
-        <img class="bulb-glow image-glow" src="../../assets/images/work/light-bulb-glow.png" />
-        <img class="glow-line image-glow" src="../../assets/images/work/light-beam-line.png" />
+        <div class="black-circle" />
+        <img
+          class="bulb"
+          src="../../assets/images/work/light-bulb.png"
+        />
+        <img
+          class="bulb-glow"
+          src="../../assets/images/work/light-bulb-glow.png"
+        />
+        <img
+          class="glow-line"
+          src="../../assets/images/work/light-beam-line.png"
+        />
       </div>
       <h1 class="page-title">WORK</h1>
 
-      <div>
+      <div id="sliding-button">
         <p class="font-orange text-center just-sans font-20">swipe right to see our past works</p>
         <div class="sliding-button-container">
           <div class="sliding-button">
@@ -28,22 +36,33 @@
 
     <div id="client-list-section">
       <div class="light-background" />
-      <div class="section-container">
-        <div class="client-logo-container">
-          <img src="../../assets/images/work/clients-logo/petronas-logo.png" />
-          <h1 class="client-large-name">clients</h1>
-          <h1 class="client-back-name">clients</h1>
+      <div
+        class="client-project-slider-container"
+        :class="{ 'project-active': displayMode === DisplayMode.Projects }"
+      >
+        <div class="section-container work-section-container">
+          <div class="client-logo-container">
+            <img src="../../assets/images/work/clients-logo/petronas-logo.png" />
+            <h1 class="client-large-name">clients</h1>
+            <h1 class="client-back-name">clients</h1>
+          </div>
+
+          <div class="client-list-image-container">
+            <img src="assets/images/work/all-clients.png" />
+          </div>
         </div>
 
-        <div class="client-list-image-container">
-          <img src="assets/images/work/all-clients.png" />
-        </div>
-
-        <div class="project-list-banner-container">
-          <div class="project-banner-item" v-for="(item, i) in ProjectData" :key="i">
-            <NuxtLink :to="`work/${item.slug}`">
-              <img :src="`/images/work/projects/${item.banner_image_src}`" />
-            </NuxtLink>
+        <div class="section-container projects-section-container">
+          <div class="project-list-banner-container">
+            <div
+              class="project-banner-item"
+              v-for="(item, i) in ProjectData"
+              :key="i"
+            >
+              <NuxtLink :to="`work/${item.slug}`">
+                <img :src="`/images/work/projects/${item.banner_image_src}`" />
+              </NuxtLink>
+            </div>
           </div>
         </div>
       </div>
@@ -54,20 +73,59 @@
 <script setup lang="ts">
 import gsap from "gsap";
 import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
-import ProjectData from "../../public/data/projects_data.json"
+import ProjectData from "../../public/data/projects_data.json";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
 enum DisplayMode {
   Clients,
-  Projects
+  Projects,
 }
 
-const displayMode = ref(DisplayMode.Clients) // clients, projects
+const displayMode = ref(DisplayMode.Clients); // clients, projects
 
 onMounted(() => {
-  const sliderButtonWidth = 60
-  const sliderMaxDragDistance = document.querySelector(".sliding-button")?.clientWidth - sliderButtonWidth
+  // INIT ANIMATION
+  gsap.to(".bulb-glow", {
+    duration: 1,
+    opacity: 0.8,
+    delay: 1,
+    onComplete: () => {
+      document.querySelector(".bulb-glow")?.classList.add("image-glow");
+    },
+  });
+  gsap.to(".glow-line", {
+    duration: 1,
+    opacity: 0.8,
+    delay: 1.1,
+    onComplete: () => {
+      document.querySelector(".bulb-glow")?.classList.add("image-glow");
+    },
+  });
+  gsap.to(".light-background-triangle", {
+    duration: 1,
+    opacity: 0.15,
+    delay: 1.2,
+  });
+  gsap.to(".page-title", {
+    duration: 1,
+    opacity: 1,
+    delay: 1.2,
+  });
+  gsap.to("#sliding-button", {
+    duration: 1,
+    opacity: 1,
+    delay: 1.2,
+  });
+  gsap.to("#client-list-section", {
+    duration: 1,
+    opacity: 1,
+    delay: 1.2,
+  });
+
+  // SLIDING BUTTON
+  const sliderButtonWidth = 60;
+  const sliderMaxDragDistance = document.querySelector(".sliding-button")?.clientWidth - sliderButtonWidth;
 
   Draggable.create(".slider-circle", {
     type: "x",
@@ -79,21 +137,21 @@ onMounted(() => {
     },
     onDrag: function (e) {
       // PROGRESS BAR OPACITY FOLLOW
-      const element = document.querySelector(".slider-circle")
+      const element = document.querySelector(".slider-circle");
       const style = window.getComputedStyle(element);
       const matrix = new WebKitCSSMatrix(style.transform);
-      console.log(matrix.m41)
+      console.log(matrix.m41);
       gsap.to(".slider-progress-background", {
         duration: 0,
         opacity: 0.2,
-        width: matrix.m41 + sliderButtonWidth
-      })
+        width: matrix.m41 + sliderButtonWidth,
+      });
     },
     onDragEnd: function (e) {
-      const element = document.querySelector(".slider-circle")
+      const element = document.querySelector(".slider-circle");
       const style = window.getComputedStyle(element);
       const matrix = new WebKitCSSMatrix(style.transform);
-      const dragDistance = matrix.m41
+      const dragDistance = matrix.m41;
 
       // IF DRAGGED TO THE RIGHT, SET STATE TO PROJECTS ELSE CLIENTS
       if (dragDistance > sliderMaxDragDistance * 0.9) {
@@ -101,16 +159,16 @@ onMounted(() => {
           x: sliderMaxDragDistance,
           duration: 0.2,
           rotation: 180,
-        })
+        });
 
         gsap.to(".slider-progress-background", {
           duration: 1,
           width: 0,
           borderRadius: 40,
-          opacity: 0.2
-        })
+          opacity: 0.2,
+        });
 
-        displayMode.value = DisplayMode.Projects
+        displayMode.value = DisplayMode.Projects;
       } else {
         gsap.to(this.target, {
           x: 0,
@@ -120,15 +178,14 @@ onMounted(() => {
 
         gsap.to(".slider-progress-background", {
           duration: 0.1,
-          width: sliderButtonWidth
-        })
+          width: sliderButtonWidth,
+        });
 
-        displayMode.value = DisplayMode.Clients
+        displayMode.value = DisplayMode.Clients;
       }
     },
-  })
-})
-
+  });
+});
 </script>
 
 <style lang="sass" scoped>
@@ -141,13 +198,14 @@ onMounted(() => {
   animation: image-glow 1s ease-in-out infinite alternate
 
 #work
+  background-color: black
   #light-bulb-section
     background-color: black
     padding-bottom: 40px
     position: relative
     .light-background-triangle
       background: $orange
-      opacity: 0.15
+      // opacity: 0.15
       height: 0px
       width: 0px
       position: absolute
@@ -155,9 +213,10 @@ onMounted(() => {
       left: 50%
       bottom: 0
       transform: translateX(-50%)
-      border-left: 50vw solid black
-      border-right: 50vw solid black
-      border-bottom: 25vw solid $orange
+      border-left: 60vw solid black
+      border-right: 60vw solid black
+      border-bottom: 45vh solid $orange
+      opacity: 0
     .light-bulb-container
       display: flex
       align-items: flex-start
@@ -166,14 +225,28 @@ onMounted(() => {
       .bulb
         display: block
         width: 10%
+        position: relative
+      .black-circle
+        position: relative
+        position: absolute
+        width: 10%
+        height:30%
+        background-color: red
+        top: 67%
+        left: 50%
+        transform: translateX(-50%)
+        border-radius: 50%
+        background-color: black
       .bulb-glow
         display: block
         width: 15.2%
         position: absolute
+        opacity: 0
       .glow-line
         position: absolute
         width: 60%
         top: 70%
+        opacity: 0
     .page-title
       color: none
       text-align: center
@@ -183,6 +256,10 @@ onMounted(() => {
       font-size: 80px
       --webkit-animation: text-glow 1s ease-in-out infinite alternate
       animation: text-glow 1s ease-in-out infinite alternate
+      margin-bottom: 10px
+      opacity: 0
+    #sliding-button
+      opacity: 0
     .sliding-button-container
       padding: 10px
       border: 1px solid $orange
@@ -238,16 +315,34 @@ onMounted(() => {
   #client-list-section
     background-color: black
     position: relative
+    opacity: 0
     .light-background
       background: $orange
       opacity: 0.15
       height: 100%
       width: 100%
       position: absolute
+    .client-project-slider-container
+      display: flex
+      transform: translateX(0%)
+      transition: 0.25s all
+      &.project-active
+        transform: translateX(-100%)
+        .work-section-container
+          opacity: 0
+        .projects-section-container
+          opacity: 1
+      .work-section-container
+        transition: 1.5s all
+        opacity: 1
+      .projects-section-container
+        transition: 1.5s all
+        opacity: 0
     .section-container
       padding-top: 80px
       padding-bottom: 40px
       position: relative
+      flex: 0 0 100%
       .client-logo-container
         position: relative
         margin-bottom: 40px
@@ -257,7 +352,11 @@ onMounted(() => {
           margin: 0 auto
           position: relative
           z-index: 1
+          +large-mobile
+            max-width: 300px
           // mix-blend-mode: difference
+          +mobile
+            width: 200px
         .client-large-name
           top: 20%
           left: 0
@@ -274,6 +373,10 @@ onMounted(() => {
           z-index: 1
           mix-blend-mode: overlay
           filter: drop-shadow(0px 0px 4px black)
+          +large-mobile
+            font-size: 100px
+          +mobile
+            font-size: 60px
         .client-back-name
           top: 20%
           left: 0
@@ -286,6 +389,10 @@ onMounted(() => {
           text-shadow: 0 0 8px white
           font-size: 140px
           z-index: 0
+          +large-mobile
+            font-size: 100px
+          +mobile
+            font-size: 60px
   .client-list-image-container
     img
       width: 100%
@@ -296,6 +403,4 @@ onMounted(() => {
         display: block
         img
           width: 100%
-
-
 </style>

@@ -13,5 +13,5 @@ import Footer from "./components/footer.vue";
 
 <style lang="sass">
 @import "/assets/sass/reset.sass"
-// @import "/assets/sass/fonts.sass"
+@import "/assets/sass/fonts.sass"
 </style>
