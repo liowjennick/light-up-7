@@ -3,11 +3,25 @@
     <div class="full-screen-section-container section-container full-screen-center-content">
       <div class="title-container">
         <h1 class="page-title">about</h1>
-        <img class="title-icon image-glow" src="../../assets/images/about/question-mark-glow.png" />
+        <img
+          class="title-icon question-mark"
+          src="../../assets/images/about/question-mark-glow.png"
+        />
+        <img
+          class="title-icon info"
+          src="../../assets/images/about/info-glow.png"
+        />
+        <img
+          class="title-icon bulb-balloon"
+          src="../../assets/images/about/bulb-balloon.png"
+        />
       </div>
     </div>
 
-    <div id="multi-award-section" class="full-screen-section-container">
+    <div
+      id="multi-award-section"
+      class="full-screen-section-container"
+    >
       <div class="section-container">
         <div class="address-container">
           <p class="font-white font-20 just-sans">Light Up 7 Bags 4 Awards at</p>
@@ -17,7 +31,10 @@
       </div>
     </div>
 
-    <div id="team-section" class="full-screen-section-container">
+    <div
+      id="team-section"
+      class="full-screen-section-container"
+    >
       <div class="team-image-container">
         <!-- <img src="../../assets/images/about/about-team.png" /> -->
       </div>
@@ -26,12 +43,14 @@
       </div>
     </div>
 
-    <div id="journey-section" class="full-screen-section-container">
+    <div id="journey-section">
       <div class="section-container">
         <div class="yellow-background" />
 
-        <img class="journey-start-bulb" src="../../assets/images/about/about-small-bulb.png" />
-
+        <img
+          class="journey-start-bulb"
+          src="../../assets/images/about/about-small-bulb.png"
+        />
 
         <!-- <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -63,7 +82,10 @@
           <path fill="none" stroke="white" stroke-width="2" d="M40,20 a20,20 0 0,1 -20,20" />
         </svg> -->
 
-        <div id="first-line" style="height: 200px" />
+        <div
+          id="first-line"
+          style="height: 200px"
+        />
 
         <div class="text-container first">
           <p class="font-white font-16 just-sans">Established in 2014, Light Up 7 grew out of the emergent need that the world was headed towards a new era. Everything was getting digitised. Fast.</p>
@@ -80,8 +102,10 @@
           <p class="font-white font-16 just-sans">Our partnerships have allowed us to create gold-standard experiences that have driven substantial revenue and growth for some of the most beloved and recognisable brands in the APAC region.</p>
         </div>
 
-        <img class="journey-end-bulb" src="../../assets/images/about/about-small-bulb.png" />
-
+        <img
+          class="journey-end-bulb"
+          src="../../assets/images/about/about-small-bulb.png"
+        />
       </div>
     </div>
   </div>
@@ -94,14 +118,57 @@ import { ScrollTrigger, ScrollToPlugin, Draggable, MotionPathPlugin } from "gsap
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable, MotionPathPlugin);
 
 onMounted(() => {
+  const bannerTimeline = gsap.timeline({ repeat: -1 });
+  bannerTimeline
+    .add("first")
+    .to(".title-icon.question-mark", {
+      opacity: 1,
+      scale: 1,
+      duration: 1,
+      ease: "bounce",
+    })
+    .to(".title-icon.question-mark", {
+      opacity: 0,
+      scale: 0,
+      duration: 0.5,
+      delay: 1,
+    })
+    .to(".title-icon.info", {
+      opacity: 1,
+      duration: 1,
+      scale: 1,
+      ease: "bounce",
+    })
+    .to(".title-icon.info", {
+      opacity: 0,
+      duration: 0.5,
+      scale: 0,
+      delay: 1,
+    })
+    .to(".title-icon.bulb-balloon", {
+      opacity: 1,
+      duration: 1,
+      scale: 1,
+      ease: "bounce",
+    })
+    .to(".title-icon.bulb-balloon", {
+      opacity: 0,
+      duration: 0.5,
+      scale: 0,
+      delay: 1,
+    });
+
   gsap.to("#first-line", {
     duration: 2,
     repeat: 5,
     yoyo: true,
-    motionPath: [{x: 100, y: 100}, {x: 100, y: 100}, {x: 100, y: 300}],
-  })
-})
-
+    motionPath: [
+      { x: 100, y: 100 },
+      { x: 100, y: 100 },
+      { x: 100, y: 300 },
+    ],
+  });
+});
 </script>
 
 <style lang="sass" scoped>
@@ -115,18 +182,40 @@ onMounted(() => {
   .title-container
     position: relative
     .page-title
-      color: none
+      color: black
       text-align: center
       font-family: "JustSans"
       text-shadow: 0 0 5px white, 0 0 5px white, 0 0 20px white
-      font-size: 80px
+      font-size: 220px
       --webkit-animation: text-glow 1s ease-in-out infinite alternate
       animation: text-glow 1s ease-in-out infinite alternate
+      z-index: 2
+      position: relative
     .title-icon
       position: absolute
-      width: 250px
-      top: -30%
-      right: -50%
+      z-index: 1
+      &.question-mark
+        width: 350px
+        top: 2%
+        right: -25%
+        opacity: 0
+        transform: scale(0)
+        transform-origin: bottom left
+      &.info
+        width: 350px
+        top: -3%
+        right: -48%
+        opacity: 0
+        transform: scale(0)
+        transform-origin: bottom left
+      &.bulb-balloon
+        width: 250px
+        top: -7%
+        right: 29%
+        opacity: 0
+        transform: scale(0)
+        transform-origin: bottom center
+
 
   #multi-award-section
     background-image: url("../../assets/images/about/multi-award-winning-agency.png")
