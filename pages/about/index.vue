@@ -175,6 +175,7 @@ onMounted(() => {
 @import "../../assets/sass/responsive"
 @import "../../assets/sass/layout"
 @import "../../assets/sass/animations"
+@import "../../assets/sass/fonts"
 
 #about-page
   background-color: black
@@ -190,6 +191,8 @@ onMounted(() => {
       animation: text-glow 1s ease-in-out infinite alternate
       z-index: 2
       position: relative
+      +large-mobile
+        font-size: 80px
     .title-icon
       position: absolute
       z-index: 1
@@ -200,6 +203,8 @@ onMounted(() => {
         opacity: 0
         transform: scale(0)
         transform-origin: bottom left
+        +large-mobile
+          width: 120px
       &.info
         width: 350px
         top: -3%
@@ -207,6 +212,8 @@ onMounted(() => {
         opacity: 0
         transform: scale(0)
         transform-origin: bottom left
+        +large-mobile
+          width: 120px
       &.bulb-balloon
         width: 250px
         top: -7%
@@ -214,6 +221,9 @@ onMounted(() => {
         opacity: 0
         transform: scale(0)
         transform-origin: bottom center
+        +large-mobile
+          width: 100px
+          right: 27.5%
 
 
   #multi-award-section

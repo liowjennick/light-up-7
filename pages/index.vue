@@ -39,7 +39,7 @@
                 src="../assets/images/home/quarter-circle-black-background.png"
               />
               <img
-                class="floating-shapes"
+                class="floating-shapes diamond"
                 src="../assets/images/home/double-diamond.png"
               />
               <img
@@ -67,7 +67,7 @@
                 src="../assets/images/home/star-black-background.png"
               />
               <img
-                class="floating-shapes"
+                class="floating-shapes star"
                 src="../assets/images/home/double-star.png"
               />
               <img
@@ -95,7 +95,7 @@
                 src="../assets/images/home/circle-black-background.png"
               />
               <img
-                class="floating-shapes"
+                class="floating-shapes circle"
                 src="../assets/images/home/double-circle.png"
               />
               <img
@@ -354,62 +354,30 @@ import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
 // YELLOW OUTLINE SCROLL
+var firstOutlineTimeline
+var secondOutlineTimeline
+var thirdOutlineTimeline
+
 const yellowOutlineIndex = ref(0);
-watch(yellowOutlineIndex, (newIndex, oldIndex) => {
+watch(yellowOutlineIndex, (newIndex:Number, oldIndex:Number) => {
   if (newIndex !== oldIndex) {
     const enterDuration = 0.6;
     const exitDuration = 0.2;
     switch (newIndex) {
       case 1:
-        gsap.to("#yellow-outline-first-banner-trigger .flex-row", {
-          opacity: 1,
-          duration: enterDuration,
-          y: 0,
-        });
-        gsap.to("#yellow-outline-second-banner-trigger .flex-row", {
-          opacity: 0,
-          duration: exitDuration,
-          y: -200,
-        });
-        gsap.to("#yellow-outline-third-banner-trigger .flex-row", {
-          opacity: 0,
-          duration: exitDuration,
-          y: -200,
-        });
+        firstOutlineTimeline.play()
+        secondOutlineTimeline.timeScale(2).reverse()
+        thirdOutlineTimeline.timeScale(2).reverse()
         break;
       case 2:
-        gsap.to("#yellow-outline-first-banner-trigger .flex-row", {
-          opacity: 0,
-          duration: exitDuration,
-          y: -200,
-        });
-        gsap.to("#yellow-outline-second-banner-trigger .flex-row", {
-          opacity: 1,
-          duration: enterDuration,
-          y: 0,
-        });
-        gsap.to("#yellow-outline-third-banner-trigger .flex-row", {
-          opacity: 0,
-          duration: exitDuration,
-          y: -200,
-        });
+        firstOutlineTimeline.timeScale(2).reverse()
+        secondOutlineTimeline.play()
+        thirdOutlineTimeline.timeScale(2).reverse()
         break;
       case 3:
-        gsap.to("#yellow-outline-first-banner-trigger .flex-row", {
-          opacity: 0,
-          duration: exitDuration,
-          y: -200,
-        });
-        gsap.to("#yellow-outline-second-banner-trigger .flex-row", {
-          opacity: 0,
-          duration: exitDuration,
-          y: -200,
-        });
-        gsap.to("#yellow-outline-third-banner-trigger .flex-row", {
-          opacity: 1,
-          duration: enterDuration,
-          y: 0,
-        });
+        firstOutlineTimeline.timeScale(2).reverse()
+        secondOutlineTimeline.timeScale(2).reverse()
+        thirdOutlineTimeline.play()
         break;
       default:
         break;
@@ -443,7 +411,105 @@ useHead({
 onMounted(() => {
   console.log("setup mounted");
 
-  // INTRO END
+  // OUTLINE SECTION SCROLL TRIGGER
+  ScrollTrigger.create({
+    trigger: "#outline-container",
+    start: "top top",
+    end: "bottom+=2000 bottom",
+    pin: true,
+    onUpdate: (self) => {
+      console.log(self.progress);
+
+      if (self.progress > 0.66) {
+        yellowOutlineIndex.value = 3;
+      } else if (self.progress > 0.33) {
+        yellowOutlineIndex.value = 2;
+      } else {
+        yellowOutlineIndex.value = 1;
+      }
+    },
+  });
+
+  // OUTLINE SECTION TIMELINE
+  firstOutlineTimeline = gsap.timeline()
+  firstOutlineTimeline
+    .addLabel("first")
+    .to("#yellow-outline-first-banner-trigger .background", {
+      opacity: 1,
+      duration: 0.8,
+      scale: 1
+    }, "first")
+    .to("#yellow-outline-first-banner-trigger .floating-shapes", {
+      scale: 1,
+      duration: 0.8,
+      delay: 0.4
+    }, "first")
+    .to("#yellow-outline-first-banner-trigger .yellow-outline-text", {
+      y: 0,
+      duration: 0.8,
+      opacity: 1,
+      delay: 0.2
+    }, "first")
+    .to("#yellow-outline-first-banner-trigger .text-container", {
+      y: 0,
+      duration: 0.8,
+      opacity: 1,
+      delay: 0.2
+    }, "first")
+
+  secondOutlineTimeline = gsap.timeline()
+  secondOutlineTimeline
+    .addLabel("second")
+    .to("#yellow-outline-second-banner-trigger .background", {
+      opacity: 1,
+      duration: 0.8,
+      scale: 1
+    }, "second")
+    .to("#yellow-outline-second-banner-trigger .floating-shapes", {
+      scale: 1,
+      duration: 0.8,
+      delay: 0.4
+    }, "second")
+    .to("#yellow-outline-second-banner-trigger .yellow-outline-text", {
+      y: 0,
+      duration: 0.8,
+      opacity: 1,
+      delay: 0.2
+    }, "second")
+    .to("#yellow-outline-second-banner-trigger .text-container", {
+      y: 0,
+      duration: 0.8,
+      opacity: 1,
+      delay: 0.2
+    }, "second").pause()
+
+  thirdOutlineTimeline = gsap.timeline()
+  thirdOutlineTimeline
+    .addLabel("third")
+    .to("#yellow-outline-third-banner-trigger .background", {
+      opacity: 1,
+      duration: 0.8,
+      scale: 1
+    }, "third")
+    .to("#yellow-outline-third-banner-trigger .floating-shapes", {
+      scale: 1,
+      duration: 0.8,
+      delay: 0.4
+    }, "third")
+    .to("#yellow-outline-third-banner-trigger .yellow-outline-text", {
+      y: 0,
+      duration: 0.8,
+      opacity: 1,
+      delay: 0.2
+    }, "third")
+    .to("#yellow-outline-third-banner-trigger .text-container", {
+      y: 0,
+      duration: 0.8,
+      opacity: 1,
+      delay: 0.2
+    }, "third").pause()
+
+  // INTRO VIDEO END
   document.getElementById("intro-video")?.addEventListener(
     "ended",
     () => {
@@ -472,24 +538,6 @@ onMounted(() => {
     },
     false
   );
-
-  ScrollTrigger.create({
-    trigger: "#outline-container",
-    start: "top top",
-    end: "bottom+=3000 bottom",
-    pin: true,
-    onUpdate: (self) => {
-      console.log(self.progress);
-
-      if (self.progress > 0.66) {
-        yellowOutlineIndex.value = 3;
-      } else if (self.progress > 0.33) {
-        yellowOutlineIndex.value = 2;
-      } else {
-        yellowOutlineIndex.value = 1;
-      }
-    },
-  });
 
   gsap.from(".plug-to-right.one", {
     x: "-50vw",
@@ -616,8 +664,8 @@ onMounted(() => {
     position: absolute
   .flex-row
     display: flex
-    opacity: 0
-    transform: translateY(-200px)
+    // opacity: 0
+    // transform: translateY(-200px)
     +desktop
       display: block
     .yellow-outline-text-container
@@ -628,22 +676,30 @@ onMounted(() => {
         position: absolute
         top: -15%
         left: 50%
-        transform: translateX(-50%)
+        transform: translateX(-50%) scale(0)
+        transform-origin: center center
         z-index: 0
+        opacity: 0
       .floating-shapes
         position: absolute
         width: 12%
         top: 0
         left: 27%
+        transform: scale(0)
+        transform-origin: center center
       .yellow-outline-text
         z-index: 2
         width: 100%
         position: relative
+        transform: translateY(-200px)
+        opacity: 0
     .text-container
       flex: 1
       display: flex
       align-items: center
       justify-content: center
+      transform: translateY(-200px)
+      opacity: 0
       +desktop
         margin-top: 25px
       p
