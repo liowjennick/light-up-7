@@ -172,7 +172,6 @@ onMounted(() => {
 </script>
 
 <style lang="sass" scoped>
-@import "../../assets/sass/fonts"
 @import "../../assets/sass/responsive"
 @import "../../assets/sass/layout"
 @import "../../assets/sass/animations"
