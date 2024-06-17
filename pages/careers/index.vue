@@ -1,32 +1,38 @@
 <template>
   <div id="careers">
     <!-- Banner -->
-    <div>
+    <div class="section-container" style="padding-top: 120px;">
       <!-- Animation here -->
     </div>
     <!-- Staff pics -->
-    <div>
-      <div>
+    <div class="section-container full-screen-center-content" style="flex-direction: column; margin-block: 24px;">
+      <div class="full-screen-start-between w-full" style="gap: 24px;  padding-block: 24px; border-bottom: 1px solid white;">
         <div>
-          <p>Join us in lighting up the world!</p>
+          <h2 class="font-orange" style="margin-bottom: 16px">Join us in lighting up the world!</h2>
           <p>
             All great things start with a spark—and at Light Up 7, we believe in
-            fanning the embers of creativity and success in each team member. We
+            fanning the embers of creativity and success in each team member.<br/><br/> We
             are a proudly all-in and in-house team that provides support and
-            avenues for you to bring your aspirations and visions to life. When
+            avenues for you to bring your aspirations and visions to life.<br/><br/> When
             you’re ready to light up your career, Light Up 7 is ready for you.
           </p>
         </div>
-        <div>
-          <img src="" width="707" />
+        <div style="width: 100%;">
+          <Carousel :item-to-show="staffPics.length/2" :autoplay="2000" :wrap-around="true" :pauseAutoplayOnHover="true" :transition="600">
+            <Slide v-for="(staffPic, key) in staffPics" :key="key">
+              <div class="carousel__item">
+                <img :src="staffPic.url" :alt="staffPic.alt" class="slide-image" />
+              </div>
+            </Slide>
+          </Carousel>
+        <div class="full-screen-center-content w-full" style="margin-top: 16px">
+            <button class="orange-outlined-button">be part of LU7!</button>
         </div>
-      </div>
-      <div>
-        <button>be part of LU7!</button>
+        </div>
       </div>
     </div>
     <!-- Company values -->
-    <div>
+    <div class="section-container">
       <p>How we continue to shine</p>
       <div>
         <div>
@@ -77,7 +83,7 @@
       </div>
     </div>
     <!-- Company pics -->
-    <div>
+    <div class="section-container">
       <p>Our team at work (and play!)</p>
       <div>
         <div>
@@ -110,7 +116,7 @@
       </div>
     </div>
     <!-- Vacancies -->
-    <div>
+    <div class="section-container">
       <p>ready to explore a new path?</p>
       <p>check out your dream role here.</p>
       <!-- filter tabs -->
@@ -158,10 +164,22 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import {default as Staffs} from '../../assets/images/careers'
+
+const staffPics = Staffs.map((staff: any, key: number)=>({
+  url: staff,
+  alt: `Staff pic ${key+1}`
+}))
+
+</script>
 <style lang="sass">
 @import "../../assets/sass/responsive.sass"
 @import "../../assets/sass/fonts.sass"
 @import "../../assets/sass/animations.sass"
 @import "../../assets/sass/layout.sass"
+@import "../../assets/sass/inputs.sass"
+
+.slide-image
+  max-width: 100%
 </style>

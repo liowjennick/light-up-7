@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-    <NuxtPage />
+    <NuxtPage style="background-color: black;"/>
     <Footer />
   </div>
 </template>
