@@ -14,7 +14,13 @@
 .grid-3-cols
   display: grid
   grid-template-columns: auto auto auto
-  grid-gap: 30%
+  column-gap: 20%
+  row-gap: 60px
+  +large-mobile
+    column-gap: 10%
+  +mobile
+    column-gap: 5%
+    row-gap: 28px
 .w-full
   width: 100%
 
