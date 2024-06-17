@@ -6,77 +6,47 @@
     </div>
     <!-- Staff pics -->
     <div class="section-container full-screen-center-content" style="flex-direction: column; margin-block: 24px;">
-      <div class="full-screen-start-between w-full" style="gap: 24px;  padding-block: 24px; border-bottom: 1px solid white;">
+      <div class="full-screen-start-between w-full"
+        style="gap: 24px;  padding-block: 24px; border-bottom: 1px solid white;">
         <div>
           <h2 class="font-orange" style="margin-bottom: 16px">Join us in lighting up the world!</h2>
           <p>
             All great things start with a spark—and at Light Up 7, we believe in
-            fanning the embers of creativity and success in each team member.<br/><br/> We
+            fanning the embers of creativity and success in each team member.<br /><br /> We
             are a proudly all-in and in-house team that provides support and
-            avenues for you to bring your aspirations and visions to life.<br/><br/> When
+            avenues for you to bring your aspirations and visions to life.<br /><br /> When
             you’re ready to light up your career, Light Up 7 is ready for you.
           </p>
         </div>
         <div style="width: 100%;">
-          <Carousel :item-to-show="staffPics.length/2" :autoplay="2000" :wrap-around="true" :pauseAutoplayOnHover="true" :transition="600">
+          <Carousel :item-to-show="staffPics.length / 2" :autoplay="2000" :wrap-around="true" :pauseAutoplayOnHover="true"
+            :transition="600">
             <Slide v-for="(staffPic, key) in staffPics" :key="key">
               <div class="carousel__item">
                 <img :src="staffPic.url" :alt="staffPic.alt" class="slide-image" />
               </div>
             </Slide>
           </Carousel>
-        <div class="full-screen-center-content w-full" style="margin-top: 16px">
+          <div class="full-screen-center-content w-full" style="margin-top: 16px">
             <button class="orange-outlined-button">be part of LU7!</button>
-        </div>
+          </div>
         </div>
       </div>
     </div>
     <!-- Company values -->
-    <div class="section-container">
-      <p>How we continue to shine</p>
-      <div>
-        <div>
-          <div>
-            <img src="" width="106" />
+    <div class="section-container full-screen-start-center" style="flex-direction: column; gap: 32px; margin-block: 64px;">
+      <h2 class="font-orange">How we continue to shine</h2>
+      <div class="full-screen-center-around" style="gap: 48px">
+        <div v-for="(mottoIcon, key) in mottoIcons" :key="key" class="full-screen-center-between" style="flex-direction: column; gap: 16px">
+          <div style="width: fit-content; height: 150px; ">
+            <img :src="mottoIcon.url" :alt="mottoIcon.alt" style="height: 100%;" />
           </div>
           <div>
-            <p>Celebrating Creativity</p>
+            <p style="font-size: 20px; text-align: center;">{{ mottoIcon.title }}</p>
           </div>
           <div>
-            <p>
-              We believe the greatest ideas comes from the experience of being
-              human. Whatever shape or form, your creativity will always have a
-              seat at our table.
-            </p>
-          </div>
-        </div>
-        <div>
-          <div>
-            <img src="" width="106" />
-          </div>
-          <div>
-            <p>Doing Work That Matters</p>
-          </div>
-          <div>
-            <p>
-              Joining Light Up 7 means being part of projects that make a
-              difference. Lead or have a hand in creating lasting impact with
-              brands and organisations across the APAC region.
-            </p>
-          </div>
-        </div>
-        <div>
-          <div>
-            <img src="" width="106" />
-          </div>
-          <div>
-            <p>Always Growing, Never Stopping</p>
-          </div>
-          <div>
-            <p>
-              We understand wanting to leave your mark in the industry and we
-              will support you until you make it! No matter the goals, you will
-              have the resources to thrive.
+            <p style="text-align: center;">
+              {{ mottoIcon.text }}
             </p>
           </div>
         </div>
@@ -84,8 +54,8 @@
     </div>
     <!-- Company pics -->
     <div class="section-container">
-      <p>Our team at work (and play!)</p>
-      <div>
+      <h2 class="font-orange">Our team at work (and play!)</h2>
+      <div class="bg-orange-25">
         <div>
           <img src="" width="477" />
           <!-- overlay text -->
@@ -136,27 +106,39 @@
       <!-- vacancy grid -->
       <div>
         <div>
-          <div><p>Job Title</p></div>
+          <div>
+            <p>Job Title</p>
+          </div>
           <div><button>apply now!</button></div>
         </div>
         <div>
-          <div><p>Job Title</p></div>
+          <div>
+            <p>Job Title</p>
+          </div>
           <div><button>apply now!</button></div>
         </div>
         <div>
-          <div><p>Job Title</p></div>
+          <div>
+            <p>Job Title</p>
+          </div>
           <div><button>apply now!</button></div>
         </div>
         <div>
-          <div><p>Job Title</p></div>
+          <div>
+            <p>Job Title</p>
+          </div>
           <div><button>apply now!</button></div>
         </div>
         <div>
-          <div><p>Job Title</p></div>
+          <div>
+            <p>Job Title</p>
+          </div>
           <div><button>apply now!</button></div>
         </div>
         <div>
-          <div><p>Job Title</p></div>
+          <div>
+            <p>Job Title</p>
+          </div>
           <div><button>apply now!</button></div>
         </div>
       </div>
@@ -165,14 +147,30 @@
 </template>
 
 <script setup lang="ts">
-import {default as Staffs} from '../../assets/images/careers'
+import { default as Staffs } from '@/assets/images/careers/staff-pics'
+import { default as Mottos } from '@/assets/images/careers/motto-icons'
 
-const staffPics = Staffs.map((staff: any, key: number)=>({
+const staffPics = Staffs.map((staff: any, key: number) => ({
   url: staff,
-  alt: `Staff pic ${key+1}`
+  alt: `Staff pic ${key + 1}`
+}))
+const mottoTitle = ['Celebrating Creativity','Doing Work That Matters','Always Growing, Never Stopping']
+const mottoText = [`We believe the greatest ideas comes from the experience of being
+              human. Whatever shape or form, your creativity will always have a
+              seat at our table.`, `Joining Light Up 7 means being part of projects that make a
+              difference. Lead or have a hand in creating lasting impact with
+              brands and organisations across the APAC region.`, `We understand wanting to leave your mark in the industry and we
+              will support you until you make it! No matter the goals, you will
+              have the resources to thrive.`]
+const mottoIcons = Mottos.map((motto, key) => ({
+  url: motto,
+  title: mottoTitle[key],
+  text: mottoText[key],
+  alt: `Motto ${key + 1}`
 }))
 
 </script>
+
 <style lang="sass">
 @import "../../assets/sass/responsive.sass"
 @import "../../assets/sass/fonts.sass"
@@ -182,4 +180,7 @@ const staffPics = Staffs.map((staff: any, key: number)=>({
 
 .slide-image
   max-width: 100%
+.bg-orange-25
+  background-color: $orange
+  opacity: 25%
 </style>
