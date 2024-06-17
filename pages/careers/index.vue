@@ -19,8 +19,8 @@
           </p>
         </div>
         <div style="width: 100%;">
-          <Carousel :item-to-show="staffPics.length / 2" :autoplay="2000" :wrap-around="true" :pauseAutoplayOnHover="true"
-            :transition="600">
+          <Carousel :item-to-show="staffPics.length / 2" :autoplay="2000" :wrap-around="true"
+            :pauseAutoplayOnHover="true" :transition="600">
             <Slide v-for="(staffPic, key) in staffPics" :key="key">
               <div class="carousel__item">
                 <img :src="staffPic.url" :alt="staffPic.alt" class="slide-image" />
@@ -34,10 +34,12 @@
       </div>
     </div>
     <!-- Company values -->
-    <div class="section-container full-screen-start-center" style="flex-direction: column; gap: 32px; margin-block: 64px;">
+    <div class="section-container full-screen-start-center"
+      style="flex-direction: column; gap: 32px; margin-block: 64px;">
       <h2 class="font-orange">How we continue to shine</h2>
       <div class="full-screen-center-around" style="gap: 48px">
-        <div v-for="(mottoIcon, key) in mottoIcons" :key="key" class="full-screen-center-between" style="flex-direction: column; gap: 16px">
+        <div v-for="(mottoIcon, key) in mottoIcons" :key="key" class="full-screen-center-between"
+          style="flex-direction: column; gap: 16px">
           <div style="width: fit-content; height: 150px; ">
             <img :src="mottoIcon.url" :alt="mottoIcon.alt" style="height: 100%;" />
           </div>
@@ -57,73 +59,35 @@
       <h2 class="section-container font-orange" style="margin-bottom: 24px;">Our team at work (and play!)</h2>
       <div class="section-container bg-orange-25 full-screen-center-between" style="gap: 16px">
         <div v-for="(company, key) in companyPics" :key="key" class="overlay-parent">
-          <img :src="company.url" :alt="company.alt" style="width: 100%;"/>
+          <img :src="company.url" :alt="company.alt" style="width: 100%;" />
           <!-- overlay text -->
-           <div class="overlay-child">
-             <p v-html="company.text">
-              </p>
-            </div>
+          <div class="overlay-child">
+            <p v-html="company.text">
+            </p>
+          </div>
         </div>
       </div>
-      <div class="section-container" >
+      <div class="section-container">
         <div style="border-bottom: 1px solid white;padding: 24px"></div>
       </div>
     </div>
     <!-- Vacancies -->
-    <div class="section-container">
-      <p>ready to explore a new path?</p>
-      <p>check out your dream role here.</p>
+    <div class="section-container" style="margin-block: 24px">
+      <h2 class="font-orange">ready to explore a new path?</h2>
+      <h4>check out your dream role here.</h4>
       <!-- filter tabs -->
-      <div>
-        <div>
-          <div><button>all</button></div>
-          <div><button>finance/accounting</button></div>
-          <div><button>events</button></div>
-          <div><button>internship</button></div>
-          <div><button>client services</button></div>
-          <div><button>content</button></div>
-          <div><button>creative</button></div>
-          <div><button>video</button></div>
-          <div><button>web</button></div>
+       <div class="full-screen-center-content" style="margin-block: 32px">
+         <div class="tab-container btn-group">
+           <button v-for="vacancyTab in vacancyTabs" :key="vacancyTab" class="tab-button" :name="vacancyTab" @click="">{{ vacancyTab }}</button>
+          </div>
         </div>
-      </div>
       <!-- vacancy grid -->
-      <div>
-        <div>
+      <div class="grid-3-cols">
+        <div v-for="(recent, key) in recentJobs" :key="key" class="full-screen-center-content" style="flex-direction: column; gap: 16px">
           <div>
-            <p>Job Title</p>
+            <p style="font-size: 24px;">{{ recent.title }}</p>
           </div>
-          <div><button>apply now!</button></div>
-        </div>
-        <div>
-          <div>
-            <p>Job Title</p>
-          </div>
-          <div><button>apply now!</button></div>
-        </div>
-        <div>
-          <div>
-            <p>Job Title</p>
-          </div>
-          <div><button>apply now!</button></div>
-        </div>
-        <div>
-          <div>
-            <p>Job Title</p>
-          </div>
-          <div><button>apply now!</button></div>
-        </div>
-        <div>
-          <div>
-            <p>Job Title</p>
-          </div>
-          <div><button>apply now!</button></div>
-        </div>
-        <div>
-          <div>
-            <p>Job Title</p>
-          </div>
-          <div><button>apply now!</button></div>
+          <NuxtLink class="orange-outlined-button" style="font-family: 'JustSans'; padding: 8px 24px" :to="recent.url">apply now!</NuxtLink>
         </div>
       </div>
     </div>
@@ -133,13 +97,13 @@
 <script setup lang="ts">
 import { default as Staffs } from '@/assets/images/careers/staff-pics'
 import { default as Mottos } from '@/assets/images/careers/motto-icons'
-import { default as Companys } from '@/assets/images/careers/company-pics' 
+import { default as Companys } from '@/assets/images/careers/company-pics'
 
 const staffPics = Staffs.map((staff: any, key: number) => ({
   url: staff,
   alt: `Staff pic ${key + 1}`
 }))
-const mottoTitle = ['Celebrating Creativity','Doing Work That Matters','Always Growing, Never Stopping']
+const mottoTitle = ['Celebrating Creativity', 'Doing Work That Matters', 'Always Growing, Never Stopping']
 const mottoText = [`We believe the greatest ideas comes from the experience of being
               human. Whatever shape or form, your creativity will always have a
               seat at our table.`, `Joining Light Up 7 means being part of projects that make a
@@ -161,11 +125,49 @@ const companyText = [`“I love how diverse the team is. You learn so much from 
             Up 7.”<br/><br/> I.S, Project Manager`, `“The work’s challenging but so is the downtime! Nothing beats a long
             day of projects like one (or 5) rounds of pool.”<br/><br/> M.S, Video
             Production Specialist`]
-const companyPics = Companys.map((comp, key)=>({
+const companyPics = Companys.map((comp, key) => ({
   url: comp,
   text: companyText[key],
-  alt: `Company pic ${key+1}`
+  alt: `Company pic ${key + 1}`
 }))
+
+const vacancyTabs = [
+  "all",
+  "finance/accounting",
+  "events",
+  "internship",
+  "client services",
+  "content",
+  "creative",
+  "video",
+  "web",
+]
+const recentJobs = [
+  {
+    title: "Job title",
+    url: ""
+  },
+  {
+    title: "Job title",
+    url: ""
+  },
+  {
+    title: "Job title",
+    url: ""
+  },
+  {
+    title: "Job title",
+    url: ""
+  },
+  {
+    title: "Job title",
+    url: ""
+  },
+  {
+    title: "Job title",
+    url: ""
+  },
+]
 </script>
 
 <style lang="sass">
@@ -175,6 +177,8 @@ const companyPics = Companys.map((comp, key)=>({
 @import "../../assets/sass/layout.sass"
 @import "../../assets/sass/inputs.sass"
 
+#careers
+  padding-block: 48px
 .slide-image
   max-width: 100%
 .bg-orange-25
@@ -201,4 +205,23 @@ const companyPics = Companys.map((comp, key)=>({
     padding: 24px
   &:hover
     opacity: 100%
+
+.tab-container
+  margin-block: 24px 
+  padding: 12px
+  border: 1px solid $orange
+  border-radius: 100px
+  width: fit-content
+  button 
+    background: none
+    border: none
+    border-right: 1px solid $orange
+    color: $orange
+    cursor: pointer
+    padding-inline: 24px
+
+.btn-group 
+  button:last-child
+    border-right: none
+
 </style>
