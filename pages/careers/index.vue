@@ -53,36 +53,20 @@
       </div>
     </div>
     <!-- Company pics -->
-    <div class="section-container">
-      <h2 class="font-orange">Our team at work (and play!)</h2>
-      <div class="bg-orange-25">
-        <div>
-          <img src="" width="477" />
+    <div style="margin-block: 24px;">
+      <h2 class="section-container font-orange" style="margin-bottom: 24px;">Our team at work (and play!)</h2>
+      <div class="section-container bg-orange-25 full-screen-center-between" style="gap: 16px">
+        <div v-for="(company, key) in companyPics" :key="key" class="overlay-parent">
+          <img :src="company.url" :alt="company.alt" style="width: 100%;"/>
           <!-- overlay text -->
-          <p>
-            “I love how diverse the team is. You learn so much from people of
-            various backgrounds and plus point: more festive celebrations!’ F.I,
-            Head of Motion Design
-          </p>
+           <div class="overlay-child">
+             <p v-html="company.text">
+              </p>
+            </div>
         </div>
-        <div>
-          <img src="" width="477" />
-          <!-- overlay text -->
-          <p>
-            “Super thankful for all the opportunities where the team trusted me
-            to take lead on projects. Truly a transformative experience at Light
-            Up 7.” I.S, Project Manager
-          </p>
-        </div>
-        <div>
-          <img src="" width="477" />
-          <!-- overlay text -->
-          <p>
-            “The work’s challenging but so is the downtime! Nothing beats a long
-            day of projects like one (or 5) rounds of pool.” M.S, Video
-            Production Specialist
-          </p>
-        </div>
+      </div>
+      <div class="section-container" >
+        <div style="border-bottom: 1px solid white;padding: 24px"></div>
       </div>
     </div>
     <!-- Vacancies -->
@@ -149,6 +133,7 @@
 <script setup lang="ts">
 import { default as Staffs } from '@/assets/images/careers/staff-pics'
 import { default as Mottos } from '@/assets/images/careers/motto-icons'
+import { default as Companys } from '@/assets/images/careers/company-pics' 
 
 const staffPics = Staffs.map((staff: any, key: number) => ({
   url: staff,
@@ -169,6 +154,18 @@ const mottoIcons = Mottos.map((motto, key) => ({
   alt: `Motto ${key + 1}`
 }))
 
+const companyText = [`“I love how diverse the team is. You learn so much from people of
+            various backgrounds and plus point: more festive celebrations!’<br/><br/> F.I,
+            Head of Motion Design`, `“Super thankful for all the opportunities where the team trusted me
+            to take lead on projects. Truly a transformative experience at Light
+            Up 7.”<br/><br/> I.S, Project Manager`, `“The work’s challenging but so is the downtime! Nothing beats a long
+            day of projects like one (or 5) rounds of pool.”<br/><br/> M.S, Video
+            Production Specialist`]
+const companyPics = Companys.map((comp, key)=>({
+  url: comp,
+  text: companyText[key],
+  alt: `Company pic ${key+1}`
+}))
 </script>
 
 <style lang="sass">
@@ -181,6 +178,27 @@ const mottoIcons = Mottos.map((motto, key) => ({
 .slide-image
   max-width: 100%
 .bg-orange-25
-  background-color: $orange
-  opacity: 25%
+  background-color: #ffcc5940
+  padding-block: 24px
+.overlay-parent
+  position: relative
+  max-width: 30%
+.overlay-child
+  position: absolute
+  width: 100%
+  height: 98%
+  background-color: rgba(0, 0, 0, 70%)
+  top: 50%
+  left:50%
+  transform: translate(-50%, -51%)
+  opacity: 0
+  text-align: center
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: opacity .3s linear
+  p
+    padding: 24px
+  &:hover
+    opacity: 100%
 </style>
