@@ -179,6 +179,8 @@ const recentJobs = [
 
 #careers
   padding-block: 48px
+  h2, p 
+    margin: 0px
 .slide-image
   max-width: 100%
 .bg-orange-25
