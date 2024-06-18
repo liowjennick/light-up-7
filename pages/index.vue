@@ -32,7 +32,7 @@
         class="full-screen-section-container section-container yellow-outline-banner-trigger"
         id="yellow-outline-first-banner-trigger"
       >
-        <div
+        <!-- <div
           class="svg-floating-shapes"
           :class="{ star: yellowOutlineIndex === 2, circle: yellowOutlineIndex === 3, diamond: yellowOutlineIndex === 1 }"
         >
@@ -63,7 +63,7 @@
               stroke="white"
             />
           </svg>
-        </div>
+        </div> -->
         <div class="full-screen-center-content">
           <div class="flex-row">
             <div class="yellow-outline-text-container">
@@ -71,10 +71,45 @@
                 class="background"
                 src="../assets/images/home/quarter-circle-black-background.png"
               />
-              <img
-                class="yellow-outline-text"
-                src="../assets/images/home/illuminate-brands-yellow-outline.png"
-              />
+              <div class="yellow-outline-image-container">
+                <img
+                  class="yellow-outline-text"
+                  src="../assets/images/home/illuminate-brands-yellow-outline.png"
+                />
+
+                <div
+                  class="svg-floating-shapes"
+                  :class="{ star: yellowOutlineIndex === 2, circle: yellowOutlineIndex === 3, diamond: yellowOutlineIndex === 1 }"
+                >
+                  <svg
+                    width="60"
+                    height="60"
+                    viewbox="0 0 200 200"
+                    stroke-width="4"
+                  >
+                    <path
+                      fill="none"
+                      stroke="white"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="svg-floating-shapes-small"
+                  :class="{ star: yellowOutlineIndex === 2, circle: yellowOutlineIndex === 3, diamond: yellowOutlineIndex === 1 }"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    viewbox="0 0 200 200"
+                    stroke-width="4"
+                  >
+                    <path
+                      fill="none"
+                      stroke="white"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
             <div class="text-container">
               <p class="font-white font-18 just-sans">Make the best parts of your business <b>shine bright</b> with our strategy, branding and growth services.</p>
@@ -140,10 +175,24 @@
       </div>
     </div>
 
-    <div
+    <!-- <div
       class="full-screen-section-container section-container full-screen-center-content"
       style="background-color: black"
-    ></div>
+    ></div> -->
+
+
+    <div class="full-screen-section-container full-screen-center-content">
+      <iframe
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/CCRH-ITDix0"
+        title="THIS IS LIGHT UP 7!" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      >
+      </iframe>
+    </div>
 
     <!-- OUR SERVICES SECTION -->
     <div
@@ -762,6 +811,7 @@ onMounted(() => {
 #our-services-section
   background-color: black
   +desktop
+    padding-top: 50%
     flex-direction: column-reverse
   .bullet-container
     flex: 2
@@ -1019,26 +1069,23 @@ onMounted(() => {
     path
       transition: 0.5s all
   &.star
-    top: 37%
-    left: 24%
+    top: 18%
+    left: 30%
     opacity: 1
     svg
       path
         d: path("M100,25 q0,75 -75,75 q75,0 75,75 q0,-75 75,-75 q-75,0 -75,-75")
   &.circle
-    top: 37%
-    left: 12%
+    top: 19%
+    left: 8%
     opacity: 1
     svg
       path
-        d: path("M100,25 q-75,0 -75,75 q0,75 75,75 q75,0 75,-75 q0,-75 -75,-75")
+        d: path("M101,26 q-69,6 -75,75 q6,69 75,76 q70,-5 75,-75 q-5,-69 -74,-75")
   &.diamond
-    top: 33%
-    left: 25%
+    top: 8%
+    left: 32%
     opacity: 1
-    +desktop
-      top: 32%
-      left: 36%
     svg
       path
         d: path("M100,25 q-44,43 -75,75 q40,42 75,75 q33,-31 75,-75 q-38,-37 -75,-75")
@@ -1053,28 +1100,24 @@ onMounted(() => {
     path
       transition: 0.5s all
   &.star
-    top: 32%
-    left: 26%
+    top: 6%
+    left: 34%
     opacity: 1
     svg
       path
         d: path("M100,25 q0,75 -75,75 q75,0 75,75 q0,-75 75,-75 q-75,0 -75,-75")
   &.circle
-    top: 36%
+    top: 15%
     left: 16%
     transform: scale(1.2)
     opacity: 1
-    +desktop
-      left: 20%
     svg
       path
-        d: path("M100,25 q-75,0 -75,75 q0,75 75,75 q75,0 75,-75 q0,-75 -75,-75")
+        d: path("M101,26 q-69,6 -75,75 q6,69 75,76 q70,-5 75,-75 q-5,-69 -74,-75")
   &.diamond
-    top: 29%
-    left: 21%
+    top: 0%
+    left: 25%
     opacity: 1
-    +desktop
-      left: 28%
     svg
       path
         d: path("M100,25 q-44,43 -75,75 q40,42 75,75 q33,-31 75,-75 q-38,-37 -75,-75")
