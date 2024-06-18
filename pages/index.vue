@@ -1,6 +1,6 @@
 <template>
   <div id="homepage">
-    <!-- <video
+    <video
       id="intro-video"
       autoplay
       muted
@@ -9,7 +9,7 @@
         src="../assets/images/home/light-up-7-intro-video.mp4"
         type="video/mp4"
       />
-    </video> -->
+    </video>
 
     <!-- BANNER SECTION -->
     <div
@@ -22,31 +22,6 @@
           class="bulb"
         />
         <p class="font-white font-16 just-sans">A creative solutions agency lighting up the Asia-Pacific region, one bright idea at a time.</p>
-
-        <!-- STAR D -->
-        <!-- M100,25 q-1,75 -74,77 q73,-2 74,73 q-1,-76 76,-75 q-77,-1 -76,-75 -->
-
-        <!-- CIRCLE D -->
-        <!-- M100,25 q-75,0 -74,77 q0,72 74,73 q74,-1 76,-75 q-1,-73 -76,-75 -->
-
-        <!-- DIAMOND D -->
-        <!-- M101,8 q-47,63 -75,94 q37,40 73,93 q33,-49 77,-95 q-38,-40 -75,-92 q-0.5,25 0,1 -->
-        <div id="test">
-          <svg
-            width="200"
-            height="200"
-            viewbox="0 0 200 200"
-            stroke-width="4"
-          >
-            <path
-              d="
-                M100,25 q-1,75 -74,77 q73,-2 74,73 q-1,-76 76,-75 q-77,-1 -76,-75
-              "
-              fill="none"
-              stroke="white"
-            />
-          </svg>
-        </div>
       </div>
     </div>
     <!-- YELLOW OUTLINE TEXT SECTION -->
@@ -56,16 +31,44 @@
         class="full-screen-section-container section-container yellow-outline-banner-trigger"
         id="yellow-outline-first-banner-trigger"
       >
+        <div
+          class="svg-floating-shapes"
+          :class="{ star: yellowOutlineIndex === 2, circle: yellowOutlineIndex === 3, diamond: yellowOutlineIndex === 1 }"
+        >
+          <svg
+            width="60"
+            height="60"
+            viewbox="0 0 200 200"
+            stroke-width="4"
+          >
+            <path
+              fill="none"
+              stroke="white"
+            />
+          </svg>
+        </div>
+        <div
+          class="svg-floating-shapes-small"
+          :class="{ star: yellowOutlineIndex === 2, circle: yellowOutlineIndex === 3, diamond: yellowOutlineIndex === 1 }"
+        >
+          <svg
+            width="40"
+            height="40"
+            viewbox="0 0 200 200"
+            stroke-width="4"
+          >
+            <path
+              fill="none"
+              stroke="white"
+            />
+          </svg>
+        </div>
         <div class="full-screen-center-content">
           <div class="flex-row">
             <div class="yellow-outline-text-container">
               <img
                 class="background"
                 src="../assets/images/home/quarter-circle-black-background.png"
-              />
-              <img
-                class="floating-shapes diamond"
-                src="../assets/images/home/double-diamond.png"
               />
               <img
                 class="yellow-outline-text"
@@ -91,10 +94,10 @@
                 class="background"
                 src="../assets/images/home/star-black-background.png"
               />
-              <img
+              <!-- <img
                 class="floating-shapes star"
                 src="../assets/images/home/double-star.png"
-              />
+              /> -->
               <img
                 class="yellow-outline-text"
                 src="../assets/images/home/spark-creativity-yellow-outline.png"
@@ -119,10 +122,10 @@
                 class="background"
                 src="../assets/images/home/circle-black-background.png"
               />
-              <img
+              <!-- <img
                 class="floating-shapes circle"
                 src="../assets/images/home/double-circle.png"
-              />
+              /> -->
               <img
                 class="yellow-outline-text"
                 src="../assets/images/home/visible-marketing-yellow-outline.png"
@@ -440,7 +443,7 @@ onMounted(() => {
   ScrollTrigger.create({
     trigger: "#outline-container",
     start: "top top",
-    end: "bottom+=2000 bottom",
+    end: "bottom+=3000 bottom",
     pin: true,
     onUpdate: (self) => {
       console.log(self.progress);
@@ -465,15 +468,6 @@ onMounted(() => {
         opacity: 1,
         duration: 0.8,
         scale: 1,
-      },
-      "first"
-    )
-    .to(
-      "#yellow-outline-first-banner-trigger .floating-shapes",
-      {
-        scale: 1,
-        duration: 0.8,
-        delay: 0.4,
       },
       "first"
     )
@@ -511,15 +505,6 @@ onMounted(() => {
       "second"
     )
     .to(
-      "#yellow-outline-second-banner-trigger .floating-shapes",
-      {
-        scale: 1,
-        duration: 0.8,
-        delay: 0.4,
-      },
-      "second"
-    )
-    .to(
       "#yellow-outline-second-banner-trigger .yellow-outline-text",
       {
         y: 0,
@@ -550,15 +535,6 @@ onMounted(() => {
         opacity: 1,
         duration: 0.8,
         scale: 1,
-      },
-      "third"
-    )
-    .to(
-      "#yellow-outline-third-banner-trigger .floating-shapes",
-      {
-        scale: 1,
-        duration: 0.8,
-        delay: 0.4,
       },
       "third"
     )
@@ -1034,26 +1010,71 @@ onMounted(() => {
             width: 50px
             height: 50px
 
-// #test
-svg
-  path
-    --webkit-animation: svganimate 1s ease-in-out infinite
-    animation: svganimate 1s ease-in-out infinite
+.svg-floating-shapes-small
+  position: absolute
+  z-index: 1
+  transition: 0.5s all
+  svg
+    path
+      transition: 0.5s all
+  &.star
+    top: 37%
+    left: 24%
+    opacity: 1
+    svg
+      path
+        d: path("M100,25 q0,75 -75,75 q75,0 75,75 q0,-75 75,-75 q-75,0 -75,-75")
+  &.circle
+    top: 37%
+    left: 12%
+    opacity: 1
+    svg
+      path
+        d: path("M100,25 q-75,0 -75,75 q0,75 75,75 q75,0 75,-75 q0,-75 -75,-75")
+  &.diamond
+    top: 33%
+    left: 25%
+    opacity: 1
+    +desktop
+      top: 32%
+      left: 36%
+    svg
+      path
+        d: path("M100,25 q-44,43 -75,75 q40,42 75,75 q33,-31 75,-75 q-38,-37 -75,-75")
 
 
-svg:hover
-  path
-    transition: 1s
-    d: path("M 100, 100 m 75, 0 a 75,75 0 1,0 -150,0 a 75,75 0 1,0 150,0")
-
-@keyframes svganimate
-  33%
-    // STAR
-    d: path("M100,25 q-1,75 -74,77 q73,-2 74,73 q-1,-76 76,-75 q-77,-1 -76,-75")
-  66%
-    // CIRCLE
-    d: path("M100,25 q-75,0 -74,77 q0,72 74,73 q74,-1 76,-75 q-1,-73 -76,-75")
-  99%
-    // DIAMOND
-    d: path("M101,8 q-47,63 -75,94 q37,40 73,93 q33,-49 77,-95 q-38,-40 -75,-92 q-0.5,25 0,1")
+.svg-floating-shapes
+  position: absolute
+  z-index: 1
+  transition: 0.5s all
+  opacity: 0
+  svg
+    path
+      transition: 0.5s all
+  &.star
+    top: 32%
+    left: 26%
+    opacity: 1
+    svg
+      path
+        d: path("M100,25 q0,75 -75,75 q75,0 75,75 q0,-75 75,-75 q-75,0 -75,-75")
+  &.circle
+    top: 36%
+    left: 16%
+    transform: scale(1.2)
+    opacity: 1
+    +desktop
+      left: 20%
+    svg
+      path
+        d: path("M100,25 q-75,0 -75,75 q0,75 75,75 q75,0 75,-75 q0,-75 -75,-75")
+  &.diamond
+    top: 29%
+    left: 21%
+    opacity: 1
+    +desktop
+      left: 28%
+    svg
+      path
+        d: path("M100,25 q-44,43 -75,75 q40,42 75,75 q33,-31 75,-75 q-38,-37 -75,-75")
 </style>
