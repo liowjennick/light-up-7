@@ -4,6 +4,7 @@
       id="intro-video"
       autoplay
       muted
+      playsinline
     >
       <source
         src="../assets/images/home/light-up-7-intro-video.mp4"
