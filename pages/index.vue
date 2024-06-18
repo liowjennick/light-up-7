@@ -1,6 +1,6 @@
 <template>
   <div id="homepage">
-    <video
+    <!-- <video
       id="intro-video"
       autoplay
       muted
@@ -9,7 +9,7 @@
         src="../assets/images/home/light-up-7-intro-video.mp4"
         type="video/mp4"
       />
-    </video>
+    </video> -->
 
     <!-- BANNER SECTION -->
     <div
@@ -22,6 +22,31 @@
           class="bulb"
         />
         <p class="font-white font-16 just-sans">A creative solutions agency lighting up the Asia-Pacific region, one bright idea at a time.</p>
+
+        <!-- STAR D -->
+        <!-- M100,25 q-1,75 -74,77 q73,-2 74,73 q-1,-76 76,-75 q-77,-1 -76,-75 -->
+
+        <!-- CIRCLE D -->
+        <!-- M100,25 q-75,0 -74,77 q0,72 74,73 q74,-1 76,-75 q-1,-73 -76,-75 -->
+
+        <!-- DIAMOND D -->
+        <!-- M101,8 q-47,63 -75,94 q37,40 73,93 q33,-49 77,-95 q-38,-40 -75,-92 q-0.5,25 0,1 -->
+        <div id="test">
+          <svg
+            width="200"
+            height="200"
+            viewbox="0 0 200 200"
+            stroke-width="4"
+          >
+            <path
+              d="
+                M100,25 q-1,75 -74,77 q73,-2 74,73 q-1,-76 76,-75 q-77,-1 -76,-75
+              "
+              fill="none"
+              stroke="white"
+            />
+          </svg>
+        </div>
       </div>
     </div>
     <!-- YELLOW OUTLINE TEXT SECTION -->
@@ -354,30 +379,30 @@ import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
 // YELLOW OUTLINE SCROLL
-var firstOutlineTimeline
-var secondOutlineTimeline
-var thirdOutlineTimeline
+var firstOutlineTimeline;
+var secondOutlineTimeline;
+var thirdOutlineTimeline;
 
 const yellowOutlineIndex = ref(0);
-watch(yellowOutlineIndex, (newIndex:Number, oldIndex:Number) => {
+watch(yellowOutlineIndex, (newIndex: Number, oldIndex: Number) => {
   if (newIndex !== oldIndex) {
     const enterDuration = 0.6;
     const exitDuration = 0.2;
     switch (newIndex) {
       case 1:
-        firstOutlineTimeline.play()
-        secondOutlineTimeline.timeScale(2).reverse()
-        thirdOutlineTimeline.timeScale(2).reverse()
+        firstOutlineTimeline.play();
+        secondOutlineTimeline.timeScale(2).reverse();
+        thirdOutlineTimeline.timeScale(2).reverse();
         break;
       case 2:
-        firstOutlineTimeline.timeScale(2).reverse()
-        secondOutlineTimeline.play()
-        thirdOutlineTimeline.timeScale(2).reverse()
+        firstOutlineTimeline.timeScale(2).reverse();
+        secondOutlineTimeline.play();
+        thirdOutlineTimeline.timeScale(2).reverse();
         break;
       case 3:
-        firstOutlineTimeline.timeScale(2).reverse()
-        secondOutlineTimeline.timeScale(2).reverse()
-        thirdOutlineTimeline.play()
+        firstOutlineTimeline.timeScale(2).reverse();
+        secondOutlineTimeline.timeScale(2).reverse();
+        thirdOutlineTimeline.play();
         break;
       default:
         break;
@@ -431,83 +456,133 @@ onMounted(() => {
   });
 
   // OUTLINE SECTION TIMELINE
-  firstOutlineTimeline = gsap.timeline()
+  firstOutlineTimeline = gsap.timeline();
   firstOutlineTimeline
     .addLabel("first")
-    .to("#yellow-outline-first-banner-trigger .background", {
-      opacity: 1,
-      duration: 0.8,
-      scale: 1
-    }, "first")
-    .to("#yellow-outline-first-banner-trigger .floating-shapes", {
-      scale: 1,
-      duration: 0.8,
-      delay: 0.4
-    }, "first")
-    .to("#yellow-outline-first-banner-trigger .yellow-outline-text", {
-      y: 0,
-      duration: 0.8,
-      opacity: 1,
-      delay: 0.2
-    }, "first")
-    .to("#yellow-outline-first-banner-trigger .text-container", {
-      y: 0,
-      duration: 0.8,
-      opacity: 1,
-      delay: 0.2
-    }, "first")
+    .to(
+      "#yellow-outline-first-banner-trigger .background",
+      {
+        opacity: 1,
+        duration: 0.8,
+        scale: 1,
+      },
+      "first"
+    )
+    .to(
+      "#yellow-outline-first-banner-trigger .floating-shapes",
+      {
+        scale: 1,
+        duration: 0.8,
+        delay: 0.4,
+      },
+      "first"
+    )
+    .to(
+      "#yellow-outline-first-banner-trigger .yellow-outline-text",
+      {
+        y: 0,
+        duration: 0.8,
+        opacity: 1,
+        delay: 0.2,
+      },
+      "first"
+    )
+    .to(
+      "#yellow-outline-first-banner-trigger .text-container",
+      {
+        y: 0,
+        duration: 0.8,
+        opacity: 1,
+        delay: 0.2,
+      },
+      "first"
+    );
 
-  secondOutlineTimeline = gsap.timeline()
+  secondOutlineTimeline = gsap.timeline();
   secondOutlineTimeline
     .addLabel("second")
-    .to("#yellow-outline-second-banner-trigger .background", {
-      opacity: 1,
-      duration: 0.8,
-      scale: 1
-    }, "second")
-    .to("#yellow-outline-second-banner-trigger .floating-shapes", {
-      scale: 1,
-      duration: 0.8,
-      delay: 0.4
-    }, "second")
-    .to("#yellow-outline-second-banner-trigger .yellow-outline-text", {
-      y: 0,
-      duration: 0.8,
-      opacity: 1,
-      delay: 0.2
-    }, "second")
-    .to("#yellow-outline-second-banner-trigger .text-container", {
-      y: 0,
-      duration: 0.8,
-      opacity: 1,
-      delay: 0.2
-    }, "second").pause()
+    .to(
+      "#yellow-outline-second-banner-trigger .background",
+      {
+        opacity: 1,
+        duration: 0.8,
+        scale: 1,
+      },
+      "second"
+    )
+    .to(
+      "#yellow-outline-second-banner-trigger .floating-shapes",
+      {
+        scale: 1,
+        duration: 0.8,
+        delay: 0.4,
+      },
+      "second"
+    )
+    .to(
+      "#yellow-outline-second-banner-trigger .yellow-outline-text",
+      {
+        y: 0,
+        duration: 0.8,
+        opacity: 1,
+        delay: 0.2,
+      },
+      "second"
+    )
+    .to(
+      "#yellow-outline-second-banner-trigger .text-container",
+      {
+        y: 0,
+        duration: 0.8,
+        opacity: 1,
+        delay: 0.2,
+      },
+      "second"
+    )
+    .pause();
 
-  thirdOutlineTimeline = gsap.timeline()
+  thirdOutlineTimeline = gsap.timeline();
   thirdOutlineTimeline
     .addLabel("third")
-    .to("#yellow-outline-third-banner-trigger .background", {
-      opacity: 1,
-      duration: 0.8,
-      scale: 1
-    }, "third")
-    .to("#yellow-outline-third-banner-trigger .floating-shapes", {
-      scale: 1,
-      duration: 0.8,
-      delay: 0.4
-    }, "third")
-    .to("#yellow-outline-third-banner-trigger .yellow-outline-text", {
-      y: 0,
-      duration: 0.8,
-      opacity: 1,
-      delay: 0.2
-    }, "third")
-    .to("#yellow-outline-third-banner-trigger .text-container", {
-      y: 0,
-      duration: 0.8,
-      opacity: 1,
-      delay: 0.2
-    }, "third").pause()
+    .to(
+      "#yellow-outline-third-banner-trigger .background",
+      {
+        opacity: 1,
+        duration: 0.8,
+        scale: 1,
+      },
+      "third"
+    )
+    .to(
+      "#yellow-outline-third-banner-trigger .floating-shapes",
+      {
+        scale: 1,
+        duration: 0.8,
+        delay: 0.4,
+      },
+      "third"
+    )
+    .to(
+      "#yellow-outline-third-banner-trigger .yellow-outline-text",
+      {
+        y: 0,
+        duration: 0.8,
+        opacity: 1,
+        delay: 0.2,
+      },
+      "third"
+    )
+    .to(
+      "#yellow-outline-third-banner-trigger .text-container",
+      {
+        y: 0,
+        duration: 0.8,
+        opacity: 1,
+        delay: 0.2,
+      },
+      "third"
+    )
+    .pause();
 
   // INTRO VIDEO END
   document.getElementById("intro-video")?.addEventListener(
@@ -958,4 +1033,27 @@ onMounted(() => {
           img
             width: 50px
             height: 50px
+
+// #test
+svg
+  path
+    --webkit-animation: svganimate 1s ease-in-out infinite
+    animation: svganimate 1s ease-in-out infinite
+
+
+svg:hover
+  path
+    transition: 1s
+    d: path("M 100, 100 m 75, 0 a 75,75 0 1,0 -150,0 a 75,75 0 1,0 150,0")
+
+@keyframes svganimate
+  33%
+    // STAR
+    d: path("M100,25 q-1,75 -74,77 q73,-2 74,73 q-1,-76 76,-75 q-77,-1 -76,-75")
+  66%
+    // CIRCLE
+    d: path("M100,25 q-75,0 -74,77 q0,72 74,73 q74,-1 76,-75 q-1,-73 -76,-75")
+  99%
+    // DIAMOND
+    d: path("M101,8 q-47,63 -75,94 q37,40 73,93 q33,-49 77,-95 q-38,-40 -75,-92 q-0.5,25 0,1")
 </style>

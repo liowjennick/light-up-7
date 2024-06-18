@@ -288,6 +288,12 @@ onMounted(() => {
         +desktop
           display: block
           margin: 0 auto
+        &.first, &.third
+          display: block
+          margin-left: auto
+        &.second, &.fourth
+          display: block
+          margin-right: auto
         p
           text-align: center
 
