@@ -40,28 +40,32 @@
         class="client-project-slider-container"
         :class="{ 'project-active': displayMode === DisplayMode.Projects }"
       >
-        <div class="section-container work-section-container">
-          <div class="client-logo-container">
-            <img src="../../assets/images/work/clients-logo/petronas-logo.png" />
-            <h1 class="client-large-name">clients</h1>
-            <h1 class="client-back-name">clients</h1>
-          </div>
+        <div class="work-section-container">
+          <div class="section-container">
+            <div class="client-logo-container">
+              <img src="../../assets/images/work/clients-logo/petronas-logo.png" />
+              <h1 class="client-large-name">clients</h1>
+              <h1 class="client-back-name">clients</h1>
+            </div>
 
-          <div class="client-list-image-container">
-            <img src="assets/images/work/all-clients.png" />
+            <div class="client-list-image-container">
+              <img src="assets/images/work/all-clients.png" />
+            </div>
           </div>
         </div>
 
-        <div class="section-container projects-section-container">
-          <div class="project-list-banner-container">
-            <div
-              class="project-banner-item"
-              v-for="(item, i) in ProjectData"
-              :key="i"
-            >
-              <NuxtLink :to="`work/${item.slug}`">
-                <img :src="`/images/work/projects/${item.banner_image_src}`" />
-              </NuxtLink>
+        <div class="projects-section-container">
+          <div class="section-container">
+            <div class="project-list-banner-container">
+              <div
+                class="project-banner-item"
+                v-for="(item, i) in ProjectData"
+                :key="i"
+              >
+                <NuxtLink :to="`work/${item.slug}`">
+                  <img :src="`/images/work/projects/${item.banner_image_src}`" />
+                </NuxtLink>
+              </div>
             </div>
           </div>
         </div>
@@ -335,9 +339,11 @@ onMounted(() => {
       .work-section-container
         transition: 1.5s all
         opacity: 1
+        flex: 0 0 100%
       .projects-section-container
         transition: 1.5s all
         opacity: 0
+        flex: 0 0 100%
     .section-container
       padding-top: 80px
       padding-bottom: 40px

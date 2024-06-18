@@ -26,7 +26,7 @@
       </div>
     </div>
     <!-- YELLOW OUTLINE TEXT SECTION -->
-    <div id="outline-container">
+    <div id="outline-container" class="section-container">
       <!-- FIRST -->
       <div
         class="full-screen-section-container section-container yellow-outline-banner-trigger"
@@ -67,6 +67,7 @@
         <div class="full-screen-center-content">
           <div class="flex-row">
             <div class="yellow-outline-text-container">
+
               <img
                 class="background"
                 src="../assets/images/home/quarter-circle-black-background.png"
@@ -918,9 +919,9 @@ onMounted(() => {
     display: block
     margin-left: auto
   .clients-list-container
+    background-color: rgba(255, 255, 255, 0.28)
     .section-container
       display: flex
-      background-color: rgba(255, 255, 255, 0.28)
       .client-item
         flex: 1
         img
@@ -946,9 +947,9 @@ onMounted(() => {
           color: white
 
   .award-list-container
+    background-color: rgba(255, 205, 89, 0.25)
     .section-container
       display: flex
-      background-color: rgba(255, 205, 89, 0.25)
       .award-item
         flex: 1
         img
