@@ -38,11 +38,11 @@
         "media_gallery": [
           [
             {
-              "src": "https://www.youtube.com/watch?v=wq85VpwO4AA",
+              "src": "https://www.youtube.com/embed/wq85VpwO4AA",
               "is_video": false,
               "is_youtube_video": true,
               "caption": "VR Roller Coaster Ride",
-              "width_percent": 75
+              "width_percent": 70
 
             },
             {
@@ -50,7 +50,7 @@
               "full_width": false,
               "is_video": false,
               "caption": "Interactive AR",
-              "width_percent": 25
+              "width_percent": 30
             }
           ],
           [

@@ -57,17 +57,21 @@
 
           <div class="media-gallery-container" v-for="(gallery, j) in item.media_gallery" :key="j">
             <template v-for="(image, k) in gallery" :key="k">
-              <iframe
-                v-if="image && image.is_youtube_video"
-                :width="image.width_percent + '%'"
-                height="100%"
-                :src="image.src"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              >
-              </iframe>
+              <template v-if="image && image.is_youtube_video && image.src">
+                <div class="iframe-container" :style="{ width: image.width_percent + '%' }">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    :src="image.src"
+                    frameborder="0"
+                    title="Hello"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  >
+                  </iframe>
+                </div>
+              </template>
 
               <img v-else :style="{ width: image.width_percent + '%' }" :src="`/images/work/projects/${route.params.slug}/${image.src}`" />
             </template>
@@ -100,6 +104,8 @@ useHead({
 #project-item
   min-height: 100vh
   background-color: black
+  .project-section-container
+    padding-bottom: 120px
   .content-container
     padding-top: 120px
     +desktop
@@ -199,11 +205,11 @@ useHead({
         padding-bottom: 80px
         +large-mobile
           display: block
-        .media-item
-          flex: 0 0 49%
-          margin-bottom: 5px
-          &.full-width
-            flex: 0 0 100%
-          img
-            width: 100%
+        .iframe-container
+          padding: 5px
+          box-sizing: border-box
+        img
+          width: 100%
+          padding: 5px
+          box-sizing: border-box
 </style>
