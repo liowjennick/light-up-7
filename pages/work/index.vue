@@ -63,7 +63,7 @@
                 :key="i"
               >
                 <NuxtLink :to="`work/${item.slug}`">
-                  <img :src="`/images/work/projects/${item.banner_image_src}`" />
+                  <img :src="`/images/work/projects/${item.slug}/${item.banner_image_src}`" />
                 </NuxtLink>
               </div>
             </div>
@@ -77,7 +77,7 @@
 <script setup lang="ts">
 import gsap from "gsap";
 import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
-import ProjectData from "../../public/data/projects_data.json";
+import ProjectData from "../../public/data/projects_data.js";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 

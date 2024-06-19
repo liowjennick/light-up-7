@@ -2,55 +2,77 @@
   <div id="project-item">
     <div class="content-container">
       <div class="section-container">
-        <img class="company-logo mb-20" :src="`/images/work/projects/${route.params.slug}/${project_data.company_logo_src}`" />
+        <div class="project-section-container" v-for="(item, i) in project_data.contents" :key="i">
+          <img class="company-logo mb-20" :src="`/images/work/projects/${route.params.slug}/${item.company_logo_src}`" v-if="item.company_logo_src" />
 
-        <div class="mb-30">
-          <div class="workscope-list-container">
-            <div class="workscope-item" v-for="(workscope, i) in project_data.workscope_tags" :key="i">
-              <img class="workscope-icon" src="/images/work/projects/lightbulb-icon.png" />
-              <p class="font-10">{{ workscope }}</p>
-            </div>
-          </div>
-        </div>
-
-        <h1 class="font-white just-sans font-50">{{ project_data.title }}</h1>
-        <p class="description-text just-sans font-22 mb-40">{{ project_data.subtitle }}</p>
-
-        <img class="mobile-featured-image" :src="`/images/work/projects/${route.params.slug}/${project_data.featured_media_src}`" />
-
-        <div class="challenge-result-container">
-          <div class="text-container">
-            <p class="challenge-result-title font-white just-sans font-30 mb-20"><b>{{ project_data.challenge_result_title }}</b></p>
-
-            <div class="mb-30">
-              <p class="font-orange just-sans font-28 mb-10"><b>challenge</b></p>
-              <p class="font-white just-sans font-18">{{ project_data.challenge_description }}</p>
-            </div>
-
-            <div class="mb-30">
-              <p class="font-orange just-sans font-28 mb-10"><b>results</b></p>
-              <p class="font-white just-sans font-18">{{ project_data.results_description }}</p>
+          <div class="mb-30">
+            <div class="workscope-list-container">
+              <div class="workscope-item" v-for="(workscope, i) in item.workscope_tags" :key="i">
+                <img class="workscope-icon" src="/images/work/projects/lightbulb-icon.png" />
+                <p class="font-10">{{ workscope }}</p>
+              </div>
             </div>
           </div>
 
-          <div class="media-container">
-            <img :src="`/images/work/projects/${route.params.slug}/${project_data.featured_media_src}`" />
-          </div>
-        </div>
+          <h1 class="font-white just-sans font-50">{{ item.title }}</h1>
+          <p class="description-text just-sans font-22 mb-40">{{ item.subtitle }}</p>
 
-        <div class="mb-30">
-          <p class="font-orange just-sans font-28 mb-10"><b>deliverables</b></p>
-          <div class="deliverables-list-container">
-            <div class="deliverables-item" v-for="(deliverable, i) in project_data.deliverables" :key="i">
-              <p class="font-10">{{ deliverable }}</p>
+          <div class="media-container-mobile">
+            <img :style="{ width: featured_img.width_percent + '%' }" v-for="(featured_img, j) in item.featured_media_src" :key="j" :src="`/images/work/projects/${route.params.slug}/${featured_img.src}`" />
+          </div>
+
+          <div class="challenge-result-container">
+            <div class="text-container">
+              <p class="challenge-result-title font-white just-sans font-30 mb-20"><b>{{ item.challenge_result_title }}</b></p>
+
+              <div class="mb-30" v-if="item.challenge_description">
+                <p class="font-orange just-sans font-28 mb-10"><b>challenge</b></p>
+                <p class="font-white just-sans font-18">{{ item.challenge_description }}</p>
+              </div>
+
+              <div class="mb-30" v-if="item.outcome_description">
+                <p class="font-orange just-sans font-28 mb-10"><b>outcome</b></p>
+                <p class="font-white just-sans font-18">{{ item.outcome_description }}</p>
+              </div>
+
+              <div class="mb-30" v-if="item.results_description">
+                <p class="font-orange just-sans font-28 mb-10"><b>results</b></p>
+                <p class="font-white just-sans font-18">{{ item.results_description }}</p>
+              </div>
+            </div>
+
+            <div class="media-container">
+              <img :style="{ width: featured_img.width_percent + '%' }" v-for="(featured_img, j) in item.featured_media_src" :key="j" :src="`/images/work/projects/${route.params.slug}/${featured_img.src}`" />
             </div>
           </div>
-        </div>
 
-        <div class="media-gallery-container">
-          <div class="media-item" :class="{ 'full-width': media.full_width }" v-for="(media, i) in project_data.media_gallery" :key="i">
-            <img :src="`/images/work/projects/${route.params.slug}/${media.src}`" />
+          <div class="mb-30">
+            <p class="font-orange just-sans font-28 mb-10"><b>deliverables</b></p>
+            <div class="deliverables-list-container">
+              <div class="deliverables-item" v-for="(deliverable, i) in item.deliverables" :key="i">
+                <p class="font-10">{{ deliverable }}</p>
+              </div>
+            </div>
           </div>
+
+          <div class="media-gallery-container" v-for="(gallery, j) in item.media_gallery" :key="j">
+            <template v-for="(image, k) in gallery" :key="k">
+              <iframe
+                v-if="image && image.is_youtube_video"
+                :width="image.width_percent + '%'"
+                height="100%"
+                :src="image.src"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              >
+              </iframe>
+
+              <img v-else :style="{ width: image.width_percent + '%' }" :src="`/images/work/projects/${route.params.slug}/${image.src}`" />
+            </template>
+          </div>
+
         </div>
       </div>
     </div>
@@ -59,8 +81,8 @@
 
 <script setup lang="ts">
 import { useRoute } from "vue-router"
-import projectData from "../../public/data/projects_data.json"
-
+import projectData from "../../public/data/projects_data.js"
+ 
 const route = useRoute()
 const project_data = ref(projectData.find((item, i) => item.slug === route.params.slug))
 
@@ -83,14 +105,16 @@ useHead({
     +desktop
       padding-top: 160px
     // background-color: black
-    .mobile-featured-image
+    .featured-image-container
+      width: 100%
+    .featured-image-container-mobile
       width: 100%
       display: none
       +desktop
         display: block
     .section-container
       .company-logo
-        height: 50px
+        height: 150px
       h1
       .description-text
         color: #7E7E7E
@@ -108,7 +132,17 @@ useHead({
           +desktop
             display: none
           img
-            width: 100%
+            max-width: 100%
+            padding: 5px
+            box-sizing: border-box
+      .media-container-mobile
+        display: none
+        +desktop
+          display: block
+        img
+          max-width: 100%
+          padding: 5px
+          box-sizing: border-box
 
       .workscope-list-container
         .workscope-item
