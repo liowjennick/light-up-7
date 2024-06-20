@@ -10,18 +10,22 @@ projectsData.map((item) => generate_routes.push(`/work/${item.slug}`));
 export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
+
   nitro: {
     static: true,
     prerender: {
       failOnError: false,
     },
   },
+
   build: {
     transpile: ["gsap"],
   },
+
   generate: {
     routes: generate_routes,
   },
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -29,4 +33,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  modules: ["vue3-carousel-nuxt"]
 });

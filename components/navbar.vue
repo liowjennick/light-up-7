@@ -35,7 +35,7 @@
           >
           <a
             class="nav-item"
-            href="/news/news_1"
+            href="/careers"
             ><p>careers</p></a
           >
           <a
