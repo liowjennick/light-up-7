@@ -11,12 +11,56 @@
   +mobile
     padding: 0 20px
 
+.grid-3-cols
+  display: grid
+  grid-template-columns: auto auto auto
+  column-gap: 20%
+  row-gap: 60px
+  +large-mobile
+    column-gap: 10%
+  +mobile
+    column-gap: 5%
+    row-gap: 28px
+.w-full
+  width: 100%
+
 .full-screen-section-container
   height: 100vh
   width: 100vw
 
 .full-screen-center-content
   display: flex
+  flex-direction: row
   align-items: center
   justify-content: center
   box-sizing: border-box
+
+.full-screen-center-between
+  @extend .full-screen-center-content
+  justify-content: space-between
+
+.full-screen-center-start
+  @extend .full-screen-center-content
+  justify-content: start
+
+.full-screen-center-around
+  @extend .full-screen-center-content
+  justify-content: space-around
+
+.full-screen-start-between
+  @extend .full-screen-center-content
+  align-items: start
+  justify-content: space-between
+
+.full-screen-start-around
+  @extend .full-screen-center-content
+  align-items: start
+  justify-content: space-around
+
+.full-screen-center-end
+  @extend .full-screen-center-content
+  justify-content: end
+
+.full-screen-start-center
+  @extend .full-screen-center-content
+  align-items: start
