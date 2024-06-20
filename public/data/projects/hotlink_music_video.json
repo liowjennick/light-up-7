@@ -1,6 +1,6 @@
 {
     "slug": "hotlink-music-video",
-    "banner_image_src": "hotlink-music-video.png",
+    "banner_image_src": "banner.png",
     "contents": [
       {
         "company_logo_src": "hotlink.png",
@@ -10,26 +10,32 @@
         "challenge_result_title": "Showcasing the endless rewards with Hotlink App",
         "challenge_description": "Creating a video that transcends dimension with the combination of 3D and 2D elements as well as live footage.",
         "results_description": "Successfully integrating live footage with 3D and 2D elements seamlessly. 3D backgrounds with depth and realism, 2D elements add flair and dynamics. The video truly captured the endless benefits of downloading the Hotlink app.",
+        "outcome_description": "",
         "deliverables": ["Creative Concept", "Production", "3D Animation", "Video Editing", "CGI + VFX"],
-        "featured_media_src": "featured-media.png",
+        "featured_media_src": [
+            {
+                "src": "https://www.youtube.com/embed/26nk3P1Roew",
+                "is_video": false,
+                "is_youtube_video": true,
+                "caption": "",
+                "width_percent": 100
+            }
+        ],
         "media_gallery": [
-            [
-                {
-                    "src": "image-1.png",
-                    "full_width": false,
-                    "is_video": false
-                },
-                {
-                    "src": "image-2.png",
-                    "full_width": false,
-                    "is_video": false
-                },
-                {
-                    "src": "image-3.png",
-                    "full_width": false,
-                    "is_video": false
-                }
-            ]
+          [
+            {
+              "src": ["image-1.png"],
+              "is_video": false,
+              "caption": "",
+              "width_percent": 54.2
+            },
+            {
+              "src": ["image-2.png", "image-3.png"],
+              "is_video": false,
+              "caption": "",
+              "width_percent": 45.8
+            }
+          ]
         ]
       }
     ]

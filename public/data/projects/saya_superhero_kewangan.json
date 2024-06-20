@@ -42,20 +42,20 @@
               "is_video": false,
               "is_youtube_video": true,
               "caption": "VR Roller Coaster Ride",
-              "width_percent": 70
+              "width_percent": 72
 
             },
             {
-              "src": "image-1.png",
+              "src": ["image-1.png"],
               "full_width": false,
               "is_video": false,
               "caption": "Interactive AR",
-              "width_percent": 30
+              "width_percent": 28
             }
           ],
           [
             {
-                "src": "image-2.png",
+                "src": ["image-2.png"],
                 "full_width": true,
                 "is_video": false,
                 "caption": "Spot the counterfeit notes and save victims from being scammed to be the hero of the day!",
@@ -80,28 +80,28 @@
                 "is_video": false,
                 "is_youtube_video": false,
                 "caption": "",
-                "width_percent": 60
+                "width_percent": 60.6
             },
             {
                 "src": "featured-image-5.png",
                 "is_video": false,
                 "is_youtube_video": false,
                 "caption": "",
-                "width_percent": 40
+                "width_percent": 39.4
             },
             {
                 "src": "featured-image-6.png",
                 "is_video": false,
                 "is_youtube_video": false,
                 "caption": "",
-                "width_percent": 25
+                "width_percent": 26.5
             },
             {
                 "src": "featured-image-7.png",
                 "is_video": false,
                 "is_youtube_video": false,
                 "caption": "",
-                "width_percent": 75
+                "width_percent": 73.5
             }
         ]
       }

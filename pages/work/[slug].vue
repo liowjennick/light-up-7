@@ -18,7 +18,32 @@
           <p class="description-text just-sans font-22 mb-40">{{ item.subtitle }}</p>
 
           <div class="media-container-mobile">
-            <img :style="{ width: featured_img.width_percent + '%' }" v-for="(featured_img, j) in item.featured_media_src" :key="j" :src="`/images/work/projects/${route.params.slug}/${featured_img.src}`" />
+
+            <template v-for="(image, j) in item.featured_media_src" :key="j">
+              <template v-if="image && image.is_youtube_video && image.src">
+                <div class="iframe-container" :style="{ width: image.width_percent + '%' }">
+                  <iframe
+                    width="100%"
+                    :src="image.src"
+                    frameborder="0"
+                    title="Hello"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  >
+                  </iframe>
+                  <p class="caption just-sans font-white text-center" v-if="image.caption">{{image.caption}}</p>
+                </div>
+              </template>
+
+              <template v-else>
+                <div :style="{ width: image.width_percent + '%' }" class="image-container">
+                  <img :src="`/images/work/projects/${route.params.slug}/${image.src}`" />
+                  <p class="caption just-sans font-white text-center" v-if="image.caption">{{image.caption}}</p>
+                </div>
+              </template>
+            </template>
+          
           </div>
 
           <div class="challenge-result-container">
@@ -42,7 +67,30 @@
             </div>
 
             <div class="media-container">
-              <img :style="{ width: featured_img.width_percent + '%' }" v-for="(featured_img, j) in item.featured_media_src" :key="j" :src="`/images/work/projects/${route.params.slug}/${featured_img.src}`" />
+              <template v-for="(image, j) in item.featured_media_src" :key="j">
+                <template v-if="image && image.is_youtube_video && image.src">
+                  <div class="iframe-container" :style="{ width: image.width_percent + '%' }">
+                    <iframe
+                      width="100%"
+                      :src="image.src"
+                      frameborder="0"
+                      title="Hello"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen
+                    >
+                    </iframe>
+                    <p class="caption just-sans font-white text-center" v-if="image.caption">{{image.caption}}</p>
+                  </div>
+                </template>
+
+                <template v-else>
+                  <div :style="{ width: image.width_percent + '%' }" class="image-container">
+                    <img :src="`/images/work/projects/${route.params.slug}/${image.src}`" />
+                    <p class="caption just-sans font-white text-center" v-if="image.caption">{{image.caption}}</p>
+                  </div>
+                </template>
+              </template>
             </div>
           </div>
 
@@ -61,7 +109,6 @@
                 <div class="iframe-container" :style="{ width: image.width_percent + '%' }">
                   <iframe
                     width="100%"
-                    height="100%"
                     :src="image.src"
                     frameborder="0"
                     title="Hello"
@@ -70,10 +117,18 @@
                     allowfullscreen
                   >
                   </iframe>
+                  <p class="caption just-sans font-white text-center" v-if="image.caption">{{image.caption}}</p>
                 </div>
               </template>
 
-              <img v-else :style="{ width: image.width_percent + '%' }" :src="`/images/work/projects/${route.params.slug}/${image.src}`" />
+              <template v-else>
+                <div :style="{ width: image.width_percent + '%' }" class="image-container">
+                  <div class="image-item-container" v-for="(src, l) in image.src" :key="l">
+                    <img :src="`/images/work/projects/${route.params.slug}/${src}`" />
+                    <p class="caption just-sans font-white text-center" v-if="image.caption">{{image.caption}}</p>
+                  </div>
+                </div>
+              </template>
             </template>
           </div>
 
@@ -122,6 +177,7 @@ useHead({
       .company-logo
         height: 150px
       h1
+        margin-bottom: 20px
       .description-text
         color: #7E7E7E
       .challenge-result-container
@@ -137,18 +193,28 @@ useHead({
           flex: 0 0 49%
           +desktop
             display: none
-          img
-            max-width: 100%
+          .image-container
             padding: 5px
             box-sizing: border-box
+            display: inline-block
+            img
+              width: 100%
+          .iframe-container
+            iframe
+              height: 400px
       .media-container-mobile
         display: none
         +desktop
           display: block
-        img
-          max-width: 100%
+        .image-container
           padding: 5px
           box-sizing: border-box
+          display: inline-block
+          img
+            max-width: 100%
+        .iframe-container
+          iframe
+            height: 400px
 
       .workscope-list-container
         .workscope-item
@@ -202,14 +268,21 @@ useHead({
         display: flex
         flex-wrap: wrap
         justify-content: space-between
+        // display: block
         padding-bottom: 80px
         +large-mobile
           display: block
         .iframe-container
           padding: 5px
           box-sizing: border-box
-        img
-          width: 100%
-          padding: 5px
-          box-sizing: border-box
+          display: flex
+          flex-direction: column
+          iframe
+            flex: 1
+        .image-container
+          display: inline-block
+          img
+            width: 100%
+            padding: 5px
+            box-sizing: border-box
 </style>

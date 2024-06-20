@@ -1,48 +1,54 @@
 {
-    "slug": "balang-kuih-abah",
-    "banner_image_src": "balang-kuih-abah.png",
-    "contents": [
-      {
-        "company_logo_src": "pnb.png",
-        "workscope_tags": ["Video Production"],
-        "title": "PNB / ASNB Raya Ad Balang Kuih Abah",
-        "subtitle": "To identify a gap within previous Raya ads and develop a unique video that would make PNB & ASNB stand out, evoke emotions and spark introspection, urging viewers to reflect on their relationships and forgiveness.",
-        "challenge_result_title": "Inspiring Malaysian Audiences to Forgive and Ask for Forgiveness",
-        "challenge_description": "To identify a gap within previous Raya ads and develop a unique video that would make PNB & ASNB stand out, evoke emotions and spark introspection, urging viewers to reflect on their relationships and forgiveness.",
-        "results_description": "A Raya ad spun around a father-son relationship, with a highlight on bridging generational gaps and taking accountability for past mistakes. Through cinematic lenses and emotional soundtracks, the video successfully resonated with viewers of all races and ages.",
-        "deliverables": ["Script + Storyboard", "Production", "Video Editing", "Music Scoring", "Voice-Over"],
-        "featured_media_src": "featured-media.png",
-        "media_gallery": [
-          [
-            {
-              "src": "image-1.png",
-              "full_width": false,
-              "is_video": false
-            },
-            {
-              "src": "image-2.png",
-              "full_width": false,
-              "is_video": false
-            },
-            {
-              "src": "image-3.png",
-              "full_width": false,
-              "is_video": false
-            },
-            {
-              "src": "image-4.png",
-              "full_width": false,
-              "is_video": false
-            }
-          ],
-          [
-            {
-              "src": "video-1.png",
-              "full_width": true,
-              "is_video": true
-            }
-          ]
+  "slug": "balang-kuih-abah",
+  "banner_image_src": "banner.png",
+  "contents": [
+    {
+      "company_logo_src": "pnb.png",
+      "workscope_tags": ["Video Production"],
+      "title": "PNB / ASNB Raya Ad Balang Kuih Abah",
+      "subtitle": "To identify a gap within previous Raya ads and develop a unique video that would make PNB & ASNB stand out, evoke emotions and spark introspection, urging viewers to reflect on their relationships and forgiveness.",
+      "challenge_result_title": "Inspiring Malaysian Audiences to Forgive and Ask for Forgiveness",
+      "challenge_description": "To identify a gap within previous Raya ads and develop a unique video that would make PNB & ASNB stand out, evoke emotions and spark introspection, urging viewers to reflect on their relationships and forgiveness.",
+      "results_description": "A Raya ad spun around a father-son relationship, with a highlight on bridging generational gaps and taking accountability for past mistakes. Through cinematic lenses and emotional soundtracks, the video successfully resonated with viewers of all races and ages.",
+      "outcome_description": "",
+      "deliverables": ["Script + Storyboard", "Production", "Video Editing", "Music Scoring", "Voice-Over"],
+      "featured_media_src": [
+          {
+              "src": "https://www.youtube.com/embed/eSfTpl1HyzE",
+              "is_video": false,
+              "is_youtube_video": true,
+              "caption": "",
+              "width_percent": 100
+          }
+      ],
+      "media_gallery": [
+        [
+          {
+            "src": ["image-1.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 50
+          },
+          {
+            "src": ["image-2.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 50
+          },
+          {
+            "src": ["image-3.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 50
+          },
+          {
+            "src": ["image-4.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 50
+          }
         ]
-      }
-    ]
-  }
+      ]
+    }
+  ]
+}
