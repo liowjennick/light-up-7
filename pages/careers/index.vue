@@ -186,9 +186,7 @@ const recentJobs = [
 .mobile-container
   +mobile
     flex-direction: column
-.bg-orange-25
-  background-color: #ffcc5940
-  padding-block: 24px
+
 .overlay-parent
   position: relative
   max-width: 30%
