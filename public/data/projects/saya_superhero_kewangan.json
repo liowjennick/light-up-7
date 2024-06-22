@@ -14,21 +14,21 @@
         "deliverables": ["Ideation", "Gamification", "3D VR Animation", "AR Design", "Interactive Content"],
         "featured_media_src": [
             {
-                "src": "featured-image-1.png",
+                "src": ["featured-image-1.png"],
                 "is_video": false,
                 "is_youtube_video": false,
                 "caption": "",
                 "width_percent": 100
             },
             {
-                "src": "featured-image-2.png",
+                "src": ["featured-image-2.png"],
                 "is_video": false,
                 "is_youtube_video": false,
                 "caption": "",
                 "width_percent": 50
             },
             {
-                "src": "featured-image-3.png",
+                "src": ["featured-image-3.png"],
                 "is_video": false,
                 "is_youtube_video": false,
                 "caption": "",

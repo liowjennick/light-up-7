@@ -1,0 +1,68 @@
+{
+    "slug": "karnival-celik-kewangan-johor",
+    "banner_image_src": "banner.png",
+    "contents": [
+      {
+        "company_logo_src": "bnm.png",
+        "workscope_tags": ["Launch", "Event Exhibition"],
+        "title": "Karnival Celik Kewangan Johor",
+        "subtitle": "Host Karnival Celik Kewangan Johor, undergoing meticulous planning, effective coordinating, and understanding comprehensive engagement strategies to enhance public awareness of financial matters. The goal is to empower individuals to make well-informed decisions and provide valuable resources for financial education and protection.",
+        "challenge_result_title": "Spreading Financial Literacy Awareness to the Johor Public",
+        "challenge_description": "To host the first ever Karnival Celik Kewangan in Johor, where every part of the event preparation to execution is held in Johor. Another challenge faced was to cater an event with over 30 exhibitors. Another challenge which was crucial to ensure its success was to create a mechanism that would aid in educating the public regarding financial literacy.",
+        "results_description": "",
+        "outcome_description": "Everyone who attended the event enjoyed themselves. The event received a big turn up as it had over 10,000 participants in the span of 3 days which serves as a good end to Financial Literacy Month.",
+        "deliverables": ["Launch Gimmick", "Production", "Stage", "LED Screens", "Custom Booth", "Multi-Camera Production", "Exhibitors Management", "Speakers Management"],
+        "featured_media_src": [
+            {
+                "src": "https://www.youtube.com/embed/tG0W9AvY9_I",
+                "is_video": false,
+                "is_youtube_video": true,
+                "caption": "",
+                "width_percent": 100
+            }
+        ],
+        "media_gallery": [
+          [
+            {
+              "src": ["image-1.png"],
+              "full_width": false,
+              "is_video": false,
+              "width_percent": 54
+            },
+            {
+                "src": ["image-2.png", "image-3.png"],
+                "full_width": false,
+                "is_video": false,
+                "width_percent": 46
+              }
+          ],
+          [
+            {
+                "src": ["image-4.png"],
+                "full_width": true,
+                "is_video": false,
+                "width_percent": 50
+            },
+            {
+                "src": ["image-5.png"],
+                "full_width": true,
+                "is_video": false,
+                "width_percent": 50
+            },
+            {
+                "src": ["image-6.png"],
+                "full_width": true,
+                "is_video": false,
+                "width_percent": 50
+            },
+            {
+                "src": ["image-7.png"],
+                "full_width": true,
+                "is_video": false,
+                "width_percent": 50
+            }
+          ]
+        ]
+      }
+    ]
+  }

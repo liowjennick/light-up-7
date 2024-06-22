@@ -1,0 +1,54 @@
+{
+    "slug": "ktmb-corporate-video",
+    "banner_image_src": "banner.png",
+    "contents": [
+      {
+        "company_logo_src": "ktmb.png",
+        "workscope_tags": ["Video Production"],
+        "title": "KTMB Corporate Video",
+        "subtitle": "The cinematic shots of KTMB's assets, futuristic animations and heartwarming portraits of people whose life depends on KTMB successfully showcase the brand's reliability and connectivity across Malaysia.",
+        "challenge_result_title": "Keretapi Tanah Melayu Berhad: Connecting Horizons, Empowering Journeys for a Future of Seamless Connectivity",
+        "challenge_description": "Craft a compelling video capturing the beauty of Malaysia and highlighting the reliability of Keretapi Tanah Melayu Berhad (KTMB). Journey through diverse locations, showcasing KTMB's impact on daily life. Highlight innovative services and create a visually appealing story that resonates with the audience, emphasizing KTMB's readiness for the future.",
+        "results_description": "The video successfully captures KTMB's reliability and connectivity across Malaysia, meeting and surpassing client expectations. With a focus on modernization and future readiness, it engages viewers through visuals and storytelling. Highlighting innovative services like ETS and KTM Logistics, the video effectively emphasizes KTMB's impact.",
+        "outcome_description": "",
+        "deliverables": ["Scriptwriting", "Storyboarding", "Production", "2D Motion & CGI", "Video Shooting", "Music Licensing", "Drone Shooting", "Talent Management", "Voice Over Rec", "Production Management"],
+        "featured_media_src": [
+            {
+                "src": "https://www.youtube.com/embed/tG0W9AvY9_I",
+                "is_video": false,
+                "is_youtube_video": true,
+                "caption": "",
+                "width_percent": 100
+            }
+        ],
+        "media_gallery": [
+          [
+            {
+              "src": ["image-1.png"],
+              "is_video": false,
+              "caption": "",
+              "width_percent": 50
+            },
+            {
+              "src": ["image-2.png"],
+              "is_video": false,
+              "caption": "",
+              "width_percent": 50
+            },
+            {
+                "src": ["image-3.png"],
+                "is_video": false,
+                "caption": "",
+                "width_percent": 50
+            },
+            {
+                "src": ["image-4.png"],
+                "is_video": false,
+                "caption": "",
+                "width_percent": 50
+            }
+          ]
+        ]
+      }
+    ]
+  }
