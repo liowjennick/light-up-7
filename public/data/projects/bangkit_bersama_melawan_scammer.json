@@ -1,0 +1,43 @@
+{
+    "slug": "bangkit-bersama-melawan-scammer",
+    "banner_image_src": "banner.png",
+    "contents": [
+      {
+        "company_logo_src": "bnm.png",
+        "workscope_tags": ["Video Production"],
+        "title": "Bangkit Bersama Melawan Scammer",
+        "subtitle": "Develop a video to educate the public on the dangers and modus operandi of scammers while also invoking unity during Merdeka and Hari Malaysia, urging Malaysians to stand together and fight against this common threat.",
+        "challenge_result_title": "Fight Against Scammers Together in Conjunction with Merdeka & Malaysia Day",
+        "challenge_description": "Developing a video that educated the public on the dangers and modus operandi of scammers while also invoking the feeling of togetherness amongst Malaysians during Malaysia's Independence Day and Hari Malaysia.",
+        "results_description": "",
+        "outcome_description": "Successfully developed a video that garners the public's attention and educated them on the importance of being careful with Scammer’s tactics while also coming together as a nation to fight against them.",
+        "deliverables": ["Script Writing", "Storyboarding", "Video Production", "Creative Concept", "Talent Acquisition", "Music Licensing"],
+        "featured_media_src": [
+            {
+                "src": ["image-1.png"],
+                "is_video": false,
+                "is_youtube_video": false,
+                "caption": "",
+                "width_percent": 100
+            }
+        ],
+        "media_gallery": [
+          [
+            {
+              "src": "https://www.youtube.com/embed/AePO0MVSoZw",
+              "full_width": false,
+              "is_video": false,
+              "is_youtube_video": true,
+              "width_percent": 100
+            },
+            {
+                "src": ["image-2.png"],
+                "full_width": false,
+                "is_video": false,
+                "width_percent": 100
+              }
+          ]
+        ]
+      }
+    ]
+  }

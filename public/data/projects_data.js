@@ -8,6 +8,9 @@ import CyberviewSocialMediaCampaign from "./projects/cyberview_social_media_camp
 import AhhYumDigitalMarketingSuite from "./projects/ahh_yum_digital_marketing_suite.json"
 import SayaSayangSayaUnicef from "./projects/saya_sayang_saya_unicef.json"
 import KarnivalCelikKewanganJohor from "./projects/karnival_celik_kewangan_johor.json"
+import BangkitBersamaMelawanScammer from "./projects/bangkit_bersama_melawan_scammer.json"
+import MalaysiaNextChickenChop from "./projects/malaysia_next_chicken_chop.json"
+import LaterasiKewanganSarawak from "./projects/laterasi_kewangan_sarawak.json"
 
 const projectsData = [
     BalangKuihAbah,
@@ -19,7 +22,10 @@ const projectsData = [
     CyberviewSocialMediaCampaign,
     AhhYumDigitalMarketingSuite,
     SayaSayangSayaUnicef,
-    KarnivalCelikKewanganJohor
+    KarnivalCelikKewanganJohor,
+    BangkitBersamaMelawanScammer,
+    MalaysiaNextChickenChop,
+    LaterasiKewanganSarawak
 ]
 
 export default projectsData

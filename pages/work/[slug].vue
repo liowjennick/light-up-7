@@ -281,6 +281,7 @@ useHead({
           flex-direction: column
           iframe
             flex: 1
+            min-height: 400px
         .image-container
           display: inline-block
           img
