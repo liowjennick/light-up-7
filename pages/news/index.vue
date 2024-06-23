@@ -18,7 +18,8 @@
         </div>
         <!-- News List -->
         <div class="full-screen-center-content hover-news" style="flex-direction: column;">
-            <div v-for="thumb in news" :key="thumb.id" style="width: 100%;" class="divider-parent">
+            <NuxtLink v-for="thumb in news" :key="thumb.id" style="width: 100%;" class="divider-parent"
+                :to="`/news/${thumb.id}`">
                 <div class="section-container full-screen-start-start divider-child" style="padding: 35px 80px;">
                     <div style="flex: 1;">
                         <img :src="thumb.img" style="width: 100%;" />
@@ -37,7 +38,7 @@
                         </NuxtLink>
                     </div>
                 </div>
-            </div>
+            </NuxtLink>
         </div>
         <!-- Pagination -->
         <div class="section-container full-screen-center-content" style="padding-block: 48px;">
@@ -77,7 +78,7 @@ import { computed, ref } from "vue"
 
 const news: any[] = reactive([
     {
-        id: '1',
+        id: 'news_1',
         img: NewsThumbnail,
         date: new Date().toLocaleDateString('en-US', {
             day: 'numeric',
@@ -89,7 +90,7 @@ const news: any[] = reactive([
         description: 'Description',
     },
     {
-        id: '4',
+        id: 'news_1',
         img: NewsThumbnail,
         date: new Date().toLocaleDateString('en-US', {
             day: 'numeric',
@@ -101,7 +102,7 @@ const news: any[] = reactive([
         description: 'Description',
     },
     {
-        id: '2',
+        id: 'news_1',
         img: NewsThumbnail,
         date: new Date().toLocaleDateString('en-US', {
             day: 'numeric',
@@ -113,7 +114,7 @@ const news: any[] = reactive([
         description: 'Description',
     },
     {
-        id: '3',
+        id: 'news_1',
         img: NewsThumbnail,
         date: new Date().toLocaleDateString('en-US', {
             day: 'numeric',
@@ -125,7 +126,7 @@ const news: any[] = reactive([
         description: 'Description',
     },
     {
-        id: '9',
+        id: 'news_1',
         img: NewsThumbnail,
         date: new Date().toLocaleDateString('en-US', {
             day: 'numeric',
@@ -180,6 +181,7 @@ const switchPage = (page: number, e: Event) => {
     color: $orange !important
 .hover-news
     .divider-parent
+        text-decoration: none
         &:hover
             @extend .bg-orange-25
         .divider-child
