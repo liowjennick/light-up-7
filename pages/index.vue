@@ -17,13 +17,21 @@
       class="full-screen-section-container section-container full-screen-center-content"
       id="home-banner-section"
     >
-      <div class="flex-row">
+      <div class="background-image-container">
+        <img src="../assets/images/home/header-background.png" />
+      </div>
+
+      <div class="large-logo-container">
+        <img src="../assets/images/home/logo-large-header.png" />
+      </div>
+
+      <!-- <div class="flex-row">
         <img
           src="../assets/images/home/banner-bulb.png"
           class="bulb"
         />
         <p class="font-white font-16 just-sans">A creative solutions agency lighting up the Asia-Pacific region, one bright idea at a time.</p>
-      </div>
+      </div> -->
     </div>
     <!-- YELLOW OUTLINE TEXT SECTION -->
     <div id="outline-container" class="section-container">
@@ -382,7 +390,7 @@
     >
       <div class="flex-row">
         <div class="text-container">
-          <p class="font-white just-sans font-46"><b>light up</b> your</p>
+          <p class="font-white just-sans font-32"><b>light up</b> your</p>
         </div>
 
         <div class="bulb-container">
@@ -404,10 +412,10 @@
           </div>
           <div class="bulb-text-container">
             <p
-              class="font-white just-sans font-46"
+              class="font-white just-sans font-32"
               :class="{ active: lightUpYourIdeasBulbActive }"
             >
-              <b>ideas</b>
+              <b id="bulb-text">{{ lightBulbTextList[currentLightBulbTextIndex] }}</b>
             </p>
 
             <NuxtLink
@@ -482,6 +490,9 @@ const onMouseLeaveServiceItem = (index: Number) => {
 const lightUpYourIdeasBulbActive = ref(false);
 const bulbInitialY = ref(0);
 
+const lightBulbTextList = ref(["ideas", "business", "campaigns", "events"])
+const currentLightBulbTextIndex = ref(0);
+
 useHead({
   title: "Test Home Title",
   meta: [{ name: "description", content: "Amazing" }],
@@ -489,6 +500,25 @@ useHead({
 
 onMounted(() => {
   console.log("setup mounted");
+
+  const lightBulbTextTimeline = gsap.timeline({repeat: -1, repeatDelay: 2})
+  lightBulbTextTimeline
+    .to("#bulb-text", {
+      opacity: 0,
+      y: -100,
+      onComplete: () => {
+        if (currentLightBulbTextIndex.value + 1 > lightBulbTextList.value.length - 1) {
+          currentLightBulbTextIndex.value = 0
+        } else {
+          currentLightBulbTextIndex.value += 1
+        }
+      }
+    })
+    .to("#bulb-text", {
+      opacity: 1,
+      y: 0
+    })
+
 
   // OUTLINE SECTION SCROLL TRIGGER
   ScrollTrigger.create({
@@ -732,6 +762,19 @@ onMounted(() => {
 
 #home-banner-section
   background-color: black
+  .background-image-container
+    position: relative
+    transition: 1s all
+    opacity: 1
+    &:hover
+      opacity: 0
+    img
+      width: 100%
+  .large-logo-container
+    position: absolute
+    width: 20%
+    img
+      width: 100%
   .flex-row
     display: flex
     align-items: center
@@ -800,7 +843,7 @@ onMounted(() => {
       display: flex
       align-items: center
       justify-content: center
-      transform: translateY(-200px)
+      // transform: translateY(-200px)
       opacity: 0
       +desktop
         margin-top: 25px
@@ -967,7 +1010,7 @@ onMounted(() => {
     .text-container
       position: relative
       height: 50vh
-      width: 40vw
+      width: 20vw
       +desktop
         height: initial
         width: 100%
@@ -1002,8 +1045,9 @@ onMounted(() => {
         +desktop
           top: 30%
         p
+          opacity: 0
           &.active
-            // opacity: 0
+            opacity: 1
           +desktop
             font-size: 50px
       .large-bulb-pull-image

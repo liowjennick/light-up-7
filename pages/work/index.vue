@@ -329,21 +329,25 @@ onMounted(() => {
     .client-project-slider-container
       display: flex
       transform: translateX(0%)
-      transition: 0.25s all
+      transition: 0.25s transform
       &.project-active
         transform: translateX(-100%)
         .work-section-container
           opacity: 0
         .projects-section-container
           opacity: 1
+          overflow: unset
+          height: 100%
       .work-section-container
-        transition: 1.5s all
+        transition: 1.5s opacity
         opacity: 1
         flex: 0 0 100%
       .projects-section-container
-        transition: 1.5s all
+        transition: 1.5s opacity
         opacity: 0
         flex: 0 0 100%
+        height: 0px
+        overflow: hidden
     .section-container
       padding-top: 80px
       padding-bottom: 40px
