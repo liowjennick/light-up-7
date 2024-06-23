@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="navbar-container"
-    :class="{ minimized: navbarMinimized }"
-  >
+  <div id="navbar-container" :class="{ minimized: navbarMinimized }">
     <div class="section-container">
       <div class="opacity-background" />
       <div class="navbar-contents">
@@ -13,36 +10,24 @@
         </div>
 
         <div class="navigation-list-container">
-          <a
-            class="nav-item"
-            href="/news/news_1"
-            ><p>services</p></a
-          >
-          <a
-            class="nav-item"
-            href="/work"
-            ><p>work</p></a
-          >
-          <a
-            class="nav-item"
-            href="/about"
-            ><p>about</p></a
-          >
-          <a
-            class="nav-item"
-            href="/news/news_1"
-            ><p>news</p></a
-          >
-          <a
-            class="nav-item"
-            href="/careers"
-            ><p>careers</p></a
-          >
-          <a
-            class="nav-item"
-            href="/news/news_1"
-            ><p>contact</p></a
-          >
+          <a class="nav-item" href="/news/news_1">
+            <p>services</p>
+          </a>
+          <a class="nav-item" href="/work">
+            <p>work</p>
+          </a>
+          <a class="nav-item" href="/about">
+            <p>about</p>
+          </a>
+          <a class="nav-item" href="/news">
+            <p>news</p>
+          </a>
+          <a class="nav-item" href="/careers">
+            <p>careers</p>
+          </a>
+          <a class="nav-item" href="/news/news_1">
+            <p>contact</p>
+          </a>
         </div>
       </div>
     </div>
