@@ -57,7 +57,8 @@
     <!-- Company pics -->
     <div style="margin-block: 24px;">
       <h2 class="section-container font-orange" style="margin-bottom: 24px;">Our team at work (and play!)</h2>
-      <div class="section-container bg-orange-25 full-screen-center-between mobile-container" style="gap: 16px">
+      <div class="section-container bg-orange-25 full-screen-center-between mobile-container"
+        style="gap: 16px; padding-block: 24px;">
         <div v-for="(company, key) in companyPics" :key="key" class="overlay-parent">
           <img :src="company.url" :alt="company.alt" style="width: 100%;" />
           <!-- overlay text -->
@@ -76,18 +77,21 @@
       <h2 class="font-orange">ready to explore a new path?</h2>
       <h4>check out your dream role here.</h4>
       <!-- filter tabs -->
-       <div class="full-screen-center-content tab-parent-container">
-         <div class="full-screen-center-content tab-container btn-group" style="flex-wrap: wrap; row-gap: 8px;">
-           <button v-for="vacancyTab in vacancyTabs" :key="vacancyTab" class="tab-button" :name="vacancyTab" @click="">{{ vacancyTab }}</button>
-          </div>
+      <div class="full-screen-center-content tab-parent-container">
+        <div class="full-screen-center-content tab-container btn-group" style="flex-wrap: wrap; row-gap: 8px;">
+          <button v-for="vacancyTab in vacancyTabs" :key="vacancyTab" class="tab-button" :name="vacancyTab" @click="">{{
+            vacancyTab }}</button>
         </div>
+      </div>
       <!-- vacancy grid -->
       <div class="grid-3-cols">
-        <div v-for="(recent, key) in recentJobs" :key="key" class="full-screen-center-content" style="flex-direction: column; gap: 16px">
+        <div v-for="(recent, key) in recentJobs" :key="key" class="full-screen-center-content"
+          style="flex-direction: column; gap: 16px">
           <div>
             <p style="font-size: 24px;">{{ recent.title }}</p>
           </div>
-          <NuxtLink class="orange-outlined-button vacancy-btn" style="font-family: 'JustSans';" :to="recent.url">apply now!</NuxtLink>
+          <NuxtLink class="orange-outlined-button vacancy-btn" style="font-family: 'JustSans';" :to="recent.url">apply
+            now!</NuxtLink>
         </div>
       </div>
     </div>
@@ -186,9 +190,7 @@ const recentJobs = [
 .mobile-container
   +mobile
     flex-direction: column
-.bg-orange-25
-  background-color: #ffcc5940
-  padding-block: 24px
+
 .overlay-parent
   position: relative
   max-width: 30%
