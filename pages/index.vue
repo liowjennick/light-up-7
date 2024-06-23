@@ -311,8 +311,8 @@
       />
 
       <div class="section-container mb-20">
-        <p class="font-orange font-20 just-sans mb-10">our prestigious achievements:</p>
-        <p class="font-white font-30 just-sans mb-40">awards and recognition by</p>
+        <p class="font-orange font-20 just-sans mb-10 font-weight-100">our prestigious achievements:</p>
+        <p class="font-white font-30 just-sans mb-40 font-weight-100">awards and recognition by</p>
       </div>
 
       <div class="award-list-container mb-40">

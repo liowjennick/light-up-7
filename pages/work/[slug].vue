@@ -9,7 +9,7 @@
             <div class="workscope-list-container">
               <div class="workscope-item" v-for="(workscope, i) in item.workscope_tags" :key="i">
                 <img class="workscope-icon" src="/images/work/projects/lightbulb-icon.png" />
-                <p class="font-10">{{ workscope }}</p>
+                <p class="font-10 font-weight-100 font-gray">{{ workscope }}</p>
               </div>
             </div>
           </div>
@@ -53,17 +53,17 @@
 
               <div class="mb-30" v-if="item.challenge_description">
                 <p class="font-orange just-sans font-28 mb-10"><b>challenge</b></p>
-                <p class="font-white just-sans font-18">{{ item.challenge_description }}</p>
+                <p class="font-white just-sans font-18 font-weight-100">{{ item.challenge_description }}</p>
               </div>
 
               <div class="mb-30" v-if="item.outcome_description">
                 <p class="font-orange just-sans font-28 mb-10"><b>outcome</b></p>
-                <p class="font-white just-sans font-18">{{ item.outcome_description }}</p>
+                <p class="font-white just-sans font-18 font-weight-100">{{ item.outcome_description }}</p>
               </div>
 
               <div class="mb-30" v-if="item.results_description">
                 <p class="font-orange just-sans font-28 mb-10"><b>results</b></p>
-                <p class="font-white just-sans font-18">{{ item.results_description }}</p>
+                <p class="font-white just-sans font-18 font-weight-100">{{ item.results_description }}</p>
               </div>
             </div>
 
