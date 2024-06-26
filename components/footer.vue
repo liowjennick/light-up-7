@@ -8,20 +8,20 @@
 
       <div class="contact-column">
         <div class="mb-20 top">
-          <p class="font-light-gray just-sans"><b>New Business &amp; Inquiries</b></p>
+          <p class="font-white just-sans"><b>New Business &amp; Inquiries</b></p>
           <p class="font-light-gray just-sans font-weight-100">info@lightup7.com</p>
           <p class="font-light-gray just-sans font-weight-100">+6011-11578977</p>
           <p class="font-light-gray just-sans font-weight-100">+603-8605 3561</p>
         </div>
 
         <div class="bottom">
-          <p class="font-light-gray just-sans"><b>Careers</b></p>
+          <p class="font-white just-sans"><b>Careers</b></p>
           <p class="font-light-gray just-sans font-weight-100">jobs@lightup7.com</p>
         </div>
       </div>
 
       <div class="address-column">
-        <p class="font-light-gray just-sans"><b>Location</b></p>
+        <p class="font-white just-sans"><b>Location</b></p>
         <p class="font-light-gray just-sans font-weight-100">West Wing 1st Floor,</p>
         <p class="font-light-gray just-sans font-weight-100">Bangunan ECM Libra, 8,</p>
         <p class="font-light-gray just-sans font-weight-100">Jalan Damansara Endah,</p>
@@ -31,6 +31,7 @@
       </div>
 
       <div class="social-media-column">
+        <p class="just-sans mb-10 font-white"><b>Follow us on</b></p>
         <div class="social-media-list-container top">
           <div class="social-media-item">
             <a href="#" target="_blank">
@@ -85,10 +86,14 @@
         text-align: center
     .logo-image-container
       flex: 3
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      flex-direction: column
       +desktop
         margin-bottom: 20px
       img
-        width: 120px
+        width: 90px
         display: block
         margin: 0 auto 10px auto
     .contact-column
@@ -121,8 +126,8 @@
             margin-right: 5px
             margin-left: 5px
           a
-            height: 40px
-            width: 40px
+            height: 30px
+            width: 30px
             border: 1px solid white
             border-radius: 50%
             display: flex
@@ -130,9 +135,10 @@
             justify-content: center
             padding: 5px
             img
-              height: 30px
+              height: 20px
 
             
     p
-      font-size: 18px
+      font-size: 16px
+      line-height: 25px
 </style>

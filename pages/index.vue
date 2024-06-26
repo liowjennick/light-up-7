@@ -17,8 +17,39 @@
       class="full-screen-section-container section-container full-screen-center-content"
       id="home-banner-section"
     >
-      <div class="background-image-container">
-        <img src="../assets/images/home/header-background.png" />
+      <div class="background-text-container">
+        <!-- <img src="../assets/images/home/header-background.png" /> -->
+        <div class="text-background-row first">
+          <p class="first">A</p>
+          <p class="second">creative</p>
+          <p class="third">solutions</p>
+        </div>
+
+        <div class="text-background-row second">
+          <p class="first">agency</p>
+          <p class="second">lighting</p>
+          <p class="third">up</p>
+        </div>
+
+        <div class="text-background-row third">
+          <p class="first">the</p>
+          <p class="second">Asia-</p>
+        </div>
+
+        <div class="text-background-row fourth">
+          <p class="first">Pacific</p>
+          <p class="second">region,</p>
+          <p class="third">one</p>
+        </div>
+
+        <div class="text-background-row fifth">
+          <p class="first">bright</p>
+          <p class="second">idea</p>
+          <p class="third">at</p>
+          <p class="fourth">a</p>
+          <p class="fifth">time.</p>
+        </div>
+
       </div>
 
       <div class="large-logo-container">
@@ -755,6 +786,7 @@ onMounted(() => {
 
 #homepage
   background-color: black
+  padding-top: 0px
 
 #intro-video
   width: 100vw
@@ -765,17 +797,94 @@ onMounted(() => {
 
 #home-banner-section
   background-color: black
-  .background-image-container
+  .background-text-container
     position: relative
     transition: 1s all
     opacity: 1
-    &:hover
-      opacity: 0
-    img
-      width: 100%
+    width: 100%
+    height: 80%
+    display: flex
+    flex-direction: column
+    +desktop
+      height: 70%
+    .text-background-row
+      display: flex
+      flex: 1
+      align-items: center
+      p
+        font-size: 100px
+        color: #1A1A1A
+        font-weight: bold
+        transition: 0.3s all
+        +desktop
+          font-size: 60px
+        +large-mobile
+          font-size: 50px
+        +mobile
+          font-size: 40px
+        &:hover
+          color: white
+          text-shadow: 0px 0px 16px #DC9F41, 0px 0px 25px #DC9F41
+
+      &.first
+        p
+          &.first
+            flex: 1
+          &.second
+            flex: 2
+          &.third
+            flex: 1
+            text-align: right
+      &.second
+        p
+          &.first
+            flex: 2
+          &.second
+            flex: 1
+          &.third
+            flex: 1
+            text-align: right
+      &.third
+        p
+          &.first
+            flex: 1
+          &.second
+            flex: 1
+            text-align: right
+      &.fourth
+        p
+          &.first
+            flex: 3
+          &.second
+            flex: 1
+          &.third
+            flex: 2
+            text-align: right
+      &.fifth
+        p
+          &.first
+            flex: 6
+          &.second
+            flex: 4
+          &.third
+            flex: 2.7
+          &.fourth
+            flex: 1.5
+          &.fifth
+            flex: 6
+
+
   .large-logo-container
     position: absolute
-    width: 20%
+    width: 280px
+    top: 50%
+    +desktop
+      width: 160px
+      top: 48%
+    +large-mobile
+      width: 135px
+    +mobile
+      width: 125px
     img
       width: 100%
   .flex-row
