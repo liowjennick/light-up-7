@@ -35,6 +35,9 @@
     </div>
     <!-- YELLOW OUTLINE TEXT SECTION -->
     <div id="outline-container" class="section-container">
+      <div class="indicator-container-list">
+        <div class="indicator-button" :class="{ active: yellowOutlineIndex === i }" v-for="i in 3" :key="i" />
+      </div>
       <!-- FIRST -->
       <div
         class="full-screen-section-container section-container yellow-outline-banner-trigger"
@@ -803,6 +806,35 @@ onMounted(() => {
   position: relative
   height: 100vh
   background-color: black
+  .indicator-container-list
+    position: absolute
+    right: 20px
+    top: 50%
+    transform: translateY(-50%)
+    +desktop
+      display: flex
+      bottom: 10%
+      left: 48%
+      // transform: translateX(-50%)
+      top: unset
+    .indicator-button
+      width: 12px
+      height: 12px
+      margin-top: 10px
+      margin-bottom: 10px
+      border-radius: 50%
+      border: 2px solid white
+      transition: 0.4s all
+      +desktop
+        margin-left: 5px
+        margin-right: 5px
+        margin-top: 0px
+        margin-bottom: 0px
+      &.active
+        background-color: white
+  .full-screen-section-container
+    +desktop
+      width: auto
   .yellow-outline-banner-trigger
     height: 100vh
     display: flex
@@ -848,7 +880,9 @@ onMounted(() => {
       +desktop
         margin-top: 25px
       p
+        padding-right: 80px
         +desktop
+          padding-right: 0
           font-size: 22px
           text-align: center
 
