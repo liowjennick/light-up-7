@@ -877,7 +877,7 @@ onMounted(() => {
   .large-logo-container
     position: absolute
     width: 280px
-    top: 50%
+    top: 47%
     +desktop
       width: 160px
       top: 48%
