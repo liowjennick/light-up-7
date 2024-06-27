@@ -20,14 +20,23 @@
       <h1 class="page-title">WORK</h1>
 
       <div id="sliding-button">
-        <p class="font-orange text-center just-sans font-20">swipe right to see our past works</p>
+        <p class="font-orange text-center just-sans font-20 font-weight-200">swipe right to see our past works</p>
         <div class="sliding-button-container">
           <div class="sliding-button">
             <div class="slider-progress-background" />
-            <p v-if="displayMode === DisplayMode.Clients">our clients</p>
-            <p v-if="displayMode === DisplayMode.Projects">our projects</p>
+
+            <div class="icon-container-work">
+              <img src="../../assets/images/work/work-slider-icon.png" />
+            </div>
+
+            <div class="icon-container-projects">
+              <img src="../../assets/images/work/projects-slider-icon.png" />
+            </div>
+
+            <p class="font-weight-200" v-if="displayMode === DisplayMode.Clients">our clients</p>
+            <p class="font-weight-200" v-if="displayMode === DisplayMode.Projects">our projects</p>
             <div class="slider-circle">
-              <p class="font-white">&#8250;</p>
+              <img src="../../assets/images/work/right-caret.png" />
             </div>
           </div>
         </div>
@@ -289,7 +298,7 @@ onMounted(() => {
         .slider-circle
           height: 60px
           width: 60px
-          background-color: rgba(255, 222, 135, 1)
+          background-color: rgba(255, 222, 135, 0.5)
           // opacity: 0.5
           position: absolute
           border-radius: 50%
@@ -298,10 +307,15 @@ onMounted(() => {
           cursor: pointer
           box-shadow: 1px 0px 8px black
           z-index: 2
+          display: flex
+          align-items: center
+          justify-content: center
+          img
+            width: 20px
           p
             color: white
             font-family: "JustSans"
-            font-weight: bold
+            // font-weight: bold
             display: flex
             justify-content: center
             align-items: center
@@ -312,9 +326,23 @@ onMounted(() => {
           height: 60px
           position: absolute
           z-index: 1
-          opacity: 0.2
+          opacity: 0.1
           border-radius: 40px
           left: 0
+        .icon-container-work
+          position: absolute
+          top: 0
+          height: 100%
+          left: 0
+          img
+            height: 100%
+        .icon-container-projects
+          position: absolute
+          top: 0
+          height: 100%
+          right: 0
+          img
+            height: 100%
 
   #client-list-section
     background-color: black
