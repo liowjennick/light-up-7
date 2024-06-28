@@ -6,15 +6,116 @@
     </div>
     <!-- Services List -->
     <div class="full-screen-center-content hover-services" style="flex-direction: column;">
-      <NuxtLink v-for="service in services" :key="service.slug" class="divider-parent" style="width: 100%;"
-        :to="`/services/${service.slug}`">
+      <NuxtLink class="divider-parent" style="width: 100%;" :to="`/services/growth-strategy`">
         <div class="divider-child full-screen-center-content service-item section-container"
           style="gap: 60px; padding: 35px 40px">
-          <div style="width: 10%;" class="full-screen-center-content"><img :src="service.icon" alt="icon">
+          <div style="width: 10%;" class="full-screen-center-content">
+            <Growth />
           </div>
           <div class="full-screen-start-center" style="flex-direction: column; flex: 1;">
-            <h2>{{ service.title }}</h2>
-            <p>{{ service.description }}</p>
+            <h2>Growth Strategy</h2>
+            <p>Propel your business with a tactical plan optimised to achieve your desired goals. </p>
+          </div>
+          <div class="cta-btn-parent full-screen-center-content">
+            <p class="hover-text">learn more</p>
+            <div class="cta-btn-child"><img :src="arrowUpRight" alt="Arrow up right"></div>
+          </div>
+        </div>
+      </NuxtLink>
+      <NuxtLink class="divider-parent" style="width: 100%;" :to="`/services/digital-marketing`">
+        <div class="divider-child full-screen-center-content service-item section-container"
+          style="gap: 60px; padding: 35px 40px">
+          <div style="width: 10%;" class="full-screen-center-content">
+            <Digital />
+          </div>
+          <div class="full-screen-start-center" style="flex-direction: column; flex: 1;">
+            <h2>Digital Marketing</h2>
+            <p>Stay ahead on the digital front with a host of approaches, integrated to meet your business needs </p>
+          </div>
+          <div class="cta-btn-parent full-screen-center-content">
+            <p class="hover-text">learn more</p>
+            <div class="cta-btn-child"><img :src="arrowUpRight" alt="Arrow up right"></div>
+          </div>
+        </div>
+      </NuxtLink>
+      <NuxtLink class="divider-parent" style="width: 100%;" :to="`/services/video-photography`">
+        <div class="divider-child full-screen-center-content service-item section-container"
+          style="gap: 60px; padding: 35px 40px">
+          <div style="width: 10%;" class="full-screen-center-content">
+            <Video />
+          </div>
+          <div class="full-screen-start-center" style="flex-direction: column; flex: 1;">
+            <h2>Video & Photography</h2>
+            <p>A picture is worth a thousand words. Tell your brand story with captivating images and engaging videos.
+            </p>
+          </div>
+          <div class="cta-btn-parent full-screen-center-content">
+            <p class="hover-text">learn more</p>
+            <div class="cta-btn-child"><img :src="arrowUpRight" alt="Arrow up right"></div>
+          </div>
+        </div>
+      </NuxtLink>
+      <NuxtLink class="divider-parent" style="width: 100%;" :to="`/services/brand-creative-design`">
+        <div class="divider-child full-screen-center-content service-item section-container"
+          style="gap: 60px; padding: 35px 40px">
+          <div style="width: 10%;" class="full-screen-center-content">
+            <Brand />
+          </div>
+          <div class="full-screen-start-center" style="flex-direction: column; flex: 1;">
+            <h2>Branding & Creative Design</h2>
+            <p>With a little sparkle and some zing, your new brand identity is ready to take on the world. </p>
+          </div>
+          <div class="cta-btn-parent full-screen-center-content">
+            <p class="hover-text">learn more</p>
+            <div class="cta-btn-child"><img :src="arrowUpRight" alt="Arrow up right"></div>
+          </div>
+        </div>
+      </NuxtLink>
+      <NuxtLink class="divider-parent" style="width: 100%;" :to="`/services/website-apps`">
+        <div class="divider-child full-screen-center-content service-item section-container"
+          style="gap: 60px; padding: 35px 40px">
+          <div style="width: 10%;" class="full-screen-center-content">
+            <Website />
+          </div>
+          <div class="full-screen-start-center" style="flex-direction: column; flex: 1;">
+            <h2>Websites & Apps</h2>
+            <p>Your business’ first point of contact can leave a lasting impression. Build your best brand website with
+              us! </p>
+          </div>
+          <div class="cta-btn-parent full-screen-center-content">
+            <p class="hover-text">learn more</p>
+            <div class="cta-btn-child"><img :src="arrowUpRight" alt="Arrow up right"></div>
+          </div>
+        </div>
+      </NuxtLink>
+      <NuxtLink class="divider-parent" style="width: 100%;" :to="`/services/event-management`">
+        <div class="divider-child full-screen-center-content service-item section-container"
+          style="gap: 60px; padding: 35px 40px">
+          <div style="width: 10%;" class="full-screen-center-content">
+            <Event />
+          </div>
+          <div class="full-screen-start-center" style="flex-direction: column; flex: 1;">
+            <h2>Event Management</h2>
+            <p>From conceptualising all the way to d-day handling, our event management team is poised to bring it all
+              to life.
+            </p>
+          </div>
+          <div class="cta-btn-parent full-screen-center-content">
+            <p class="hover-text">learn more</p>
+            <div class="cta-btn-child"><img :src="arrowUpRight" alt="Arrow up right"></div>
+          </div>
+        </div>
+      </NuxtLink>
+      <NuxtLink class="divider-parent" style="width: 100%;" :to="`/services/media-buying`">
+        <div class="divider-child full-screen-center-content service-item section-container"
+          style="gap: 60px; padding: 35px 40px">
+          <div style="width: 10%;" class="full-screen-center-content">
+            <Media />
+          </div>
+          <div class="full-screen-start-center" style="flex-direction: column; flex: 1;">
+            <h2>Media Buying</h2>
+            <p>Put your brand in front of the right audience at the right time and place. Let us help you optimise your
+              digital presence. </p>
           </div>
           <div class="cta-btn-parent full-screen-center-content">
             <p class="hover-text">learn more</p>
@@ -26,22 +127,9 @@
   </div>
 </template>
 <script setup lang='ts'>
-import { reactive } from 'vue'
 import arrowUpRight from '@/assets/svg/arrow-up-right.svg'
-import icons from '@/assets/svg'
+import { Growth, Digital, Brand, Event, Media, Video, Website } from '@/assets/svg'
 
-interface Service {
-  icon: string,
-  title: string,
-  description: string,
-  slug: string
-}
-const services: Service[] = reactive(icons.map((icon, key) => ({
-  icon,
-  title: 'Service Title',
-  description: 'Service description',
-  slug: `service_${key}`
-})))
 </script>
 <style lang="sass">
 @import "../../assets/sass/responsive.sass"
@@ -57,12 +145,16 @@ const services: Service[] = reactive(icons.map((icon, key) => ({
       &:hover
           background-color: #DC9F41
           .service-item
+            path[fill="#DC9F41"]
+              fill: white
+            path[stroke="#DC9F41"]
+              stroke: white
             .cta-btn-parent
               background-color: black
               transform: translate(-75%, 50%)
               .hover-text
                 visibility: visible
-                color: #DC9F41
+                color: $orange
               .cta-btn-child
                 transform: translate(115%, -145%)
       .divider-child

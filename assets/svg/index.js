@@ -1,9 +1,9 @@
-import growth from './growth.svg';
-import digital from './digital.svg';
-import brand from './brand.svg';
-import event from './event.svg';
-import media from './media.svg';
-import video from './video.svg';
-import website from './website.svg';
+import Growth from './growth.vue';
+import Digital from './digital.vue';
+import Brand from './brand.vue';
+import Event from './event.vue';
+import Media from './media.vue';
+import Video from './video.vue';
+import Website from './website.vue';
 
-export default [growth, digital, brand, event, media, video, website];
+export { Growth, Digital, Brand, Event, Media, Video, Website };
