@@ -10,7 +10,7 @@
         </div>
 
         <div class="navigation-list-container">
-          <a class="nav-item" href="/news/news_1">
+          <a class="nav-item" href="/services">
             <p>services</p>
           </a>
           <a class="nav-item" href="/work">
