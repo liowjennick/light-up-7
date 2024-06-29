@@ -98,13 +98,16 @@ onMounted(() => {
       .nav-item
         transition: 0.2s all
         padding: 40px 40px
-        color: white
         text-decoration: none
         display: block
         // font-family: "JustSans"
         font-weight: normal
+        p
+          color: white
+          transition: 0.4s all
         &:hover
-          font-weight: bold
+          p
+           color: $orange
         +desktop
           padding: 20px 20px
         +large-mobile
@@ -113,7 +116,7 @@ onMounted(() => {
           padding: 15px 10px
         p
           font-size: 20px
-          transition: 0.2s font-size
+          // transition: 0.2s font-size
           // text-decoration: none
           font-family: "JustSans"
           +desktop

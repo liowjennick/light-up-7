@@ -17,16 +17,58 @@
       class="full-screen-section-container section-container full-screen-center-content"
       id="home-banner-section"
     >
-      <div class="flex-row">
+      <div class="background-text-container">
+        <!-- <img src="../assets/images/home/header-background.png" /> -->
+        <div class="text-background-row first">
+          <p class="first">A</p>
+          <p class="second">creative</p>
+          <p class="third">solutions</p>
+        </div>
+
+        <div class="text-background-row second">
+          <p class="first">agency</p>
+          <p class="second">lighting</p>
+          <p class="third">up</p>
+        </div>
+
+        <div class="text-background-row third">
+          <p class="first">the</p>
+          <p class="second">Asia-</p>
+        </div>
+
+        <div class="text-background-row fourth">
+          <p class="first">Pacific</p>
+          <p class="second">region,</p>
+          <p class="third">one</p>
+        </div>
+
+        <div class="text-background-row fifth">
+          <p class="first">bright</p>
+          <p class="second">idea</p>
+          <p class="third">at</p>
+          <p class="fourth">a</p>
+          <p class="fifth">time.</p>
+        </div>
+
+      </div>
+
+      <div class="large-logo-container">
+        <img src="../assets/images/home/logo-large-header.png" />
+      </div>
+
+      <!-- <div class="flex-row">
         <img
           src="../assets/images/home/banner-bulb.png"
           class="bulb"
         />
         <p class="font-white font-16 just-sans">A creative solutions agency lighting up the Asia-Pacific region, one bright idea at a time.</p>
-      </div>
+      </div> -->
     </div>
     <!-- YELLOW OUTLINE TEXT SECTION -->
     <div id="outline-container" class="section-container">
+      <div class="indicator-container-list">
+        <div class="indicator-button" :class="{ active: yellowOutlineIndex === i }" v-for="i in 3" :key="i" />
+      </div>
       <!-- FIRST -->
       <div
         class="full-screen-section-container section-container yellow-outline-banner-trigger"
@@ -311,8 +353,8 @@
       />
 
       <div class="section-container mb-20">
-        <p class="font-orange font-20 just-sans mb-10">our prestigious achievements:</p>
-        <p class="font-white font-30 just-sans mb-40">awards and recognition by</p>
+        <p class="font-orange font-20 just-sans mb-10 font-weight-100">our prestigious achievements:</p>
+        <p class="font-white font-30 just-sans mb-40 font-weight-100">awards and recognition by</p>
       </div>
 
       <div class="award-list-container mb-40">
@@ -382,7 +424,7 @@
     >
       <div class="flex-row">
         <div class="text-container">
-          <p class="font-white just-sans font-46"><b>light up</b> your</p>
+          <p class="font-white just-sans font-32"><b>light up</b> your</p>
         </div>
 
         <div class="bulb-container">
@@ -404,10 +446,10 @@
           </div>
           <div class="bulb-text-container">
             <p
-              class="font-white just-sans font-46"
+              class="font-white just-sans font-32"
               :class="{ active: lightUpYourIdeasBulbActive }"
             >
-              <b>ideas</b>
+              <b id="bulb-text">{{ lightBulbTextList[currentLightBulbTextIndex] }}</b>
             </p>
 
             <NuxtLink
@@ -482,6 +524,9 @@ const onMouseLeaveServiceItem = (index: Number) => {
 const lightUpYourIdeasBulbActive = ref(false);
 const bulbInitialY = ref(0);
 
+const lightBulbTextList = ref(["ideas", "business", "campaigns", "events"])
+const currentLightBulbTextIndex = ref(0);
+
 useHead({
   title: "Test Home Title",
   meta: [{ name: "description", content: "Amazing" }],
@@ -489,6 +534,25 @@ useHead({
 
 onMounted(() => {
   console.log("setup mounted");
+
+  const lightBulbTextTimeline = gsap.timeline({repeat: -1, repeatDelay: 2})
+  lightBulbTextTimeline
+    .to("#bulb-text", {
+      opacity: 0,
+      y: -100,
+      onComplete: () => {
+        if (currentLightBulbTextIndex.value + 1 > lightBulbTextList.value.length - 1) {
+          currentLightBulbTextIndex.value = 0
+        } else {
+          currentLightBulbTextIndex.value += 1
+        }
+      }
+    })
+    .to("#bulb-text", {
+      opacity: 1,
+      y: 0
+    })
+
 
   // OUTLINE SECTION SCROLL TRIGGER
   ScrollTrigger.create({
@@ -722,6 +786,7 @@ onMounted(() => {
 
 #homepage
   background-color: black
+  padding-top: 0px
 
 #intro-video
   width: 100vw
@@ -732,6 +797,96 @@ onMounted(() => {
 
 #home-banner-section
   background-color: black
+  .background-text-container
+    position: relative
+    transition: 1s all
+    opacity: 1
+    width: 100%
+    height: 80%
+    display: flex
+    flex-direction: column
+    +desktop
+      height: 70%
+    .text-background-row
+      display: flex
+      flex: 1
+      align-items: center
+      p
+        font-size: 100px
+        color: #1A1A1A
+        font-weight: bold
+        transition: 0.3s all
+        +desktop
+          font-size: 60px
+        +large-mobile
+          font-size: 50px
+        +mobile
+          font-size: 40px
+        &:hover
+          color: white
+          text-shadow: 0px 0px 16px #DC9F41, 0px 0px 25px #DC9F41
+
+      &.first
+        p
+          &.first
+            flex: 1
+          &.second
+            flex: 2
+          &.third
+            flex: 1
+            text-align: right
+      &.second
+        p
+          &.first
+            flex: 2
+          &.second
+            flex: 1
+          &.third
+            flex: 1
+            text-align: right
+      &.third
+        p
+          &.first
+            flex: 1
+          &.second
+            flex: 1
+            text-align: right
+      &.fourth
+        p
+          &.first
+            flex: 3
+          &.second
+            flex: 1
+          &.third
+            flex: 2
+            text-align: right
+      &.fifth
+        p
+          &.first
+            flex: 6
+          &.second
+            flex: 4
+          &.third
+            flex: 2.7
+          &.fourth
+            flex: 1.5
+          &.fifth
+            flex: 6
+
+
+  .large-logo-container
+    position: absolute
+    width: 280px
+    top: 47%
+    +desktop
+      width: 160px
+      top: 48%
+    +large-mobile
+      width: 135px
+    +mobile
+      width: 125px
+    img
+      width: 100%
   .flex-row
     display: flex
     align-items: center
@@ -760,6 +915,35 @@ onMounted(() => {
   position: relative
   height: 100vh
   background-color: black
+  .indicator-container-list
+    position: absolute
+    right: 20px
+    top: 50%
+    transform: translateY(-50%)
+    +desktop
+      display: flex
+      bottom: 10%
+      left: 48%
+      // transform: translateX(-50%)
+      top: unset
+    .indicator-button
+      width: 12px
+      height: 12px
+      margin-top: 10px
+      margin-bottom: 10px
+      border-radius: 50%
+      border: 2px solid white
+      transition: 0.4s all
+      +desktop
+        margin-left: 5px
+        margin-right: 5px
+        margin-top: 0px
+        margin-bottom: 0px
+      &.active
+        background-color: white
+  .full-screen-section-container
+    +desktop
+      width: auto
   .yellow-outline-banner-trigger
     height: 100vh
     display: flex
@@ -800,12 +984,14 @@ onMounted(() => {
       display: flex
       align-items: center
       justify-content: center
-      transform: translateY(-200px)
+      // transform: translateY(-200px)
       opacity: 0
       +desktop
         margin-top: 25px
       p
+        padding-right: 80px
         +desktop
+          padding-right: 0
           font-size: 22px
           text-align: center
 
@@ -967,7 +1153,7 @@ onMounted(() => {
     .text-container
       position: relative
       height: 50vh
-      width: 40vw
+      width: 20vw
       +desktop
         height: initial
         width: 100%
@@ -1002,8 +1188,9 @@ onMounted(() => {
         +desktop
           top: 30%
         p
+          opacity: 0
           &.active
-            // opacity: 0
+            opacity: 1
           +desktop
             font-size: 50px
       .large-bulb-pull-image
