@@ -695,12 +695,12 @@ onMounted(() => {
           document.querySelector("#home-banner-section .bulb")?.classList.add("image-glow");
         },
       });
-      gsap.to("#home-banner-section p", {
-        opacity: 1,
-        duration: 1,
-        ease: "power2",
-        delay: 1,
-      });
+      // gsap.to("#home-banner-section p", {
+      //   opacity: 1,
+      //   duration: 1,
+      //   ease: "power2",
+      //   delay: 1,
+      // });
     },
     false
   );
@@ -783,6 +783,7 @@ onMounted(() => {
 @import "../assets/sass/fonts.sass"
 @import "../assets/sass/animations.sass"
 @import "../assets/sass/layout.sass"
+@import "../assets/sass/reset.sass"
 
 #homepage
   background-color: black
@@ -813,9 +814,10 @@ onMounted(() => {
       align-items: center
       p
         font-size: 100px
-        color: #1A1A1A
+        color: white
         font-weight: bold
         transition: 0.3s all
+        opacity: 0.1
         +desktop
           font-size: 60px
         +large-mobile
@@ -823,8 +825,8 @@ onMounted(() => {
         +mobile
           font-size: 40px
         &:hover
-          color: white
-          text-shadow: 0px 0px 16px #DC9F41, 0px 0px 25px #DC9F41
+          opacity: 0.3
+          text-shadow: 0px 0px 8px white
 
       &.first
         p

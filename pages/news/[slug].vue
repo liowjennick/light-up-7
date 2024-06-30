@@ -48,7 +48,7 @@ useHead({
 
 
 </script>
-<style lang="sass">
+<style lang="sass" scoped>
 @import '../../assets/sass/responsive.sass'
 @import '../../assets/sass/layout.sass'
 @import '../../assets/sass/fonts.sass'

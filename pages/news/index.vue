@@ -9,7 +9,7 @@
             style="text-align: center; margin-block: 48px; flex-direction: column; gap: 64px;">
             <div>
                 <h1 class="font-orange" style="font-size: 48px; font-weight: bold;">What we've been up to</h1>
-                <p>Learn more about our shining work for clients, plus illuminating insights and company stories.</p>
+                <p class="font-white">Learn more about our shining work for clients, plus illuminating insights and company stories.</p>
             </div>
             <!-- Animation Here -->
             <div>
@@ -156,7 +156,7 @@ const switchPage = (page: number, e: Event) => {
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 @import '../../assets/sass/layout.sass'
 @import '../../assets/sass/inputs.sass'
 @import "../../assets/sass/responsive.sass"

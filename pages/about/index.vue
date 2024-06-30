@@ -251,6 +251,9 @@ onMounted(() => {
 
 #about-page
   background-color: black
+  // h1
+  //   margin-top: initial
+  //   margin-bottom: initial
   .title-container
     position: relative
     .page-title

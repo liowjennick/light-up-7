@@ -10,7 +10,7 @@
         style="gap: 24px;  padding-block: 24px; border-bottom: 1px solid white;">
         <div>
           <h2 class="font-orange" style="margin-bottom: 16px">Join us in lighting up the world!</h2>
-          <p>
+          <p class="font-white">
             All great things start with a spark—and at Light Up 7, we believe in
             fanning the embers of creativity and success in each team member.<br /><br /> We
             are a proudly all-in and in-house team that provides support and
@@ -44,10 +44,10 @@
             <img :src="mottoIcon.url" :alt="mottoIcon.alt" style="height: 100%;" />
           </div>
           <div>
-            <p style="font-size: 20px; text-align: center;">{{ mottoIcon.title }}</p>
+            <p class="font-white" style="font-size: 20px; text-align: center;">{{ mottoIcon.title }}</p>
           </div>
           <div>
-            <p style="text-align: center;">
+            <p class="font-white" style="text-align: center;">
               {{ mottoIcon.text }}
             </p>
           </div>
@@ -57,14 +57,17 @@
     <!-- Company pics -->
     <div style="margin-block: 24px;">
       <h2 class="section-container font-orange" style="margin-bottom: 24px;">Our team at work (and play!)</h2>
-      <div class="section-container bg-orange-25 full-screen-center-between mobile-container"
+      <div class="bg-orange-25 full-screen-center-between mobile-container"
         style="gap: 16px; padding-block: 24px;">
-        <div v-for="(company, key) in companyPics" :key="key" class="overlay-parent">
-          <img :src="company.url" :alt="company.alt" style="width: 100%;" />
-          <!-- overlay text -->
-          <div class="overlay-child">
-            <p v-html="company.text">
-            </p>
+        <div class="section-container full-screen-center-between mobile-container"
+        style="gap: 16px; padding-block: 24px;">
+          <div v-for="(company, key) in companyPics" :key="key" class="overlay-parent">
+            <img :src="company.url" :alt="company.alt" style="width: 100%;" />
+            <!-- overlay text -->
+            <div class="overlay-child">
+              <p class="font-white" v-html="company.text">
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -75,7 +78,7 @@
     <!-- Vacancies -->
     <div class="section-container" style="margin-block: 24px">
       <h2 class="font-orange">ready to explore a new path?</h2>
-      <h4>check out your dream role here.</h4>
+      <h4 class="font-white">check out your dream role here.</h4>
       <!-- filter tabs -->
       <div class="full-screen-center-content tab-parent-container">
         <div class="full-screen-center-content tab-container btn-group" style="flex-wrap: wrap; row-gap: 8px;">
@@ -88,7 +91,7 @@
         <div v-for="(recent, key) in recentJobs" :key="key" class="full-screen-center-content"
           style="flex-direction: column; gap: 16px">
           <div>
-            <p style="font-size: 24px;">{{ recent.title }}</p>
+            <p class="font-white" style="font-size: 24px;">{{ recent.title }}</p>
           </div>
           <NuxtLink class="orange-outlined-button vacancy-btn" style="font-family: 'JustSans';" :to="recent.url">apply
             now!</NuxtLink>
@@ -174,7 +177,7 @@ const recentJobs = [
 ]
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 @import "../../assets/sass/responsive.sass"
 @import "../../assets/sass/fonts.sass"
 @import "../../assets/sass/animations.sass"

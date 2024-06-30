@@ -34,25 +34,25 @@
         <p class="just-sans mb-10 font-white"><b>Follow us on</b></p>
         <div class="social-media-list-container top">
           <div class="social-media-item">
-            <a href="#" target="_blank">
+            <a href="https://www.instagram.com/lightupseven/" target="_blank">
               <img src="../assets/images/social-media-logo/instagram-logo.png" />
             </a>
           </div>
 
           <div class="social-media-item">
-            <a href="#" target="_blank">
+            <a href="https://www.facebook.com/lightupseven/" target="_blank">
               <img src="../assets/images/social-media-logo/facebook-logo.png" />
             </a>
           </div>
 
           <div class="social-media-item">
-            <a href="#" target="_blank">
+            <a href="https://www.linkedin.com/company/lightup7" target="_blank">
               <img src="../assets/images/social-media-logo/linkedin-logo.png" />
             </a>
           </div>
 
           <div class="social-media-item">
-            <a href="#" target="_blank">
+            <a href="https://www.youtube.com/@LightUp7" target="_blank">
               <img src="../assets/images/social-media-logo/youtube-logo.png" />
             </a>
           </div>

@@ -131,7 +131,7 @@ import arrowUpRight from '@/assets/svg/arrow-up-right.svg'
 import { Growth, Digital, Brand, Event, Media, Video, Website } from '@/assets/svg'
 
 </script>
-<style lang="sass">
+<style lang="sass" scoped>
 @import "../../assets/sass/responsive.sass"
 @import "../../assets/sass/fonts.sass"
 @import "../../assets/sass/animations.sass"
