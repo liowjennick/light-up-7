@@ -14,6 +14,7 @@
         />
         <img
           class="glow-line"
+          :class="{ active: initialAnimationComplete }"
           src="../../assets/images/work/light-beam-line.png"
         />
       </div>
@@ -90,6 +91,8 @@ import ProjectData from "../../public/data/projects_data.js";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
+const initialAnimationComplete = ref(false)
+
 enum DisplayMode {
   Clients,
   Projects,
@@ -101,20 +104,20 @@ onMounted(() => {
   // INIT ANIMATION
   gsap.to(".bulb-glow", {
     duration: 1,
-    opacity: 0.8,
+    opacity: 0.6,
     delay: 1,
     onComplete: () => {
       document.querySelector(".bulb-glow")?.classList.add("image-glow");
     },
   });
-  gsap.to(".glow-line", {
-    duration: 1,
-    opacity: 0.8,
-    delay: 1.1,
-    onComplete: () => {
-      document.querySelector(".bulb-glow")?.classList.add("image-glow");
-    },
-  });
+  // gsap.to(".glow-line", {
+  //   duration: 1,
+  //   opacity: 0.8,
+  //   delay: 1.1,
+  //   onComplete: () => {
+  //     document.querySelector(".bulb-glow")?.classList.add("image-glow");
+  //   },
+  // });
   gsap.to(".light-background-triangle", {
     duration: 1,
     opacity: 0.15,
@@ -134,6 +137,9 @@ onMounted(() => {
     duration: 1,
     opacity: 1,
     delay: 1.2,
+    onComplete: () => {
+      initialAnimationComplete.value = true
+    }
   });
 
   // SLIDING BUTTON
@@ -260,6 +266,11 @@ onMounted(() => {
         width: 60%
         top: 70%
         opacity: 0
+        transform-origin: center top
+        transform: scale(0)
+        z-index: 10
+        &.active
+          animation: glow-line-expand 1s ease-out infinite alternate
     .page-title
       color: none
       text-align: center
@@ -273,6 +284,8 @@ onMounted(() => {
       opacity: 0
     #sliding-button
       opacity: 0
+      z-index: 20
+      position: relative
     .sliding-button-container
       padding: 10px
       border: 1px solid $orange
@@ -441,4 +454,11 @@ onMounted(() => {
         display: block
         img
           width: 100%
+
+@keyframes glow-line-expand
+  0%
+    transform: scale(1)
+  100%
+    transform: scale(1.4)
+    opacity: 1
 </style>

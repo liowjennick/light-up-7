@@ -10,7 +10,6 @@ projectsData.map((item) => generate_routes.push(`/work/${item.slug}`));
 export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
-
   nitro: {
     static: true,
     prerender: {

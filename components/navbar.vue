@@ -59,7 +59,7 @@ onMounted(() => {
   z-index: 1000
   transition: 0.2s all
   // background: red
-  padding: 10px
+  padding: 5px
   .opacity-background
     background-color: #474747
     opacity: 0
@@ -85,7 +85,7 @@ onMounted(() => {
         justify-content: center
         padding-top: 20px
       a
-        width: 150px
+        width: 100px
         transition: 0.2s all
         img
           transition: 0.2s all
@@ -109,13 +109,13 @@ onMounted(() => {
           p
            color: $orange
         +desktop
-          padding: 20px 20px
+          padding: 15px 15px
         +large-mobile
-          padding: 15px 10px
+          padding: 10px 10px
         +mobile
-          padding: 15px 10px
+          padding: 10px 10px
         p
-          font-size: 20px
+          font-size: 16px
           // transition: 0.2s font-size
           // text-decoration: none
           font-family: "JustSans"

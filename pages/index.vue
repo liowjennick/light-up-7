@@ -155,7 +155,7 @@
               </div>
             </div>
             <div class="text-container">
-              <p class="font-white font-18 just-sans">Make the best parts of your business <b>shine bright</b> with our strategy, branding and growth services.</p>
+              <p class="font-white font-14 font-weight-200 just-sans">Make the best parts of your business <b>shine bright</b> with our strategy, branding and growth services.</p>
             </div>
           </div>
         </div>
@@ -183,7 +183,7 @@
               />
             </div>
             <div class="text-container">
-              <p class="font-white font-18 just-sans">Seeking effective marketing solutions? Look no further! Our custom-made digital strategies <b>deliver results tailored to your audience.</b></p>
+              <p class="font-white font-14 font-weight-200 just-sans">Seeking effective marketing solutions? Look no further! Our custom-made digital strategies <b>deliver results tailored to your audience.</b></p>
             </div>
           </div>
         </div>
@@ -211,7 +211,7 @@
               />
             </div>
             <div class="text-container">
-              <p class="font-white font-18 just-sans">Make the best parts of your business <b>shine bright</b> with our strategy, branding and growth services.</p>
+              <p class="font-white font-14 font-weight-200 just-sans">Make the best parts of your business <b>shine bright</b> with our strategy, branding and growth services.</p>
             </div>
           </div>
         </div>
@@ -243,7 +243,7 @@
       id="our-services-section"
     >
       <div class="bullet-container">
-        <p class="font-orange font-20 just-sans mb-20">our services</p>
+        <p class="font-orange font-20 font-weight-200 just-sans mb-20">our services</p>
         <div class="services-list-container">
           <div
             class="services-item pb-8 pt-8"
@@ -253,8 +253,8 @@
             @mouseleave="onMouseLeaveServiceItem(i)"
             :class="{ active: ourServicesItemsHighlightedSection === i }"
           >
-            <p class="bullet font-white font-18 just-sans">0{{ i + 1 }}.</p>
-            <p class="text font-white font-18 just-sans">{{ item }}</p>
+            <p class="bullet font-white font-18 font-weight-200 just-sans">0{{ i + 1 }}.</p>
+            <p class="text font-white font-18 font-weight-200 just-sans">{{ item }}</p>
           </div>
         </div>
       </div>
@@ -301,8 +301,8 @@
         src="../assets/images/home/client-section-plug-to-right.png"
       />
       <div class="section-container mb-20">
-        <p class="font-orange font-20 just-sans mb-10">our distinguished clients:</p>
-        <p class="font-white font-30 just-sans mb-40">brand growth specialists delivering quality without compromise.</p>
+        <p class="font-orange font-20 font-weight-200 just-sans mb-10">our distinguished clients:</p>
+        <p class="font-white font-30 font-weight-200 just-sans mb-40">brand growth specialists delivering quality without compromise.</p>
       </div>
 
       <div class="clients-list-container mb-40">
@@ -353,8 +353,8 @@
       />
 
       <div class="section-container mb-20">
-        <p class="font-orange font-20 just-sans mb-10 font-weight-100">our prestigious achievements:</p>
-        <p class="font-white font-30 just-sans mb-40 font-weight-100">awards and recognition by</p>
+        <p class="font-orange font-20 just-sans mb-10 font-weight-200">our prestigious achievements:</p>
+        <p class="font-white font-30 just-sans mb-40 font-weight-200">awards and recognition by</p>
       </div>
 
       <div class="award-list-container mb-40">
@@ -438,12 +438,12 @@
             src="../assets/images/home/light-up-your-idea-large-bulb-glow.png"
           />
           <div class="large-bulb-pull-image">
-            <img src="../assets/images/home/light-up-your-idea-large-bulb-pull.png" />
+            <img :class="{ idle: bulbPullIdle }" src="../assets/images/home/light-up-your-idea-large-bulb-pull.png" />
           </div>
-          <div class="pull-me-text-container">
+          <!-- <div class="pull-me-text-container">
             <img src="../assets/images/home/arrow-down.png" />
             <p class="font-white just-sans">pull me</p>
-          </div>
+          </div> -->
           <div class="bulb-text-container">
             <p
               class="font-white just-sans font-32"
@@ -521,10 +521,11 @@ const onMouseLeaveServiceItem = (index: Number) => {
   }
 };
 
+const bulbPullIdle = ref(true)
 const lightUpYourIdeasBulbActive = ref(false);
 const bulbInitialY = ref(0);
 
-const lightBulbTextList = ref(["ideas", "business", "campaigns", "events"])
+const lightBulbTextList = ref(["brand", "message", "growth"])
 const currentLightBulbTextIndex = ref(0);
 
 useHead({
@@ -761,6 +762,7 @@ onMounted(() => {
     bounds: { minY: 0, maxY: bulbMaxDragY },
     overshootTolerance: 1,
     onDragStart: function (e) {
+      bulbPullIdle.value = false
       bulbInitialY.value = this.target.getBoundingClientRect().top;
     },
     onDragEnd: function (e) {
@@ -772,6 +774,12 @@ onMounted(() => {
       gsap.to(this.target, {
         y: 0,
         duration: 0.1,
+        ease: "bounce",
+        onComplete: () => {
+          setTimeout(() => {
+            bulbPullIdle.value = true
+          }, 100)
+        }
       });
     },
   });
@@ -1203,6 +1211,8 @@ onMounted(() => {
         img
           width: 20px
           transform: translateY(-50%)
+          &.idle
+            animation: bulb-switch-shake 2s ease-out infinite forwards
       .pull-me-text-container
         display: flex
         position: absolute
@@ -1220,9 +1230,9 @@ onMounted(() => {
       .large-bulb-glow
         opacity: 0
         position: absolute
-        width: 142%
-        top: -16%
-        left: -21%
+        width: 143.4%
+        top: -17.5%
+        left: -21.5%
         transition: 0.1s all
         &.active
           opacity: 1
@@ -1311,4 +1321,18 @@ onMounted(() => {
     svg
       path
         d: path("M100,25 q-44,43 -75,75 q40,42 75,75 q33,-31 75,-75 q-38,-37 -75,-75")
+
+@keyframes bulb-switch-shake
+  0%
+    transform: translateY(-50%)
+  20%
+    transform: translateY(-55%)
+  40%
+    transform: translateY(-50%)
+  60%
+    transform: translateY(-55%)
+  80%
+    transform: translateY(-50%)
+  100%
+    transform: translateY(-50%)
 </style>
