@@ -224,7 +224,7 @@
     ></div> -->
 
 
-    <div class="full-screen-section-container full-screen-center-content">
+    <div id="video-section" class="full-screen-section-container full-screen-center-content">
       <iframe
         width="100%"
         height="100%"
@@ -675,6 +675,23 @@ onMounted(() => {
       "third"
     )
     .pause();
+
+  // VIDEO PIN
+  ScrollTrigger.create({
+    trigger: "#video-section",
+    start: "top top",
+    end: "bottom+=600 bottom",
+    pin: true,
+  });
+
+  // SERVICES PIN
+  ScrollTrigger.create({
+    trigger: "#our-services-section",
+    start: "top top",
+    end: "bottom+=600 bottom",
+    pin: true,
+  });
+
 
   // INTRO VIDEO END
   document.getElementById("intro-video")?.addEventListener(
