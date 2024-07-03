@@ -704,15 +704,15 @@ onMounted(() => {
           document.getElementById("intro-video").style.display = "none";
         },
       });
-      gsap.to("#home-banner-section .bulb", {
-        opacity: 0.8,
-        duration: 1,
-        ease: "power2",
-        delay: 1,
-        onComplete: () => {
-          document.querySelector("#home-banner-section .bulb")?.classList.add("image-glow");
-        },
-      });
+      // gsap.to("#home-banner-section .bulb", {
+      //   opacity: 0.8,
+      //   duration: 1,
+      //   ease: "power2",
+      //   delay: 1,
+      //   onComplete: () => {
+      //     document.querySelector("#home-banner-section .bulb")?.classList.add("image-glow");
+      //   },
+      // });
       // gsap.to("#home-banner-section p", {
       //   opacity: 1,
       //   duration: 1,
@@ -761,12 +761,12 @@ onMounted(() => {
   });
 
   // PULL ARROW ANIMATE
-  gsap.to(".pull-me-text-container img", {
-    y: 10,
-    duration: 1,
-    yoyo: true,
-    repeat: -1,
-  });
+  // gsap.to(".pull-me-text-container img", {
+  //   y: 10,
+  //   duration: 1,
+  //   yoyo: true,
+  //   repeat: -1,
+  // });
 
   // const bulbInitialY = document.querySelector(".large-bulb-pull-image")?.getBoundingClientRect().y
   const bulbMaxDragY = 60;
@@ -1229,7 +1229,7 @@ onMounted(() => {
           width: 20px
           transform: translateY(-50%)
           &.idle
-            animation: bulb-switch-shake 2s ease-out infinite forwards
+            animation: bulb-switch-shake 2s ease-out infinite
       .pull-me-text-container
         display: flex
         position: absolute
@@ -1341,15 +1341,15 @@ onMounted(() => {
 
 @keyframes bulb-switch-shake
   0%
-    transform: translateY(-50%)
+    margin-top: 10px
   20%
-    transform: translateY(-55%)
+    margin-top: 0px
   40%
-    transform: translateY(-50%)
+    margin-top: 10px
   60%
-    transform: translateY(-55%)
+    margin-top: 0px
   80%
-    transform: translateY(-50%)
+    margin-top: 10px
   100%
-    transform: translateY(-50%)
+    margin-top: 0px
 </style>
