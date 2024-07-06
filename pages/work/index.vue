@@ -53,10 +53,15 @@
         <div class="work-section-container">
           <div class="section-container">
             <div class="client-logo-container">
-              <img src="../../assets/images/work/clients-logo/petronas-logo.png" />
+              <img class="client-bulb-image" src="../../assets/images/work/clients-logo/petronas-logo.png" />
+              <img class="client-generic-bulb" src="../../assets/images/work/clients-logo/generic-bulb.png" />
               <h1 class="client-large-name">clients</h1>
               <h1 class="client-back-name">clients</h1>
             </div>
+
+            <!-- <div class="bulb-cutout-section">
+              <img src="../../assets/images/work/clients-logo/petronas-logo.png" />
+            </div> -->
 
             <div class="client-list-image-container">
               <img src="assets/images/work/all-clients.png" />
@@ -88,6 +93,7 @@
 import gsap from "gsap";
 import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
 import ProjectData from "../../public/data/projects_data.js";
+import { setCookie, getCookie } from "../../utils/cookies"
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
@@ -146,6 +152,20 @@ onMounted(() => {
   const sliderButtonWidth = 60;
   const sliderMaxDragDistance = document.querySelector(".sliding-button")?.clientWidth - sliderButtonWidth;
 
+  // INITIAL SECTION OF SLIDING BUTTON
+  const sectionCookie = getCookie("work-section")
+  const element = document.querySelector(".slider-circle");
+
+  if (sectionCookie === JSON.stringify(DisplayMode.Projects)) {
+    displayMode.value = DisplayMode.Projects
+
+    gsap.to(element, {
+      x: sliderMaxDragDistance,
+      duration: 0.2,
+      rotation: 180,
+    });
+  }
+
   Draggable.create(".slider-circle", {
     type: "x",
     inertia: true,
@@ -188,6 +208,7 @@ onMounted(() => {
         });
 
         displayMode.value = DisplayMode.Projects;
+        setCookie("work-section", displayMode.value, 2)
       } else {
         gsap.to(this.target, {
           x: 0,
@@ -201,6 +222,7 @@ onMounted(() => {
         });
 
         displayMode.value = DisplayMode.Clients;
+        setCookie("work-section", displayMode.value, 2)
       }
     },
   });
@@ -323,8 +345,15 @@ onMounted(() => {
           display: flex
           align-items: center
           justify-content: center
+          transition: 0.2s all
           img
             width: 20px
+            transition: 0.2s all
+          &:hover
+            box-shadow: 1px 0 14px black
+            background-color: rgba(255, 222, 135, 0.8)
+            img
+              transform: scale(1.2)
           p
             color: white
             font-family: "JustSans"
@@ -394,20 +423,43 @@ onMounted(() => {
       padding-bottom: 40px
       position: relative
       flex: 0 0 100%
+      .bulb-cutout-section
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        background-color: $orange
+        img
+          width: 400px
       .client-logo-container
         position: relative
         margin-bottom: 40px
-        img
+        // background: $orange
+        // opacity: 0.15
+        .client-generic-bulb
           display: block
-          width: 400px
           margin: 0 auto
           position: relative
           z-index: 1
+          width: 400px
+          // mix-blend-mode: multiply
+
           +large-mobile
             max-width: 300px
           // mix-blend-mode: difference
           +mobile
             width: 200px
+        .client-bulb-image
+          position: absolute
+          top: 0
+          left: 50%
+          transform: translateX(-50%)
+          width: 400px
+          z-index: 2
+          opacity: 0
+          transition: 0.2s all
+          &:hover
+            opacity: 1
         .client-large-name
           top: 20%
           left: 0
@@ -421,7 +473,7 @@ onMounted(() => {
           font-family: "JustSans"
           text-shadow: 0 0 10px white
           font-size: 140px
-          z-index: 1
+          z-index: 2
           mix-blend-mode: overlay
           filter: drop-shadow(0px 0px 4px black)
           +large-mobile

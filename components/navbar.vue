@@ -57,7 +57,7 @@ onMounted(() => {
   position: fixed
   width: 100vw
   z-index: 1000
-  transition: 0.2s all
+  transition: 0.5s all
   // background: red
   padding: 5px
   .opacity-background
@@ -124,8 +124,11 @@ onMounted(() => {
           +mobile
             font-size: 14px
   &.minimized
+    overflow: hidden
+    opacity: 0
+    pointer-events: none
     .opacity-background
-      opacity: 0.5
+      opacity: 0
     .navbar-contents
       .logo-container
         img

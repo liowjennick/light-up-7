@@ -1,16 +1,18 @@
 <template>
   <div id="homepage">
-    <video
-      id="intro-video"
-      autoplay
-      muted
-      playsinline
-    >
-      <source
-        src="../assets/images/home/light-up-7-intro-video.mp4"
-        type="video/mp4"
-      />
-    </video>
+    <template v-if="!hideIntroVideo">
+      <video
+        id="intro-video"
+        autoplay
+        muted
+        playsinline
+      >
+        <source
+          src="../assets/images/home/light-up-7-intro-video.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </template>
 
     <!-- BANNER SECTION -->
     <div
@@ -21,8 +23,8 @@
         <!-- <img src="../assets/images/home/header-background.png" /> -->
         <div class="text-background-row first">
           <p class="first">A</p>
-          <p class="second">creative</p>
-          <p class="third">solutions</p>
+          <p class="second">brand</p>
+          <p class="third">activation</p>
         </div>
 
         <div class="text-background-row second">
@@ -56,13 +58,6 @@
         <img src="../assets/images/home/logo-large-header.png" />
       </div>
 
-      <!-- <div class="flex-row">
-        <img
-          src="../assets/images/home/banner-bulb.png"
-          class="bulb"
-        />
-        <p class="font-white font-16 just-sans">A creative solutions agency lighting up the Asia-Pacific region, one bright idea at a time.</p>
-      </div> -->
     </div>
     <!-- YELLOW OUTLINE TEXT SECTION -->
     <div id="outline-container" class="section-container">
@@ -74,38 +69,6 @@
         class="full-screen-section-container section-container yellow-outline-banner-trigger"
         id="yellow-outline-first-banner-trigger"
       >
-        <!-- <div
-          class="svg-floating-shapes"
-          :class="{ star: yellowOutlineIndex === 2, circle: yellowOutlineIndex === 3, diamond: yellowOutlineIndex === 1 }"
-        >
-          <svg
-            width="60"
-            height="60"
-            viewbox="0 0 200 200"
-            stroke-width="4"
-          >
-            <path
-              fill="none"
-              stroke="white"
-            />
-          </svg>
-        </div>
-        <div
-          class="svg-floating-shapes-small"
-          :class="{ star: yellowOutlineIndex === 2, circle: yellowOutlineIndex === 3, diamond: yellowOutlineIndex === 1 }"
-        >
-          <svg
-            width="40"
-            height="40"
-            viewbox="0 0 200 200"
-            stroke-width="4"
-          >
-            <path
-              fill="none"
-              stroke="white"
-            />
-          </svg>
-        </div> -->
         <div class="full-screen-center-content">
           <div class="flex-row">
             <div class="yellow-outline-text-container">
@@ -144,7 +107,7 @@
                     width="40"
                     height="40"
                     viewbox="0 0 200 200"
-                    stroke-width="4"
+                    stroke-width="6"
                   >
                     <path
                       fill="none"
@@ -471,6 +434,7 @@
 <script setup lang="ts">
 import gsap from "gsap";
 import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
+import { setCookie, getCookie } from "../utils/cookies"
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
@@ -512,7 +476,6 @@ const ourServicesItemsHighlightedSection = ref(-1);
 
 const onMouseOverServiceItem = (index: Number) => {
   ourServicesItemsHighlightedSection.value = index;
-  console.log(ourServicesItemsHighlightedSection.value);
 };
 
 const onMouseLeaveServiceItem = (index: Number) => {
@@ -520,6 +483,8 @@ const onMouseLeaveServiceItem = (index: Number) => {
     ourServicesItemsHighlightedSection.value = -1;
   }
 };
+
+const hideIntroVideo = ref(false)
 
 const bulbPullIdle = ref(true)
 const lightUpYourIdeasBulbActive = ref(false);
@@ -533,8 +498,31 @@ useHead({
   meta: [{ name: "description", content: "Amazing" }],
 });
 
+onBeforeMount(() => {
+  if (localStorage.getItem("home-intro-video-played") === "true") {
+    hideIntroVideo.value = true
+  }
+})
+
 onMounted(() => {
-  console.log("setup mounted");
+  if (localStorage.getItem("home-intro-video-played") !== "true") {
+    // INTRO VIDEO END
+    document.getElementById("intro-video")?.addEventListener(
+      "ended",
+      () => {
+        console.log("Video ended");
+        gsap.to("#intro-video", {
+          opacity: 0,
+          onComplete: () => {
+            document.getElementById("intro-video").style.display = "none";
+            localStorage.setItem("home-intro-video-played", "true");
+          },
+        });
+      },
+      false
+    );
+  }
+
 
   const lightBulbTextTimeline = gsap.timeline({repeat: -1, repeatDelay: 2})
   lightBulbTextTimeline
@@ -562,8 +550,6 @@ onMounted(() => {
     end: "bottom+=3000 bottom",
     pin: true,
     onUpdate: (self) => {
-      console.log(self.progress);
-
       if (self.progress > 0.66) {
         yellowOutlineIndex.value = 3;
       } else if (self.progress > 0.33) {
@@ -692,37 +678,6 @@ onMounted(() => {
     pin: true,
   });
 
-
-  // INTRO VIDEO END
-  document.getElementById("intro-video")?.addEventListener(
-    "ended",
-    () => {
-      console.log("Video ended");
-      gsap.to("#intro-video", {
-        opacity: 0,
-        onComplete: () => {
-          document.getElementById("intro-video").style.display = "none";
-        },
-      });
-      // gsap.to("#home-banner-section .bulb", {
-      //   opacity: 0.8,
-      //   duration: 1,
-      //   ease: "power2",
-      //   delay: 1,
-      //   onComplete: () => {
-      //     document.querySelector("#home-banner-section .bulb")?.classList.add("image-glow");
-      //   },
-      // });
-      // gsap.to("#home-banner-section p", {
-      //   opacity: 1,
-      //   duration: 1,
-      //   ease: "power2",
-      //   delay: 1,
-      // });
-    },
-    false
-  );
-
   gsap.from(".plug-to-right.one", {
     x: "-50vw",
     duration: 2,
@@ -820,6 +775,7 @@ onMounted(() => {
   background: black
   position: fixed
   z-index: 100
+  opacity: 1
 
 #home-banner-section
   background-color: black
@@ -1229,7 +1185,7 @@ onMounted(() => {
           width: 20px
           transform: translateY(-50%)
           &.idle
-            animation: bulb-switch-shake 2s ease-out infinite
+            animation: bulb-switch-shake 2s ease-in-out infinite
       .pull-me-text-container
         display: flex
         position: absolute
@@ -1298,7 +1254,7 @@ onMounted(() => {
     opacity: 1
     svg
       path
-        d: path("M101,26 q-69,6 -75,75 q6,69 75,76 q70,-5 75,-75 q-5,-69 -74,-75")
+        d: path("M100,25 q-70,6 -75,75 q6,70 75,75 q70,-5 75,-75 q-5,-70 -75,-75")
   &.diamond
     top: 8%
     left: 32%
@@ -1330,7 +1286,7 @@ onMounted(() => {
     opacity: 1
     svg
       path
-        d: path("M101,26 q-69,6 -75,75 q6,69 75,76 q70,-5 75,-75 q-5,-69 -74,-75")
+        d: path("M100,25 q-70,6 -75,75 q5,70 75,75 q70,-5 75,-75 q-5,-70 -75,-75")
   &.diamond
     top: 0%
     left: 25%
@@ -1341,15 +1297,15 @@ onMounted(() => {
 
 @keyframes bulb-switch-shake
   0%
-    margin-top: 10px
+    margin-top: 0px
   20%
-    margin-top: 0px
+    margin-top: 10px
   40%
-    margin-top: 10px
-  60%
     margin-top: 0px
-  80%
+  60%
     margin-top: 10px
+  80%
+    margin-top: 0px
   100%
     margin-top: 0px
 </style>
