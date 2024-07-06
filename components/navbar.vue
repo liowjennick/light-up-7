@@ -36,15 +36,25 @@
 
 <script setup lang="ts">
 const navbarMinimized = ref(false);
+const previousScroll = ref(0);
 
 onMounted(() => {
   window.addEventListener("scroll", (event) => {
     if (scrollY <= 0) {
       navbarMinimized.value = false;
     } else {
-      navbarMinimized.value = true;
+      const st = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (st > previousScroll.value) {
+        navbarMinimized.value = true;
+      } else {
+        navbarMinimized.value = false; 
+      }
+
+      previousScroll.value = st
     }
-  });
+
+  }, false);
 });
 </script>
 

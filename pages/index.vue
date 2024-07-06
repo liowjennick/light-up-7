@@ -1,18 +1,20 @@
 <template>
   <div id="homepage">
-    <template v-if="!hideIntroVideo">
-      <video
-        id="intro-video"
-        autoplay
-        muted
-        playsinline
-      >
-        <source
-          src="../assets/images/home/light-up-7-intro-video.mp4"
-          type="video/mp4"
-        />
-      </video>
-    </template>
+    <ClientOnly>
+      <template v-if="!hideIntroVideo">
+        <video
+          id="intro-video"
+          autoplay
+          muted
+          playsinline
+        >
+          <source
+            src="../assets/images/home/light-up-7-intro-video.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </template>
+    </ClientOnly>
 
     <!-- BANNER SECTION -->
     <div
@@ -518,8 +520,7 @@ onMounted(() => {
             localStorage.setItem("home-intro-video-played", "true");
           },
         });
-      },
-      false
+      }
     );
   }
 
