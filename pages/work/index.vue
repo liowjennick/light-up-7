@@ -53,8 +53,11 @@
         <div class="work-section-container">
           <div class="section-container">
             <div class="client-logo-container">
-              <img class="client-bulb-image" src="../../assets/images/work/clients-logo/petronas-logo.png" />
+              <!-- <img class="client-bulb-image" src="../../assets/images/work/clients-logo/petronas-logo.png" /> -->
+              <!-- class="client-generic-bulb" -->
               <img class="client-generic-bulb" src="../../assets/images/work/clients-logo/generic-bulb.png" />
+              <img :class="{ active: activeClientBulbImage === client.slug }"  v-for="(client, i) in clientsCarouselLogo" :key="i" class="client-bulb-image" :src="`/images/work/clients-bulb-logo/petronas-logo.png`" />
+
               <h1 class="client-large-name">clients</h1>
               <h1 class="client-back-name">clients</h1>
             </div>
@@ -64,7 +67,9 @@
             </div> -->
 
             <div class="client-list-image-container">
-              <img src="assets/images/work/all-clients.png" />
+              <div @mouseover="activeClientBulbImage = client.slug" class="client-image-container" :key="i" v-for="(client, i) in clientsCarouselLogo">
+                <img :src="`/images/work/clients-carousel-logo/${client.image_src}`" />
+              </div>
             </div>
           </div>
         </div>
@@ -104,7 +109,174 @@ enum DisplayMode {
   Projects,
 }
 
-const displayMode = ref(DisplayMode.Clients); // clients, projects
+const displayMode = ref(DisplayMode.Clients);
+
+const activeClientBulbImage = ref("")
+
+const clientsCarouselLogo = ref([
+  {
+    image_src: "7-eleven.png",
+    slug: "7-eleven"
+  },
+  {
+    image_src: "ahhyum.png",
+    slug: "ahhyum"
+  },
+  {
+    image_src: "ambank.png",
+    slug: "ambank"
+  },
+  {
+    image_src: "astro.png",
+    slug: "astro"
+  },
+  {
+    image_src: "asus.png",
+    slug: "asus"
+  },
+  {
+    image_src: "beats-by-dr-dre.png",
+    slug: "beats-by-dr-dre"
+  },
+  {
+    image_src: "bnm.png",
+    slug: "bnm"
+  },
+  {
+    image_src: "bursa-malaysia.png",
+    slug: "bursa-malaysia"
+  },
+  {
+    image_src: "cyberview.png",
+    slug: "cyberview"
+  },
+  {
+    image_src: "dubai-uae.png",
+    slug: "dubai-uae"
+  },
+  {
+    image_src: "epsom.png",
+    slug: "epsom"
+  },
+  {
+    image_src: "fen.png",
+    slug: "fen"
+  },
+  {
+    image_src: "fimm.png",
+    slug: "fimm"
+  },
+  {
+    image_src: "fwd.png",
+    slug: "fwd"
+  },
+  {
+    image_src: "hitachi.png",
+    slug: "hitachi"
+  },
+  {
+    image_src: "hotlink.png",
+    slug: "hotlink"
+  },
+  {
+    image_src: "khazanah-nasional.png",
+    slug: "khazanah-nasional"
+  },
+  {
+    image_src: "kpj.png",
+    slug: "kpj"
+  },
+  {
+    image_src: "ktm.png",
+    slug: "ktm"
+  },
+  {
+    image_src: "kwap.png",
+    slug: "kwap"
+  },
+  {
+    image_src: "kwsp.png",
+    slug: "kwsp"
+  },
+  {
+    image_src: "leonardo.png",
+    slug: "leonardo"
+  },
+  {
+    image_src: "malaysia-airports.png",
+    slug: "malaysia-airports"
+  },
+  {
+    image_src: "mprc.png",
+    slug: "mprc"
+  },
+  {
+    image_src: "paynet.png",
+    slug: "paynet"
+  },
+  {
+    image_src: "pdi.png",
+    slug: "pdi"
+  },
+  {
+    image_src: "petronas.png",
+    slug: "petronas"
+  },
+  {
+    image_src: "pidm.png",
+    slug: "pidm"
+  },
+  {
+    image_src: "pnb.png",
+    slug: "pnb"
+  },
+  {
+    image_src: "rjm.png",
+    slug: "rjm"
+  },
+  {
+    image_src: "rosken.png",
+    slug: "rosken"
+  },
+  {
+    image_src: "selangor.png",
+    slug: "selangor"
+  },
+  {
+    image_src: "sime-darby.png",
+    slug: "sime-darby"
+  },
+  {
+    image_src: "suria-klcc.png",
+    slug: "suria-klcc"
+  },
+  {
+    image_src: "suruhanjaya.png",
+    slug: "suruhanjaya"
+  },
+  {
+    image_src: "tabung-haji.png",
+    slug: "tabung-haji"
+  },
+  {
+    image_src: "tokio-marine.png",
+    slug: "tokio-marine"
+  },
+  {
+    image_src: "ubermen.png",
+    slug: "ubermen"
+  },
+  {
+    image_src: "unicef.png",
+    slug: "unicef"
+  },
+  {
+    image_src: "unilever.png",
+    slug: "unilever"
+  },
+])
+
+
 
 onMounted(() => {
   // INIT ANIMATION
@@ -458,7 +630,12 @@ onMounted(() => {
           z-index: 2
           opacity: 0
           transition: 0.2s all
-          &:hover
+          +large-mobile
+            max-width: 300px
+          // mix-blend-mode: difference
+          +mobile
+            width: 200px
+          &.active
             opacity: 1
         .client-large-name
           top: 20%
@@ -497,8 +674,19 @@ onMounted(() => {
           +mobile
             font-size: 60px
   .client-list-image-container
-    img
-      width: 100%
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+    .client-image-container
+      flex: 0 0 10%
+      padding: 10px
+      +desktop
+        flex: 0 0 14%
+      +large-mobile
+        flex: 0 0 20%
+      img
+        width: 100%
   .project-list-banner-container
     .project-banner-item
       margin-bottom: 20px

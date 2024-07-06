@@ -2,11 +2,11 @@
   <div id="footer-container">
     <div class="section-container">
       <div class="logo-image-container">
-        <img src="../assets/images/light-up-7-logo-vertical.png" />
+        <img src="../assets/images/light-up-7-logo-with-bulb.png" />
         <p class="font-light-gray just-sans text-center font-weight-100">201401020933 (1097019-X)</p>
       </div>
 
-      <div class="contact-column">
+      <!-- <div class="contact-column">
         <div class="mb-20 top">
           <p class="font-white just-sans"><b>New Business &amp; Inquiries</b></p>
           <p class="font-light-gray just-sans font-weight-100">info@lightup7.com</p>
@@ -28,39 +28,42 @@
         <p class="font-light-gray just-sans font-weight-100">Bukit Damansara,</p>
         <p class="font-light-gray just-sans font-weight-100">50490 Kuala Lumpur,</p>
         <p class="font-light-gray just-sans font-weight-100">Wilayah Persekutuan Kuala Lumpur</p>
-      </div>
+      </div> -->
 
       <div class="social-media-column">
-        <p class="just-sans mb-10 font-white"><b>Follow us on</b></p>
         <div class="social-media-list-container top">
           <div class="social-media-item">
             <a href="https://www.instagram.com/lightupseven/" target="_blank">
               <img src="../assets/images/social-media-logo/instagram-logo.png" />
             </a>
+            <p class="font-light-gray just-sans font-weight-100">instagram</p>
           </div>
 
           <div class="social-media-item">
             <a href="https://www.facebook.com/lightupseven/" target="_blank">
               <img src="../assets/images/social-media-logo/facebook-logo.png" />
             </a>
+            <p class="font-light-gray just-sans font-weight-100">facebook</p>
           </div>
 
           <div class="social-media-item">
             <a href="https://www.linkedin.com/company/lightup7" target="_blank">
               <img src="../assets/images/social-media-logo/linkedin-logo.png" />
             </a>
+            <p class="font-light-gray just-sans font-weight-100">linkedin</p>
           </div>
 
           <div class="social-media-item">
             <a href="https://www.youtube.com/@LightUp7" target="_blank">
               <img src="../assets/images/social-media-logo/youtube-logo.png" />
             </a>
+            <p class="font-light-gray just-sans font-weight-100">youtube</p>
           </div>
         </div>
+      </div>
 
-        <div class="copyright-container bottom">
-          <p class="font-light-gray just-sans font-weight-100">© 2024 Light Up 7 | All rights reserved</p>
-        </div>
+      <div class="copyright-column">
+        <p class="font-light-gray just-sans font-weight-100">© 2024 Light Up 7 | All rights reserved</p>
       </div>
     </div>
   </div>
@@ -85,17 +88,22 @@
       +desktop
         text-align: center
     .logo-image-container
-      flex: 3
       display: flex
       align-items: center
       justify-content: flex-end
-      flex-direction: column
+      flex: 1
       +desktop
         margin-bottom: 20px
-      img
-        width: 90px
         display: block
-        margin: 0 auto 10px auto
+      p
+        font-size: 12px
+        margin-top: 12px
+      img
+        width: 150px
+        display: block
+        margin: 0 10px 0px auto
+        +desktop
+          margin: 0 auto
     .contact-column
       flex: 3
       display: flex
@@ -109,22 +117,32 @@
       +desktop
         margin-bottom: 20px
     .social-media-column
-      flex: 4
+      flex: 2
       display: flex
-      flex-direction: column
+      justify-content: center
+      align-items: center
       .top
         flex: 1
       .social-media-list-container
         display: flex
+        justify-content: center
+        flex: 0 0 50%
+        flex-wrap: wrap
+        flex: 1
         +desktop
           justify-content: center
           margin-bottom: 20px
+          justify-content: flex-start
         .social-media-item
           // flex: 1
           margin-right: 10px
+          display: flex
+          align-items: center
           +desktop
             margin-right: 5px
             margin-left: 5px
+            margin-bottom: 10px
+            flex: 1
           a
             height: 30px
             width: 30px
@@ -134,10 +152,20 @@
             align-items: center
             justify-content: center
             padding: 5px
+            margin-right: 10px
             img
               height: 20px
-
-            
+    .copyright-column
+      flex: 1
+      align-items: center
+      display: flex
+      justify-content: flex-end
+      +desktop
+        display: block
+      p
+        text-align: right
+        +desktop
+          text-align: center
     p
       font-size: 16px
       line-height: 25px
