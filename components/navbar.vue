@@ -25,7 +25,7 @@
           <a class="nav-item" href="/careers">
             <p>careers</p>
           </a>
-          <a class="nav-item" href="/news/news_1">
+          <a class="nav-item" href="/contact">
             <p>contact</p>
           </a>
         </div>
