@@ -507,22 +507,18 @@ onBeforeMount(() => {
 })
 
 onMounted(() => {
-  if (localStorage.getItem("home-intro-video-played") !== "true") {
-    // INTRO VIDEO END
-    document.getElementById("intro-video")?.addEventListener(
-      "ended",
-      () => {
-        console.log("Video ended");
-        gsap.to("#intro-video", {
-          opacity: 0,
-          onComplete: () => {
-            document.getElementById("intro-video").style.display = "none";
-            localStorage.setItem("home-intro-video-played", "true");
-          },
-        });
-      }
-    );
-  }
+  // INTRO VIDEO END
+  setTimeout(() => {
+    if (document.getElementById("intro-video")) {
+      gsap.to("#intro-video", {
+        opacity: 0,
+        onComplete: () => {
+          document.getElementById("intro-video").style.display = "none";
+          localStorage.setItem("home-intro-video-played", "true");
+        },
+      });
+    }
+  }, 8000)
 
 
   const lightBulbTextTimeline = gsap.timeline({repeat: -1, repeatDelay: 2})
