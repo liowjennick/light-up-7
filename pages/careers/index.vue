@@ -15,7 +15,7 @@
             fanning the embers of creativity and success in each team member.<br /><br /> We
             are a proudly all-in and in-house team that provides support and
             avenues for you to bring your aspirations and visions to life.<br /><br /> When
-            you’re ready to light up your career, Light Up 7 is ready for you.
+            you're ready to light up your career, Light Up 7 is ready for you.
           </p>
         </div>
         <div style="width: 100%;">
@@ -56,7 +56,9 @@
     </div>
     <!-- Company pics -->
     <div style="margin-block: 24px;">
-      <h2 class="section-container font-orange" style="margin-bottom: 24px;">Our team at work (and play!)</h2>
+      <div class="section-container">
+        <h2 class="font-orange" style="margin-bottom: 24px;">Our team at work (and play!)</h2>
+      </div>
       <div class="bg-orange-25 full-screen-center-between mobile-container"
         style="gap: 16px; padding-block: 24px;">
         <div class="section-container full-screen-center-between mobile-container"
