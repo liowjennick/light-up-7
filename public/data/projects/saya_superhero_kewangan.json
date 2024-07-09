@@ -76,28 +76,28 @@
         "deliverables": ["Fabrication", "Design + Printing", "Interactive Content", "Copywriting", "Gamification"],
         "featured_media_src": [
             {
-                "src": "featured-image-4.png",
+                "src": ["featured-image-4.png"],
                 "is_video": false,
                 "is_youtube_video": false,
                 "caption": "",
                 "width_percent": 60.6
             },
             {
-                "src": "featured-image-5.png",
+                "src": ["featured-image-5.png"],
                 "is_video": false,
                 "is_youtube_video": false,
                 "caption": "",
                 "width_percent": 39.4
             },
             {
-                "src": "featured-image-6.png",
+                "src": ["featured-image-6.png"],
                 "is_video": false,
                 "is_youtube_video": false,
                 "caption": "",
                 "width_percent": 26.5
             },
             {
-                "src": "featured-image-7.png",
+                "src": ["featured-image-7.png"],
                 "is_video": false,
                 "is_youtube_video": false,
                 "caption": "",

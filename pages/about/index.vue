@@ -127,9 +127,9 @@
     >
       <div class="section-container">
         <div class="address-container">
-          <p class="font-white font-20 just-sans">Light Up 7 Bags 4 Awards at</p>
-          <p class="font-white font-20 just-sans">Prestigious Agency of the Year</p>
-          <p class="font-white font-20 just-sans">and MARKIES Awards 2022</p>
+          <p class="font-white font-20 just-sans font-weight-200">Light Up 7 Bags 4 Awards at</p>
+          <p class="font-white font-20 just-sans font-weight-200">Prestigious Agency of the Year</p>
+          <p class="font-white font-20 just-sans font-weight-200">and MARKIES Awards 2022</p>
         </div>
       </div>
     </div>
@@ -189,7 +189,7 @@ onMounted(() => {
         className: "enabled",
         targets: ["#svg2 .svg-elem-4"]
       },
-      start: "top-=100 center",
+      start: "top+=200 center",
       end: "bottom+=2000 center",
       toggleActions: "play play play play"
     }
@@ -202,7 +202,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: "#line-2",
       scrub: 2,
-      start: "top center",
+      start: "top+=200 center",
       end: "bottom center",
       toggleActions: "play reverse play reverse"
     }
@@ -230,7 +230,7 @@ onMounted(() => {
         className: "enabled",
         targets: ["#svg3 .svg-elem-4"]
       },
-      start: "top-=100 center",
+      start: "top center",
       end: "bottom+=2000 center",
       toggleActions: "play play play play"
     }
@@ -243,7 +243,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: "#line-3",
       scrub: 1,
-      start: "top center",
+      start: "top+=200 center",
       end: "bottom center",
       toggleActions: "play reverse play reverse"
     }
@@ -271,7 +271,7 @@ onMounted(() => {
         className: "enabled",
         targets: ["#svg4 .svg-elem-4"]
       },
-      start: "top-=100 center",
+      start: "top+=200 center",
       end: "bottom+=2000 center",
       toggleActions: "play play play play"
     }
@@ -284,7 +284,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: "#line-4",
       scrub: 2,
-      start: "top center",
+      start: "top+=200 center",
       end: "bottom center",
       toggleActions: "play reverse play reverse"
     }
@@ -298,7 +298,7 @@ onMounted(() => {
         className: "enabled",
         targets: ["#svg4 .svg-elem-1", "#svg4 .svg-elem-2", "#svg4 .svg-elem-3", ".text-container.fourth"]
       },
-      start: "top center",
+      start: "top+=200 center",
       end: "top+=2000 center",
       toggleActions: "play play play play"
     }

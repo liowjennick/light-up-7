@@ -66,6 +66,9 @@
       <div class="indicator-container-list">
         <div class="indicator-button" :class="{ active: yellowOutlineIndex === i }" v-for="i in 3" :key="i" />
       </div>
+
+      <img class="arrow-down" src="../assets/images/work/right-caret.png" />
+
       <!-- FIRST -->
       <div
         class="full-screen-section-container section-container yellow-outline-banner-trigger"
@@ -84,7 +87,6 @@
                   class="yellow-outline-text"
                   src="../assets/images/home/illuminate-brands-yellow-outline.png"
                 />
-
                 <div
                   class="svg-floating-shapes"
                   :class="{ star: yellowOutlineIndex === 2, circle: yellowOutlineIndex === 3, diamond: yellowOutlineIndex === 1 }"
@@ -148,7 +150,7 @@
               />
             </div>
             <div class="text-container">
-              <p class="font-white font-14 font-weight-200 just-sans">Seeking effective marketing solutions? Look no further! Our custom-made digital strategies <b>deliver results tailored to your audience.</b></p>
+              <p class="font-white font-14 font-weight-200 just-sans">We specialise in <b>bringing ideas to life</b>, spanning from design and video production to event planning, all to <b>ignite transformative branding experiences</b>.</p>
             </div>
           </div>
         </div>
@@ -176,7 +178,7 @@
               />
             </div>
             <div class="text-container">
-              <p class="font-white font-14 font-weight-200 just-sans">Make the best parts of your business <b>shine bright</b> with our strategy, branding and growth services.</p>
+              <p class="font-white font-14 font-weight-200 just-sans">Seeking effective marketing solutions? Look no further! Our custom-made digital strategies <b>deliver results tailored to your audience</b>.</p>
             </div>
           </div>
         </div>
@@ -189,17 +191,35 @@
     ></div> -->
 
 
-    <div id="video-section" class="full-screen-section-container full-screen-center-content">
+    <div id="video-section" class="full-screen-section-container section-container full-screen-center-content">
+      
       <iframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/CCRH-ITDix0"
+        src="https://www.youtube.com/embed/CCRH-ITDix0?autoplay=1"
         title="THIS IS LIGHT UP 7!" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
+        v-if="showHeroVideo"
       >
       </iframe>
+
+      <video
+        id="hero-video"
+        autoplay
+        muted
+        playsinline
+        loop
+        v-if="!showHeroVideo"
+        @click="showHeroVideo = true"
+        style="cursor: pointer"
+      >
+        <source
+          src="../assets/images/home/home-hero-gif.mp4"
+          type="video/mp4"
+        />
+      </video>
     </div>
 
     <!-- OUR SERVICES SECTION -->
@@ -232,8 +252,9 @@
           />
 
           <img
-            class="bulb-base-background image-glow"
+            class="bulb-base-background"
             src="../assets/images/home/our-services-bulb-background.png"
+            :class="{ active: ourServicesItemsHighlightedSection !== -1 }"
           />
 
           <div
@@ -405,10 +426,10 @@
           <div class="large-bulb-pull-image">
             <img :class="{ idle: bulbPullIdle }" src="../assets/images/home/light-up-your-idea-large-bulb-pull.png" />
           </div>
-          <!-- <div class="pull-me-text-container">
-            <img src="../assets/images/home/arrow-down.png" />
+          <div class="pull-me-text-container">
+            <!-- <img src="../assets/images/home/arrow-down.png" /> -->
             <p class="font-white just-sans">pull me</p>
-          </div> -->
+          </div>
           <div class="bulb-text-container">
             <p
               class="font-white just-sans font-32"
@@ -439,6 +460,9 @@ import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
 import { setCookie, getCookie } from "../utils/cookies"
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
+
+// VIDEO
+const showHeroVideo = ref(false)
 
 // YELLOW OUTLINE SCROLL
 var firstOutlineTimeline;
@@ -496,8 +520,8 @@ const lightBulbTextList = ref(["brand", "message", "growth"])
 const currentLightBulbTextIndex = ref(0);
 
 useHead({
-  title: "Test Home Title",
-  meta: [{ name: "description", content: "Amazing" }],
+  title: "Light Up 7 | Brand Activation Agency",
+  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
 });
 
 onBeforeMount(() => {
@@ -713,12 +737,12 @@ onMounted(() => {
   });
 
   // PULL ARROW ANIMATE
-  // gsap.to(".pull-me-text-container img", {
-  //   y: 10,
-  //   duration: 1,
-  //   yoyo: true,
-  //   repeat: -1,
-  // });
+  gsap.to(".pull-me-text-container img", {
+    y: 10,
+    duration: 1,
+    yoyo: true,
+    repeat: -1,
+  });
 
   // const bulbInitialY = document.querySelector(".large-bulb-pull-image")?.getBoundingClientRect().y
   const bulbMaxDragY = 60;
@@ -857,7 +881,7 @@ onMounted(() => {
   .large-logo-container
     position: absolute
     width: 280px
-    top: 47%
+    top: 49%
     +desktop
       width: 160px
       top: 48%
@@ -903,7 +927,7 @@ onMounted(() => {
     +desktop
       display: flex
       bottom: 10%
-      left: 48%
+      left: 50%
       // transform: translateX(-50%)
       top: unset
     .indicator-button
@@ -918,7 +942,7 @@ onMounted(() => {
         margin-left: 5px
         margin-right: 5px
         margin-top: 0px
-        margin-bottom: 0px
+        margin-bottom: 20px
       &.active
         background-color: white
   .full-screen-section-container
@@ -928,6 +952,15 @@ onMounted(() => {
     height: 100vh
     display: flex
     position: absolute
+  .arrow-down
+    position: absolute
+    transform: rotate(90deg) translateY(-50%)
+    transform-origin: center center
+    bottom: 25px
+    left: 50%
+    width: 30px
+    --webkit-animation: arrow-down-move 2s ease-out infinite alternate
+    animation: arrow-down-move 2s ease-out infinite alternate
   .flex-row
     display: flex
     // opacity: 0
@@ -1022,6 +1055,10 @@ onMounted(() => {
         top: -60%
         z-index: 0
         transform: translateX(-50%)
+        opacity: 0
+        transition: 0.2s all
+        &.active
+          opacity: 1
       .bulb-image-text-container
         position: absolute
         width: 20%
@@ -1188,7 +1225,7 @@ onMounted(() => {
         position: absolute
         align-items: center
         justify-content: center
-        right: -20%
+        right: 0%
         +desktop
           right: 0
         img
@@ -1292,15 +1329,34 @@ onMounted(() => {
       path
         d: path("M100,25 q-44,43 -75,75 q40,42 75,75 q33,-31 75,-75 q-38,-37 -75,-75")
 
+#video-section
+  #hero-video
+    width: 100%
+
+@keyframes arrow-down-move
+  0%
+    bottom: 10px
+  20%
+    bottom: 20px
+  40%
+    bottom: 10px
+  60%
+    bottom: 20px
+  80%
+    bottom: 10px
+  100%
+    bottom: 10px
+
+
 @keyframes bulb-switch-shake
   0%
     margin-top: 0px
   20%
-    margin-top: 10px
+    margin-top: 20px
   40%
     margin-top: 0px
   60%
-    margin-top: 10px
+    margin-top: 20px
   80%
     margin-top: 0px
   100%

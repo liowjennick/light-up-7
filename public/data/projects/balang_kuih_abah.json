@@ -47,6 +47,16 @@
             "caption": "",
             "width_percent": 50
           }
+        ],
+        [
+          {
+            "src": "https://www.youtube.com/embed/MzhqppyRHYY",
+            "full_width": false,
+            "is_video": false,
+            "is_youtube_video": true,
+            "width_percent": 100,
+            "caption": "Behind the Scenes Video"
+          }
         ]
       ]
     }

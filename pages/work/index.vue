@@ -21,7 +21,11 @@
       <h1 class="page-title">WORK</h1>
 
       <div id="sliding-button">
-        <p class="font-orange text-center just-sans font-20 font-weight-200">swipe right to see our past works</p>
+        <div class="sliding-button-description" :class="{ 'project-active': displayMode === DisplayMode.Projects }">
+          <p class="clients font-orange text-center just-sans font-20 font-weight-200">swipe right to see our past works</p>
+          <p class="projects font-orange text-center just-sans font-20 font-weight-200">swipe left to see our clients</p>
+        </div>
+
         <div class="sliding-button-container">
           <div class="sliding-button">
             <div class="slider-progress-background" />
@@ -60,6 +64,7 @@
 
               <h1 class="client-large-name">clients</h1>
               <h1 class="client-back-name">clients</h1>
+              <!-- <img class="client-inner-text-white" src="../../assets/images/work/bulb-inner-text-white.png" /> -->
             </div>
 
             <!-- <div class="bulb-cutout-section">
@@ -288,14 +293,26 @@ onMounted(() => {
       document.querySelector(".bulb-glow")?.classList.add("image-glow");
     },
   });
-  // gsap.to(".glow-line", {
-  //   duration: 1,
-  //   opacity: 0.8,
-  //   delay: 1.1,
-  //   onComplete: () => {
-  //     document.querySelector(".bulb-glow")?.classList.add("image-glow");
-  //   },
-  // });
+  gsap.to(".glow-line", {
+    duration: 1,
+    opacity: 0.8,
+    delay: 1.1,
+    onComplete: () => {
+      document.querySelector(".bulb-glow")?.classList.add("image-glow");
+    },
+  });
+  gsap.to(".glow-line", {
+    duration: 1,
+    scale: 1.5,
+    scrollTrigger: {
+      trigger: ".glow-line",
+      start: "top+=400 bottom",
+      end: "top top",
+      scrub: 1,
+      toggleActions: "play reverse play reverse"
+    }
+  })
+
   gsap.to(".light-background-triangle", {
     duration: 1,
     opacity: 0.15,
@@ -454,17 +471,18 @@ onMounted(() => {
         display: block
         width: 15.2%
         position: absolute
-        opacity: 0
+        opacity: 2
       .glow-line
         position: absolute
         width: 60%
         top: 70%
         opacity: 0
         transform-origin: center top
-        transform: scale(0)
-        z-index: 10
+        transform: scale(0.8)
+        z-index: 1
         &.active
-          animation: glow-line-expand 1s ease-out infinite alternate
+          opacity: 0
+          // animation: glow-line-expand 1s ease-out infinite alternate
     .page-title
       color: none
       text-align: center
@@ -480,6 +498,27 @@ onMounted(() => {
       opacity: 0
       z-index: 20
       position: relative
+    .sliding-button-description
+      display: flex
+      justify-content: flex-start
+      transition: 0.75s all
+      &.project-active
+        transform: translateX(-100%)
+        .projects
+          opacity: 1
+          transition-delay: 0.4s
+        .clients
+          opacity: 0
+          transition-delay: 0s
+      p
+        flex: 0 0 100%
+        transition: 0.2s all
+      .projects
+        opacity: 0
+        transition-delay: 0s
+      .clients
+        opacity: 1
+        transition-delay: 0.4s
     .sliding-button-container
       padding: 10px
       border: 1px solid $orange
@@ -621,6 +660,13 @@ onMounted(() => {
           // mix-blend-mode: difference
           +mobile
             width: 200px
+        // .client-inner-text-white
+        //   position: absolute
+        //   z-index: 2
+        //   top: 38%
+        //   left: 50%
+        //   transform: translateX(-50%)
+        //   width: 80%
         .client-bulb-image
           position: absolute
           top: 0
@@ -644,15 +690,15 @@ onMounted(() => {
           // background: rgba(255, 255, 255, 0.2)
           position: absolute
           color: white
-          opacity: 0.6
+          opacity: 0.8
           // opacity: 0.4
           text-align: center
           font-family: "JustSans"
-          text-shadow: 0 0 10px white
+          // text-shadow: 0 0 10px white
           font-size: 140px
           z-index: 2
-          mix-blend-mode: overlay
-          filter: drop-shadow(0px 0px 4px black)
+          // mix-blend-mode: color-dodge
+          // filter: drop-shadow(0px 0px 2px black)
           +large-mobile
             font-size: 100px
           +mobile
@@ -666,7 +712,8 @@ onMounted(() => {
           opacity: 1
           text-align: center
           font-family: "JustSans"
-          text-shadow: 0 0 8px white
+          color: black
+          // text-shadow: 0 0 8px white
           font-size: 140px
           z-index: 0
           +large-mobile

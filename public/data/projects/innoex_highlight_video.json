@@ -36,13 +36,13 @@
               "width_percent": 50
             },
             {
-                "src": ["image-2.png"],
+                "src": ["image-3.png"],
                 "is_video": false,
                 "caption": "",
                 "width_percent": 50
               },
               {
-                "src": ["image-2.png"],
+                "src": ["image-4.png"],
                 "is_video": false,
                 "caption": "",
                 "width_percent": 50
