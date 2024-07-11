@@ -122,6 +122,18 @@
     </div>
 
     <div
+      id="team-section"
+      class="full-screen-section-container"
+    >
+      <div class="team-image-container">
+        <!-- <img src="../../assets/images/about/about-team.png" /> -->
+      </div>
+      <div class="team-caption-container section-container">
+        <p class="font-white font-16 just-sans">At our agency, we shed light on your brand's potential, guiding you towards success with our expertise, innovation and unparalleled creativity.</p>
+      </div>
+    </div>
+
+    <div
       id="multi-award-section"
       class="full-screen-section-container"
     >
@@ -131,18 +143,6 @@
           <p class="font-white font-20 just-sans font-weight-200">Prestigious Agency of the Year</p>
           <p class="font-white font-20 just-sans font-weight-200">and MARKIES Awards 2022</p>
         </div>
-      </div>
-    </div>
-
-    <div
-      id="team-section"
-      class="full-screen-section-container"
-    >
-      <div class="team-image-container">
-        <!-- <img src="../../assets/images/about/about-team.png" /> -->
-      </div>
-      <div class="team-caption-container section-container">
-        <p class="font-white font-16 just-sans">At our agency, we shed light on your brand's potential, guiding you towards success with our expertise, innovation and unparalleled creativity.</p>
       </div>
     </div>
   </div>

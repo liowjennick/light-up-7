@@ -120,56 +120,96 @@ const activeClientBulbImage = ref("")
 
 const clientsCarouselLogo = ref([
   {
-    image_src: "7-eleven.png",
-    slug: "7-eleven"
-  },
-  {
-    image_src: "ahhyum.png",
-    slug: "ahhyum"
-  },
-  {
-    image_src: "ambank.png",
-    slug: "ambank"
-  },
-  {
-    image_src: "astro.png",
-    slug: "astro"
-  },
-  {
-    image_src: "asus.png",
-    slug: "asus"
-  },
-  {
-    image_src: "beats-by-dr-dre.png",
-    slug: "beats-by-dr-dre"
-  },
-  {
-    image_src: "bnm.png",
-    slug: "bnm"
-  },
-  {
-    image_src: "bursa-malaysia.png",
-    slug: "bursa-malaysia"
+    image_src: "khazanah-nasional.png",
+    slug: "khazanah-nasional"
   },
   {
     image_src: "cyberview.png",
     slug: "cyberview"
   },
   {
-    image_src: "dubai-uae.png",
-    slug: "dubai-uae"
+    image_src: "bnm.png",
+    slug: "bnm"
   },
   {
-    image_src: "epsom.png",
-    slug: "epsom"
+    image_src: "petronas.png",
+    slug: "petronas"
+  },
+  {
+    image_src: "7-eleven.png",
+    slug: "7-eleven"
+  },
+  {
+    image_src: "unicef.png",
+    slug: "unicef"
   },
   {
     image_src: "fen.png",
     slug: "fen"
   },
   {
-    image_src: "fimm.png",
-    slug: "fimm"
+    image_src: "pnb.png",
+    slug: "pnb"
+  },
+  {
+    image_src: "suruhanjaya.png",
+    slug: "suruhanjaya"
+  },
+  {
+    image_src: "hotlink.png",
+    slug: "hotlink"
+  },
+  {
+    image_src: "ktm.png",
+    slug: "ktm"
+  },
+  {
+    image_src: "tabung-haji.png",
+    slug: "tabung-haji"
+  },
+  {
+    image_src: "paynet.png",
+    slug: "paynet"
+  },
+  {
+    image_src: "kpj.png",
+    slug: "kpj"
+  },
+  {
+    image_src: "dubai-uae.png",
+    slug: "dubai-uae"
+  },
+  {
+    image_src: "sime-darby.png",
+    slug: "sime-darby"
+  },
+  {
+    image_src: "epsom.png",
+    slug: "epsom"
+  },
+  {
+    image_src: "pidm.png",
+    slug: "pidm"
+  },
+  {
+    image_src: "tokio-marine.png",
+    slug: "tokio-marine"
+  },
+  {
+    image_src: "unilever.png",
+    slug: "unilever"
+  },
+  {
+    image_src: "bursa-malaysia.png",
+    slug: "bursa-malaysia"
+  },
+  {
+    image_src: "astro.png",
+    slug: "astro"
+  },
+  {
+    image_src: "ahhyum.png",
+    slug: "ahhyum"
   },
   {
     image_src: "fwd.png",
@@ -180,104 +220,64 @@ const clientsCarouselLogo = ref([
     slug: "hitachi"
   },
   {
-    image_src: "hotlink.png",
-    slug: "hotlink"
-  },
-  {
-    image_src: "khazanah-nasional.png",
-    slug: "khazanah-nasional"
-  },
-  {
-    image_src: "kpj.png",
-    slug: "kpj"
-  },
-  {
-    image_src: "ktm.png",
-    slug: "ktm"
-  },
-  {
-    image_src: "kwap.png",
-    slug: "kwap"
-  },
-  {
-    image_src: "kwsp.png",
-    slug: "kwsp"
-  },
-  {
-    image_src: "leonardo.png",
-    slug: "leonardo"
-  },
-  {
-    image_src: "malaysia-airports.png",
-    slug: "malaysia-airports"
+    image_src: "fimm.png",
+    slug: "fimm"
   },
   {
     image_src: "mprc.png",
     slug: "mprc"
   },
   {
-    image_src: "paynet.png",
-    slug: "paynet"
-  },
-  {
-    image_src: "pdi.png",
-    slug: "pdi"
-  },
-  {
-    image_src: "petronas.png",
-    slug: "petronas"
-  },
-  {
-    image_src: "pidm.png",
-    slug: "pidm"
-  },
-  {
-    image_src: "pnb.png",
-    slug: "pnb"
-  },
-  {
-    image_src: "rjm.png",
-    slug: "rjm"
-  },
-  {
     image_src: "rosken.png",
     slug: "rosken"
+  },
+  {
+    image_src: "kwap.png",
+    slug: "kwap"
+  },
+  {
+    image_src: "ambank.png",
+    slug: "ambank"
+  },
+  {
+    image_src: "asus.png",
+    slug: "asus"
   },
   {
     image_src: "selangor.png",
     slug: "selangor"
   },
   {
-    image_src: "sime-darby.png",
-    slug: "sime-darby"
+    image_src: "kwsp.png",
+    slug: "kwsp"
+  },
+  {
+    image_src: "rjm.png",
+    slug: "rjm"
+  },
+  {
+    image_src: "malaysia-airports.png",
+    slug: "malaysia-airports"
+  },
+  {
+    image_src: "beats-by-dr-dre.png",
+    slug: "beats-by-dr-dre"
+  },
+  {
+    image_src: "pdi.png",
+    slug: "pdi"
+  },
+  {
+    image_src: "leonardo.png",
+    slug: "leonardo"
   },
   {
     image_src: "suria-klcc.png",
     slug: "suria-klcc"
   },
   {
-    image_src: "suruhanjaya.png",
-    slug: "suruhanjaya"
-  },
-  {
-    image_src: "tabung-haji.png",
-    slug: "tabung-haji"
-  },
-  {
-    image_src: "tokio-marine.png",
-    slug: "tokio-marine"
-  },
-  {
     image_src: "ubermen.png",
     slug: "ubermen"
-  },
-  {
-    image_src: "unicef.png",
-    slug: "unicef"
-  },
-  {
-    image_src: "unilever.png",
-    slug: "unilever"
   },
 ])
 
@@ -336,6 +336,21 @@ onMounted(() => {
       initialAnimationComplete.value = true
     }
   });
+
+  // PROJECT SCROLL IN WHEN SCROLLING
+  document.querySelectorAll(".project-banner-item").forEach((item, i) => {
+    gsap.from(item, {
+      opacity: 0,
+      x: "100%",
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: item,
+        start: "top center",
+        end: "center center",
+        toggleActions: "play play play play",
+      }
+    })
+  })
 
   // SLIDING BUTTON
   const sliderButtonWidth = 60;
@@ -733,7 +748,9 @@ onMounted(() => {
       +large-mobile
         flex: 0 0 20%
       img
-        width: 100%
+        width: 80%
+        display: block
+        margin: 0 auto
   .project-list-banner-container
     .project-banner-item
       margin-bottom: 20px

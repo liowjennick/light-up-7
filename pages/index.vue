@@ -195,7 +195,7 @@
       
       <iframe
         width="100%"
-        height="100%"
+        height="100%" 
         src="https://www.youtube.com/embed/CCRH-ITDix0?autoplay=1"
         title="THIS IS LIGHT UP 7!" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -205,21 +205,24 @@
       >
       </iframe>
 
-      <video
-        id="hero-video"
-        autoplay
-        muted
-        playsinline
-        loop
-        v-if="!showHeroVideo"
-        @click="showHeroVideo = true"
-        style="cursor: pointer"
-      >
-        <source
-          src="../assets/images/home/home-hero-gif.mp4"
-          type="video/mp4"
-        />
-      </video>
+      <div class="hero-video-container" v-if="!showHeroVideo">
+        <video
+          id="hero-video"
+          autoplay
+          muted
+          playsinline
+          loop
+        >
+          <source
+            src="../assets/images/home/home-hero-gif.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        <div class="play-button-container">
+          <img @click="showHeroVideo = true" src="../assets/images/home/play-button.png" />
+        </div>
+      </div>
     </div>
 
     <!-- OUR SERVICES SECTION -->
@@ -293,45 +296,80 @@
 
       <div class="clients-list-container mb-40">
         <div class="section-container">
-          <div class="client-item">
+          <a href="/work/balang-kuih-abah" class="client-item">
             <img
               class="client-logo"
-              src="../assets/images/home/client-logo-unilever.png"
+              src="../assets/images/home/logo/pnb-logo.png"
             />
-          </div>
-          <div class="client-item">
+          </a>
+          <a href="/work/hotlink-music-video" class="client-item">
             <img
               class="client-logo"
-              src="../assets/images/home/client-logo-hotlink.png"
+              src="../assets/images/home/logo/hotlink.png"
             />
-          </div>
+          </a>
 
-          <div class="client-item">
+          <a href="/work/ktmb-corporate-video" class="client-item">
             <img
               class="client-logo"
-              src="../assets/images/home/client-logo-bank-negara.png"
+              src="../assets/images/home/logo/ktm-logo.png"
             />
-          </div>
-          <div class="client-item">
+          </a>
+          <a href="/work/innoex-highlight-video" class="client-item">
             <img
               class="client-logo"
-              src="../assets/images/home/client-logo-petronas.png"
+              src="../assets/images/home/logo/cyberview-logo.png"
             />
-          </div>
-          <div class="client-item">
+          </a>
+          <a href="/work/7-eleven-social-media-marketing" class="client-item">
             <img
               class="client-logo"
-              src="../assets/images/home/client-logo-7-eleven.png"
+              src="../assets/images/home/logo/7-eleven.png"
             />
-          </div>
+          </a>
+
+          <a href="/work/ahh-yum-digital-marketing-suite" class="client-item">
+            <img
+              class="client-logo"
+              src="../assets/images/home/logo/ahh-yum.png"
+            />
+          </a>
+
+          <a href="/work/bangkit-bersama-melawan-scammer" class="client-item">
+            <img
+              class="client-logo"
+              src="../assets/images/home/logo/bank-negara.png"
+            />
+          </a>
+
+          <a href="/work/malaysia-next-chicken-chop" class="client-item">
+            <img
+              class="client-logo"
+              src="../assets/images/home/logo/unilever.png"
+            />
+          </a>
+
+          <a href="/work/saya-sayang-saya-unicef" class="client-item">
+            <img
+              class="client-logo"
+              src="../assets/images/home/logo/unicef.png"
+            />
+          </a>
+
+          <a href="/work/superhero-kewangan" class="client-item">
+            <img
+              class="client-logo"
+              src="../assets/images/home/logo/art-gallery.png"
+            />
+          </a>
         </div>
       </div>
 
-      <div class="cta-button-row">
+      <a href="/work" class="cta-button-row">
         <div class="cta-button">
           <p class="font-orange font-18">view more</p>
         </div>
-      </div>
+      </a>
 
       <img
         class="plug-to-left"
@@ -438,15 +476,15 @@
               <b id="bulb-text">{{ lightBulbTextList[currentLightBulbTextIndex] }}</b>
             </p>
 
-            <NuxtLink
-              to="#"
+            <a
+              href="/services"
               class="cta-circle"
               :class="{ active: lightUpYourIdeasBulbActive }"
             >
               <div class="arrow-container">
                 <img src="../assets/images/home/arrow-diagonal.png" />
               </div>
-            </NuxtLink>
+            </a>
           </div>
         </div>
       </div>
@@ -1125,13 +1163,20 @@ onMounted(() => {
     background-color: rgba(255, 255, 255, 0.28)
     .section-container
       display: flex
+      align-items: center
       .client-item
         flex: 1
+        margin: 0 10px
+        padding: 20px 0
+        transition: 0.2s all
+        &:hover
+          transform: scale(1.1)
         img
           width: 100%
   .cta-button-row
     display: flex
     justify-content: center
+    text-decoration: none
     .cta-button
       border: 1px solid $orange
       border-radius: 24px
@@ -1330,8 +1375,21 @@ onMounted(() => {
         d: path("M100,25 q-44,43 -75,75 q40,42 75,75 q33,-31 75,-75 q-38,-37 -75,-75")
 
 #video-section
-  #hero-video
+  .hero-video-container
+    position: relative
     width: 100%
+    #hero-video
+      width: 100%
+    .play-button-container
+      position: absolute
+      z-index: 1
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      cursor: pointer
+      img
+        width: 100px
+  
 
 @keyframes arrow-down-move
   0%

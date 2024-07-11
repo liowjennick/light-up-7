@@ -1,8 +1,22 @@
 <template>
   <div id="services">
     <!-- Banner -->
-    <div>
-      <!-- Animation Here -->
+    <div
+      class="full-screen-section-container section-container full-screen-center-content"
+      id="services-banner-section"
+    >
+
+      <div class="page-title-container">
+        <img src="../../assets/images/services/services-title.png" />
+      </div>
+
+      <div class="yellow-shadow-container" />
+
+      <div class="yellow-shadow-container-bottom">
+        <div class="icon-container">
+          <img src="../../assets/images/services/icons/icon-group.png" />
+        </div>
+      </div>
     </div>
     <!-- Services List -->
     <div class="full-screen-center-content hover-services" style="flex-direction: column;">
@@ -127,8 +141,36 @@
   </div>
 </template>
 <script setup lang='ts'>
+import gsap from "gsap";
 import arrowUpRight from '@/assets/svg/arrow-up-right.svg'
 import { Growth, Digital, Brand, Event, Media, Video, Website } from '@/assets/svg'
+import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
+
+onMounted(() => {
+  gsap.to(".icon-container", {
+    bottom: "40%",
+    scrollTrigger: {
+      trigger: "#services-banner-section",
+      start: "top top",
+      end: "bottom center",
+      scrub: 1,
+      toggleActions: "play reverse play reverse",
+    }
+  })
+
+  gsap.to([".yellow-shadow-container", ".yellow-shadow-container-bottom"], {
+    y: -150,
+    scrollTrigger: {
+      trigger: "#services-banner-section",
+      start: "center-=200 top",
+      end: "bottom center",
+      scrub: 1,
+      toggleActions: "play reverse play reverse",
+    }
+  })
+})
 
 </script>
 <style lang="sass" scoped>
@@ -180,4 +222,45 @@ import { Growth, Digital, Brand, Event, Media, Video, Website } from '@/assets/s
   .divider-parent:last-child
       .divider-child
         border-bottom: 1px solid #ffffff40
+#services-banner-section 
+  position: relative
+  .icon-list
+    position: absolute
+    display: flex
+    width: 80%
+    z-index: 3
+    bottom: 15%
+    .icon-container
+      img
+        width: 80%
+        display: block
+        margin: 0 auto
+  .page-title-container
+    z-index: 12
+    img
+      width: 100%
+  .yellow-shadow-container
+    position: absolute
+    bottom: 20%
+    z-index: 10
+    border: 2px solid $orange
+    width: 100%
+    height: 20%
+    border-radius: 50%
+  .yellow-shadow-container-bottom
+    width: 200%
+    position: absolute
+    bottom: 20%
+    height: 100%
+    border-radius: 0% 0% 50% 50%
+    overflow: hidden
+    .icon-container
+      width: 32%
+      transform: translate(50%)
+      position: absolute
+      bottom: -10%
+      left: 18%
+      overflow: hidden
+      img
+        width: 100%
 </style>

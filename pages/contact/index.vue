@@ -1,10 +1,10 @@
 <template>
   <div id="contact-page">
     <div style="position: relative; margin-bottom: 20px">
-      <img src="../../assets/images/contact/sparkles-top.png" alt="Sparkles top"
+      <!-- <img src="../../assets/images/contact/sparkles-top.png" alt="Sparkles top"
         style="position: absolute; top: 150px; left: 500px;" class="pulse-1">
       <img src="../../assets/images/contact/sparkles-bottom.png" alt="Sparkles bottom"
-        style="position: absolute; bottom: 300px; right: 350px;" class="pulse-2">
+        style="position: absolute; bottom: 300px; right: 350px;" class="pulse-2"> -->
       <img src="../../assets/images/contact/contact-header.png" style="width: 100%; height: auto;" />
     </div>
     <div class="section-container full-screen-start-center" style="gap: 60px">
