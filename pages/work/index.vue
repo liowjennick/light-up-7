@@ -60,7 +60,7 @@
               <!-- <img class="client-bulb-image" src="../../assets/images/work/clients-logo/petronas-logo.png" /> -->
               <!-- class="client-generic-bulb" -->
               <img class="client-generic-bulb" src="../../assets/images/work/clients-logo/generic-bulb.png" />
-              <img :class="{ active: activeClientBulbImage === client.slug }"  v-for="(client, i) in clientsCarouselLogo" :key="i" class="client-bulb-image" :src="`/images/work/clients-bulb-logo/petronas-logo.png`" />
+              <img :class="{ active: activeClientBulbImage === client.slug }"  v-for="(client, i) in clientsCarouselLogo" :key="i" class="client-bulb-image" :src="`/images/work/bulb-logo/${client.slug}.png`" />
 
               <h1 class="client-large-name">clients</h1>
               <h1 class="client-back-name">clients</h1>
@@ -703,13 +703,14 @@ onMounted(() => {
           left: 0
           width: 100%
           // background: rgba(255, 255, 255, 0.2)
+          mix-blend-mode: overlay
           position: absolute
           color: white
           opacity: 0.8
           // opacity: 0.4
           text-align: center
           font-family: "JustSans"
-          // text-shadow: 0 0 10px white
+          text-shadow: 0 0 5px white
           font-size: 140px
           z-index: 2
           // mix-blend-mode: color-dodge
@@ -728,7 +729,7 @@ onMounted(() => {
           text-align: center
           font-family: "JustSans"
           color: black
-          // text-shadow: 0 0 8px white
+          text-shadow: 0 0 5px white
           font-size: 140px
           z-index: 0
           +large-mobile
