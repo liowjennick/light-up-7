@@ -1,11 +1,13 @@
 <template>
   <div id="services">
     <!-- Header -->
-    <div class="full-screen-center-content section-container" style="padding-top: 150px; gap: 45px; padding-bottom: 48px;">
+    <div class="full-screen-center-content section-container"
+      style="padding-top: 150px; gap: 45px; padding-bottom: 48px;">
       <img :src="growth" alt="growth" width="100" style="margin-left: auto; height: auto;">
       <div class="full-screen-start-center" style="color: #DC9F41; flex-direction: column;">
         <h1 style="margin: 0; font-size: 64px; font-weight: normal;">Growth Strategy</h1>
-        <p style="font-size: 26px; margin: 0;">Propel your business with a tactical plan optimised to achieve your desired goals.</p>
+        <p style="font-size: 26px; margin: 0;">Propel your business with a tactical plan optimised to achieve your
+          desired goals.</p>
       </div>
     </div>
     <!-- Animation header -->
@@ -14,7 +16,7 @@
       <LineToBulb />
     </div>
     <!-- Service Details -->
-    <div class="service-detail-grid-2 section-container" style="margin-block: 48px">
+    <div class="service-detail-grid-2 section-container" style="padding: 48px 0px">
       <div v-for="(detail, key) in serviceDetails" :key="key" class="full-screen-start-center service-detail-item"
         style="flex-direction: column;">
         <p>{{ detail.title }}</p>
