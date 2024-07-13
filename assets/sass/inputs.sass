@@ -1,3 +1,4 @@
+@import 'fonts.sass'
 @mixin cta-button
     transition: transform .1s linear
     text-decoration: none
@@ -9,6 +10,9 @@
     padding: 12px 32px
     color: #FFCE6D
     background: none
+    &:hover
+        background-color: white
+        box-shadow: 0 0 20px white
     @include cta-button
 
 .white-outlined-button
@@ -17,6 +21,9 @@
     padding: 12px 32px
     color: #FFFFFF
     background: none
+    &:hover
+        background-color: $orange
+        box-shadow: 0 0 20px $orange
     @include cta-button
 
 input
