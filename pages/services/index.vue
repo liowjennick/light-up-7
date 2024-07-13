@@ -1,5 +1,12 @@
 <template>
   <div id="services">
+    <div :style="{
+      top: mouseMoveAttributes.y,
+      left: mouseMoveAttributes.x,
+      transform: `translate(-50%, -50%) skew(${mouseMoveAttributes.skewed}deg, ${mouseMoveAttributes.skewed}deg) scaleX(${mouseMoveAttributes.scaleX}) scaleY(${mouseMoveAttributes.scaleY})`
+    }" class="cursor-follow">
+      <p>Text here</p>
+    </div>
     <!-- Banner -->
     <div
       class="full-screen-section-container section-container full-screen-center-content"
@@ -148,6 +155,74 @@ import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
+const mouseMoveAttributes = ref({
+  x: 0,
+  y: 0,
+  scaleX: 1,
+  scaleY: 1,
+  skewed: 0
+})
+
+const mousePosition = ref({
+  x: 0,
+  y: 0,
+})
+
+const angle = (cx, cy, ex, ey) => {
+  var dy = ey - cy;
+  var dx = ex - cx;
+  var theta = Math.atan2(dy, dx); // range (-PI, PI]
+  theta *= 180 / Math.PI; // rads to degs, range (-180, 180]
+  return theta;
+}
+const angle360 =(cx, cy, ex, ey) => {
+  var theta = angle(cx, cy, ex, ey); // range (-180, 180]
+  if (theta < 0) theta = 360 + theta; // range [0, 360)
+  return theta;
+}
+
+const mouseMoveTimer = () => {
+  setTimeout(() => {
+    const pageX = mousePosition.value.x
+    const pageY = mousePosition.value.y
+
+  
+    // GET YELLOW CIRCLE CURRENT POSITION
+    const currentX = document.querySelector(".cursor-follow")?.getBoundingClientRect().left
+    const currentY = document.querySelector(".cursor-follow")?.getBoundingClientRect().top
+
+    const angleTo = angle360(currentX, currentY, pageX, pageY)
+    console.log("angle")
+    console.log(angleTo)
+
+    const differenceX = Math.abs(currentX - pageX)
+    const differenceY = Math.abs(currentY - pageY)
+    // difference 0 = scale 1
+
+
+    mouseMoveAttributes.value = {
+      x: pageX + "px",
+      y: pageY + "px",
+      scaleX: 1 + (differenceX / 300),
+      scaleY: 1 + (differenceY / 300),
+      skewed: 0
+    }
+
+    console.log(differenceX)
+    mouseMoveTimer()
+  }, 100)
+}
+
+const onMouseMoveFunction = (e) => {
+  const pageX = e.pageX
+  const pageY = e.pageY
+
+  mousePosition.value = {
+    x: pageX,
+    y: pageY
+  }
+}
+
 onMounted(() => {
   gsap.to(".icon-container", {
     bottom: "40%",
@@ -170,6 +245,9 @@ onMounted(() => {
       toggleActions: "play reverse play reverse",
     }
   })
+
+  document.addEventListener("mousemove", onMouseMoveFunction)
+  mouseMoveTimer()
 })
 
 </script>
@@ -263,4 +341,16 @@ onMounted(() => {
       overflow: hidden
       img
         width: 100%
+
+.cursor-follow
+  height: 100px
+  width: 100px
+  background-color: $orange
+  border-radius: 50%
+  display: flex
+  align-items: center
+  justify-content: center
+  position: absolute
+  transform: translate(-50%, -50%)
+  transition: 0.2s all
 </style>
