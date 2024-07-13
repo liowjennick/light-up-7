@@ -4,12 +4,21 @@
         <div id="news-banner-section" class="section-container full-screen-center-content full-screen-section-container" style="padding-top: 120px;">
             <!-- Animation here -->
             <div class="banner-title-container">
-                <img src="../../assets/images/news/banner-title.png" />
+                <img class="banner-title" src="../../assets/images/news/banner-title.png" />
                 <div class="banner-megaphone-container">
                     <img src="../../assets/images/news/banner-glow-megaphone.png" />
                 </div>
+                <div class="banner-megaphone-dim-container">
+                    <img src="../../assets/images/news/banner-megaphone-dim.png" />
+                </div>
                 <div class="banner-message-bubble-container">
                     <img src="../../assets/images/news/banner-message-bubble.png" />
+                </div>
+                <div class="star-1-container">
+                    <img class="star-1" src="../../assets/images/news/star.png" />
+                </div>
+                <div class="star-2-container">
+                    <img class="star-2" src="../../assets/images/news/star.png" />
                 </div>
             </div>
 
@@ -87,6 +96,10 @@ import NewsThumbnail from '@/assets/images/news/news-thumbnail.png'
 import { computed, ref } from "vue"
 import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
 import NewsData from "../../public/data/news_data.js"
+import gsap from "gsap";
+import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
 const news: any[] = reactive(NewsData)
 
@@ -105,6 +118,44 @@ const switchPage = (page: number, e: Event) => {
             break;
     }
 }
+
+onMounted(() => {
+    // INTRO ANIMATION
+    // MEGAPHONE DIM
+    gsap.to(".banner-megaphone-dim-container img", {
+        opacity: 1,
+        duration: 0.7,
+        delay: 0.5,
+        rotate: -60
+    })
+    gsap.to(".banner-megaphone-dim-container img", {
+        duration: 0.2,
+        rotate: 15,
+        delay: 1.2,
+    })
+    gsap.to(".banner-megaphone-dim-container img", {
+        duration: 0.1,
+        rotate: 0,
+        delay: 1.4,
+    })
+
+    // LIGHT UP
+    gsap.to(".banner-title-container .banner-title", {
+        duration: 0.5,
+        opacity: 1,
+        delay: 1.4
+    })
+    gsap.to(".banner-megaphone-container", {
+        duration: 0.5,
+        opacity: 1,
+        delay: 1.4
+    })
+    gsap.to(".banner-message-bubble-container", {
+        duration: 0.5,
+        opacity: 1,
+        delay: 1.4
+    })
+})
 </script>
 
 <style lang="sass" scoped>
@@ -148,20 +199,48 @@ const switchPage = (page: number, e: Event) => {
     .banner-title-container
         width: 80%
         position: relative
-        img
+        .banner-title
+            opacity: 0.4
             width: 100%
     .banner-megaphone-container
         width: 20%
         position: absolute
         top: 0%
         left: -5%
+        opacity: 0
         img
             width: 100%
+    .banner-megaphone-dim-container
+        width: 12%
+        position: absolute
+        top: 9%
+        left: -4.4%
+        opacity: 0.4
+        img
+            width: 100%
+            transform-origin: bottom right
     .banner-message-bubble-container
         width: 15%
         position: absolute
         bottom: 5%
         right: -5%
+        opacity: 0.4
+        img
+            width: 100%
+    .star-1-container
+        position: absolute
+        width: 10%
+        right: 0
+        top: 0
+        img
+            width: 100%
+            -webkit-transform: scaleX(-1)
+            transform: scaleX(-1)
+    .star-2-container
+        position: absolute
+        width: 10%
+        left: 0
+        bottom: 0
         img
             width: 100%
 .lottie-globe-rotate
