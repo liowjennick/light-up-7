@@ -38,7 +38,7 @@
         </div>
         <!-- News List -->
         <div class="full-screen-center-content hover-news" style="flex-direction: column;">
-            <NuxtLink v-for="thumb in news" :key="thumb.id" style="width: 100%;" class="divider-parent"
+            <div v-for="thumb in news" :key="thumb.id" style="width: 100%;" class="divider-parent"
                 :to="`/news/${thumb.id}`">
                 <div class="section-container full-screen-start-start divider-child news-row" style="padding: 35px 80px;">
                     <div class="thumbnail-container">
@@ -57,7 +57,7 @@
                         </NuxtLink>
                     </div>
                 </div>
-            </NuxtLink>
+            </div>
         </div>
         <!-- Pagination -->
         <div class="section-container full-screen-center-content" style="padding-block: 48px;">
