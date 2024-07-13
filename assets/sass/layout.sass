@@ -13,9 +13,10 @@
 
 .grid-3-cols
   display: grid
-  grid-template-columns: auto auto auto
-  column-gap: 20%
-  row-gap: 60px
+  grid-template-columns: repeat(3, 1fr)
+  grid-template-rows: repeat(2, 1fr)
+  grid-column-gap: 20px
+  grid-row-gap: 60px
   +large-mobile
     column-gap: 10%
   +mobile
