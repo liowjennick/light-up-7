@@ -99,8 +99,8 @@
           <div>
             <p class="font-white" style="font-size: 24px;">{{ recent.title }}</p>
           </div>
-          <NuxtLink class="orange-outlined-button vacancy-btn" style="font-family: 'JustSans';" :to="recent.url">apply
-            now!</NuxtLink>
+          <a class="orange-outlined-button vacancy-btn" style="font-family: 'JustSans';" :href="recent.url">apply
+            now!</a>
         </div>
       </div>
     </div>
@@ -287,6 +287,12 @@ onMounted(() => {
     }, 3000);
   }, 3000); // Start the loop initially
 });
+
+onUnmounted(() => {
+  gsap.killTweensOf('.fade-in-out')
+  gsap.killTweensOf('.fade-in-out2')
+  gsap.killTweensOf('.fade-in-out3')
+})
 const mottoTitle = ['Celebrating Creativity', 'Doing Work That Matters', 'Always Growing, Never Stopping']
 const mottoText = [`We believe the greatest ideas comes from the experience of being
               human. Whatever shape or form, your creativity will always have a
@@ -463,6 +469,8 @@ const recentJobs = [
     color: $orange
     cursor: pointer
     padding-inline: 24px
+    &:hover
+      text-shadow: 0 0 10px white
     +mobile
       padding-inline: 8px 
   button:last-child
