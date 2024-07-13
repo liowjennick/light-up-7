@@ -59,6 +59,30 @@ h1, h2, h3, h4 , h5, p, span
       margin-bottom: #{2 * $i * 0.5}px
 
 @for $i from 1 through 20
+  .ml-#{2 * $i}
+    margin-left: #{2 * $i}px
+    +large-desktop
+      margin-left: #{2 * $i * 1.4}px
+    +desktop
+      margin-left: #{2 * $i}px
+    +large-mobile
+      margin-left: #{2 * $i * 0.75}px
+    +mobile
+      margin-left: #{2 * $i * 0.5}px
+
+@for $i from 1 through 20
+  .mr-#{2 * $i}
+    margin-right: #{2 * $i}px
+    +large-desktop
+      margin-right: #{2 * $i * 1.4}px
+    +desktop
+      margin-right: #{2 * $i}px
+    +large-mobile
+      margin-right: #{2 * $i * 0.75}px
+    +mobile
+      margin-right: #{2 * $i * 0.5}px
+
+@for $i from 1 through 20
   .pb-#{2 * $i}
     padding-bottom: #{2 * $i}px
     +large-desktop

@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-import newsData from "./public/data/news_data.json";
+import newsData from "./public/data/news_data.js";
 import projectsData from "./public/data/projects_data.js";
 
 const generate_routes: string[] = [];
