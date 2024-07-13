@@ -1,12 +1,24 @@
+@mixin cta-button
+    transition: transform .1s linear
+    text-decoration: none
+    &:hover
+        transform: scale(1.1)
 .orange-outlined-button
     border: 1px solid #FFCE6D
     border-radius: 100px
     padding: 12px 32px
     color: #FFCE6D
     background: none
+    @include cta-button
+
 .white-outlined-button
     border: 1px solid #FFFFFF
     border-radius: 100px
     padding: 12px 32px
     color: #FFFFFF
     background: none
+    @include cta-button
+
+input
+    &::placeholder
+        color: white

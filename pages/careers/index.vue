@@ -94,7 +94,7 @@
       </div>
       <!-- vacancy grid -->
       <div class="grid-3-cols">
-        <div v-for="(recent, key) in recentJobs" :key="key" class="full-screen-center-content"
+        <div v-for="(recent, key) in recentJobs" :key="key" class="full-screen-start-center"
           style="flex-direction: column; gap: 16px">
           <div>
             <p class="font-white" style="font-size: 24px;">{{ recent.title }}</p>
@@ -239,7 +239,7 @@ const onCompleteUnglowCursorClick: gsap.Callback = () => {
   })
 }
 const onReverseCompleteUnglowCursorClick: gsap.Callback = () => {
-  gsap.to(['.cursor-unglow', '.computer-unglow'], {
+  gsap.set(['.cursor-unglow', '.computer-unglow'], {
     opacity: 1,
     duration: 0,
   })
@@ -248,7 +248,7 @@ const onReverseCompleteUnglowCursorClick: gsap.Callback = () => {
     scale: 0.9,
     duration: .1
   })
-  gsap.to('.computer-glow', {
+  gsap.set('.computer-glow', {
     opacity: 0,
     duration: 0
   })
@@ -258,7 +258,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: '#careers',
       start: "top top",
-      end: "bottom top",
+      end: "bottom 100%",
       pin: true,
       scrub: 1,
       toggleActions: "play reverse play reverse",
@@ -269,7 +269,6 @@ onMounted(() => {
     opacity: 1,
     duration: 1,
     ease: "power3.inOut",
-
   })
   tl.to('.cursor-unglow', {
     scale: 0.9,
@@ -277,7 +276,7 @@ onMounted(() => {
     onComplete: onCompleteUnglowCursorClick,
     onReverseComplete: onReverseCompleteUnglowCursorClick
   })
-  tl.to(".f", {
+  tl.to('.computer-glow', {
     duration: .5
   })
   onTransitionEnd();
@@ -329,28 +328,28 @@ const vacancyTabs = [
 ]
 const recentJobs = [
   {
-    title: "Job title",
-    url: ""
+    title: "Event Manager",
+    url: "/careers/1"
   },
   {
-    title: "Job title",
-    url: ""
+    title: "Finance and Accounting Executive",
+    url: "/careers/1"
   },
   {
-    title: "Job title",
-    url: ""
+    title: "Internship",
+    url: "/careers/1"
   },
   {
-    title: "Job title",
-    url: ""
+    title: "Project Manager",
+    url: "/careers/1"
   },
   {
-    title: "Job title",
-    url: ""
+    title: "Video Production Manager",
+    url: "/careers/1"
   },
   {
-    title: "Job title",
-    url: ""
+    title: "Senior Digital Designer",
+    url: "/careers/1"
   },
 ]
 </script>
