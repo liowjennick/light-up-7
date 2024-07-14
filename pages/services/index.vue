@@ -30,11 +30,13 @@
       style="flex-direction: column"
     >
       <NuxtLink
+        v-for="(item, i) in servicesItem"
         class="divider-parent"
-        id="item-0"
+        :key="i"
+        :id="`item-${i}`"
         style="width: 100%; text-decoration: none"
         :to="`/services/growth-strategy`"
-        @mouseenter="() => setActiveFollowCircleIndex(0)"
+        @mouseenter="() => setActiveFollowCircleIndex(i)"
         @mouseleave="() => setActiveFollowCircleIndex(-1)"
       >
         <div
@@ -42,231 +44,24 @@
           style="gap: 60px; padding: 35px 40px"
         >
           <div
-            style="width: 10%"
+            style="width: 10%; z-index: 1"
             class="full-screen-center-content"
           >
-            <Growth />
+            <img class="item-icon-orange" v-if="activeCircleFollowIndex !== i" :src="`/images/services/list-icons/icons/orange/${item.slug}-orange.png`" />
+            <img class="item-icon" v-if="activeCircleFollowIndex === i" :src="`/images/services/list-icons/icons/white/${item.slug}.png`" />
           </div>
           <div
             class="full-screen-start-center"
-            style="flex-direction: column; flex: 1; color: white"
+            style="z-index: 1; flex-direction: column; flex: 1; color: white"
           >
-            <h2>Growth Strategy</h2>
-            <p>Propel your business with a tactical plan optimised to achieve your desired goals.</p>
+            <h2>{{item.title}}</h2>
+            <p>{{item.description}}</p>
           </div>
           <div
             class="cta-btn-parent full-screen-center-content"
-            :class="{ active: activeCircleFollowIndex === 0 }"
-            id="circle-mouse-follow-0"
+            :class="{ active: activeCircleFollowIndex === i }"
+            :id="`circle-mouse-follow-${i}`"
           >
-            <p class="hover-text">learn more</p>
-            <div class="cta-btn-child">
-              <img
-                :src="arrowUpRight"
-                alt="Arrow up right"
-              />
-            </div>
-          </div>
-        </div>
-      </NuxtLink>
-      <NuxtLink
-        class="divider-parent"
-        @mouseenter="() => setActiveFollowCircleIndex(1)"
-        @mouseleave="() => setActiveFollowCircleIndex(-1)"
-        style="width: 100%; text-decoration: none"
-        :to="`/services/digital-marketing`"
-        id="item-1"
-      >
-        <div
-          class="divider-child full-screen-center-content service-item section-container"
-          style="gap: 60px; padding: 35px 40px"
-        >
-          <div
-            style="width: 10%"
-            class="full-screen-center-content"
-          >
-            <Digital />
-          </div>
-          <div
-            class="full-screen-start-center"
-            style="flex-direction: column; flex: 1; color: white"
-          >
-            <h2>Digital Marketing</h2>
-            <p>Stay ahead on the digital front with a host of approaches, integrated to meet your business needs</p>
-          </div>
-          <div
-            :class="{ active: activeCircleFollowIndex === 1 }"
-            id="circle-mouse-follow-1"
-            class="cta-btn-parent full-screen-center-content"
-          >
-            <p class="hover-text">learn more</p>
-            <div class="cta-btn-child">
-              <img
-                :src="arrowUpRight"
-                alt="Arrow up right"
-              />
-            </div>
-          </div>
-        </div>
-      </NuxtLink>
-      <NuxtLink
-        class="divider-parent"
-        style="width: 100%; text-decoration: none"
-        :to="`/services/video-photography`"
-      >
-        <div
-          class="divider-child full-screen-center-content service-item section-container"
-          style="gap: 60px; padding: 35px 40px"
-        >
-          <div
-            style="width: 10%"
-            class="full-screen-center-content"
-          >
-            <Video />
-          </div>
-          <div
-            class="full-screen-start-center"
-            style="flex-direction: column; flex: 1; color: white"
-          >
-            <h2>Video & Photography</h2>
-            <p>A picture is worth a thousand words. Tell your brand story with captivating images and engaging videos.</p>
-          </div>
-          <div
-            :class="{ active: activeCircleFollowIndex === 1 }"
-            class="cta-btn-parent full-screen-center-content"
-          >
-            <p class="hover-text">learn more</p>
-            <div class="cta-btn-child">
-              <img
-                :src="arrowUpRight"
-                alt="Arrow up right"
-              />
-            </div>
-          </div>
-        </div>
-      </NuxtLink>
-      <NuxtLink
-        class="divider-parent"
-        style="width: 100%; text-decoration: none"
-        :to="`/services/brand-creative-design`"
-      >
-        <div
-          class="divider-child full-screen-center-content service-item section-container"
-          style="gap: 60px; padding: 35px 40px"
-        >
-          <div
-            style="width: 10%"
-            class="full-screen-center-content"
-          >
-            <Brand />
-          </div>
-          <div
-            class="full-screen-start-center"
-            style="flex-direction: column; flex: 1; color: white"
-          >
-            <h2>Branding & Creative Design</h2>
-            <p>With a little sparkle and some zing, your new brand identity is ready to take on the world.</p>
-          </div>
-          <div class="cta-btn-parent full-screen-center-content">
-            <p class="hover-text">learn more</p>
-            <div class="cta-btn-child">
-              <img
-                :src="arrowUpRight"
-                alt="Arrow up right"
-              />
-            </div>
-          </div>
-        </div>
-      </NuxtLink>
-      <NuxtLink
-        class="divider-parent"
-        style="width: 100%; text-decoration: none"
-        :to="`/services/website-apps`"
-      >
-        <div
-          class="divider-child full-screen-center-content service-item section-container"
-          style="gap: 60px; padding: 35px 40px"
-        >
-          <div
-            style="width: 10%"
-            class="full-screen-center-content"
-          >
-            <Website />
-          </div>
-          <div
-            class="full-screen-start-center"
-            style="flex-direction: column; flex: 1; color: white"
-          >
-            <h2>Websites & Apps</h2>
-            <p>Your business’ first point of contact can leave a lasting impression. Build your best brand website with us!</p>
-          </div>
-          <div class="cta-btn-parent full-screen-center-content">
-            <p class="hover-text">learn more</p>
-            <div class="cta-btn-child">
-              <img
-                :src="arrowUpRight"
-                alt="Arrow up right"
-              />
-            </div>
-          </div>
-        </div>
-      </NuxtLink>
-      <NuxtLink
-        class="divider-parent"
-        style="width: 100%; text-decoration: none"
-        :to="`/services/event-management`"
-      >
-        <div
-          class="divider-child full-screen-center-content service-item section-container"
-          style="gap: 60px; padding: 35px 40px"
-        >
-          <div
-            style="width: 10%"
-            class="full-screen-center-content"
-          >
-            <Event />
-          </div>
-          <div
-            class="full-screen-start-center"
-            style="flex-direction: column; flex: 1; color: white"
-          >
-            <h2>Event Management</h2>
-            <p>From conceptualising all the way to d-day handling, our event management team is poised to bring it all to life.</p>
-          </div>
-          <div class="cta-btn-parent full-screen-center-content">
-            <p class="hover-text">learn more</p>
-            <div class="cta-btn-child">
-              <img
-                :src="arrowUpRight"
-                alt="Arrow up right"
-              />
-            </div>
-          </div>
-        </div>
-      </NuxtLink>
-      <NuxtLink
-        class="divider-parent"
-        style="width: 100%; text-decoration: none"
-        :to="`/services/media-buying`"
-      >
-        <div
-          class="divider-child full-screen-center-content service-item section-container"
-          style="gap: 60px; padding: 35px 40px"
-        >
-          <div
-            style="width: 10%"
-            class="full-screen-center-content"
-          >
-            <Media />
-          </div>
-          <div
-            class="full-screen-start-center"
-            style="flex-direction: column; flex: 1; color: white"
-          >
-            <h2>Media Buying</h2>
-            <p>Put your brand in front of the right audience at the right time and place. Let us help you optimise your digital presence.</p>
-          </div>
-          <div class="cta-btn-parent full-screen-center-content">
             <p class="hover-text">learn more</p>
             <div class="cta-btn-child">
               <img
@@ -294,6 +89,45 @@ const setActiveFollowCircleIndex = (index: number) => {
   activeCircleFollowIndex.value = index;
   console.log(index);
 };
+
+const servicesItem = ref([
+  {
+    title: "Growth Strategy",
+    description: "Propel your business with a tactical plan optimised to achieve your desired goals.",
+    slug: "growth-strategy"
+  },
+  {
+    title: "Digital Marketing",
+    description: "Stay ahead on the digital front with a host of approaches, integrated to meet your business needs",
+    slug: "digital-marketing"
+  },
+  {
+    title: "Video & Photography",
+    description: "A picture is worth a thousand words. Tell your brand story with captivating images and engaging videos.",
+    slug: "video-photography"
+  },
+  {
+    title: "Branding & Creative Design",
+    description: "With a little sparkle and some zing, your new brand identity is ready to take on the world.",
+    slug: "brand-creative-design"
+  },
+  {
+    title: "Websites & Apps",
+    description: "Your business' first point of contact can leave a lasting impression. Build your best brand website with us!",
+    slug: "website-apps"
+  },
+  {
+    title: "Event Management",
+    description: "From conceptualising all the way to d-day handling, our event management team is poised to bring it all to life.",
+    slug: "event-management"
+  },
+  {
+    title: "Media Buying",
+    description: "Put your brand in front of the right audience at the right time and place. Let us help you optimise your digital presence.",
+    slug: "media-buying"
+  },
+
+])
 
 // #circle-mouse-follow-1
 
@@ -328,67 +162,38 @@ const mouseMoveTimer = () => {
     const mouseX = mousePosition.value.x;
     const mouseY = mousePosition.value.y;
 
-    if (activeCircleFollowIndex.value === 0) {
-      const xOffset = document.querySelector(".section-container")?.getBoundingClientRect().right;
-      const yOffset = document.querySelector("#item-0")?.getBoundingClientRect().bottom;
+    servicesItem.value.map((item, i) => {
+      if (activeCircleFollowIndex.value === i) {
+        const xOffset = document.querySelector(".section-container")?.getBoundingClientRect().right;
+        const yOffset = document.querySelector(`#item-${i}`)?.getBoundingClientRect().bottom;
 
-      const currentX = document.querySelector("#circle-mouse-follow-0")?.getBoundingClientRect().right;
-      const currentY = document.querySelector("#circle-mouse-follow-0")?.getBoundingClientRect().bottom;
+        const currentX = document.querySelector(`#circle-mouse-follow-${i}`)?.getBoundingClientRect().right;
+        const currentY = document.querySelector(`#circle-mouse-follow-${i}`)?.getBoundingClientRect().bottom;
 
-      // TODO REMOVE HARD
-      const differenceX = Math.abs(mouseX - currentX + 60);
-      const differenceY = Math.abs(currentY - mouseY);
+        // TODO REMOVE HARD
+        const differenceX = Math.abs(mouseX - currentX + 60);
+        const differenceY = Math.abs(currentY - mouseY);
 
-      const destinationX = mouseX - xOffset + 80;
-      const destinationY = mouseY - yOffset + 100;
+        const destinationX = mouseX - xOffset + 90;
+        const destinationY = mouseY - yOffset + 70;
 
-      gsap.to("#circle-mouse-follow-0", {
-        x: destinationX,
-        y: destinationY,
-        scaleX: 1 + differenceX / 300,
-        scaleY: 1 + differenceY / 200,
-        duration: 0.1,
-      });
-    } else {
-      gsap.to("#circle-mouse-follow-0", {
-        x: 0,
-        y: 0,
-        scaleX: 1,
-        scaleY: 1,
-        duration: 0.2,
-      });
-    }
-
-    if (activeCircleFollowIndex.value === 1) {
-      const xOffset = document.querySelector(".section-container")?.getBoundingClientRect().right;
-      const yOffset = document.querySelector("#item-1")?.getBoundingClientRect().bottom;
-
-      const currentX = document.querySelector("#circle-mouse-follow-1")?.getBoundingClientRect().right;
-      const currentY = document.querySelector("#circle-mouse-follow-1")?.getBoundingClientRect().bottom;
-
-      // TODO REMOVE HARD
-      const differenceX = Math.abs(mouseX - currentX + 60);
-      const differenceY = Math.abs(currentY - mouseY);
-
-      const destinationX = mouseX - xOffset + 80;
-      const destinationY = mouseY - yOffset + 100;
-
-      gsap.to("#circle-mouse-follow-1", {
-        x: destinationX,
-        y: destinationY,
-        scaleX: 1 + differenceX / 300,
-        scaleY: 1 + differenceY / 200,
-        duration: 0.1,
-      });
-    } else {
-      gsap.to("#circle-mouse-follow-1", {
-        x: 0,
-        y: 0,
-        scaleX: 1,
-        scaleY: 1,
-        duration: 0.2,
-      });
-    }
+        gsap.to(`#circle-mouse-follow-${i}`, {
+          x: destinationX,
+          y: destinationY,
+          scaleX: 1 + differenceX / 300,
+          scaleY: 1 + differenceY / 200,
+          duration: 0.1,
+        });
+      } else {
+        gsap.to(`#circle-mouse-follow-${i}`, {
+          x: 0,
+          y: 0,
+          scaleX: 1,
+          scaleY: 1,
+          duration: 0.2,
+        });
+      }
+    })
 
     mouseMoveTimer();
   }, 100);
@@ -442,6 +247,7 @@ onMounted(() => {
 .hover-services
   .divider-parent
       text-decoration: none
+      overflow: hidden
       &:hover
           background-color: #DC9F41
           .service-item
@@ -540,4 +346,10 @@ onMounted(() => {
   position: absolute
   transform: translate(-50%, -50%)
   transition: 0.2s all
+  z-index: 0
+
+.item-icon
+  width: 50px
+.item-icon-orange
+  width: 50px
 </style>
