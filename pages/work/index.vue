@@ -347,7 +347,7 @@ onMounted(() => {
         trigger: item,
         start: "top center",
         end: "center center",
-        toggleActions: "play play play play",
+        toggleActions: "play play play reverse",
       }
     })
   })
