@@ -460,12 +460,15 @@
             src="../assets/images/home/light-up-your-idea-large-bulb-glow.png"
           />
           <div class="large-bulb-pull-image">
+            <p class="font-white just-sans">pull me</p>
             <img :class="{ idle: bulbPullIdle }" src="../assets/images/home/light-up-your-idea-large-bulb-pull.png" />
           </div>
+
           <div class="pull-me-text-container">
             <!-- <img src="../assets/images/home/arrow-down.png" /> -->
-            <p class="font-white just-sans">pull me</p>
+            <!-- <p class="font-white just-sans">pull me</p> -->
           </div>
+
           <div class="bulb-text-container">
             <p
               class="font-white just-sans font-32"
@@ -1260,10 +1263,15 @@ onMounted(() => {
         position: absolute
         left: 50%
         transform: translateX(-50%)
-        overflow: hidden
+        overflow-y: clip
+        p
+          position: absolute
+          right: -40px
+          top: 20px
         img
           width: 20px
           transform: translateY(-50%)
+          padding: 0 40px 40px 40px
           &.idle
             animation: bulb-switch-shake 2s ease-in-out infinite
       .pull-me-text-container
@@ -1271,7 +1279,8 @@ onMounted(() => {
         position: absolute
         align-items: center
         justify-content: center
-        right: 0%
+        right: 0
+        bottom: 0
         +desktop
           right: 0
         img
