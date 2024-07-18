@@ -162,7 +162,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: "#line-1",
       scrub: 2,
-      start: "top+=200 center",
+      start: "top center",
       end: "bottom center",
       toggleActions: "play reverse play reverse"
     }
@@ -175,7 +175,7 @@ onMounted(() => {
         className: "enabled",
         targets: ["#svg1", ".text-container.first"]
       },
-      start: "top+=200 center",
+      start: "top center",
       end: "bottom+=2000 center",
       toggleActions: "play play play play"
     }
@@ -189,7 +189,7 @@ onMounted(() => {
         className: "enabled",
         targets: ["#svg2 .svg-elem-4"]
       },
-      start: "top+=200 center",
+      start: "top center",
       end: "bottom+=2000 center",
       toggleActions: "play play play play"
     }
@@ -202,7 +202,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: "#line-2",
       scrub: 2,
-      start: "top+=200 center",
+      start: "top center",
       end: "bottom center",
       toggleActions: "play reverse play reverse"
     }
@@ -216,7 +216,7 @@ onMounted(() => {
         className: "enabled",
         targets: ["#svg2 .svg-elem-1", "#svg2 .svg-elem-2", "#svg2 .svg-elem-3", ".text-container.second"]
       },
-      start: "top+=200 center",
+      start: "top center",
       end: "bottom+=2000 center",
       toggleActions: "play play play play"
     }
@@ -243,7 +243,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: "#line-3",
       scrub: 1,
-      start: "top+=200 center",
+      start: "top center",
       end: "bottom center",
       toggleActions: "play reverse play reverse"
     }
@@ -257,7 +257,7 @@ onMounted(() => {
         className: "enabled",
         targets: ["#svg3 .svg-elem-1", "#svg3 .svg-elem-2", "#svg3 .svg-elem-3", ".text-container.third"]
       },
-      start: "top+=200 center",
+      start: "top center",
       end: "bottom+=2000 center",
       toggleActions: "play play play play"
     }
@@ -271,7 +271,7 @@ onMounted(() => {
         className: "enabled",
         targets: ["#svg4 .svg-elem-4"]
       },
-      start: "top+=200 center",
+      start: "top center",
       end: "bottom+=2000 center",
       toggleActions: "play play play play"
     }
@@ -284,7 +284,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: "#line-4",
       scrub: 2,
-      start: "top+=200 center",
+      start: "top center",
       end: "bottom center",
       toggleActions: "play reverse play reverse"
     }
@@ -298,7 +298,7 @@ onMounted(() => {
         className: "enabled",
         targets: ["#svg4 .svg-elem-1", "#svg4 .svg-elem-2", "#svg4 .svg-elem-3", ".text-container.fourth"]
       },
-      start: "top+=200 center",
+      start: "top center",
       end: "top+=2000 center",
       toggleActions: "play play play play"
     }
