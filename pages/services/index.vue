@@ -29,13 +29,13 @@
       class="full-screen-center-content hover-services"
       style="flex-direction: column"
     >
-      <NuxtLink
+      <a
         v-for="(item, i) in servicesItem"
         class="divider-parent"
         :key="i"
         :id="`item-${i}`"
         style="width: 100%; text-decoration: none"
-        :to="`/services/growth-strategy`"
+        :href="`/services/${item.slug}`"
         @mouseenter="() => setActiveFollowCircleIndex(i)"
         @mouseleave="() => setActiveFollowCircleIndex(-1)"
       >
@@ -71,7 +71,7 @@
             </div>
           </div>
         </div>
-      </NuxtLink>
+      </a>
     </div>
   </div>
 </template>

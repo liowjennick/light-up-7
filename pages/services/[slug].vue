@@ -3,8 +3,7 @@
     <!-- Header -->
     <div class="full-screen-center-content section-container"
       style="padding-top: 150px; gap: 45px; padding-bottom: 48px;">
-      <img class="service-icon" :src="currentService.icon" alt="growth" width="100"
-        style="margin-left: auto; height: auto;">
+        <DotLottieVue autoplay loop :src="`/lottie/services/${params.slug}.json`"/>
       <div class="full-screen-start-center" style="color: #DC9F41; flex-direction: column;">
         <h1 style="margin: 0; font-size: 64px; font-weight: normal;">{{ currentService.title }}</h1>
         <p style="font-size: 26px; margin: 0;">{{ currentService.description }}</p>
@@ -13,7 +12,7 @@
     <!-- Animation header -->
     <div>
       <!-- Animation Here -->
-      <LineToBulb />
+        <DotLottieVue autoplay loop src="/lottie/services/services-line-bulb.json"/>
     </div>
     <!-- Service Details -->
     <div class="service-detail-grid-2 section-container">
@@ -33,25 +32,17 @@
 </template>
 <script setup lang='ts'>
 import { reactive } from 'vue';
-import growth from '@/assets/svg/growth.svg'
-import digital from '@/assets/svg/digital.svg'
-import media from '@/assets/svg/media.svg'
-import brand from '@/assets/svg/brand.svg'
-import website from '@/assets/svg/website.svg'
-import video from '@/assets/svg/video.svg'
-import event from '@/assets/svg/event.svg'
-import LineToBulb from '~/assets/svg/line-to-bulb.vue';
 import { useRoute } from 'vue-router';
-import gsap from 'gsap'
+import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
 
 const { params } = useRoute()
 
 const currentService = reactive<{
-  icon: string,
+  slug: string,
   title: string,
   description: string,
 }>({
-  icon: "",
+  slug: "",
   title: "",
   description: "",
 })
@@ -60,7 +51,6 @@ const serviceDetails = ref<{ title: string, description: string }[]>([])
 onMounted(() => {
   switch (params.slug) {
     case "growth-strategy":
-      currentService.icon = growth
       currentService.title = "Growth Strategy"
       currentService.description = "Propel your business with a tactical plan optimised to achieve your desired goals."
       serviceDetails.value = [{
@@ -89,7 +79,6 @@ onMounted(() => {
       },]
       break;
     case "digital-marketing":
-      currentService.icon = digital
       currentService.title = "Digital Marketing"
       currentService.description = "Stay ahead on the digital front with a host of approaches, integrated to meet your business needs"
       serviceDetails.value = [
@@ -124,7 +113,6 @@ onMounted(() => {
       ]
       break;
     case "media-buying":
-      currentService.icon = media
       currentService.title = "Media Buying"
       currentService.description = "Put your brand in front of the right audience at the right time and place. Let us help you optimise your digital presence."
       serviceDetails.value = [
@@ -159,7 +147,6 @@ onMounted(() => {
       ]
       break;
     case "brand-creative-design":
-      currentService.icon = brand
       currentService.title = "Branding & Creative Design"
       currentService.description = "With a little sparkle and some zing, your new brand identity is ready to take on the world."
       serviceDetails.value = [
@@ -194,7 +181,6 @@ onMounted(() => {
       ]
       break;
     case "website-apps":
-      currentService.icon = website
       currentService.title = "Websites & Apps"
       currentService.description = "Your business’ first point of contact can leave a lasting impression. Build your best brand website with us! "
       serviceDetails.value = [
@@ -229,7 +215,6 @@ onMounted(() => {
       ]
       break;
     case "video-photography":
-      currentService.icon = video
       currentService.title = "Video & Phototgraphy"
       currentService.description = "A picture is worth a thousand words. Tell your brand story with captivating images and engaging videos."
       serviceDetails.value = [
@@ -268,7 +253,6 @@ onMounted(() => {
       ]
       break;
     case "event-management":
-      currentService.icon = event
       currentService.title = "Event Management"
       currentService.description = "From conceptualising all the way to d-day handling, our event management team is poised to bring it all to life. "
       serviceDetails.value = [
@@ -295,29 +279,6 @@ onMounted(() => {
       ]
       break;
   }
-  gsap.to('.service-icon', {
-    keyframes: [
-      {
-        scaleX: -1,
-        duration: 1,
-        ease: 'power2.inOut'
-      },
-      {
-        scaleX: 1,
-        duration: 1,
-        ease: 'power2.inOut'
-      },
-      {
-        scaleX: -1,
-        duration: 1,
-        ease: 'power2.inOut'
-      },
-      {
-        scaleX: 1,
-        duration: 1,
-        ease: 'bounce.out'
-      }],
-  })
 })
 
 const navs = reactive([
@@ -342,6 +303,10 @@ const navs = reactive([
 @import "../../assets/sass/layout.sass"
 @import "../../assets/sass/inputs.sass"
 
+.hidden
+  display: none
+canvas
+  width: 50%
 #services
   background: black
 .service-detail-grid-2
