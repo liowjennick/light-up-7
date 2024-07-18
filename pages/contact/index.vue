@@ -1,11 +1,11 @@
 <template>
   <div id="contact-page">
-    <div style="position: relative; margin-bottom: 20px">
-      <!-- <img src="../../assets/images/contact/sparkles-top.png" alt="Sparkles top"
-        style="position: absolute; top: 150px; left: 500px;" class="pulse-1">
-      <img src="../../assets/images/contact/sparkles-bottom.png" alt="Sparkles bottom"
-        style="position: absolute; bottom: 300px; right: 350px;" class="pulse-2"> -->
-      <img src="../../assets/images/contact/contact-header.png" style="width: 100%; height: auto;" />
+    <div class="contact-header full-screen-center-content">
+      <img src="../../assets/images/contact/contact-header.png" style="width: 60%; height: auto;"
+        id="contact-header-title" />
+      <PhoneLine class="phone-line" />
+      <div class="black-screen"></div>
+      <Phone class="phone" />
     </div>
     <div class="section-container full-screen-start-center" style="gap: 60px">
       <div style="padding: 24px 0px; flex-direction: column;" class="full-screen-start-start">
@@ -99,6 +99,12 @@
 </template>
 
 <script setup lang="ts">
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+import PhoneLine from '~/assets/svg/phone-line.vue';
+import Phone from '~/assets/svg/phone.vue'
+
+gsap.registerPlugin(ScrollTrigger)
 useHead({
   script: [
     {
@@ -114,6 +120,21 @@ useHead({
 const grecaptchaWidget = ref(null)
 
 onMounted(() => {
+  gsap.to(".black-screen", {
+    width: "0%",
+    scrollTrigger: {
+      trigger: ".black-screen",
+      pin: true,
+      scrub: 1,
+      start: "top top",
+      end: "bottom top",
+      toggleActions: "play reverse play reverse"
+    }
+  }
+  )
+  // tl.to(".black-screen", {
+  //   width: "0%"
+  // })
   console.log("Loaded")
   grecaptchaWidget.value = grecaptcha.render("g-recaptcha", {
     "sitekey": "6LfzyL4UAAAAAMKy1bCFyL8wKNOC3ehLQlt8PQH1"
@@ -180,17 +201,31 @@ const submitForm = async (e) => {
 @import "../../assets/sass/reset.sass"
 @import "../../assets/sass/inputs.sass"
 
-.pulse-1
-  animation: 1s infinite alternate pulsing
-.pulse-2
-  animation: 1s infinite alternate pulsing
-  animation-delay: 1s
+.contact-header
+  position: relative
+  height: 950px
 
-@keyframes pulsing
-  from
-    opacity: 30%
-    transform: scale(.8)
-  to
-    opacity: 100%
-    transform: scale(1.2)
+#contact-header-title
+  display: none
+.phone-line
+  position: absolute
+  bottom: 0
+  left: 0
+  transform: translateX(-4.5%)
+  z-index: 1
+.black-screen
+  height: inherit
+  width: 100%
+  background-color: black
+  position: absolute
+  top: 0
+  right: 0
+  // display: none
+  z-index: 2
+.phone
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 3
+  transform: translate(-15%, -5%) rotate(135deg)
 </style>
