@@ -46,7 +46,7 @@
           style="flex-direction: column; gap: 16px">
           <div style="width: fit-content; height: 160px; ">
             <!-- <img :src="mottoIcon.url" :alt="mottoIcon.alt" style="height: 100%;" /> -->
-            <DotLottieVue style="height: 100%; width: auto" autoplay loop :src="mottoIcon.url" class="company-value" />
+            <DotLottieVue style="height: 100%; width: auto" autoplay loop :src="mottoIcon.url" />
           </div>
           <div>
             <p class="font-white" style="font-size: 20px; text-align: center;">{{ mottoIcon.title }}</p>
@@ -301,7 +301,7 @@ const mottoText = [`We believe the greatest ideas comes from the experience of b
               brands and organisations across the APAC region.`, `We understand wanting to leave your mark in the industry and we
               will support you until you make it! No matter the goals, you will
               have the resources to thrive.`]
-const mottoIcons = ["https://lottie.host/237e8fd5-e1f5-4fde-b7d5-af9adc366928/3OLQEDz7r3.json", "https://lottie.host/012651ff-864c-423a-8e68-837e8b1eabc4/uXD9QgpXpy.json", "https://lottie.host/b1d7bcd9-200b-4cce-9b9f-a8fd763fe9bd/8nIIt4gHSO.json"].map((motto, key) => ({
+const mottoIcons = ["https://lottie.host/94aaa01b-e14b-49c6-a7ff-c954b071ae62/mv0ZtYJHNn.json", "https://lottie.host/f0396e62-133c-44f9-9283-43ed82c1e173/KuudAy4Kvb.json", "https://lottie.host/8367b1b3-3995-46ef-b640-00c387413c09/7ZGBxnbywM.json"].map((motto, key) => ({
   url: motto,
   title: mottoTitle[key],
   text: mottoText[key],
@@ -367,10 +367,6 @@ const recentJobs = [
 @import "../../assets/sass/layout.sass"
 @import "../../assets/sass/inputs.sass"
 
-.company-value
-  transition: transform .3s ease-in-out
-  &:hover
-    transform: scale(1.3)
 .banner
   position: relative
   flex: 1 0 0
