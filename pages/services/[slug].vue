@@ -19,7 +19,7 @@
       <LottieAnimation autoplay :animation-data="LineBulb" class="services-header" />
     </div>
     <!-- Service Details -->
-    <div class="service-detail-grid-2 section-container">
+    <div class="service-detail-grid-2" :style="{height: `${(serviceDetails.length + 1) * 100}px`}">
       <div v-for="(detail, key) in serviceDetails" :key="key" class="full-screen-start-center service-detail-item"
         style="flex-direction: column;">
         <p>{{ detail.title }}</p>
@@ -352,11 +352,11 @@ const navs = reactive([
   flex-wrap: wrap
   justify-content: center
   gap: 60px
-  height: 600px
+  padding: 0 80px
   margin-bottom: 60px
   .service-detail-item
-    max-width: 50%
-    flex: 0 0 1
+    width: 45%
+    flex: 0
     padding: 24px
     border: 1px solid #000000
     color: white
