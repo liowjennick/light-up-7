@@ -32,32 +32,48 @@
 
       <div class="social-media-column">
         <div class="social-media-list-container top">
-          <div class="social-media-item">
-            <a href="https://www.instagram.com/lightupseven/" target="_blank">
+          <div class="social-media-item-container">
+            <a
+              href="https://www.instagram.com/lightupseven/"
+              target="_blank"
+              class="social-media-item"
+            >
               <img src="../assets/images/social-media-logo/instagram-logo.png" />
             </a>
-            <p class="font-light-gray just-sans font-weight-100">instagram</p>
+            <!-- <p class="font-light-gray just-sans font-weight-100">instagram</p> -->
           </div>
 
-          <div class="social-media-item">
-            <a href="https://www.facebook.com/lightupseven/" target="_blank">
+          <div class="social-media-item-container">
+            <a
+              href="https://www.facebook.com/lightupseven/"
+              target="_blank"
+              class="social-media-item"
+            >
               <img src="../assets/images/social-media-logo/facebook-logo.png" />
             </a>
-            <p class="font-light-gray just-sans font-weight-100">facebook</p>
+            <!-- <p class="font-light-gray just-sans font-weight-100">facebook</p> -->
           </div>
 
-          <div class="social-media-item">
-            <a href="https://www.linkedin.com/company/lightup7" target="_blank">
+          <div class="social-media-item-container">
+            <a
+              href="https://www.linkedin.com/company/lightup7"
+              target="_blank"
+              class="social-media-item"
+            >
               <img src="../assets/images/social-media-logo/linkedin-logo.png" />
             </a>
-            <p class="font-light-gray just-sans font-weight-100">linkedin</p>
+            <!-- <p class="font-light-gray just-sans font-weight-100">linkedin</p> -->
           </div>
 
-          <div class="social-media-item">
-            <a href="https://www.youtube.com/@LightUp7" target="_blank">
+          <div class="social-media-item-container">
+            <a
+              href="https://www.youtube.com/@LightUp7"
+              target="_blank"
+              class="social-media-item"
+            >
               <img src="../assets/images/social-media-logo/youtube-logo.png" />
             </a>
-            <p class="font-light-gray just-sans font-weight-100">youtube</p>
+            <!-- <p class="font-light-gray just-sans font-weight-100">youtube</p> -->
           </div>
         </div>
       </div>
@@ -69,8 +85,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style lang="sass" scoped>
 @import "../assets/sass/layout"
@@ -78,6 +93,7 @@
 
 #footer-container
   background-color: black
+  z-index: 10
   .section-container
     padding-top: 40px
     padding-bottom: 40px
@@ -132,29 +148,37 @@
         +desktop
           justify-content: center
           margin-bottom: 20px
-          justify-content: flex-start
-        .social-media-item
+          justify-content: center
+        .social-media-item-container
           // flex: 1
-          margin-right: 10px
+          // margin-right: 10px
           display: flex
           align-items: center
+          cursor: pointer
+          margin: 0 20px
           +desktop
-            margin-right: 5px
-            margin-left: 5px
+            margin-right: 10px
+            margin-left: 10px
             margin-bottom: 10px
-            flex: 1
-          a
+            // flex: 1
+            justify-content: center
+            display: block
+            // margin: 10px auto
+          .social-media-item
             height: 30px
             width: 30px
+            display: block
             border: 1px solid white
             border-radius: 50%
             display: flex
             align-items: center
             justify-content: center
             padding: 5px
-            margin-right: 10px
+            // margin-right: 10px
+            cursor: pointer
             img
               height: 20px
+              cursor: pointer
     .copyright-column
       flex: 1
       align-items: center
