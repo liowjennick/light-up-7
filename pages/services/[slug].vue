@@ -2,7 +2,12 @@
   <div id="services">
     <!-- Header -->
     <div class="full-screen-center-start section-container header-container">
-      <DotLottieVue autoplay loop :src="`/lottie/services/${params.slug}.json`" class="services-icon" />
+      <LottieAnimation
+          autoplay
+          loop
+          :animation-data="currentService.lottie"
+          class="services-icon"
+        />
       <div class="full-screen-start-center" style="color: #DC9F41; flex-direction: column;">
         <h1 style="margin: 0; font-size: 64px; font-weight: normal;">{{ currentService.title }}</h1>
         <p style="font-size: 26px; margin: 0;">{{ currentService.description }}</p>
@@ -11,7 +16,7 @@
     <!-- Animation header -->
     <div>
       <!-- Animation Here -->
-      <DotLottieVue autoplay loop src="/lottie/services/services-line-bulb.json" class="services-header" />
+      <LottieAnimation autoplay :animation-data="LineBulb" class="services-header" />
     </div>
     <!-- Service Details -->
     <div class="service-detail-grid-2 section-container">
@@ -32,26 +37,52 @@
 <script setup lang='ts'>
 import { reactive } from 'vue';
 import { useRoute } from 'vue-router';
-import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
+import { LottieAnimation } from 'lottie-web-vue'
+import Growth from '@/assets/images/services/lottie/growth-strategy.json'
+import Digital from '@/assets/images/services/lottie/digital-marketing.json'
+import Media from '@/assets/images/services/lottie/media-buying.json'
+import Branding from '@/assets/images/services/lottie/branding-creative.json'
+import Website from '@/assets/images/services/lottie/website-apps.json'
+import Video from '@/assets/images/services/lottie/video-photography.json'
+import Event from '@/assets/images/services/lottie/event-management.json'
+import LineBulb from '@/assets/images/services/lottie/services-line-bulb.json'
 
 const { params } = useRoute()
 
-const currentService = reactive<{
-  slug: string,
+const currentService = ref<{
+  lottie: any,
   title: string,
   description: string,
 }>({
-  slug: "",
+  lottie: getIcon(params.slug as string),
   title: "",
   description: "",
 })
 const serviceDetails = ref<{ title: string, description: string }[]>([])
 
+function getIcon (slug: string) { 
+  switch (slug) {
+    case "growth-strategy":
+      return Growth
+    case "digital-marketing":
+      return Digital
+    case "media-buying":
+      return Media
+    case "branding-creative":
+      return Branding
+    case "website-apps":
+      return Website
+    case "video-photography":
+      return Video
+    case "event-management":
+      return Event
+  }
+ }
 onMounted(() => {
   switch (params.slug) {
     case "growth-strategy":
-      currentService.title = "Growth Strategy"
-      currentService.description = "Propel your business with a tactical plan optimised to achieve your desired goals."
+      currentService.value.title = "Growth Strategy"
+      currentService.value.description = "Propel your business with a tactical plan optimised to achieve your desired goals."
       serviceDetails.value = [{
         title: 'Marketing Strategy & Consultation',
         description: 'Unlock your potential with personalised strategies to fuel growth and maximise your digital presence.'
@@ -78,8 +109,8 @@ onMounted(() => {
       },]
       break;
     case "digital-marketing":
-      currentService.title = "Digital Marketing"
-      currentService.description = "Stay ahead on the digital front with a host of approaches, integrated to meet your business needs"
+      currentService.value.title = "Digital Marketing"
+      currentService.value.description = "Stay ahead on the digital front with a host of approaches, integrated to meet your business needs"
       serviceDetails.value = [
         {
           title: "Social Media Management",
@@ -112,8 +143,8 @@ onMounted(() => {
       ]
       break;
     case "media-buying":
-      currentService.title = "Media Buying"
-      currentService.description = "Put your brand in front of the right audience at the right time and place. Let us help you optimise your digital presence."
+      currentService.value.title = "Media Buying"
+      currentService.value.description = "Put your brand in front of the right audience at the right time and place. Let us help you optimise your digital presence."
       serviceDetails.value = [
         {
           title: "Digital Advertising",
@@ -145,9 +176,9 @@ onMounted(() => {
         },
       ]
       break;
-    case "brand-creative-design":
-      currentService.title = "Branding & Creative Design"
-      currentService.description = "With a little sparkle and some zing, your new brand identity is ready to take on the world."
+    case "branding-creative":
+      currentService.value.title = "Branding & Creative Design"
+      currentService.value.description = "With a little sparkle and some zing, your new brand identity is ready to take on the world."
       serviceDetails.value = [
         {
           title: "Research & Strategy",
@@ -180,8 +211,8 @@ onMounted(() => {
       ]
       break;
     case "website-apps":
-      currentService.title = "Websites & Apps"
-      currentService.description = "Your business’ first point of contact can leave a lasting impression. Build your best brand website with us! "
+      currentService.value.title = "Websites & Apps"
+      currentService.value.description = "Your business’ first point of contact can leave a lasting impression. Build your best brand website with us! "
       serviceDetails.value = [
         {
           title: "UI & UX Design",
@@ -214,8 +245,8 @@ onMounted(() => {
       ]
       break;
     case "video-photography":
-      currentService.title = "Video & Phototgraphy"
-      currentService.description = "A picture is worth a thousand words. Tell your brand story with captivating images and engaging videos."
+      currentService.value.title = "Video & Phototgraphy"
+      currentService.value.description = "A picture is worth a thousand words. Tell your brand story with captivating images and engaging videos."
       serviceDetails.value = [
         {
           title: "Video Production",
@@ -252,8 +283,8 @@ onMounted(() => {
       ]
       break;
     case "event-management":
-      currentService.title = "Event Management"
-      currentService.description = "From conceptualising all the way to d-day handling, our event management team is poised to bring it all to life. "
+      currentService.value.title = "Event Management"
+      currentService.value.description = "From conceptualising all the way to d-day handling, our event management team is poised to bring it all to life. "
       serviceDetails.value = [
         {
           title: "Virtual / Physical / Hybrid Events",
