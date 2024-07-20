@@ -716,10 +716,10 @@ onMounted(() => {
           width: 80%
           // mix-blend-mode: multiply
           +large-mobile
-            max-width: 350px
+            max-width: 300px
           // mix-blend-mode: difference
           +mobile
-            width: 350px
+            width: 300px
         // .client-inner-text-white
         //   position: absolute
         //   z-index: 2
@@ -740,7 +740,7 @@ onMounted(() => {
             max-width: 300px
           // mix-blend-mode: difference
           +mobile
-            width: 200px
+            width: 300px
           &.active
             opacity: 1
         .client-text-outline-image

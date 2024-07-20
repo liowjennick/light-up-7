@@ -72,10 +72,7 @@
         class="divider-parent"
         :to="`/news/${thumb.id}`"
       >
-        <div
-          class="section-container full-screen-start-start divider-child news-row"
-          style="padding: 35px 80px"
-        >
+        <div class="section-container full-screen-start-start divider-child news-row">
           <div class="thumbnail-container">
             <img
               :src="`/images/news/${thumb.thumbnail_src}`"
@@ -326,10 +323,13 @@ onMounted(() => {
         img
             width: 100%
 .lottie-globe-rotate
-    width: 80%
-    height: 80%
+    width: 600px
     display: block
     margin: 0 auto
+    +large-mobile
+        width: 400px
+    +mobile
+        width: 100%
 
 .white-outlined-button
     font-size: 16px
@@ -351,8 +351,11 @@ onMounted(() => {
 
 .news-row
     display: flex
+    padding: 35px 80px
     +desktop
         display: block
+    +large-mobile
+        padding: 0 0 80px 0
     .thumbnail-container
         flex: 1
         +desktop
