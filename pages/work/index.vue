@@ -21,7 +21,10 @@
       <h1 class="page-title">WORK</h1>
 
       <div id="sliding-button">
-        <div class="sliding-button-description" :class="{ 'project-active': displayMode === DisplayMode.Projects }">
+        <div
+          class="sliding-button-description"
+          :class="{ 'project-active': displayMode === DisplayMode.Projects }"
+        >
           <p class="clients font-orange text-center just-sans font-20 font-weight-200">swipe right to see our past works</p>
           <p class="projects font-orange text-center just-sans font-20 font-weight-200">swipe left to see our clients</p>
         </div>
@@ -38,8 +41,18 @@
               <img src="../../assets/images/work/projects-slider-icon.png" />
             </div>
 
-            <p class="font-weight-200" v-if="displayMode === DisplayMode.Clients">our clients</p>
-            <p class="font-weight-200" v-if="displayMode === DisplayMode.Projects">our projects</p>
+            <p
+              class="font-weight-200"
+              v-if="displayMode === DisplayMode.Clients"
+            >
+              our clients
+            </p>
+            <p
+              class="font-weight-200"
+              v-if="displayMode === DisplayMode.Projects"
+            >
+              our projects
+            </p>
             <div class="slider-circle">
               <img src="../../assets/images/work/right-caret.png" />
             </div>
@@ -59,11 +72,29 @@
             <div class="client-logo-container">
               <!-- <img class="client-bulb-image" src="../../assets/images/work/clients-logo/petronas-logo.png" /> -->
               <!-- class="client-generic-bulb" -->
-              <img class="client-generic-bulb" src="../../assets/images/work/clients-logo/generic-bulb.png" />
-              <img :class="{ active: activeClientBulbImage === client.slug }"  v-for="(client, i) in clientsCarouselLogo" :key="i" class="client-bulb-image" :src="`/images/work/bulb-logo/${client.slug}.png`" />
+              <img
+                class="client-generic-bulb"
+                src="../../assets/images/work/bulb-outline-yellow.png"
+              />
+              <img
+                :class="{ active: activeClientBulbImage === client.slug }"
+                v-for="(client, i) in clientsCarouselLogo"
+                :key="i"
+                class="client-bulb-image"
+                :src="`/images/work/bulb-logo/${client.slug}.png`"
+              />
 
-              <h1 class="client-large-name">clients</h1>
-              <h1 class="client-back-name">clients</h1>
+              <img
+                class="client-text-outline-image"
+                src="../../assets/images/work/bulb-clients-outline.png"
+              />
+              <img
+                class="client-text-white-image"
+                src="../../assets/images/work/bulb-clients-white.png"
+              />
+
+              <!-- <h1 class="client-large-name">clients</h1>
+              <h1 class="client-back-name">clients</h1> -->
               <!-- <img class="client-inner-text-white" src="../../assets/images/work/bulb-inner-text-white.png" /> -->
             </div>
 
@@ -72,7 +103,13 @@
             </div> -->
 
             <div class="client-list-image-container">
-              <div @mouseover="activeClientBulbImage = client.slug" class="client-image-container" :key="i" v-for="(client, i) in clientsCarouselLogo">
+              <div
+                @mouseover="activeClientBulbImage = client.slug"
+                @mouseleave="activeClientBulbImage = -1"
+                class="client-image-container"
+                :key="i"
+                v-for="(client, i) in clientsCarouselLogo"
+              >
                 <img :src="`/images/work/clients-carousel-logo/${client.image_src}`" />
               </div>
             </div>
@@ -103,11 +140,11 @@
 import gsap from "gsap";
 import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
 import ProjectData from "../../public/data/projects_data.js";
-import { setCookie, getCookie } from "../../utils/cookies"
+import { setCookie, getCookie } from "../../utils/cookies";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
-const initialAnimationComplete = ref(false)
+const initialAnimationComplete = ref(false);
 
 enum DisplayMode {
   Clients,
@@ -116,172 +153,170 @@ enum DisplayMode {
 
 const displayMode = ref(DisplayMode.Clients);
 
-const activeClientBulbImage = ref("")
+const activeClientBulbImage = ref("");
 
 const clientsCarouselLogo = ref([
   {
     image_src: "khazanah-nasional.png",
-    slug: "khazanah-nasional"
+    slug: "khazanah-nasional",
   },
   {
     image_src: "cyberview.png",
-    slug: "cyberview"
+    slug: "cyberview",
   },
   {
     image_src: "bnm.png",
-    slug: "bnm"
+    slug: "bnm",
   },
   {
     image_src: "petronas.png",
-    slug: "petronas"
+    slug: "petronas",
   },
   {
     image_src: "7-eleven.png",
-    slug: "7-eleven"
+    slug: "7-eleven",
   },
   {
     image_src: "unicef.png",
-    slug: "unicef"
+    slug: "unicef",
   },
   {
     image_src: "fen.png",
-    slug: "fen"
+    slug: "fen",
   },
   {
     image_src: "pnb.png",
-    slug: "pnb"
+    slug: "pnb",
   },
   {
     image_src: "suruhanjaya.png",
-    slug: "suruhanjaya"
+    slug: "suruhanjaya",
   },
   {
     image_src: "hotlink.png",
-    slug: "hotlink"
+    slug: "hotlink",
   },
   {
     image_src: "ktm.png",
-    slug: "ktm"
+    slug: "ktm",
   },
   {
     image_src: "tabung-haji.png",
-    slug: "tabung-haji"
+    slug: "tabung-haji",
   },
   {
     image_src: "paynet.png",
-    slug: "paynet"
+    slug: "paynet",
   },
   {
     image_src: "kpj.png",
-    slug: "kpj"
+    slug: "kpj",
   },
   {
     image_src: "dubai-uae.png",
-    slug: "dubai-uae"
+    slug: "dubai-uae",
   },
   {
     image_src: "sime-darby.png",
-    slug: "sime-darby"
+    slug: "sime-darby",
   },
   {
     image_src: "epsom.png",
-    slug: "epsom"
+    slug: "epsom",
   },
   {
     image_src: "pidm.png",
-    slug: "pidm"
+    slug: "pidm",
   },
   {
     image_src: "tokio-marine.png",
-    slug: "tokio-marine"
+    slug: "tokio-marine",
   },
   {
     image_src: "unilever.png",
-    slug: "unilever"
+    slug: "unilever",
   },
   {
     image_src: "bursa-malaysia.png",
-    slug: "bursa-malaysia"
+    slug: "bursa-malaysia",
   },
   {
     image_src: "astro.png",
-    slug: "astro"
+    slug: "astro",
   },
   {
     image_src: "ahhyum.png",
-    slug: "ahhyum"
+    slug: "ahhyum",
   },
   {
     image_src: "fwd.png",
-    slug: "fwd"
+    slug: "fwd",
   },
   {
     image_src: "hitachi.png",
-    slug: "hitachi"
+    slug: "hitachi",
   },
   {
     image_src: "fimm.png",
-    slug: "fimm"
+    slug: "fimm",
   },
   {
     image_src: "mprc.png",
-    slug: "mprc"
+    slug: "mprc",
   },
   {
     image_src: "rosken.png",
-    slug: "rosken"
+    slug: "rosken",
   },
   {
     image_src: "kwap.png",
-    slug: "kwap"
+    slug: "kwap",
   },
   {
     image_src: "ambank.png",
-    slug: "ambank"
+    slug: "ambank",
   },
   {
     image_src: "asus.png",
-    slug: "asus"
+    slug: "asus",
   },
   {
     image_src: "selangor.png",
-    slug: "selangor"
+    slug: "selangor",
   },
   {
     image_src: "kwsp.png",
-    slug: "kwsp"
+    slug: "kwsp",
   },
   {
     image_src: "rjm.png",
-    slug: "rjm"
+    slug: "rjm",
   },
   {
     image_src: "malaysia-airports.png",
-    slug: "malaysia-airports"
+    slug: "malaysia-airports",
   },
   {
     image_src: "beats-by-dr-dre.png",
-    slug: "beats-by-dr-dre"
+    slug: "beats-by-dr-dre",
   },
   {
     image_src: "pdi.png",
-    slug: "pdi"
+    slug: "pdi",
   },
   {
     image_src: "leonardo.png",
-    slug: "leonardo"
+    slug: "leonardo",
   },
   {
     image_src: "suria-klcc.png",
-    slug: "suria-klcc"
+    slug: "suria-klcc",
   },
   {
     image_src: "ubermen.png",
-    slug: "ubermen"
+    slug: "ubermen",
   },
-])
-
-
+]);
 
 onMounted(() => {
   // INIT ANIMATION
@@ -309,9 +344,9 @@ onMounted(() => {
       start: "top+=400 bottom",
       end: "top top",
       scrub: 1,
-      toggleActions: "play reverse play reverse"
-    }
-  })
+      toggleActions: "play reverse play reverse",
+    },
+  });
 
   gsap.to(".light-background-triangle", {
     duration: 1,
@@ -333,8 +368,8 @@ onMounted(() => {
     opacity: 1,
     delay: 1.2,
     onComplete: () => {
-      initialAnimationComplete.value = true
-    }
+      initialAnimationComplete.value = true;
+    },
   });
 
   // PROJECT SCROLL IN WHEN SCROLLING
@@ -348,20 +383,20 @@ onMounted(() => {
         start: "top center",
         end: "center center",
         toggleActions: "play play play reverse",
-      }
-    })
-  })
+      },
+    });
+  });
 
   // SLIDING BUTTON
   const sliderButtonWidth = 60;
   const sliderMaxDragDistance = document.querySelector(".sliding-button")?.clientWidth - sliderButtonWidth;
 
   // INITIAL SECTION OF SLIDING BUTTON
-  const sectionCookie = getCookie("work-section")
+  const sectionCookie = getCookie("work-section");
   const element = document.querySelector(".slider-circle");
 
   if (sectionCookie === JSON.stringify(DisplayMode.Projects)) {
-    displayMode.value = DisplayMode.Projects
+    displayMode.value = DisplayMode.Projects;
 
     gsap.to(element, {
       x: sliderMaxDragDistance,
@@ -412,7 +447,7 @@ onMounted(() => {
         });
 
         displayMode.value = DisplayMode.Projects;
-        setCookie("work-section", displayMode.value, 2)
+        setCookie("work-section", displayMode.value, 2);
       } else {
         gsap.to(this.target, {
           x: 0,
@@ -426,7 +461,7 @@ onMounted(() => {
         });
 
         displayMode.value = DisplayMode.Clients;
-        setCookie("work-section", displayMode.value, 2)
+        setCookie("work-section", displayMode.value, 2);
       }
     },
   });
@@ -638,6 +673,10 @@ onMounted(() => {
         transition: 1.5s opacity
         opacity: 1
         flex: 0 0 100%
+        .section-container
+          display: flex
+          +large-mobile
+            display: block
       .projects-section-container
         transition: 1.5s opacity
         opacity: 0
@@ -659,22 +698,28 @@ onMounted(() => {
           width: 400px
       .client-logo-container
         position: relative
-        margin-bottom: 40px
+        width: 350px
+        display: flex
+        align-items: center
+        justify-content: center
+        // margin-bottom: 40px
         // background: $orange
         // opacity: 0.15
+        margin-right: 80px
+        +large-mobile
+          margin: 0 auto 40px auto
         .client-generic-bulb
           display: block
           margin: 0 auto
           position: relative
-          z-index: 1
-          width: 400px
+          z-index: 3
+          width: 80%
           // mix-blend-mode: multiply
-
           +large-mobile
             max-width: 300px
           // mix-blend-mode: difference
           +mobile
-            width: 200px
+            width: 300px
         // .client-inner-text-white
         //   position: absolute
         //   z-index: 2
@@ -684,10 +729,10 @@ onMounted(() => {
         //   width: 80%
         .client-bulb-image
           position: absolute
-          top: 0
+          top: 50%
           left: 50%
-          transform: translateX(-50%)
-          width: 400px
+          transform: translate(-50%, -50%)
+          width: 80%
           z-index: 2
           opacity: 0
           transition: 0.2s all
@@ -695,13 +740,28 @@ onMounted(() => {
             max-width: 300px
           // mix-blend-mode: difference
           +mobile
-            width: 200px
+            width: 300px
           &.active
             opacity: 1
+        .client-text-outline-image
+          position: absolute
+          width: 115%
+          top: 53.9%
+          left: 51.3%
+          transform: translate(-50%, -50%)
+          z-index: 10
+        .client-text-white-image
+          position: absolute
+          width: 118%
+          top: 55.9%
+          left: 51.5%
+          transform: translate(-50%, -50%)
+          z-index: 10
         .client-large-name
-          top: 20%
-          left: 0
+          top: 40%
+          left: 50%
           width: 100%
+          transform: translate(-50%, -50%)
           // background: rgba(255, 255, 255, 0.2)
           mix-blend-mode: overlay
           position: absolute
@@ -711,7 +771,7 @@ onMounted(() => {
           text-align: center
           font-family: "JustSans"
           text-shadow: 0 0 5px white
-          font-size: 140px
+          font-size: 100px
           z-index: 2
           // mix-blend-mode: color-dodge
           // filter: drop-shadow(0px 0px 2px black)
@@ -720,9 +780,10 @@ onMounted(() => {
           +mobile
             font-size: 60px
         .client-back-name
-          top: 20%
-          left: 0
+          top: 40%
+          left: 50%
           width: 100%
+          transform: translate(-50%, -50%)
           position: absolute
           color: none
           opacity: 1
@@ -730,7 +791,7 @@ onMounted(() => {
           font-family: "JustSans"
           color: black
           text-shadow: 0 0 5px white
-          font-size: 140px
+          font-size: 100px
           z-index: 0
           +large-mobile
             font-size: 100px
@@ -741,9 +802,10 @@ onMounted(() => {
     flex-wrap: wrap
     align-items: center
     justify-content: center
+    flex: 1
     .client-image-container
-      flex: 0 0 10%
-      padding: 10px
+      flex: 0 0 11%
+      padding: 5px
       +desktop
         flex: 0 0 14%
       +large-mobile
