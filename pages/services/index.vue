@@ -29,14 +29,13 @@
       class="full-screen-center-content hover-services"
       style="flex-direction: column"
     >
-      <a
+      <NuxtLink
         v-for="(item, i) in servicesItem"
         class="divider-parent"
         :key="i"
         :id="`item-${i}`"
         style="width: 100%; text-decoration: none"
-        :href="`/services/growth-strategy`"
-        target="_blank"
+        :to="`/services/${item.slug}`"
         @mouseenter="() => setActiveFollowCircleIndex(i)"
         @mouseleave="() => setActiveFollowCircleIndex(-1)"
       >
@@ -80,7 +79,7 @@
             </div>
           </div>
         </div>
-      </a>
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -118,7 +117,7 @@ const servicesItem = ref([
   {
     title: "Branding & Creative Design",
     description: "With a little sparkle and some zing, your new brand identity is ready to take on the world.",
-    slug: "brand-creative-design",
+    slug: "branding-creative",
   },
   {
     title: "Websites & Apps",

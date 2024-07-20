@@ -1,10 +1,13 @@
 <template>
   <div id="services">
     <!-- Header -->
-    <div class="full-screen-center-content section-container"
-      style="padding-top: 150px; gap: 45px; padding-bottom: 48px;">
-      <img class="service-icon" :src="currentService.icon" alt="growth" width="100"
-        style="margin-left: auto; height: auto;">
+    <div class="full-screen-center-start section-container header-container">
+      <LottieAnimation
+          autoplay
+          loop
+          :animation-data="currentService.lottie"
+          class="services-icon"
+        />
       <div class="full-screen-start-center" style="color: #DC9F41; flex-direction: column;">
         <h1 style="margin: 0; font-size: 64px; font-weight: normal;">{{ currentService.title }}</h1>
         <p style="font-size: 26px; margin: 0;">{{ currentService.description }}</p>
@@ -13,10 +16,10 @@
     <!-- Animation header -->
     <div>
       <!-- Animation Here -->
-      <LineToBulb />
+      <LottieAnimation autoplay :animation-data="LineBulb" class="services-header" />
     </div>
     <!-- Service Details -->
-    <div class="service-detail-grid-2 section-container">
+    <div class="service-detail-grid-2" :style="{height: `${(serviceDetails.length + 1) * 100}px`}">
       <div v-for="(detail, key) in serviceDetails" :key="key" class="full-screen-start-center service-detail-item"
         style="flex-direction: column;">
         <p>{{ detail.title }}</p>
@@ -33,36 +36,53 @@
 </template>
 <script setup lang='ts'>
 import { reactive } from 'vue';
-import growth from '@/assets/svg/growth.svg'
-import digital from '@/assets/svg/digital.svg'
-import media from '@/assets/svg/media.svg'
-import brand from '@/assets/svg/brand.svg'
-import website from '@/assets/svg/website.svg'
-import video from '@/assets/svg/video.svg'
-import event from '@/assets/svg/event.svg'
-import LineToBulb from '~/assets/svg/line-to-bulb.vue';
 import { useRoute } from 'vue-router';
-import gsap from 'gsap'
+import { LottieAnimation } from 'lottie-web-vue'
+import Growth from '@/assets/images/services/lottie/growth-strategy.json'
+import Digital from '@/assets/images/services/lottie/digital-marketing.json'
+import Media from '@/assets/images/services/lottie/media-buying.json'
+import Branding from '@/assets/images/services/lottie/branding-creative.json'
+import Website from '@/assets/images/services/lottie/website-apps.json'
+import Video from '@/assets/images/services/lottie/video-photography.json'
+import Event from '@/assets/images/services/lottie/event-management.json'
+import LineBulb from '@/assets/images/services/lottie/services-line-bulb.json'
 
 const { params } = useRoute()
 
-const currentService = reactive<{
-  icon: string,
+const currentService = ref<{
+  lottie: any,
   title: string,
   description: string,
 }>({
-  icon: "",
+  lottie: getIcon(params.slug as string),
   title: "",
   description: "",
 })
 const serviceDetails = ref<{ title: string, description: string }[]>([])
 
+function getIcon (slug: string) { 
+  switch (slug) {
+    case "growth-strategy":
+      return Growth
+    case "digital-marketing":
+      return Digital
+    case "media-buying":
+      return Media
+    case "branding-creative":
+      return Branding
+    case "website-apps":
+      return Website
+    case "video-photography":
+      return Video
+    case "event-management":
+      return Event
+  }
+ }
 onMounted(() => {
   switch (params.slug) {
     case "growth-strategy":
-      currentService.icon = growth
-      currentService.title = "Growth Strategy"
-      currentService.description = "Propel your business with a tactical plan optimised to achieve your desired goals."
+      currentService.value.title = "Growth Strategy"
+      currentService.value.description = "Propel your business with a tactical plan optimised to achieve your desired goals."
       serviceDetails.value = [{
         title: 'Marketing Strategy & Consultation',
         description: 'Unlock your potential with personalised strategies to fuel growth and maximise your digital presence.'
@@ -89,9 +109,8 @@ onMounted(() => {
       },]
       break;
     case "digital-marketing":
-      currentService.icon = digital
-      currentService.title = "Digital Marketing"
-      currentService.description = "Stay ahead on the digital front with a host of approaches, integrated to meet your business needs"
+      currentService.value.title = "Digital Marketing"
+      currentService.value.description = "Stay ahead on the digital front with a host of approaches, integrated to meet your business needs"
       serviceDetails.value = [
         {
           title: "Social Media Management",
@@ -124,9 +143,8 @@ onMounted(() => {
       ]
       break;
     case "media-buying":
-      currentService.icon = media
-      currentService.title = "Media Buying"
-      currentService.description = "Put your brand in front of the right audience at the right time and place. Let us help you optimise your digital presence."
+      currentService.value.title = "Media Buying"
+      currentService.value.description = "Put your brand in front of the right audience at the right time and place. Let us help you optimise your digital presence."
       serviceDetails.value = [
         {
           title: "Digital Advertising",
@@ -158,10 +176,9 @@ onMounted(() => {
         },
       ]
       break;
-    case "brand-creative-design":
-      currentService.icon = brand
-      currentService.title = "Branding & Creative Design"
-      currentService.description = "With a little sparkle and some zing, your new brand identity is ready to take on the world."
+    case "branding-creative":
+      currentService.value.title = "Branding & Creative Design"
+      currentService.value.description = "With a little sparkle and some zing, your new brand identity is ready to take on the world."
       serviceDetails.value = [
         {
           title: "Research & Strategy",
@@ -194,9 +211,8 @@ onMounted(() => {
       ]
       break;
     case "website-apps":
-      currentService.icon = website
-      currentService.title = "Websites & Apps"
-      currentService.description = "Your business’ first point of contact can leave a lasting impression. Build your best brand website with us! "
+      currentService.value.title = "Websites & Apps"
+      currentService.value.description = "Your business’ first point of contact can leave a lasting impression. Build your best brand website with us! "
       serviceDetails.value = [
         {
           title: "UI & UX Design",
@@ -229,9 +245,8 @@ onMounted(() => {
       ]
       break;
     case "video-photography":
-      currentService.icon = video
-      currentService.title = "Video & Phototgraphy"
-      currentService.description = "A picture is worth a thousand words. Tell your brand story with captivating images and engaging videos."
+      currentService.value.title = "Video & Phototgraphy"
+      currentService.value.description = "A picture is worth a thousand words. Tell your brand story with captivating images and engaging videos."
       serviceDetails.value = [
         {
           title: "Video Production",
@@ -268,9 +283,8 @@ onMounted(() => {
       ]
       break;
     case "event-management":
-      currentService.icon = event
-      currentService.title = "Event Management"
-      currentService.description = "From conceptualising all the way to d-day handling, our event management team is poised to bring it all to life. "
+      currentService.value.title = "Event Management"
+      currentService.value.description = "From conceptualising all the way to d-day handling, our event management team is poised to bring it all to life. "
       serviceDetails.value = [
         {
           title: "Virtual / Physical / Hybrid Events",
@@ -295,29 +309,6 @@ onMounted(() => {
       ]
       break;
   }
-  gsap.to('.service-icon', {
-    keyframes: [
-      {
-        scaleX: -1,
-        duration: 1,
-        ease: 'power2.inOut'
-      },
-      {
-        scaleX: 1,
-        duration: 1,
-        ease: 'power2.inOut'
-      },
-      {
-        scaleX: -1,
-        duration: 1,
-        ease: 'power2.inOut'
-      },
-      {
-        scaleX: 1,
-        duration: 1,
-        ease: 'bounce.out'
-      }],
-  })
 })
 
 const navs = reactive([
@@ -342,6 +333,17 @@ const navs = reactive([
 @import "../../assets/sass/layout.sass"
 @import "../../assets/sass/inputs.sass"
 
+.header-container
+  padding-top: 150px
+  gap: 45px
+  padding-bottom: 48px
+  padding-inline: 0
+.services-header
+  height: 400px
+  width: 100%
+.services-icon
+  width: 250px
+  height: 300px
 #services
   background: black
 .service-detail-grid-2
@@ -350,11 +352,11 @@ const navs = reactive([
   flex-wrap: wrap
   justify-content: center
   gap: 60px
-  height: 600px
+  padding: 0 80px
   margin-bottom: 60px
   .service-detail-item
-    max-width: 50%
-    flex: 0 0 1
+    width: 45%
+    flex: 0
     padding: 24px
     border: 1px solid #000000
     color: white
