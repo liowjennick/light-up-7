@@ -1,9 +1,8 @@
 <template>
   <div id="services">
     <!-- Header -->
-    <div class="full-screen-center-content section-container"
-      style="padding-top: 150px; gap: 45px; padding-bottom: 48px;">
-        <DotLottieVue autoplay loop :src="`/lottie/services/${params.slug}.json`"/>
+    <div class="full-screen-center-start section-container header-container">
+      <DotLottieVue autoplay loop :src="`/lottie/services/${params.slug}.json`" class="services-icon" />
       <div class="full-screen-start-center" style="color: #DC9F41; flex-direction: column;">
         <h1 style="margin: 0; font-size: 64px; font-weight: normal;">{{ currentService.title }}</h1>
         <p style="font-size: 26px; margin: 0;">{{ currentService.description }}</p>
@@ -12,7 +11,7 @@
     <!-- Animation header -->
     <div>
       <!-- Animation Here -->
-        <DotLottieVue autoplay loop src="/lottie/services/services-line-bulb.json"/>
+      <DotLottieVue autoplay loop src="/lottie/services/services-line-bulb.json" class="services-header" />
     </div>
     <!-- Service Details -->
     <div class="service-detail-grid-2 section-container">
@@ -303,10 +302,17 @@ const navs = reactive([
 @import "../../assets/sass/layout.sass"
 @import "../../assets/sass/inputs.sass"
 
-.hidden
-  display: none
-canvas
-  width: 50%
+.header-container
+  padding-top: 150px
+  gap: 45px
+  padding-bottom: 48px
+  padding-inline: 0
+.services-header
+  height: 400px
+  width: 100%
+.services-icon
+  width: 250px
+  height: 300px
 #services
   background: black
 .service-detail-grid-2

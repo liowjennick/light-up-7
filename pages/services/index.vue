@@ -47,15 +47,23 @@
             style="width: 10%; z-index: 1"
             class="full-screen-center-content"
           >
-            <img class="item-icon-orange" v-if="activeCircleFollowIndex !== i" :src="`/images/services/list-icons/icons/orange/${item.slug}-orange.png`" />
-            <img class="item-icon" v-if="activeCircleFollowIndex === i" :src="`/images/services/list-icons/icons/white/${item.slug}.png`" />
+            <img
+              class="item-icon-orange"
+              v-if="activeCircleFollowIndex !== i"
+              :src="`/images/services/list-icons/icons/orange/${item.slug}-orange.png`"
+            />
+            <img
+              class="item-icon"
+              v-if="activeCircleFollowIndex === i"
+              :src="`/images/services/list-icons/icons/white/${item.slug}.png`"
+            />
           </div>
           <div
             class="full-screen-start-center"
             style="z-index: 1; flex-direction: column; flex: 1; color: white"
           >
-            <h2>{{item.title}}</h2>
-            <p>{{item.description}}</p>
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.description }}</p>
           </div>
           <div
             class="cta-btn-parent full-screen-center-content"
@@ -94,40 +102,39 @@ const servicesItem = ref([
   {
     title: "Growth Strategy",
     description: "Propel your business with a tactical plan optimised to achieve your desired goals.",
-    slug: "growth-strategy"
+    slug: "growth-strategy",
   },
   {
     title: "Digital Marketing",
     description: "Stay ahead on the digital front with a host of approaches, integrated to meet your business needs",
-    slug: "digital-marketing"
+    slug: "digital-marketing",
   },
   {
     title: "Video & Photography",
     description: "A picture is worth a thousand words. Tell your brand story with captivating images and engaging videos.",
-    slug: "video-photography"
+    slug: "video-photography",
   },
   {
     title: "Branding & Creative Design",
     description: "With a little sparkle and some zing, your new brand identity is ready to take on the world.",
-    slug: "brand-creative-design"
+    slug: "brand-creative-design",
   },
   {
     title: "Websites & Apps",
     description: "Your business' first point of contact can leave a lasting impression. Build your best brand website with us!",
-    slug: "website-apps"
+    slug: "website-apps",
   },
   {
     title: "Event Management",
     description: "From conceptualising all the way to d-day handling, our event management team is poised to bring it all to life.",
-    slug: "event-management"
+    slug: "event-management",
   },
   {
     title: "Media Buying",
     description: "Put your brand in front of the right audience at the right time and place. Let us help you optimise your digital presence.",
-    slug: "media-buying"
+    slug: "media-buying",
   },
-
-])
+]);
 
 // #circle-mouse-follow-1
 
@@ -173,25 +180,25 @@ const mouseMoveTimer = () => {
         let destinationX = mouseX - xOffset + 90;
         let destinationY = mouseY - yOffset + 70;
 
-        const minX = 0 - 210
-        const maxX = 0 + 70
-        const minY = 0 - 70
-        const maxY = 0 + 70
+        const minX = 0 - 210;
+        const maxX = 0 + 70;
+        const minY = 0 - 70;
+        const maxY = 0 + 70;
 
         if (destinationX < minX) {
-          destinationX = minX
+          destinationX = minX;
         }
 
         if (destinationX > maxX) {
-          destinationX = maxX
+          destinationX = maxX;
         }
 
         if (destinationY < minY) {
-          destinationY = minY
+          destinationY = minY;
         }
 
         if (destinationY > maxY) {
-          destinationY = maxY
+          destinationY = maxY;
         }
 
         // TODO REMOVE HARD
@@ -201,8 +208,8 @@ const mouseMoveTimer = () => {
         gsap.to(`#circle-mouse-follow-${i}`, {
           x: destinationX,
           y: destinationY,
-          scaleX: Math.min((1 + differenceX / 300), 1.4),
-          scaleY: Math.min((1 + differenceY / 200), 1.4),
+          scaleX: Math.min(1 + differenceX / 300, 1.4),
+          scaleY: Math.min(1 + differenceY / 200, 1.4),
           duration: 0.1,
         });
       } else {
@@ -214,7 +221,7 @@ const mouseMoveTimer = () => {
           duration: 0.2,
         });
       }
-    })
+    });
 
     mouseMoveTimer();
   }, 100);
@@ -285,9 +292,11 @@ onMounted(() => {
             //   .cta-btn-child
             //     transform: translate(115%, -145%)
       .divider-child
-          border-top: 1px solid #ffffff40
+        border-top: 1px solid #ffffff40
       .service-item
         padding: 20px 40px
+        +large-mobile
+          padding: 0
         .cta-btn-parent
           position: relative
           width: 70px
@@ -295,6 +304,8 @@ onMounted(() => {
           border-radius: 100%
           background-color: #DC9F41
           transition: all .2s linear
+          +large-mobile
+            display: none
           &.active
             background-color: black
             .hover-text
@@ -336,14 +347,14 @@ onMounted(() => {
     bottom: 20%
     z-index: 10
     border: 2px solid $orange
-    width: 100%
+    width: 95%
     height: 20%
     border-radius: 50%
   .yellow-shadow-container-bottom
     width: 200%
     position: absolute
     bottom: 20%
-    height: 100%
+    height: 95%
     border-radius: 0% 0% 50% 50%
     overflow: hidden
     .icon-container

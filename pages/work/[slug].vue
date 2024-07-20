@@ -2,25 +2,46 @@
   <div id="project-item">
     <div class="content-container">
       <div class="section-container">
-        <div class="project-section-container" v-for="(item, i) in project_data.contents" :key="i">
-          <img class="company-logo mb-20" :src="`/images/work/projects/${route.params.slug}/${item.company_logo_src}`" v-if="item.company_logo_src" />
+        <div
+          class="project-section-container"
+          v-for="(item, i) in project_data.contents"
+          :key="i"
+        >
+          <img
+            class="company-logo mb-20"
+            :src="`/images/work/projects/${route.params.slug}/${item.company_logo_src}`"
+            v-if="item.company_logo_src"
+          />
 
           <div class="mb-30">
             <div class="workscope-list-container">
-              <div class="workscope-item" v-for="(workscope, i) in item.workscope_tags" :key="i">
-                <img class="workscope-icon" src="/images/work/projects/lightbulb-icon.png" />
+              <div
+                class="workscope-item"
+                v-for="(workscope, i) in item.workscope_tags"
+                :key="i"
+              >
+                <img
+                  class="workscope-icon"
+                  src="/images/work/projects/lightbulb-icon.png"
+                />
                 <p class="font-10 font-weight-100 font-gray">{{ workscope }}</p>
               </div>
             </div>
           </div>
 
-          <h1 class="font-white just-sans font-50">{{ item.title }}</h1>
-          <p class="description-text just-sans font-22 mb-40">{{ item.subtitle }}</p>
+          <h1 class="font-white just-sans font-40">{{ item.title }}</h1>
+          <p class="description-text just-sans font-16 mb-40 font-weight-200">{{ item.subtitle }}</p>
 
           <div class="media-container-mobile">
-            <template v-for="(image, j) in item.featured_media_src" :key="j">
+            <template
+              v-for="(image, j) in item.featured_media_src"
+              :key="j"
+            >
               <template v-if="image && image.is_youtube_video && image.src">
-                <div class="iframe-container" :style="{ width: image.width_percent + '%' }">
+                <div
+                  class="iframe-container"
+                  :style="{ width: image.width_percent + '%' }"
+                >
                   <iframe
                     width="100%"
                     :src="image.src"
@@ -31,46 +52,79 @@
                     allowfullscreen
                   >
                   </iframe>
-                  <p class="caption just-sans font-white text-center" v-if="image.caption">{{image.caption}}</p>
+                  <p
+                    class="caption just-sans font-white text-center"
+                    v-if="image.caption"
+                  >
+                    {{ image.caption }}
+                  </p>
                 </div>
               </template>
 
-                <template v-else>
-                  <div :style="{ width: image.width_percent + '%' }" class="image-container">
-                    <div class="image-item-container" v-for="(src, l) in image.src" :key="l">
-                      <img :src="`/images/work/projects/${route.params.slug}/${src}`" />
-                      <p class="caption just-sans font-white text-center" v-if="image.caption">{{image.caption}}</p>
-                    </div>
+              <template v-else>
+                <div
+                  :style="{ width: image.width_percent + '%' }"
+                  class="image-container"
+                >
+                  <div
+                    class="image-item-container"
+                    v-for="(src, l) in image.src"
+                    :key="l"
+                  >
+                    <img :src="`/images/work/projects/${route.params.slug}/${src}`" />
+                    <p
+                      class="caption just-sans font-white text-center"
+                      v-if="image.caption"
+                    >
+                      {{ image.caption }}
+                    </p>
                   </div>
-                </template>
+                </div>
+              </template>
             </template>
-        
           </div>
 
           <div class="challenge-result-container">
             <div class="text-container">
-              <p class="challenge-result-title font-white just-sans font-30 mb-20"><b>{{ item.challenge_result_title }}</b></p>
+              <p class="challenge-result-title font-white just-sans font-22 mb-20">
+                <b>{{ item.challenge_result_title }}</b>
+              </p>
 
-              <div class="mb-30" v-if="item.challenge_description">
-                <p class="font-orange just-sans font-28 mb-10"><b>challenge</b></p>
-                <p class="font-white just-sans font-18 font-weight-100">{{ item.challenge_description }}</p>
+              <div
+                class="mb-30"
+                v-if="item.challenge_description"
+              >
+                <p class="font-orange just-sans font-20 mb-10"><b>challenge</b></p>
+                <p class="font-white just-sans font-16 font-weight-200">{{ item.challenge_description }}</p>
               </div>
 
-              <div class="mb-30" v-if="item.outcome_description">
-                <p class="font-orange just-sans font-28 mb-10"><b>outcome</b></p>
-                <p class="font-white just-sans font-18 font-weight-100">{{ item.outcome_description }}</p>
+              <div
+                class="mb-30"
+                v-if="item.outcome_description"
+              >
+                <p class="font-orange just-sans font-20 mb-10"><b>outcome</b></p>
+                <p class="font-white just-sans font-16 font-weight-200">{{ item.outcome_description }}</p>
               </div>
 
-              <div class="mb-30" v-if="item.results_description">
-                <p class="font-orange just-sans font-28 mb-10"><b>results</b></p>
-                <p class="font-white just-sans font-18 font-weight-100">{{ item.results_description }}</p>
+              <div
+                class="mb-30"
+                v-if="item.results_description"
+              >
+                <p class="font-orange just-sans font-20 mb-10"><b>results</b></p>
+                <p class="font-white just-sans font-16 font-weight-200">{{ item.results_description }}</p>
               </div>
             </div>
 
             <div class="media-container">
-              <template v-for="(image, j) in item.featured_media_src" :key="j">
+              <template
+                v-for="(image, j) in item.featured_media_src"
+                :key="j"
+              >
                 <template v-if="image && image.is_youtube_video && image.src">
-                  <div class="iframe-container" :style="{ width: image.width_percent + '%' }">
+                  <div
+                    class="iframe-container"
+                    :style="{ width: image.width_percent + '%' }"
+                  >
                     <iframe
                       width="100%"
                       :src="image.src"
@@ -85,10 +139,22 @@
                 </template>
 
                 <template v-else>
-                  <div :style="{ width: image.width_percent + '%' }" class="image-container">
-                    <div class="image-item-container" v-for="(src, l) in image.src" :key="l">
+                  <div
+                    :style="{ width: image.width_percent + '%' }"
+                    class="image-container"
+                  >
+                    <div
+                      class="image-item-container"
+                      v-for="(src, l) in image.src"
+                      :key="l"
+                    >
                       <img :src="`/images/work/projects/${route.params.slug}/${src}`" />
-                      <p class="caption just-sans font-white text-center" v-if="image.caption">{{image.caption}}</p>
+                      <p
+                        class="caption just-sans font-white text-center"
+                        v-if="image.caption"
+                      >
+                        {{ image.caption }}
+                      </p>
                     </div>
                   </div>
                 </template>
@@ -97,18 +163,32 @@
           </div>
 
           <div class="mb-30">
-            <p class="font-orange just-sans font-28 mb-10"><b>deliverables</b></p>
+            <p class="font-orange just-sans font-20 mb-10"><b>deliverables</b></p>
             <div class="deliverables-list-container">
-              <div class="deliverables-item" v-for="(deliverable, i) in item.deliverables" :key="i">
+              <div
+                class="deliverables-item"
+                v-for="(deliverable, i) in item.deliverables"
+                :key="i"
+              >
                 <p class="font-10">{{ deliverable }}</p>
               </div>
             </div>
           </div>
 
-          <div class="media-gallery-container" v-for="(gallery, j) in item.media_gallery" :key="j">
-            <template v-for="(image, k) in gallery" :key="k">
+          <div
+            class="media-gallery-container"
+            v-for="(gallery, j) in item.media_gallery"
+            :key="j"
+          >
+            <template
+              v-for="(image, k) in gallery"
+              :key="k"
+            >
               <template v-if="image && image.is_youtube_video && image.src">
-                <div class="iframe-container" :style="{ width: image.width_percent + '%' }">
+                <div
+                  class="iframe-container"
+                  :style="{ width: image.width_percent + '%' }"
+                >
                   <iframe
                     width="100%"
                     :src="image.src"
@@ -119,21 +199,37 @@
                     allowfullscreen
                   >
                   </iframe>
-                  <p class="caption just-sans font-white text-center" v-if="image.caption">{{image.caption}}</p>
+                  <p
+                    class="caption just-sans font-white text-center"
+                    v-if="image.caption"
+                  >
+                    {{ image.caption }}
+                  </p>
                 </div>
               </template>
 
               <template v-else>
-                <div :style="{ width: image.width_percent + '%' }" class="image-container">
-                  <div class="image-item-container" v-for="(src, l) in image.src" :key="l">
+                <div
+                  :style="{ width: image.width_percent + '%' }"
+                  class="image-container"
+                >
+                  <div
+                    class="image-item-container"
+                    v-for="(src, l) in image.src"
+                    :key="l"
+                  >
                     <img :src="`/images/work/projects/${route.params.slug}/${src}`" />
-                    <p class="caption just-sans font-white text-center" v-if="image.caption">{{image.caption}}</p>
+                    <p
+                      class="caption just-sans font-white text-center"
+                      v-if="image.caption"
+                    >
+                      {{ image.caption }}
+                    </p>
                   </div>
                 </div>
               </template>
             </template>
           </div>
-
         </div>
       </div>
     </div>
@@ -141,15 +237,15 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from "vue-router"
-import projectData from "../../public/data/projects_data.js"
- 
-const route = useRoute()
-const project_data = ref(projectData.find((item, i) => item.slug === route.params.slug))
+import { useRoute } from "vue-router";
+import projectData from "../../public/data/projects_data.js";
+
+const route = useRoute();
+const project_data = ref(projectData.find((item, i) => item.slug === route.params.slug));
 
 useHead({
   title: project_data.value.title,
-  meta: [{ name: "description", content: project_data.value.title }]
+  meta: [{ name: "description", content: project_data.value.title }],
 });
 </script>
 
