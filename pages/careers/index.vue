@@ -44,9 +44,12 @@
       <div class="full-screen-center-around mobile-container" style="gap: 48px">
         <div v-for="(mottoIcon, key) in mottoIcons" :key="key" class="full-screen-center-between"
           style="flex-direction: column; gap: 16px">
-          <div style="width: fit-content; height: 160px; ">
-            <!-- <img :src="mottoIcon.url" :alt="mottoIcon.alt" style="height: 100%;" /> -->
-            <DotLottieVue style="height: 100%; width: auto" autoplay loop :src="mottoIcon.url" />
+          <div>
+            <LottieAnimation 
+            class="company-value-icon"
+              autoplay
+              loop
+              :animation-data="mottoIcon.url"/>
           </div>
           <div>
             <p class="font-white" style="font-size: 20px; text-align: center;">{{ mottoIcon.title }}</p>
@@ -109,13 +112,16 @@
 
 <script setup lang="ts">
 import { default as Companys } from '@/assets/images/careers/company-pics'
-import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
 import { default as Staffs } from '@/assets/images/careers/staff-pics'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { computed, ref, reactive } from 'vue';
 import { default as ComputerUnglow } from '@/assets/images/careers/computer-unglow.png'
 import { default as ComputerGlow } from '@/assets/images/careers/glow-computer.png'
+import { LottieAnimation } from 'lottie-web-vue';
+import Value1 from '@/assets/images/careers/lottie/Icon1_Celebrating Creativity_V1.gif.json'
+import Value2 from '@/assets/images/careers/lottie/Icon2_Doing Work That Matters.json'
+import Value3 from '@/assets/images/careers/lottie/Icon3_Always Growing.json'
 
 gsap.registerPlugin(ScrollTrigger)
 const staffPics = reactive(Staffs)
@@ -301,12 +307,12 @@ const mottoText = [`We believe the greatest ideas comes from the experience of b
               brands and organisations across the APAC region.`, `We understand wanting to leave your mark in the industry and we
               will support you until you make it! No matter the goals, you will
               have the resources to thrive.`]
-const mottoIcons = ["https://lottie.host/94aaa01b-e14b-49c6-a7ff-c954b071ae62/mv0ZtYJHNn.json", "https://lottie.host/f0396e62-133c-44f9-9283-43ed82c1e173/KuudAy4Kvb.json", "https://lottie.host/8367b1b3-3995-46ef-b640-00c387413c09/7ZGBxnbywM.json"].map((motto, key) => ({
+const mottoIcons = ref([Value1, Value2, Value3].map((motto, key) => ({
   url: motto,
   title: mottoTitle[key],
   text: mottoText[key],
   alt: `Motto ${key + 1}`
-}))
+})))
 
 const companyText = [`“I love how diverse the team is. You learn so much from people of
             various backgrounds and plus point: more festive celebrations!’<br/><br/> F.I,
@@ -367,6 +373,8 @@ const recentJobs = [
 @import "../../assets/sass/layout.sass"
 @import "../../assets/sass/inputs.sass"
 
+.company-value-icon
+  width: 160px
 .banner
   position: relative
   flex: 1 0 0
