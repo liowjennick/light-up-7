@@ -1,11 +1,14 @@
 <template>
   <div id="contact-page">
-    <div class="contact-header full-screen-center-content">
-      <img src="../../assets/images/contact/contact-header.png" style="width: 60%; height: auto;"
-        id="contact-header-title" />
-      <PhoneLine class="phone-line" />
-      <div class="black-screen"></div>
-      <Phone class="phone" />
+    <div class="header-container">
+      <div class="contact-header full-screen-center-content">
+        <img src="../../assets/images/contact/contact-header.png" style="width: 60%; height: auto;"
+          id="contact-header-title" />
+        <PhoneLine class="phone-line" />
+        <div class="black-screen">
+        </div>
+        <Phone class="phone" />
+      </div>
     </div>
     <div class="section-container full-screen-start-center" style="gap: 60px">
       <div style="padding: 24px 0px; flex-direction: column;" class="full-screen-start-start">
@@ -84,9 +87,9 @@
             style="width: 95%; border: 1px solid white; border-radius: 100px; padding: 16px 20px; background: transparent; font-family: 'JustSans'" />
         </div>
 
-        <!-- <p class="font-white">CAPTCHA</p>
-        <div id="g-recaptcha"> -->
-        <!-- </div> -->
+        <p class="font-white">CAPTCHA</p>
+        <div id="g-recaptcha">
+        </div>
 
         <div>
           <button @click="submitForm" class="orange-outlined-button">submit form</button>
@@ -98,7 +101,7 @@
 
 <script setup lang="ts">
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
+import { ScrollTrigger, CustomEase } from 'gsap/all';
 import PhoneLine from '~/assets/svg/phone-line.vue';
 import Phone from '~/assets/svg/phone.vue'
 
@@ -118,21 +121,35 @@ useHead({
 const grecaptchaWidget = ref(null)
 
 onMounted(() => {
-  gsap.to(".black-screen", {
-    width: "0%",
-    scrollTrigger: {
-      trigger: ".black-screen",
-      pin: true,
-      scrub: 1,
-      start: "top top",
-      end: "bottom top",
-      toggleActions: "play reverse play reverse"
+  const st = {
+    trigger: ".contact-header",
+    pin: ".header-container",
+    scrub: 1,
+    start: "top top",
+    end: "bottom top",
+    markers: true,
+    toggleActions: "play reverse play reverse",
+  }
+  const tl = gsap.timeline({
+    scrollTrigger: st
+  })
+  tl.to(".black-screen", {
+    keyframes: {
+      width: ["100vw", "88vw", "85vw", "80vw", "73vw", "57vw", "57vw", "57vw", "57vw", "57vw", "55vw", "45vw", "35vw", "25vw", "15vw", "5vw", 0]
     }
   }
-  )
-  // tl.to(".black-screen", {
-  //   width: "0%"
-  // })
+  ).to(".phone", {
+    ease: "sine.inOut",
+    keyframes: {
+      rotate: ['135deg', '180deg', '135deg', '90deg', '45deg', '0deg', '-90deg', '-180deg', '-225deg', '-250deg', '-270deg', '-280deg', '-300deg', '-315deg', '-360deg'],
+      x: [0, "1vw", "1vw", "10vw", "15vw", "25vw", "25vw", "25vw", "25vw", "25vw", "30vw", "40vw", "50vw", "60vw", "70vw", "80vw", "82.5vw"],
+      yPercent: [0, 10, 60, 85, 90, 83, 75, 70, 75, 83, 95, 100, 103, 98, 80, 50, 31.5]
+    },
+  }, "<")
+  .to(".extend", {
+    duration: .1
+  })
+  
   console.log("Loaded")
   grecaptchaWidget.value = grecaptcha.render("g-recaptcha", {
     "sitekey": "6LfzyL4UAAAAAMKy1bCFyL8wKNOC3ehLQlt8PQH1"
@@ -160,8 +177,8 @@ const formValues = ref({
 const submitForm = async (e) => {
   e.preventDefault()
 
-  grecaptcha.ready(async function() {
-    const token = await grecaptcha.execute('6LeVjccUAAAAALn5Y5sSEv3fwy_MAq8gxXR0e9J3', {action: 'submit'})
+  grecaptcha.ready(async function () {
+    const token = await grecaptcha.execute('6LeVjccUAAAAALn5Y5sSEv3fwy_MAq8gxXR0e9J3', { action: 'submit' })
 
     const consumer_key = "ck_b5c2220b7a8a191bf1e459f792ded895c4f4d6d2"
     const consumer_secret = "cs_323064df8c1c4dd7f14239a0420906cf3bad4dc7"
@@ -202,18 +219,23 @@ const submitForm = async (e) => {
 @import "../../assets/sass/reset.sass"
 @import "../../assets/sass/inputs.sass"
 
+.header-container
+  height: 100vh
+
 .contact-header
   position: relative
-  height: 950px
+  height: 100%
 
 #contact-header-title
-  display: none
-.phone-line
   position: absolute
-  bottom: 0
-  left: 0
-  transform: translateX(-4.5%)
-  z-index: 1
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  z-index: 5
+.phone-line
+  transform: translate(-4.5%, 0%)
+  height: 100%
+  width: 100%
 .black-screen
   height: inherit
   width: 100%
@@ -221,12 +243,11 @@ const submitForm = async (e) => {
   position: absolute
   top: 0
   right: 0
-  // display: none
   z-index: 2
 .phone
   position: absolute
   top: 0
   left: 0
   z-index: 3
-  transform: translate(-15%, -5%) rotate(135deg)
+  transform: translate(-15%, -5%) 
 </style>
