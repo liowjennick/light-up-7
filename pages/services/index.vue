@@ -170,18 +170,39 @@ const mouseMoveTimer = () => {
         const currentX = document.querySelector(`#circle-mouse-follow-${i}`)?.getBoundingClientRect().right;
         const currentY = document.querySelector(`#circle-mouse-follow-${i}`)?.getBoundingClientRect().bottom;
 
+        let destinationX = mouseX - xOffset + 90;
+        let destinationY = mouseY - yOffset + 70;
+
+        const minX = 0 - 210
+        const maxX = 0 + 70
+        const minY = 0 - 70
+        const maxY = 0 + 70
+
+        if (destinationX < minX) {
+          destinationX = minX
+        }
+
+        if (destinationX > maxX) {
+          destinationX = maxX
+        }
+
+        if (destinationY < minY) {
+          destinationY = minY
+        }
+
+        if (destinationY > maxY) {
+          destinationY = maxY
+        }
+
         // TODO REMOVE HARD
         const differenceX = Math.abs(mouseX - currentX + 60);
         const differenceY = Math.abs(currentY - mouseY);
 
-        const destinationX = mouseX - xOffset + 90;
-        const destinationY = mouseY - yOffset + 70;
-
         gsap.to(`#circle-mouse-follow-${i}`, {
           x: destinationX,
           y: destinationY,
-          scaleX: 1 + differenceX / 300,
-          scaleY: 1 + differenceY / 200,
+          scaleX: Math.min((1 + differenceX / 300), 1.4),
+          scaleY: Math.min((1 + differenceY / 200), 1.4),
           duration: 0.1,
         });
       } else {

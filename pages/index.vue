@@ -37,6 +37,9 @@
 
         <div class="text-background-row third">
           <p class="first">the</p>
+          <div class="large-logo-container">
+            <img src="../assets/images/home/logo-large-header.png" />
+          </div>
           <p class="second">Asia-</p>
         </div>
 
@@ -53,11 +56,6 @@
           <p class="fourth">a</p>
           <p class="fifth">time.</p>
         </div>
-
-      </div>
-
-      <div class="large-logo-container">
-        <img src="../assets/images/home/logo-large-header.png" />
       </div>
 
     </div>
@@ -462,12 +460,15 @@
             src="../assets/images/home/light-up-your-idea-large-bulb-glow.png"
           />
           <div class="large-bulb-pull-image">
+            <p class="font-white just-sans">pull me</p>
             <img :class="{ idle: bulbPullIdle }" src="../assets/images/home/light-up-your-idea-large-bulb-pull.png" />
           </div>
+
           <div class="pull-me-text-container">
             <!-- <img src="../assets/images/home/arrow-down.png" /> -->
-            <p class="font-white just-sans">pull me</p>
+            <!-- <p class="font-white just-sans">pull me</p> -->
           </div>
+
           <div class="bulb-text-container">
             <p
               class="font-white just-sans font-32"
@@ -852,6 +853,7 @@ onMounted(() => {
       display: flex
       flex: 1
       align-items: center
+      position: relative
       p
         font-size: 100px
         color: white
@@ -919,10 +921,12 @@ onMounted(() => {
   .large-logo-container
     position: absolute
     width: 280px
-    top: 49%
+    top: calc(50%)
+    left: 50%
+    transform: translate(-50%, -35%)
     +desktop
       width: 160px
-      top: 48%
+      top: calc(50%)
     +large-mobile
       width: 135px
     +mobile
@@ -1259,10 +1263,15 @@ onMounted(() => {
         position: absolute
         left: 50%
         transform: translateX(-50%)
-        overflow: hidden
+        overflow-y: clip
+        p
+          position: absolute
+          right: -40px
+          top: 20px
         img
           width: 20px
           transform: translateY(-50%)
+          padding: 0 40px 40px 40px
           &.idle
             animation: bulb-switch-shake 2s ease-in-out infinite
       .pull-me-text-container
@@ -1270,7 +1279,8 @@ onMounted(() => {
         position: absolute
         align-items: center
         justify-content: center
-        right: 0%
+        right: 0
+        bottom: 0
         +desktop
           right: 0
         img
