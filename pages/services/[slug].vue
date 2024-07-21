@@ -28,9 +28,9 @@
     </div>
     <!-- Quick Nav -->
     <div class="full-screen-center-around section-container">
-      <NuxtLink v-for="nav in navs" :key="nav.slug" class="orange-outlined-button">
+      <a v-for="nav in navs" :href="`/${nav.slug}`" :key="nav.slug" class="orange-outlined-button">
         {{ nav.text }}
-      </NuxtLink>
+      </a>
     </div>
   </div>
 </template>
@@ -336,14 +336,14 @@ const navs = reactive([
 .header-container
   padding-top: 150px
   gap: 45px
-  padding-bottom: 48px
+  // padding-bottom: 48px
   padding-inline: 0
 .services-header
-  height: 400px
+  // height: 400px
   width: 100%
 .services-icon
   width: 250px
-  height: 300px
+  // height: 300px
 #services
   background: black
 .service-detail-grid-2

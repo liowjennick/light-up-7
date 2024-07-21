@@ -27,9 +27,9 @@
           9.00 am – 6.00 pm | Monday – Friday <br>
           Weekends & Public Holidays – Closed
         </p>
-        <NuxtLink class="orange-outlined-button" style="margin-block: 32px 24px; text-decoration: none;">
+        <a target="_blank" href="https://www.google.com/maps/place/Light+Up+7/@3.1498933,101.6651169,17z/data=!3m2!4b1!5s0x31cc49ab0e0f7ac3:0xcaf3484f21fd43ab!4m6!3m5!1s0x31cc4c5fabb47ffb:0x52e9e06c169d79dc!8m2!3d3.1498933!4d101.6651169!16s%2Fg%2F11b6gchlp_?entry=ttu" class="orange-outlined-button" style="margin-block: 32px 24px; text-decoration: none;">
           view map
-        </NuxtLink>
+        </a>
         <p style="font-size: 20px;" class="font-orange">new business & inquiries</p>
         <p class="font-white">
           info@lightup7.com
@@ -127,7 +127,7 @@ onMounted(() => {
     scrub: 1,
     start: "top top",
     end: "bottom top",
-    markers: true,
+    // markers: true,
     toggleActions: "play reverse play reverse",
   }
   const tl = gsap.timeline({
