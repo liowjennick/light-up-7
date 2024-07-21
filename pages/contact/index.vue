@@ -87,12 +87,13 @@
             style="width: 95%; border: 1px solid white; border-radius: 100px; padding: 16px 20px; background: transparent; font-family: 'JustSans'" />
         </div>
 
-        <p class="font-white">CAPTCHA</p>
-        <div id="g-recaptcha">
-        </div>
-
         <div>
-          <button @click="submitForm" class="orange-outlined-button">submit form</button>
+          <button
+            class="orange-outlined-button g-recaptcha"
+            data-sitekey="6LeVjccUAAAAALn5Y5sSEv3fwy_MAq8gxXR0e9J3" 
+            data-callback="onSubmit"
+            data-action='submit'
+          >submit form</button>
         </div>
       </div>
     </div>
@@ -112,8 +113,7 @@ useHead({
       type: "text/javascript",
       async: true,
       defer: true,
-      render: "explicit",
-      src: `https://www.google.com/recaptcha/api.js?render=6LeVjccUAAAAALn5Y5sSEv3fwy_MAq8gxXR0e9J3`
+      src: `https://www.google.com/recaptcha/api.js`
     }
   ]
 })
@@ -121,6 +121,10 @@ useHead({
 const grecaptchaWidget = ref(null)
 
 onMounted(() => {
+  window.onSubmit = (token) => {
+    submitForm(token)
+  }
+
   const st = {
     trigger: ".contact-header",
     pin: ".header-container",
@@ -156,13 +160,6 @@ onMounted(() => {
   })
 })
 
-// const onloadCallback = () => {
-//   console.log("Loaded")
-//   grecaptcha.render("g-recaptcha", {
-//     "sitekey": "6LfzyL4UAAAAAMKy1bCFyL8wKNOC3ehLQlt8PQH1"
-//   })
-// }
-
 const formValues = ref({
   name: "",
   business_name: "",
@@ -174,40 +171,34 @@ const formValues = ref({
   tell_us_more: ""
 })
 
-const submitForm = async (e) => {
-  e.preventDefault()
+async function submitForm (token) {
+  console.log(token)
+  const consumer_key = "ck_b5c2220b7a8a191bf1e459f792ded895c4f4d6d2"
+  const consumer_secret = "cs_323064df8c1c4dd7f14239a0420906cf3bad4dc7"
 
-  grecaptcha.ready(async function () {
-    const token = await grecaptcha.execute('6LeVjccUAAAAALn5Y5sSEv3fwy_MAq8gxXR0e9J3', { action: 'submit' })
+  console.log("Basic " + btoa(`${consumer_key}:${consumer_secret}`))
 
-    const consumer_key = "ck_b5c2220b7a8a191bf1e459f792ded895c4f4d6d2"
-    const consumer_secret = "cs_323064df8c1c4dd7f14239a0420906cf3bad4dc7"
-
-    console.log("Basic " + btoa(`${consumer_key}:${consumer_secret}`))
-
-    const response = await fetch("https://lightup7.com/wp-json/gf/v2/forms/2/submissions", {
-      method: "POST",
-      headers: {
-        "Authorization": "Basic " + btoa(`${consumer_key}:${consumer_secret}`),
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        "name": formValues.value.name,
-        "business_name": formValues.value.business_name,
-        "email": formValues.value.email,
-        "phone": formValues.value.phone,
-        "company_website": formValues.value.company_website,
-        "business_industry": formValues.value.business_industry,
-        "interest": formValues.value.interest,
-        "tell_us_more": formValues.value.tell_us_more,
-        "token": token
-      })
+  const response = await fetch("https://lightup7.com/wp-json/gf/v2/forms/2/submissions", {
+    method: "POST",
+    headers: {
+      "Authorization": "Basic " + btoa(`${consumer_key}:${consumer_secret}`),
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      input_1: formValues.value.name,
+      input_2: formValues.value.business_name,
+      input_3: formValues.value.phone,
+      input_4: formValues.value.email,
+      input_5: formValues.value.company_website,
+      input_6: formValues.value.business_industry,
+      input_7: formValues.value.interest,
+      // "tell_us_more": formValues.value.tell_us_more,
+      input_8: token
     })
+  })
 
-    const response_data = response.json()
-    console.log(response_data)
-
-  });
+  const response_data = response.json()
+  console.log(response_data)
 }
 </script>
 
