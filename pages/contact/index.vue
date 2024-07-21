@@ -153,12 +153,7 @@ onMounted(() => {
   .to(".extend", {
     duration: .1
   })
-  
-  console.log("Loaded")
-  grecaptchaWidget.value = grecaptcha.render("g-recaptcha", {
-    "sitekey": "6LfzyL4UAAAAAMKy1bCFyL8wKNOC3ehLQlt8PQH1"
   })
-})
 
 const formValues = ref({
   name: "",
