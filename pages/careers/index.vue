@@ -13,9 +13,16 @@
     </div>
     <!-- Staff pics -->
     <div class="section-container full-screen-center-content" style="flex-direction: column; margin-block: 24px;">
-      <div class="full-screen-start-between w-full mobile-container"
-        style="gap: 24px;  padding-block: 24px; border-bottom: 1px solid white;">
-        <div>
+      <div class="w-full mobile-container team-member-row"
+        style="border-bottom: 1px solid white;">
+        <div class="team-member-image-container">
+          <div class="bulb-mask">
+            <img :src="currentImageUrl" class="fade-in-out">
+          </div>
+
+          <img class="mask-outline" src="../../assets/images/careers/bulb-mask-outline.png" />
+        </div>
+        <div class="team-member-text-container">
           <h2 class="font-orange" style="margin-bottom: 16px">Join us in lighting up the world!</h2>
           <p class="font-white">
             All great things start with a spark—and at Light Up 7, we believe in
@@ -24,15 +31,8 @@
             avenues for you to bring your aspirations and visions to life.<br /><br /> When
             you're ready to light up your career, Light Up 7 is ready for you.
           </p>
-        </div>
-        <div style="width: 100%;">
-          <div class="image-container">
-            <img :src="currentImageUrl" :height="250" class="fade-in-out">
-            <img :src="currentImageUrl2" :height="250" class="fade-in-out2">
-            <img :src="currentImageUrl3" :height="250" class="fade-in-out3">
-          </div>
-          <div class="full-screen-center-content w-full" style="margin-top: 16px">
-            <button class="orange-outlined-button">be part of LU7!</button>
+          <div class="full-screen-center-content w-full" style="margin-top: 40px">
+            <button @click="scrollToExplore" class="orange-outlined-button">be part of LU7!</button>
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@
       </div>
     </div>
     <!-- Vacancies -->
-    <div class="section-container" style="margin-block: 24px">
+    <div class="section-container" id="vacancies-section" style="margin-block: 24px">
       <h2 class="font-orange">ready to explore a new path?</h2>
       <h4 class="font-white">check out your dream role here.</h4>
       <!-- filter tabs -->
@@ -124,6 +124,16 @@ import Value2 from '@/assets/images/careers/lottie/Icon2_Doing Work That Matters
 import Value3 from '@/assets/images/careers/lottie/Icon3_Always Growing.json'
 
 gsap.registerPlugin(ScrollTrigger)
+
+const scrollToExplore = () => {
+  const scrollY = document.getElementById("vacancies-section")?.getBoundingClientRect().top + window.scrollY
+  window.scrollTo({
+    top: scrollY,
+    behavior: "smooth"
+  })
+}
+
+
 const staffPics = reactive(Staffs)
 // Image Set 1
 let currentImageIndex = ref(0);
@@ -132,12 +142,12 @@ const currentImageUrl = computed(() => {
 })
 const fadeOutCurrentImage = () => {
   gsap.fromTo('.fade-in-out', { opacity: 1 }, {
-    opacity: 0, y: -100, duration: 1.5, ease: "power2.in"
+    opacity: 0, y: 40, duration: 1.5, ease: "power2.in"
   });
 };
 const fadeInNewImage = () => {
   currentImageIndex.value = getRandomIndex(staffPics.length);
-  gsap.fromTo('.fade-in-out', { opacity: 0, y: -100 }, { opacity: 1, y: 0, duration: 1.5, ease: "power2.out", onComplete: onComplete1 });
+  gsap.fromTo('.fade-in-out', { opacity: 0, y: 40 }, { opacity: 1, y: 40, duration: 1.5, ease: "power2.out", onComplete: onComplete1 });
 };
 function getRandomIndex(max: number) {
   let rand = Math.floor(Math.random() * max)
@@ -484,4 +494,49 @@ const recentJobs = [
   +mobile
     padding: 8px 12px
     font-size: 12px
+
+.team-member-row
+  display: flex
+  align-items: center
+  padding: 0 80px
+  box-sizing: border-box
+  +large-mobile
+    display: block
+    padding: 0
+  .team-member-text-container
+    flex: 4
+    padding-left: 80px
+    +large-mobile
+      padding-left: 0px
+      padding-bottom: 80px
+  .team-member-image-container
+    flex: 1
+    position: relative
+    +large-mobile
+      width: 100%
+      max-width: 300px
+      display: block
+      margin: 0 auto
+    .mask-outline
+      position: absolute
+      top: 50%
+      left: 0
+      width: 100%
+      transform: translateY(-50%)
+  .bulb-mask
+    mask-image: url("../../assets/images/careers/bulb-mask-1x.png")
+    mask-repeat: no-repeat
+    mask-position: center center
+    mask-size: 100%
+    -webkit-mask-image: url("../../assets/images/careers/bulb-mask-1x.png")
+    -webkit-mask-repeat: no-repeat
+    -webkit-mask-position: center center
+    width: 100%
+    img
+      width: 100%
+      height: 50%
+      transform: translateY(40px)
+
+.orange-outlined-button
+  cursor: pointer
 </style>
