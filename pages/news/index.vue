@@ -201,10 +201,10 @@ onMounted(() => {
             opacity: 0.4
             width: 100%
     .banner-megaphone-container
-        width: 400px
+        width: 35%
         position: absolute
-        top: -32%
-        left: -15%
+        top: -25%
+        left: -12%
         z-index: -1
         opacity: 0.4
         img
@@ -219,7 +219,7 @@ onMounted(() => {
             width: 100%
             transform-origin: bottom right
     .banner-message-bubble-container
-        width: 300px
+        width: 30%
         position: absolute
         bottom: -12%
         right: -12%
@@ -229,7 +229,7 @@ onMounted(() => {
             width: 100%
     .star-1-container
         position: absolute
-        width: 150px
+        width: 15%
         right: 0
         top: 0
         z-index: -1
@@ -239,7 +239,7 @@ onMounted(() => {
             transform: scaleX(-1)
     .star-2-container
         position: absolute
-        width: 150px
+        width: 15%
         left: -5%
         bottom: -5%
         transform: scaleX(-1)

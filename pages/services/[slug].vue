@@ -3,9 +3,9 @@
     <!-- Header -->
     <div class="full-screen-center-start section-container header-container">
       <LottieAnimation autoplay loop :animation-data="currentService.lottie" class="services-icon" />
-      <div class="full-screen-start-center" style="color: #DC9F41; flex-direction: column;">
-        <h1 style="margin: 0; font-size: 64px; font-weight: normal;">{{ currentService.title }}</h1>
-        <p style="font-size: 26px; margin: 0;">{{ currentService.description }}</p>
+      <div class="header-text" style="color: #DC9F41;">
+        <h1 style="margin: 0;">{{ currentService.title }}</h1>
+        <p style="margin: 0;">{{ currentService.description }}</p>
       </div>
     </div>
     <!-- Animation header -->
@@ -14,7 +14,7 @@
       <LottieAnimation autoplay :animation-data="LineBulb" class="services-header" />
     </div>
     <!-- Service Details -->
-    <div class="service-detail-grid-2" :style="{ height: `${(serviceDetails.length + 1) * 80}px` }">
+    <div class="service-detail-grid-2" :style="{ height: `${(serviceDetails.length + 1) * 90}px` }">
       <div v-for="(detail, key) in serviceDetails" :key="key" class="full-screen-start-center service-detail-item"
         style="flex-direction: column;">
         <p>{{ detail.title }}</p>
@@ -332,12 +332,32 @@ const navs = reactive([
   padding-top: 150px
   gap: 45px
   // padding-bottom: 48px
-  padding-inline: 0
+  padding-inline: 12px
+  .header-text
+    display: flex
+    flex-direction: column
+  h1
+    font-size: 64px
+    font-weight: normal
+  p
+    font-size: 26px
+  +large-mobile
+    gap: 24px
+  +mobile
+    gap: 0px
+    h1 
+      font-size: 36px
+    p
+      font-size: 16px
 .services-header
   // height: 400px
   width: 100%
 .services-icon
   width: 250px
+  +large-mobile
+    width: 40%
+  +mobile
+    width: 50%
   // height: 300px
 #services
   background: black
@@ -349,12 +369,22 @@ const navs = reactive([
   gap: 60px
   padding: 0 80px
   margin-bottom: 60px
+  +large-mobile
+    height: auto !important
+    gap: 20px
+  +mobile
+    padding: 0 20px
   .service-detail-item
     width: 45%
     flex: 0
     padding: 24px
     border: 1px solid #000000
     color: white
+    +large-mobile
+      width: 100%
+      padding: 12px
+    +mobile
+      width: 100%
     p:first-child
       font-size: 30px
       font-weight: normal
