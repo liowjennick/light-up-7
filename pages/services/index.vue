@@ -8,10 +8,8 @@
       <p>Text here</p>
     </div> -->
     <!-- Banner -->
-    <div
-      class="full-screen-section-container section-container full-screen-center-content"
-      id="services-banner-section"
-    >
+    <div class="full-screen-section-container section-container full-screen-center-content"
+      id="services-banner-section">
       <div class="page-title-container">
         <img src="../../assets/images/services/services-title.png" />
       </div>
@@ -25,57 +23,27 @@
       </div>
     </div>
     <!-- Services List -->
-    <div
-      class="full-screen-center-content hover-services"
-      style="flex-direction: column"
-    >
-      <a
-        v-for="(item, i) in servicesItem"
-        class="divider-parent"
-        :key="i"
-        :id="`item-${i}`"
-        style="width: 100%; text-decoration: none"
-        :href="`/services/${item.slug}`"
-        @mouseenter="() => setActiveFollowCircleIndex(i)"
-        @mouseleave="() => setActiveFollowCircleIndex(-1)"
-      >
-        <div
-          class="divider-child full-screen-center-content service-item section-container"
-          style="gap: 60px; padding: 35px 40px"
-        >
-          <div
-            style="width: 10%; z-index: 1"
-            class="full-screen-center-content"
-          >
-            <img
-              class="item-icon-orange"
-              v-if="activeCircleFollowIndex !== i"
-              :src="`/images/services/list-icons/icons/orange/${item.slug}-orange.png`"
-            />
-            <img
-              class="item-icon"
-              v-if="activeCircleFollowIndex === i"
-              :src="`/images/services/list-icons/icons/white/${item.slug}.png`"
-            />
+    <div class="full-screen-center-content hover-services" style="flex-direction: column">
+      <a v-for="(item, i) in servicesItem" class="divider-parent" :key="i" :id="`item-${i}`"
+        style="width: 100%; text-decoration: none" :href="`/services/${item.slug}`"
+        @mouseenter="() => setActiveFollowCircleIndex(i)" @mouseleave="() => setActiveFollowCircleIndex(-1)">
+        <div class="divider-child full-screen-center-content service-item section-container"
+          style="gap: 60px; padding: 35px 40px">
+          <div style="width: 10%; z-index: 1" class="full-screen-center-content">
+            <img class="item-icon-orange" v-if="activeCircleFollowIndex !== i"
+              :src="`/images/services/list-icons/icons/orange/${item.slug}-orange.png`" />
+            <img class="item-icon" v-if="activeCircleFollowIndex === i"
+              :src="`/images/services/list-icons/icons/white/${item.slug}.png`" />
           </div>
-          <div
-            class="full-screen-start-center"
-            style="z-index: 1; flex-direction: column; flex: 1; color: white"
-          >
+          <div class="full-screen-start-center" style="z-index: 1; flex-direction: column; flex: 1; color: white">
             <h2>{{ item.title }}</h2>
             <p>{{ item.description }}</p>
           </div>
-          <div
-            class="cta-btn-parent full-screen-center-content"
-            :class="{ active: activeCircleFollowIndex === i }"
-            :id="`circle-mouse-follow-${i}`"
-          >
+          <div class="cta-btn-parent full-screen-center-content" :class="{ active: activeCircleFollowIndex === i }"
+            :id="`circle-mouse-follow-${i}`">
             <p class="hover-text">learn more</p>
             <div class="cta-btn-child">
-              <img
-                :src="arrowUpRight"
-                alt="Arrow up right"
-              />
+              <img :src="arrowUpRight" alt="Arrow up right" />
             </div>
           </div>
         </div>
@@ -151,14 +119,14 @@ const mousePosition = ref({
   y: 0,
 });
 
-const angle = (cx, cy, ex, ey) => {
+const angle = (cx: number, cy: number, ex: number, ey: number) => {
   var dy = ey - cy;
   var dx = ex - cx;
   var theta = Math.atan2(dy, dx); // range (-PI, PI]
   theta *= 180 / Math.PI; // rads to degs, range (-180, 180]
   return theta;
 };
-const angle360 = (cx, cy, ex, ey) => {
+const angle360 = (cx: number, cy: number, ex: number, ey: number) => {
   var theta = angle(cx, cy, ex, ey); // range (-180, 180]
   if (theta < 0) theta = 360 + theta; // range [0, 360)
   return theta;
@@ -171,11 +139,11 @@ const mouseMoveTimer = () => {
 
     servicesItem.value.map((item, i) => {
       if (activeCircleFollowIndex.value === i) {
-        const xOffset = document.querySelector(".section-container")?.getBoundingClientRect().right;
-        const yOffset = document.querySelector(`#item-${i}`)?.getBoundingClientRect().bottom;
+        const xOffset = document.querySelector(".section-container")?.getBoundingClientRect().right || 0;
+        const yOffset = document.querySelector(`#item-${i}`)?.getBoundingClientRect().bottom || 0;
 
-        const currentX = document.querySelector(`#circle-mouse-follow-${i}`)?.getBoundingClientRect().right;
-        const currentY = document.querySelector(`#circle-mouse-follow-${i}`)?.getBoundingClientRect().bottom;
+        const currentX = document.querySelector(`#circle-mouse-follow-${i}`)?.getBoundingClientRect().right || 0;
+        const currentY = document.querySelector(`#circle-mouse-follow-${i}`)?.getBoundingClientRect().bottom || 0;
 
         let destinationX = mouseX - xOffset + 90;
         let destinationY = mouseY - yOffset + 70;
@@ -227,7 +195,7 @@ const mouseMoveTimer = () => {
   }, 100);
 };
 
-const onMouseMoveFunction = (e) => {
+const onMouseMoveFunction = (e: MouseEvent) => {
   const pageX = e.clientX;
   const pageY = e.clientY;
 

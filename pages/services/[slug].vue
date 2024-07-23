@@ -2,12 +2,7 @@
   <div id="services">
     <!-- Header -->
     <div class="full-screen-center-start section-container header-container">
-      <LottieAnimation
-          autoplay
-          loop
-          :animation-data="currentService.lottie"
-          class="services-icon"
-        />
+      <LottieAnimation autoplay loop :animation-data="currentService.lottie" class="services-icon" />
       <div class="full-screen-start-center" style="color: #DC9F41; flex-direction: column;">
         <h1 style="margin: 0; font-size: 64px; font-weight: normal;">{{ currentService.title }}</h1>
         <p style="font-size: 26px; margin: 0;">{{ currentService.description }}</p>
@@ -19,7 +14,7 @@
       <LottieAnimation autoplay :animation-data="LineBulb" class="services-header" />
     </div>
     <!-- Service Details -->
-    <div class="service-detail-grid-2" :style="{height: `${(serviceDetails.length + 1) * 100}px`}">
+    <div class="service-detail-grid-2" :style="{ height: `${(serviceDetails.length + 1) * 80}px` }">
       <div v-for="(detail, key) in serviceDetails" :key="key" class="full-screen-start-center service-detail-item"
         style="flex-direction: column;">
         <p>{{ detail.title }}</p>
@@ -60,7 +55,7 @@ const currentService = ref<{
 })
 const serviceDetails = ref<{ title: string, description: string }[]>([])
 
-function getIcon (slug: string) { 
+function getIcon(slug: string) {
   switch (slug) {
     case "growth-strategy":
       return Growth
@@ -77,7 +72,7 @@ function getIcon (slug: string) {
     case "event-management":
       return Event
   }
- }
+}
 onMounted(() => {
   switch (params.slug) {
     case "growth-strategy":
