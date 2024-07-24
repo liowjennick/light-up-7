@@ -168,24 +168,21 @@ const onComplete1: gsap.Callback = () => {
 
 // Banner Animation
 const onCompleteUnglowCursorClick: gsap.Callback = () => {
-  gsap.to(['.cursor-unglow', '.computer-unglow'], {
+  gsap.set(['.cursor-unglow', '.computer-unglow'], {
     opacity: 0,
-    duration: 0,
   })
   gsap.fromTo('.cursor-glow', { scale: 0.9, opacity: 0 }, {
     opacity: 1,
     scale: 1.1,
     duration: .1
   })
-  gsap.to('.computer-glow', {
+  gsap.set('.computer-glow', {
     opacity: 1,
-    duration: 0
   })
 }
 const onReverseCompleteUnglowCursorClick: gsap.Callback = () => {
   gsap.set(['.cursor-unglow', '.computer-unglow'], {
     opacity: 1,
-    duration: 0,
   })
   gsap.fromTo('.cursor-glow', { scale: 1.1, opacity: 1 }, {
     opacity: 0,
@@ -194,7 +191,6 @@ const onReverseCompleteUnglowCursorClick: gsap.Callback = () => {
   })
   gsap.set('.computer-glow', {
     opacity: 0,
-    duration: 0
   })
 }
 onMounted(() => {
@@ -202,14 +198,14 @@ onMounted(() => {
     scrollTrigger: {
       trigger: '#careers',
       start: "top top",
-      end: "bottom 100%",
+      end: "bottom center",
       pin: true,
-      scrub: 1,
+      scrub: .1,
       toggleActions: "play reverse play reverse",
     }
   })
   tl.to('.computer-unglow', {
-    y: -150,
+    top: "-50%",
     opacity: 1,
     duration: 1,
     ease: "power3.inOut",
@@ -219,6 +215,8 @@ onMounted(() => {
     duration: .1,
     onComplete: onCompleteUnglowCursorClick,
     onReverseComplete: onReverseCompleteUnglowCursorClick
+  }).set('.careers-banner', {
+    opacity: 1
   })
   tl.to('.computer-glow', {
     duration: .5
@@ -332,21 +330,25 @@ const recentJobs = [
 .banner
   position: relative
   flex: 1 0 0
-  margin-top: 100px
+  z-index: 0
   .careers-banner
     width: 100%
     height: auto
-    margin-top: 100px
+    opacity: 40%
   .cursor-unglow
     position: absolute
-    top: 0
-    right: 18%
-    transform: translate(0%, -50%)
+    top: -12%
+    right: 21.5%
+    transform: translate(-50%, -50%)
+    height: 37%
+    width: auto
   .cursor-glow
     position: absolute
-    top: 0
-    right: 13%
-    transform: translate(0%, -50%)
+    top: -11.5%
+    right: 10%
+    height: 90%
+    width: auto
+    transform: translate(-50%, -50%)
     opacity: 0
   .computer-unglow
     position: absolute
@@ -355,13 +357,15 @@ const recentJobs = [
     transform: translate(-50%, -50%)
     height: 100%
     opacity: 0
+    z-index:  -2
   .computer-glow
     position: absolute
-    top: -22%
+    top: -52%
     left: 50%
     transform: translate(-50%, -50%)
-    height: 113%
+    height: 173%
     opacity: 0
+    z-index: 1
   
 .image-container 
   display: flex
