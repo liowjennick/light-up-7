@@ -13,8 +13,7 @@
     </div>
     <!-- Staff pics -->
     <div class="section-container full-screen-center-content" style="flex-direction: column; margin-block: 24px;">
-      <div class="w-full mobile-container team-member-row"
-        style="border-bottom: 1px solid white;">
+      <div class="w-full mobile-container team-member-row" style="border-bottom: 1px solid white;">
         <div class="team-member-image-container">
           <div class="bulb-mask">
             <img :src="currentImageUrl" class="fade-in-out">
@@ -45,11 +44,7 @@
         <div v-for="(mottoIcon, key) in mottoIcons" :key="key" class="full-screen-center-between"
           style="flex-direction: column; gap: 16px">
           <div>
-            <LottieAnimation 
-            class="company-value-icon"
-              autoplay
-              loop
-              :animation-data="mottoIcon.url"/>
+            <LottieAnimation class="company-value-icon" autoplay loop :animation-data="mottoIcon.url" />
           </div>
           <div>
             <p class="font-white" style="font-size: 20px; text-align: center;">{{ mottoIcon.title }}</p>
@@ -96,9 +91,8 @@
         </div>
       </div>
       <!-- vacancy grid -->
-      <div class="grid-3-cols">
-        <div v-for="(recent, key) in recentJobs" :key="key" class="full-screen-start-center"
-          style="flex-direction: column; gap: 16px">
+      <div class="vacancy-container">
+        <div v-for="(recent, key) in recentJobs" :key="key" class="vacancy-item">
           <div>
             <p class="font-white" style="font-size: 24px;">{{ recent.title }}</p>
           </div>
@@ -131,7 +125,7 @@ useHead({
 });
 
 const scrollToExplore = () => {
-  const scrollY = document.getElementById("vacancies-section")?.getBoundingClientRect().top + window.scrollY
+  const scrollY = document.getElementById("vacancies-section")?.getBoundingClientRect().top || 0 + window.scrollY
   window.scrollTo({
     top: scrollY,
     behavior: "smooth"
@@ -156,8 +150,6 @@ const fadeInNewImage = () => {
 };
 function getRandomIndex(max: number) {
   let rand = Math.floor(Math.random() * max)
-  while (rand == currentImageIndex2.value || rand == currentImageIndex3.value)
-    rand = Math.floor(Math.random() * max)
   return rand
 };
 const onTransitionEnd = () => {
@@ -171,75 +163,6 @@ const onTransitionEnd = () => {
 const onComplete1: gsap.Callback = () => {
   setTimeout(() => {
     onTransitionEnd()
-  }, 4500);
-}
-
-// Image Set 2
-let currentImageIndex2 = ref(1);
-const currentImageUrl2 = computed(() => {
-  return staffPics[currentImageIndex2.value];
-})
-const fadeOutCurrentImage2 = () => {
-  gsap.fromTo('.fade-in-out2', { opacity: 1 }, {
-    opacity: 0, y: -100, duration: 1.5, ease: "power2.in"
-  });
-};
-const fadeInNewImage2 = () => {
-  currentImageIndex2.value = getRandomIndex2(staffPics.length);
-  gsap.fromTo('.fade-in-out2', { opacity: 0, y: -100 }, { opacity: 1, y: 0, duration: 1.5, ease: "power2.out", onComplete: onComplete2 });
-};
-function getRandomIndex2(max: number) {
-  let rand = Math.floor(Math.random() * max)
-  while (rand == currentImageIndex.value || rand == currentImageIndex3.value)
-    rand = Math.floor(Math.random() * max)
-  return rand
-};
-
-const onTransitionEnd2 = () => {
-  setTimeout(() => {
-    fadeOutCurrentImage2();
-    setTimeout(() => {
-      fadeInNewImage2();
-    }, 1500); // Adjust delay between fade out and fade in
-  }, 1500);
-};
-const onComplete2: gsap.Callback = () => {
-  setTimeout(() => {
-    onTransitionEnd2()
-  }, 4500);
-}
-
-// Image Set 3
-let currentImageIndex3 = ref(2);
-const currentImageUrl3 = computed(() => {
-  return staffPics[currentImageIndex3.value];
-})
-const fadeOutCurrentImage3 = () => {
-  gsap.fromTo('.fade-in-out3', { opacity: 1 }, {
-    opacity: 0, y: -100, duration: 1.5, ease: "power2.in"
-  });
-};
-const fadeInNewImage3 = () => {
-  currentImageIndex3.value = getRandomIndex3(staffPics.length);
-  gsap.fromTo('.fade-in-out3', { opacity: 0, y: -100 }, { opacity: 1, y: 0, duration: 1.5, ease: "power2.out", onComplete: onComplete3 });
-};
-function getRandomIndex3(max: number) {
-  let rand = Math.floor(Math.random() * max)
-  while (rand == currentImageIndex2.value || rand == currentImageIndex.value)
-    rand = Math.floor(Math.random() * max)
-  return rand
-};
-const onTransitionEnd3 = () => {
-  setTimeout(() => {
-    fadeOutCurrentImage3();
-    setTimeout(() => {
-      fadeInNewImage3();
-    }, 1500); // Adjust delay between fade out and fade in
-  }, 1500);
-};
-const onComplete3: gsap.Callback = () => {
-  setTimeout(() => {
-    onTransitionEnd3()
   }, 4500);
 }
 
@@ -300,19 +223,13 @@ onMounted(() => {
   tl.to('.computer-glow', {
     duration: .5
   })
-  onTransitionEnd();
   setTimeout(() => {
-    onTransitionEnd2();
-    setTimeout(() => {
-      onTransitionEnd3();
-    }, 3000);
+    onTransitionEnd();
   }, 3000); // Start the loop initially
 });
 
 onUnmounted(() => {
   gsap.killTweensOf('.fade-in-out')
-  gsap.killTweensOf('.fade-in-out2')
-  gsap.killTweensOf('.fade-in-out3')
 })
 const mottoTitle = ['Celebrating Creativity', 'Doing Work That Matters', 'Always Growing, Never Stopping']
 const mottoText = [`We believe the greatest ideas comes from the experience of being
@@ -388,6 +305,28 @@ const recentJobs = [
 @import "../../assets/sass/layout.sass"
 @import "../../assets/sass/inputs.sass"
 
+.vacancy-container
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-template-rows: 1fr 1fr
+  gap: 60px
+  padding: 24px
+  +mobile
+    padding: 12px
+    display: flex
+    flex-direction: column
+    gap: 40px
+    align-items: center
+  .vacancy-item
+    display: flex
+    flex-direction: column
+    gap: 16px
+    a
+      width: fit-content
+    +mobile
+      align-items: center
+      text-align: center
+      gap: 8px
 .company-value-icon
   width: 160px
 .banner
@@ -490,6 +429,10 @@ const recentJobs = [
     padding-inline: 24px
     &:hover
       text-shadow: 0 0 10px white
+    +desktop
+      padding-inline: 12px
+    +large-mobile
+      padding-inline: 12px
     +mobile
       padding-inline: 8px 
   button:last-child
