@@ -2,11 +2,12 @@
   <div id="contact-page">
     <div class="header-container">
       <div class="contact-header full-screen-center-content">
+        <img class="banner-image" src="../../assets/images/contact/contact-banner.svg" />
         <img src="../../assets/images/contact/contact-header.png" id="contact-header-title" />
-        <PhoneLine class="phone-line" />
         <div class="black-screen">
         </div>
-        <Phone class="phone" />
+        <!-- <PhoneLine class="phone-line" />
+        <Phone class="phone" /> -->
       </div>
     </div>
     <div class="section-container contact-body">
@@ -120,10 +121,10 @@ onMounted(() => {
 
   const st = {
     trigger: ".contact-header",
-    pin: ".header-container",
+    // pin: ".header-container",
     scrub: 1,
     start: "top top",
-    end: "bottom top",
+    end: "bottom+=500 top",
     toggleActions: "play reverse play reverse",
   }
   const tl = gsap.timeline({
@@ -258,7 +259,7 @@ async function submitForm(token: string) {
   width: 100%
 .black-screen
   height: inherit
-  width: 100%
+  width: 45%
   background-color: black
   position: absolute
   top: 0
@@ -278,4 +279,8 @@ async function submitForm(token: string) {
     top: 41%
   +mobile
     top: 47.5%
+.banner-image
+  width: 100%
+  position: absolute
+  bottom: 0%
 </style>
