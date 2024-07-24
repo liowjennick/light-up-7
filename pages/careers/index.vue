@@ -125,6 +125,11 @@ import Value3 from '@/assets/images/careers/lottie/Icon3_Always Growing.json'
 
 gsap.registerPlugin(ScrollTrigger)
 
+useHead({
+  title: "Light Up 7 | Brand Activation Agency",
+  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+});
+
 const scrollToExplore = () => {
   const scrollY = document.getElementById("vacancies-section")?.getBoundingClientRect().top + window.scrollY
   window.scrollTo({

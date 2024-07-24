@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-
+useHead({
+  title: "Light Up 7 | Brand Activation Agency",
+  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+});
 const formValues = ref({
   name: "",
   business_name: "",

@@ -91,6 +91,11 @@ import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
+useHead({
+  title: "Light Up 7 | Brand Activation Agency",
+  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+});
+
 const activeCircleFollowIndex = ref(-1);
 
 const setActiveFollowCircleIndex = (index: number) => {

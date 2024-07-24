@@ -289,7 +289,7 @@
       />
       <div class="section-container mb-20">
         <p class="font-orange font-20 font-weight-200 just-sans mb-10">our distinguished clients:</p>
-        <p class="font-white font-30 font-weight-200 just-sans mb-40">brand growth specialists delivering quality without compromise.</p>
+        <p class="font-white font-30 font-weight-200 just-sans mb-40"> trusted by local and global names across industries.</p>
       </div>
 
       <div class="clients-list-container mb-40">
@@ -798,7 +798,7 @@ onMounted(() => {
       bulbInitialY.value = this.target.getBoundingClientRect().top;
     },
     onDragEnd: function (e) {
-      if (this.target.getBoundingClientRect().top - bulbInitialY.value > 60 * 0.9) {
+      if (this.target.getBoundingClientRect().top - bulbInitialY.value > 50 * 0.8) {
         lightUpYourIdeasBulbActive.value = !lightUpYourIdeasBulbActive.value;
         bulbClickAudio.play();
       }

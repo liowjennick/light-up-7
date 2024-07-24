@@ -182,6 +182,11 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
 const news: any[] = reactive(NewsData);
 
+useHead({
+  title: "Light Up 7 | Brand Activation Agency",
+  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+});
+
 const currentPage: Ref<number> = ref(1);
 const paginateLength = computed(() => (news.length % 4 > 0 ? Math.floor(news.length / 4) + 1 : Math.floor(news.length / 4)));
 const switchPage = (page: number, e: Event) => {

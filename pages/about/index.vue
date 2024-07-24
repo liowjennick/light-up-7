@@ -307,6 +307,11 @@ import { ScrollTrigger, ScrollToPlugin, Draggable, MotionPathPlugin } from "gsap
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable, MotionPathPlugin);
 
+useHead({
+  title: "Light Up 7 | Brand Activation Agency",
+  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+});
+
 onMounted(() => {
   gsap.to("#line-1", {
     strokeDashoffset: 1146.8876953125,

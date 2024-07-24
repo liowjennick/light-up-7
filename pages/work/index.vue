@@ -144,6 +144,11 @@ import { setCookie, getCookie } from "../../utils/cookies";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
+useHead({
+  title: "Light Up 7 | Brand Activation Agency",
+  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+});
+
 const initialAnimationComplete = ref(false);
 
 enum DisplayMode {
@@ -529,7 +534,7 @@ onMounted(() => {
         opacity: 0
         transform-origin: center top
         transform: scale(0.8)
-        z-index: 1
+        z-index: 12
         &.active
           opacity: 0
           // animation: glow-line-expand 1s ease-out infinite alternate
@@ -648,9 +653,10 @@ onMounted(() => {
             height: 100%
 
   #client-list-section
-    background-color: black
+    // background-color: black
     position: relative
     opacity: 0
+    z-index: 13
     .light-background
       background: $orange
       opacity: 0.15

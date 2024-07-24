@@ -20,10 +20,10 @@
                 v-for="(workscope, i) in item.workscope_tags"
                 :key="i"
               >
-                <img
+                <!-- <img
                   class="workscope-icon"
                   src="/images/work/projects/lightbulb-icon.png"
-                />
+                /> -->
                 <p class="font-10 font-weight-100 font-gray">{{ workscope }}</p>
               </div>
             </div>
@@ -233,6 +233,11 @@
         </div>
       </div>
     </div>
+    <div class="full-screen-center-content w-full" style="margin-top: 40px">
+      <a href="/work">
+        <button @click="viewPastWork" class="orange-outlined-button">view past work</button>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -253,6 +258,7 @@ useHead({
 @import "../../assets/sass/fonts"
 @import "../../assets/sass/layout"
 @import "../../assets/sass/reset"
+@import "../../assets/sass/inputs.sass"
 
 #project-item
   min-height: 100vh
@@ -386,4 +392,7 @@ useHead({
             box-sizing: border-box
   .caption
     margin-top: 20px
+
+.orange-outlined-button
+  cursor: pointer
 </style>

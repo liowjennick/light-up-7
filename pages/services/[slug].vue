@@ -49,6 +49,11 @@ import LineBulb from '@/assets/images/services/lottie/services-line-bulb.json'
 
 const { params } = useRoute()
 
+useHead({
+  title: "Light Up 7 | Brand Activation Agency",
+  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+});
+
 const currentService = ref<{
   lottie: any,
   title: string,
