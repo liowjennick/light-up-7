@@ -3,10 +3,10 @@
     <!-- Banner -->
     <div id="careers-banner-animation" class="section-container full-screen-center-content" style="height: 100vh;">
       <div class="banner">
-        <img class="careers-banner" src="../../assets/images/careers/careers.png" alt="Careers">
+        <img class="careers-banner" src="../../assets/images/careers/careers-1.png" alt="Careers">
         <img class="computer-unglow" :src="ComputerUnglow" alt="Unglow computer">
         <img class="cursor-glow" src="../../assets/images/careers/glow-cursor.png" alt="Glow cursor">
-        <img class="computer-glow" :src="ComputerGlow" alt="glow computer">
+        <img class="computer-glow" src="../../assets/images/careers/glow-computer-1.png" alt="glow computer">
         <img class="star" src="../../assets/images/news/star.png" />
         <img class="star-2" src="../../assets/images/news/star.png" />
       </div>
@@ -179,7 +179,7 @@ onMounted(() => {
 
   bannerTimeline
     .to(".computer-unglow", {
-      bottom: "100%"
+      bottom: "77%"
     })
     .to([".computer-glow", ".cursor-glow", ".careers-banner"], {
       opacity: 1
@@ -306,8 +306,8 @@ const recentJobs = [
     transform: translate(0%, -50%)
   .cursor-glow
     position: absolute
-    bottom: 20%
-    right: 25%
+    bottom: 30%
+    right: 26.5%
     transform: translate(0%, -50%)
     opacity: 0.5
     width: 15%
@@ -321,21 +321,21 @@ const recentJobs = [
     opacity: 1
   .computer-glow
     position: absolute
-    bottom: 40%
+    bottom: 5%
     left: 50%
     transform: translate(-50%, -50%)
-    width: 24.6%
+    width: 34.6%
     opacity: 0
   .star
     position: absolute
     width: 10%
-    bottom: -20%
+    bottom: -0%
     transform: scaleX(-1)
   .star-2
     position: absolute
     width: 10%
     right: 0
-    bottom: -20%
+    bottom: -0%
   
 .image-container 
   display: flex
