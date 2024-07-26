@@ -1,14 +1,14 @@
 <template>
   <div id="careers">
     <!-- Banner -->
-    <div class="section-container full-screen-center-content" style="height: 100vh;">
-      <!-- Animation here -->
+    <div id="careers-banner-animation" class="section-container full-screen-center-content" style="height: 100vh;">
       <div class="banner">
         <img class="careers-banner" src="../../assets/images/careers/careers.png" alt="Careers">
         <img class="computer-unglow" :src="ComputerUnglow" alt="Unglow computer">
+        <img class="cursor-glow" src="../../assets/images/careers/glow-cursor.png" alt="Glow cursor">
         <img class="computer-glow" :src="ComputerGlow" alt="glow computer">
-        <img class="cursor-unglow" src="../../assets/images/careers/cursor-unglow.png" alt="Unglow cursor" :width="84">
-        <img class="cursor-glow" src="../../assets/images/careers/glow-cursor.png" alt="Glow cursor" :width="207">
+        <img class="star" src="../../assets/images/news/star.png" />
+        <img class="star-2" src="../../assets/images/news/star.png" />
       </div>
     </div>
     <!-- Staff pics -->
@@ -22,7 +22,7 @@
           <img class="mask-outline" src="../../assets/images/careers/bulb-mask-outline.png" />
         </div>
         <div class="team-member-text-container">
-          <h2 class="font-orange" style="margin-bottom: 16px">Join us in lighting up the world!</h2>
+          <h2 class="font-orange font-weight-600 font-30" style="margin-bottom: 16px">Join us in lighting up the world!</h2>
           <p class="font-white">
             All great things start with a spark—and at Light Up 7, we believe in
             fanning the embers of creativity and success in each team member.<br /><br /> We
@@ -125,7 +125,7 @@ useHead({
 });
 
 const scrollToExplore = () => {
-  const scrollY = document.getElementById("vacancies-section")?.getBoundingClientRect().top || 0 + window.scrollY
+  const scrollY = (document.getElementById("vacancies-section")?.getBoundingClientRect().top || 0) + window.scrollY
   window.scrollTo({
     top: scrollY,
     behavior: "smooth"
@@ -166,66 +166,24 @@ const onComplete1: gsap.Callback = () => {
   }, 4500);
 }
 
-// Banner Animation
-const onCompleteUnglowCursorClick: gsap.Callback = () => {
-  gsap.to(['.cursor-unglow', '.computer-unglow'], {
-    opacity: 0,
-    duration: 0,
-  })
-  gsap.fromTo('.cursor-glow', { scale: 0.9, opacity: 0 }, {
-    opacity: 1,
-    scale: 1.1,
-    duration: .1
-  })
-  gsap.to('.computer-glow', {
-    opacity: 1,
-    duration: 0
-  })
-}
-const onReverseCompleteUnglowCursorClick: gsap.Callback = () => {
-  gsap.set(['.cursor-unglow', '.computer-unglow'], {
-    opacity: 1,
-    duration: 0,
-  })
-  gsap.fromTo('.cursor-glow', { scale: 1.1, opacity: 1 }, {
-    opacity: 0,
-    scale: 0.9,
-    duration: .1
-  })
-  gsap.set('.computer-glow', {
-    opacity: 0,
-    duration: 0
-  })
-}
 onMounted(() => {
-  let tl = gsap.timeline({
+  let bannerTimeline = gsap.timeline({
     scrollTrigger: {
-      trigger: '#careers',
-      start: "top top",
-      end: "bottom 100%",
+      trigger: "#careers",
       pin: true,
-      scrub: 1,
-      toggleActions: "play reverse play reverse",
+      start: "top top",
+      end: "+=1000",
+      scrub: 1
     }
   })
-  tl.to('.computer-unglow', {
-    y: -150,
-    opacity: 1,
-    duration: 1,
-    ease: "power3.inOut",
-  })
-  tl.to('.cursor-unglow', {
-    scale: 0.9,
-    duration: .1,
-    onComplete: onCompleteUnglowCursorClick,
-    onReverseComplete: onReverseCompleteUnglowCursorClick
-  })
-  tl.to('.computer-glow', {
-    duration: .5
-  })
-  setTimeout(() => {
-    onTransitionEnd();
-  }, 3000); // Start the loop initially
+
+  bannerTimeline
+    .to(".computer-unglow", {
+      bottom: "100%"
+    })
+    .to([".computer-glow", ".cursor-glow", ".careers-banner"], {
+      opacity: 1
+    })
 });
 
 onUnmounted(() => {
@@ -333,10 +291,14 @@ const recentJobs = [
   position: relative
   flex: 1 0 0
   margin-top: 100px
+  // height: 100%
   .careers-banner
-    width: 100%
-    height: auto
-    margin-top: 100px
+    width: 80%
+    display: block
+    margin: 0 auto
+    position: relative
+    bottom: 30%
+    opacity: 0.5
   .cursor-unglow
     position: absolute
     top: 0
@@ -344,24 +306,36 @@ const recentJobs = [
     transform: translate(0%, -50%)
   .cursor-glow
     position: absolute
-    top: 0
-    right: 13%
+    bottom: 20%
+    right: 25%
     transform: translate(0%, -50%)
-    opacity: 0
+    opacity: 0.5
+    width: 15%
   .computer-unglow
     position: absolute
-    top: 20%
+    bottom: 40%
     left: 50%
-    transform: translate(-50%, -50%)
-    height: 100%
-    opacity: 0
+    transform: translateX(-50%)
+    // height: 100%
+    width: 23%
+    opacity: 1
   .computer-glow
     position: absolute
-    top: -22%
+    bottom: 40%
     left: 50%
     transform: translate(-50%, -50%)
-    height: 113%
+    width: 24.6%
     opacity: 0
+  .star
+    position: absolute
+    width: 10%
+    bottom: -20%
+    transform: scaleX(-1)
+  .star-2
+    position: absolute
+    width: 10%
+    right: 0
+    bottom: -20%
   
 .image-container 
   display: flex
