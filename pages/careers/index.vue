@@ -10,6 +10,9 @@
         <img class="star" src="../../assets/images/news/star.png" />
         <img class="star-2" src="../../assets/images/news/star.png" />
       </div>
+      <div class="arrow-down-container">
+        <img class="arrow-down" src="../../assets/images/work/right-caret.png" />
+      </div>
     </div>
     <!-- Staff pics -->
     <div class="section-container full-screen-center-content" style="flex-direction: column; margin-block: 24px;">
@@ -458,7 +461,35 @@ const recentJobs = [
       width: 100%
       height: 50%
       transform: translateY(40px)
+#careers-banner-animation
+  position: relative
+.arrow-down-container
+  position: absolute
+  bottom: 15%
+.arrow-down
+  position: absolute
+  transform: rotate(90deg)
+  transform-origin: center center
+  left: 50%
+  width: 30px
+  --webkit-animation: arrow-down-move 2s ease-out infinite alternate
+  animation: arrow-down-move 2s ease-out infinite alternate
+
 
 .orange-outlined-button
   cursor: pointer
+
+@keyframes arrow-down-move
+  0%
+    transform: translate(-50%, 10%) rotate(90deg)
+  20%
+    transform: translate(-50%, 0%) rotate(90deg)
+  40%
+    transform: translate(-50%, 10%) rotate(90deg)
+  60%
+    transform: translate(-50%, 0%) rotate(90deg)
+  80%
+    transform: translate(-50%, 10%) rotate(90deg)
+  100%
+    transform: translate(-50%, 0%) rotate(90deg)
 </style>
