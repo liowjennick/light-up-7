@@ -1,56 +1,133 @@
 <template>
   <div id="careers">
     <!-- Banner -->
-    <div class="section-container full-screen-center-content" style="height: 100vh;">
-      <!-- Animation here -->
+    <div
+      id="careers-banner-animation"
+      class="section-container full-screen-center-content"
+      style="height: 100vh"
+    >
       <div class="banner">
-        <img class="careers-banner" src="../../assets/images/careers/careers.png" alt="Careers">
-        <img class="computer-unglow" :src="ComputerUnglow" alt="Unglow computer">
-        <img class="computer-glow" :src="ComputerGlow" alt="glow computer">
-        <img class="cursor-unglow" src="../../assets/images/careers/cursor-unglow.png" alt="Unglow cursor" :width="84">
-        <img class="cursor-glow" src="../../assets/images/careers/glow-cursor.png" alt="Glow cursor" :width="207">
+        <img
+          class="careers-banner"
+          src="../../assets/images/careers/careers-1.png"
+          alt="Careers"
+        />
+        <img
+          class="computer-unglow"
+          :src="ComputerUnglow"
+          alt="Unglow computer"
+        />
+        <img
+          class="cursor-glow"
+          src="../../assets/images/careers/glow-cursor.png"
+          alt="Glow cursor"
+        />
+        <img
+          class="computer-glow"
+          src="../../assets/images/careers/glow-computer-1.png"
+          alt="glow computer"
+        />
+        <img
+          class="star"
+          src="../../assets/images/news/star.png"
+        />
+        <img
+          class="star-2"
+          src="../../assets/images/news/star.png"
+        />
+      </div>
+      <div class="arrow-down-container">
+        <img
+          class="arrow-down"
+          src="../../assets/images/work/right-caret.png"
+        />
       </div>
     </div>
     <!-- Staff pics -->
-    <div class="section-container full-screen-center-content" style="flex-direction: column; margin-block: 24px;">
-      <div class="w-full mobile-container team-member-row" style="border-bottom: 1px solid white;">
+    <div
+      class="section-container full-screen-center-content"
+      style="flex-direction: column; margin-block: 24px"
+    >
+      <div
+        class="w-full mobile-container team-member-row"
+        style="border-bottom: 1px solid white"
+      >
         <div class="team-member-image-container">
           <div class="bulb-mask">
-            <img :src="currentImageUrl" class="fade-in-out">
+            <img
+              :src="currentImageUrl"
+              class="fade-in-out"
+            />
           </div>
 
-          <img class="mask-outline" src="../../assets/images/careers/bulb-mask-outline.png" />
+          <img
+            class="mask-outline"
+            src="../../assets/images/careers/bulb-mask-outline.png"
+          />
         </div>
         <div class="team-member-text-container">
-          <h2 class="font-orange" style="margin-bottom: 16px">Join us in lighting up the world!</h2>
+          <h2
+            class="font-orange font-weight-600 font-30"
+            style="margin-bottom: 16px"
+          >
+            Join us in lighting up the world!
+          </h2>
           <p class="font-white">
-            All great things start with a spark—and at Light Up 7, we believe in
-            fanning the embers of creativity and success in each team member.<br /><br /> We
-            are a proudly all-in and in-house team that provides support and
-            avenues for you to bring your aspirations and visions to life.<br /><br /> When
-            you're ready to light up your career, Light Up 7 is ready for you.
+            All great things start with a spark—and at Light Up 7, we believe in fanning the embers of creativity and success in each team member.<br /><br />
+            We are a proudly all-in and in-house team that provides support and avenues for you to bring your aspirations and visions to life.<br /><br />
+            When you're ready to light up your career, Light Up 7 is ready for you.
           </p>
-          <div class="full-screen-center-content w-full" style="margin-top: 40px">
-            <button @click="scrollToExplore" class="orange-outlined-button">be part of LU7!</button>
+          <div
+            class="full-screen-center-content w-full"
+            style="margin-top: 40px"
+          >
+            <button
+              @click="scrollToExplore"
+              class="orange-outlined-button"
+            >
+              be part of LU7!
+            </button>
           </div>
         </div>
       </div>
     </div>
     <!-- Company values -->
-    <div class="section-container full-screen-start-center"
-      style="flex-direction: column; gap: 32px; margin-block: 64px;">
+    <div
+      class="section-container full-screen-start-center"
+      style="flex-direction: column; gap: 32px; margin-block: 64px"
+    >
       <h2 class="font-orange">How we continue to shine</h2>
-      <div class="full-screen-center-around mobile-container" style="gap: 48px">
-        <div v-for="(mottoIcon, key) in mottoIcons" :key="key" class="full-screen-center-between"
-          style="flex-direction: column; gap: 16px">
+      <div
+        class="full-screen-center-around mobile-container"
+        style="gap: 48px"
+      >
+        <div
+          v-for="(mottoIcon, key) in mottoIcons"
+          :key="key"
+          class="full-screen-center-between"
+          style="flex-direction: column; gap: 16px"
+        >
           <div>
-            <LottieAnimation class="company-value-icon" autoplay loop :animation-data="mottoIcon.url" />
+            <LottieAnimation
+              class="company-value-icon"
+              autoplay
+              loop
+              :animation-data="mottoIcon.url"
+            />
           </div>
           <div>
-            <p class="font-white" style="font-size: 20px; text-align: center;">{{ mottoIcon.title }}</p>
+            <p
+              class="font-white"
+              style="font-size: 20px; text-align: center"
+            >
+              {{ mottoIcon.title }}
+            </p>
           </div>
           <div>
-            <p class="font-white" style="text-align: center;">
+            <p
+              class="font-white"
+              style="text-align: center"
+            >
               {{ mottoIcon.text }}
             </p>
           </div>
@@ -58,46 +135,93 @@
       </div>
     </div>
     <!-- Company pics -->
-    <div style="margin-block: 24px;">
+    <div style="margin-block: 24px">
       <div class="section-container">
-        <h2 class="font-orange" style="margin-bottom: 24px;">Our team at work (and play!)</h2>
+        <h2
+          class="font-orange"
+          style="margin-bottom: 24px"
+        >
+          Our team at work (and play!)
+        </h2>
       </div>
-      <div class="bg-orange-25 full-screen-center-between mobile-container" style="gap: 16px; padding-block: 24px;">
-        <div class="section-container full-screen-center-between mobile-container"
-          style="gap: 16px; padding-block: 24px;">
-          <div v-for="(company, key) in companyPics" :key="key" class="overlay-parent">
-            <img :src="company.url" :alt="company.alt" style="width: 100%;" />
+      <div
+        class="bg-orange-25 full-screen-center-between mobile-container"
+        style="gap: 16px; padding-block: 24px"
+      >
+        <div
+          class="section-container full-screen-center-between mobile-container"
+          style="gap: 16px; padding-block: 24px"
+        >
+          <div
+            v-for="(company, key) in companyPics"
+            :key="key"
+            class="overlay-parent"
+          >
+            <img
+              :src="company.url"
+              :alt="company.alt"
+              style="width: 100%"
+            />
             <!-- overlay text -->
             <div class="overlay-child">
-              <p class="font-white" v-html="company.text">
-              </p>
+              <p
+                class="font-white"
+                v-html="company.text"
+              ></p>
             </div>
           </div>
         </div>
       </div>
       <div class="section-container">
-        <div style="border-bottom: 1px solid white;padding: 24px"></div>
+        <div style="border-bottom: 1px solid white; padding: 24px"></div>
       </div>
     </div>
     <!-- Vacancies -->
-    <div class="section-container" id="vacancies-section" style="margin-block: 24px">
+    <div
+      class="section-container"
+      id="vacancies-section"
+      style="margin-block: 24px"
+    >
       <h2 class="font-orange">ready to explore a new path?</h2>
       <h4 class="font-white">check out your dream role here.</h4>
       <!-- filter tabs -->
       <div class="full-screen-center-content tab-parent-container">
-        <div class="full-screen-center-content tab-container btn-group" style="flex-wrap: wrap; row-gap: 8px;">
-          <button v-for="vacancyTab in vacancyTabs" :key="vacancyTab" class="tab-button" :name="vacancyTab" @click="">{{
-            vacancyTab }}</button>
+        <div
+          class="full-screen-center-content tab-container btn-group"
+          style="flex-wrap: wrap; row-gap: 8px"
+        >
+          <button
+            v-for="vacancyTab in vacancyTabs"
+            :key="vacancyTab"
+            class="tab-button"
+            :name="vacancyTab"
+            @click=""
+          >
+            {{ vacancyTab }}
+          </button>
         </div>
       </div>
       <!-- vacancy grid -->
       <div class="vacancy-container">
-        <div v-for="(recent, key) in recentJobs" :key="key" class="vacancy-item">
+        <div
+          v-for="(recent, key) in recentJobs"
+          :key="key"
+          class="vacancy-item"
+        >
           <div>
-            <p class="font-white" style="font-size: 24px;">{{ recent.title }}</p>
+            <p
+              class="font-white"
+              style="font-size: 24px"
+            >
+              {{ recent.title }}
+            </p>
           </div>
-          <a class="orange-outlined-button vacancy-btn" style="font-family: 'JustSans';" :href="recent.url">apply
-            now!</a>
+          <a
+            class="orange-outlined-button vacancy-btn"
+            style="font-family: 'JustSans'"
+            :href="recent.url"
+            >apply now!</a
+          >
         </div>
       </div>
     </div>
@@ -105,19 +229,19 @@
 </template>
 
 <script setup lang="ts">
-import { default as Companys } from '@/assets/images/careers/company-pics'
-import { default as Staffs } from '@/assets/images/careers/staff-pics'
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
-import { computed, ref, reactive } from 'vue';
-import { default as ComputerUnglow } from '@/assets/images/careers/computer-unglow.png'
-import { default as ComputerGlow } from '@/assets/images/careers/glow-computer.png'
-import { LottieAnimation } from 'lottie-web-vue';
-import Value1 from '@/assets/images/careers/lottie/Icon1_Celebrating Creativity_V1.gif.json'
-import Value2 from '@/assets/images/careers/lottie/Icon2_Doing Work That Matters.json'
-import Value3 from '@/assets/images/careers/lottie/Icon3_Always Growing.json'
+import { default as Companys } from "@/assets/images/careers/company-pics";
+import { default as Staffs } from "@/assets/images/careers/staff-pics";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { computed, ref, reactive } from "vue";
+import { default as ComputerUnglow } from "@/assets/images/careers/computer-unglow.png";
+import { default as ComputerGlow } from "@/assets/images/careers/glow-computer.png";
+import { LottieAnimation } from "lottie-web-vue";
+import Value1 from "@/assets/images/careers/lottie/Icon1_Celebrating Creativity_V1.gif.json";
+import Value2 from "@/assets/images/careers/lottie/Icon2_Doing Work That Matters.json";
+import Value3 from "@/assets/images/careers/lottie/Icon3_Always Growing.json";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 useHead({
   title: "Light Up 7 | Brand Activation Agency",
@@ -125,33 +249,39 @@ useHead({
 });
 
 const scrollToExplore = () => {
-  const scrollY = document.getElementById("vacancies-section")?.getBoundingClientRect().top || 0 + window.scrollY
+  const scrollY = (document.getElementById("vacancies-section")?.getBoundingClientRect().top || 0) + window.scrollY;
   window.scrollTo({
     top: scrollY,
-    behavior: "smooth"
-  })
-}
+    behavior: "smooth",
+  });
+};
 
-
-const staffPics = reactive(Staffs)
+const staffPics = reactive(Staffs);
 // Image Set 1
 let currentImageIndex = ref(0);
 const currentImageUrl = computed(() => {
   return staffPics[currentImageIndex.value];
-})
+});
 const fadeOutCurrentImage = () => {
-  gsap.fromTo('.fade-in-out', { opacity: 1 }, {
-    opacity: 0, y: 40, duration: 1.5, ease: "power2.in"
-  });
+  gsap.fromTo(
+    ".fade-in-out",
+    { opacity: 1 },
+    {
+      opacity: 0,
+      y: 40,
+      duration: 1.5,
+      ease: "power2.in",
+    }
+  );
 };
 const fadeInNewImage = () => {
   currentImageIndex.value = getRandomIndex(staffPics.length);
-  gsap.fromTo('.fade-in-out', { opacity: 0, y: 40 }, { opacity: 1, y: 40, duration: 1.5, ease: "power2.out", onComplete: onComplete1 });
+  gsap.fromTo(".fade-in-out", { opacity: 0, y: 40 }, { opacity: 1, y: 40, duration: 1.5, ease: "power2.out", onComplete: onComplete1 });
 };
 function getRandomIndex(max: number) {
-  let rand = Math.floor(Math.random() * max)
-  return rand
-};
+  let rand = Math.floor(Math.random() * max);
+  return rand;
+}
 const onTransitionEnd = () => {
   setTimeout(() => {
     fadeOutCurrentImage();
@@ -162,138 +292,98 @@ const onTransitionEnd = () => {
 };
 const onComplete1: gsap.Callback = () => {
   setTimeout(() => {
-    onTransitionEnd()
-  }, 4500);
-}
-
-// Banner Animation
-const onCompleteUnglowCursorClick: gsap.Callback = () => {
-  gsap.set(['.cursor-unglow', '.computer-unglow'], {
-    opacity: 0,
-  })
-  gsap.fromTo('.cursor-glow', { scale: 0.9, opacity: 0 }, {
-    opacity: 1,
-    scale: 1.1,
-    duration: .1
-  })
-  gsap.set('.computer-glow', {
-    opacity: 1,
-  })
-}
-const onReverseCompleteUnglowCursorClick: gsap.Callback = () => {
-  gsap.set(['.cursor-unglow', '.computer-unglow'], {
-    opacity: 1,
-  })
-  gsap.fromTo('.cursor-glow', { scale: 1.1, opacity: 1 }, {
-    opacity: 0,
-    scale: 0.9,
-    duration: .1
-  })
-  gsap.set('.computer-glow', {
-    opacity: 0,
-  })
-}
-onMounted(() => {
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#careers',
-      start: "top top",
-      end: "bottom center",
-      pin: true,
-      scrub: .1,
-      toggleActions: "play reverse play reverse",
-    }
-  })
-  tl.to('.computer-unglow', {
-    top: "-50%",
-    opacity: 1,
-    duration: 1,
-    ease: "power3.inOut",
-  })
-  tl.to('.cursor-unglow', {
-    scale: 0.9,
-    duration: .1,
-    onComplete: onCompleteUnglowCursorClick,
-    onReverseComplete: onReverseCompleteUnglowCursorClick
-  }).set('.careers-banner', {
-    opacity: 1
-  })
-  tl.to('.computer-glow', {
-    duration: .5
-  })
-  setTimeout(() => {
     onTransitionEnd();
-  }, 3000); // Start the loop initially
+  }, 4500);
+};
+
+onMounted(() => {
+  let bannerTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#careers",
+      pin: true,
+      start: "top top",
+      end: "+=1000",
+      scrub: 1,
+    },
+  });
+
+  bannerTimeline
+    .to(".computer-unglow", {
+      bottom: "77%",
+    })
+    .to([".computer-glow", ".cursor-glow", ".careers-banner"], {
+      opacity: 1,
+    });
 });
 
 onUnmounted(() => {
-  gsap.killTweensOf('.fade-in-out')
-})
-const mottoTitle = ['Celebrating Creativity', 'Doing Work That Matters', 'Always Growing, Never Stopping']
-const mottoText = [`We believe the greatest ideas comes from the experience of being
+  gsap.killTweensOf(".fade-in-out");
+});
+const mottoTitle = ["Celebrating Creativity", "Doing Work That Matters", "Always Growing, Never Stopping"];
+const mottoText = [
+  `We believe the greatest ideas comes from the experience of being
               human. Whatever shape or form, your creativity will always have a
-              seat at our table.`, `Joining Light Up 7 means being part of projects that make a
+              seat at our table.`,
+  `Joining Light Up 7 means being part of projects that make a
               difference. Lead or have a hand in creating lasting impact with
-              brands and organisations across the APAC region.`, `We understand wanting to leave your mark in the industry and we
+              brands and organisations across the APAC region.`,
+  `We understand wanting to leave your mark in the industry and we
               will support you until you make it! No matter the goals, you will
-              have the resources to thrive.`]
-const mottoIcons = ref([Value1, Value2, Value3].map((motto, key) => ({
-  url: motto,
-  title: mottoTitle[key],
-  text: mottoText[key],
-  alt: `Motto ${key + 1}`
-})))
+              have the resources to thrive.`,
+];
+const mottoIcons = ref(
+  [Value1, Value2, Value3].map((motto, key) => ({
+    url: motto,
+    title: mottoTitle[key],
+    text: mottoText[key],
+    alt: `Motto ${key + 1}`,
+  }))
+);
 
-const companyText = [`“I love how diverse the team is. You learn so much from people of
+const companyText = [
+  `“I love how diverse the team is. You learn so much from people of
             various backgrounds and plus point: more festive celebrations!’<br/><br/> F.I,
-            Head of Motion Design`, `“Super thankful for all the opportunities where the team trusted me
+            Head of Motion Design`,
+  `“Super thankful for all the opportunities where the team trusted me
             to take lead on projects. Truly a transformative experience at Light
-            Up 7.”<br/><br/> I.S, Project Manager`, `“The work’s challenging but so is the downtime! Nothing beats a long
+            Up 7.”<br/><br/> I.S, Project Manager`,
+  `“The work’s challenging but so is the downtime! Nothing beats a long
             day of projects like one (or 5) rounds of pool.”<br/><br/> M.S, Video
-            Production Specialist`]
+            Production Specialist`,
+];
 const companyPics = Companys.map((comp, key) => ({
   url: comp,
   text: companyText[key],
-  alt: `Company pic ${key + 1}`
-}))
+  alt: `Company pic ${key + 1}`,
+}));
 
-const vacancyTabs = [
-  "all",
-  "finance/accounting",
-  "events",
-  "internship",
-  "client services",
-  "content",
-  "creative",
-  "video",
-  "web",
-]
+const vacancyTabs = ["all", "finance/accounting", "events", "internship", "client services", "content", "creative", "video", "web"];
 const recentJobs = [
   {
     title: "Event Manager",
-    url: "/careers/1"
+    url: "/careers/1",
   },
   {
     title: "Finance and Accounting Executive",
-    url: "/careers/1"
+    url: "/careers/1",
   },
   {
     title: "Internship",
-    url: "/careers/1"
+    url: "/careers/1",
   },
   {
     title: "Project Manager",
-    url: "/careers/1"
+    url: "/careers/1",
   },
   {
     title: "Video Production Manager",
-    url: "/careers/1"
+    url: "/careers/1",
   },
   {
     title: "Senior Digital Designer",
-    url: "/careers/1"
+    url: "/careers/1",
   },
-]
+];
 </script>
 
 <style lang="sass" scoped>
@@ -330,11 +420,15 @@ const recentJobs = [
 .banner
   position: relative
   flex: 1 0 0
-  z-index: 0
+  margin-top: 100px
+  // height: 100%
   .careers-banner
-    width: 100%
-    height: auto
-    opacity: 40%
+    width: 80%
+    display: block
+    margin: 0 auto
+    position: relative
+    bottom: 30%
+    opacity: 0.5
   .cursor-unglow
     position: absolute
     top: -12%
@@ -344,40 +438,48 @@ const recentJobs = [
     width: auto
   .cursor-glow
     position: absolute
-    top: -11.5%
-    right: 10%
-    height: 90%
-    width: auto
-    transform: translate(-50%, -50%)
-    opacity: 0
+    bottom: 30%
+    right: 26.5%
+    transform: translate(0%, -50%)
+    opacity: 0.5
+    width: 15%
   .computer-unglow
     position: absolute
-    top: 20%
+    bottom: 40%
     left: 50%
-    transform: translate(-50%, -50%)
-    height: 100%
-    opacity: 0
-    z-index:  -2
+    transform: translateX(-50%)
+    // height: 100%
+    width: 23%
+    opacity: 1
   .computer-glow
     position: absolute
-    top: -52%
+    bottom: 5%
     left: 50%
     transform: translate(-50%, -50%)
-    height: 173%
+    width: 34.6%
     opacity: 0
-    z-index: 1
-  
-.image-container 
+  .star
+    position: absolute
+    width: 10%
+    bottom: -0%
+    transform: scaleX(-1)
+  .star-2
+    position: absolute
+    width: 10%
+    right: 0
+    bottom: -0%
+
+.image-container
   display: flex
   justify-content: center
   align-items: center
-  img 
+  img
     max-width: 100%
     max-height: 100%
-    opacity: 1  
+    opacity: 1
 #careers
   padding-block: 48px
-  h2, h4, p 
+  h2, h4, p
     margin: 0px
 .slide-image
   max-width: 100%
@@ -419,12 +521,12 @@ const recentJobs = [
   +mobile
     margin-block: 12px
 .tab-container
-  margin-block: 24px 
+  margin-block: 24px
   padding: 12px
   border: 1px solid $orange
   border-radius: 100px
   width: fit-content
-  button 
+  button
     background: none
     border: none
     border-right: 1px solid $orange
@@ -438,7 +540,7 @@ const recentJobs = [
     +large-mobile
       padding-inline: 12px
     +mobile
-      padding-inline: 8px 
+      padding-inline: 8px
   button:last-child
     border-right: none
 .vacancy-btn
@@ -488,7 +590,35 @@ const recentJobs = [
       width: 100%
       height: 50%
       transform: translateY(40px)
+#careers-banner-animation
+  position: relative
+.arrow-down-container
+  position: absolute
+  bottom: 15%
+.arrow-down
+  position: absolute
+  transform: rotate(90deg)
+  transform-origin: center center
+  left: 50%
+  width: 30px
+  --webkit-animation: arrow-down-move 2s ease-out infinite alternate
+  animation: arrow-down-move 2s ease-out infinite alternate
+
 
 .orange-outlined-button
   cursor: pointer
+
+@keyframes arrow-down-move
+  0%
+    transform: translate(-50%, 10%) rotate(90deg)
+  20%
+    transform: translate(-50%, 0%) rotate(90deg)
+  40%
+    transform: translate(-50%, 10%) rotate(90deg)
+  60%
+    transform: translate(-50%, 0%) rotate(90deg)
+  80%
+    transform: translate(-50%, 10%) rotate(90deg)
+  100%
+    transform: translate(-50%, 0%) rotate(90deg)
 </style>

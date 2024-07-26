@@ -119,23 +119,16 @@ onMounted(() => {
     submitForm(token)
   }
 
-  const st = {
-    trigger: ".contact-header",
-    // pin: ".header-container",
-    scrub: 1,
-    start: "top top",
-    end: "bottom+=500 top",
-    toggleActions: "play reverse play reverse",
-  }
-  const tl = gsap.timeline({
-    scrollTrigger: st
-  })
-  tl.to(".black-screen", {
-    width: 0
-  }).to(".phone", {
-    opacity: 1,
-    duration: 1.5,
-    delay: .4
+  gsap.from(".banner-image", {
+    x: "-150vw",
+    scrollTrigger: {
+      ease: "power3.inOut",
+      trigger: ".header-container",
+      start: "top center",
+      end: "bottom center",
+      scrub: 1,
+      toggleActions: "play reverse play reverse"
+    }
   })
 })
 
@@ -257,14 +250,14 @@ async function submitForm(token: string) {
   transform: translate(-4.5%, 5%)
   height: 100%
   width: 100%
-.black-screen
-  height: inherit
-  width: 45%
-  background-color: black
-  position: absolute
-  top: 0
-  right: 0
-  z-index: 2
+// .black-screen
+//   height: inherit
+//   width: 45%
+//   background-color: black
+//   position: absolute
+//   top: 0
+//   right: 0
+//   z-index: 2
 .phone
   position: absolute
   top: 29.5%
