@@ -1,8 +1,26 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+
+const { params } = useRoute()
+
+const jobDescription = ref({
+  title: "Finance & Accounting Executive",
+  description: `We are searching for a highly organized and detail-oriented finance & accounting assistant to join our
+          finance
+          team. Extensive knowledge of general accounting and bookkeeping practices is essential. You will assist with
+          the
+          day-to-day tasks in our finance department. You will play an integral role in maintaining the company’s
+          account
+          information.
+          <br><br>
+          We work with clients to provide creative solutions to grow their business through media advertising and fun
+          projects. Working closely with the finance manager, you will manage, process and troubleshoot various accounts
+          and transactions. Ultimately, you will help sustain, monitor our company’s financial health and ensure our
+          resources are utilized beneficially.`
+})
 useHead({
-  title: "Light Up 7 | Brand Activation Agency",
-  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+  title: `Our Careers – ${jobDescription.value.title} | Light Up 7`,
+  meta: [{ name: "description", content: jobDescription.value.description.split('.')[0] }],
 });
 const formValues = ref({
   name: "",
@@ -20,20 +38,8 @@ const formValues = ref({
   <div id="career-details">
     <div class="section-container bg-orange-25" style="padding: 80px; max-width: 100%;">
       <div class="section-container" style="padding-inline: 80px">
-        <p class="font-orange" style="font-size: 60px; line-height: none; margin-bottom: 24px">Finance & Accounting
-          Executive</p>
-        <p>We are searching for a highly organized and detail-oriented finance & accounting assistant to join our
-          finance
-          team. Extensive knowledge of general accounting and bookkeeping practices is essential. You will assist with
-          the
-          day-to-day tasks in our finance department. You will play an integral role in maintaining the company’s
-          account
-          information.
-          <br><br>
-          We work with clients to provide creative solutions to grow their business through media advertising and fun
-          projects. Working closely with the finance manager, you will manage, process and troubleshoot various accounts
-          and transactions. Ultimately, you will help sustain, monitor our company’s financial health and ensure our
-          resources are utilized beneficially.
+        <p class="font-orange" style="font-size: 60px; line-height: none; margin-bottom: 24px">{{jobDescription.title}}</p>
+        <p v-html="jobDescription.description">
         </p>
       </div>
     </div>

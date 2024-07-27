@@ -244,8 +244,10 @@ import Value3 from "@/assets/images/careers/lottie/Icon3_Always Growing.json";
 gsap.registerPlugin(ScrollTrigger);
 
 useHead({
-  title: "Light Up 7 | Brand Activation Agency",
-  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+  title: "Career | Light Up 7",
+  meta: [{ name: "description", content: "Work at one of the top advertising companies in Malaysia! At Light Up 7, we welcome passionate and creative individuals from all backgrounds. Learn more here." },
+    {name: "keywords", content: "top advertising company in malaysia"}
+  ],
 });
 
 const scrollToExplore = () => {

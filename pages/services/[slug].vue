@@ -29,6 +29,7 @@
     </div>
   </div>
 </template>
+
 <script setup lang='ts'>
 import { reactive } from 'vue';
 import { useRoute } from 'vue-router';
@@ -44,10 +45,53 @@ import LineBulb from '@/assets/images/services/lottie/services-line-bulb.json'
 
 const { params } = useRoute()
 
-useHead({
-  title: "Light Up 7 | Brand Activation Agency",
-  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
-});
+const getHeadMetadata = (slug: string): { title: string, meta: { name: string, content: string }[] } => {
+  switch (slug) {
+    case "growth-strategy":
+      return {
+        title: "Our Services – Growth Strategy | Light Up 7",
+        meta: [{ name: "description", content: "Achieve all you want & more for your brand with LU7's growth strategy expertise. Get in touch with us to transform your business." }, { name: "keywords", content: "growth strategy" }]
+      }
+    case "digital-marketing":
+      return {
+        title: "Our Services – Digital Marketing | Light Up 7",
+        meta: [{ name: "description", content: "Amplify your brand's voice and capture key audiences across digital platforms with Light Up 7's expertise. View our digital marketing services here." }, { name: "keywords", content: "digital marketing services" }]
+      }
+    case "media-buying":
+      return {
+        title: "Our Services – Media Buying | Light Up 7",
+        meta: [{ name: "description", content: "Stand out & make it big by putting your brand out there! Contact us & let's talk media buying to bring your brand towards a wider audience." }, { name: "keywords", content: "media buying" }]
+      }
+    case "branding-creative":
+      return {
+        title: "Our Services – Branding & Creative Design | Light Up 7",
+        meta: [{ name: "description", content: "Add a little sparkle & some zing to your brand with Light Up 7's brand strategy & creative design services! Learn more about how we can transform your brand." }, { name: "keywords", content: "brand strategy, creative design" }]
+      }
+    case "website-apps":
+      return {
+        title: "Our Services – Websites & Apps | Light Up 7",
+        meta: [{ name: "description", content: "At LU7, we'll create a dynamic digital front for you with the best web development & mobile app development in Malaysia. Check out our web & app services here." }, { name: "keywords", content: "web development, mobile app development malaysia" }]
+      }
+    case "video-photography":
+      return {
+        title: "Our Services – Video & Photography | Light Up 7",
+        meta: [{ name: "description", content: "As an agency specialising in video production in KL, LU7's is well equipped to tell your brand's story through captivating visuals and videos. Learn more here." }, { name: "keywords", content: "video production kl" }]
+      }
+    case "event-management":
+      return {
+        title: "Our Services – Event Management | Light Up 7",
+        meta: [{ name: "description", content: "As the leading event organiser in Malaysia, we bring your events to life with our innovative solutions for a memorable brand experience. View our services here." }, { name: "keywords", content: "event organizer malaysia" }]
+      }
+    default:
+      return {
+        title: "Light Up 7 | Brand Activation Agency",
+        meta: [{ name: "description", content: "As a brand activation and marketing agency, we take brand experiences to new heights. Learn more about LU7, our work and how we can transform your business." },
+        { name: "keywords", content: "brand activation agency" }
+        ],
+      }
+  }
+}
+useHead(getHeadMetadata(params.slug as string));
 
 const currentService = ref<{
   lottie: any,
@@ -326,6 +370,7 @@ const navs = reactive([
   }
 ])
 </script>
+
 <style lang="sass" scoped>
 @import "../../assets/sass/responsive.sass"
 @import "../../assets/sass/fonts.sass"

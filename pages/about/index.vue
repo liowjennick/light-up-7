@@ -308,8 +308,10 @@ import { ScrollTrigger, ScrollToPlugin, Draggable, MotionPathPlugin } from "gsap
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable, MotionPathPlugin);
 
 useHead({
-  title: "Light Up 7 | Brand Activation Agency",
-  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+  title: "About Us | Light Up 7",
+  meta: [{ name: "description", content: "Light Up 7's 10 years of being as a full-service agency has set us apart in the market as an industry leader. Learn about our journey here." },
+    {name: "keywords", content: "full service agency"}
+  ],
 });
 
 onMounted(() => {

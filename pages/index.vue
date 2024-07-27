@@ -504,9 +504,9 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 const showHeroVideo = ref(false)
 
 // YELLOW OUTLINE SCROLL
-var firstOutlineTimeline;
-var secondOutlineTimeline;
-var thirdOutlineTimeline;
+var firstOutlineTimeline: gsap.core.Timeline;
+var secondOutlineTimeline: gsap.core.Timeline;
+var thirdOutlineTimeline: gsap.core.Timeline;
 
 const yellowOutlineIndex = ref(0);
 watch(yellowOutlineIndex, (newIndex: Number, oldIndex: Number) => {
@@ -539,12 +539,12 @@ watch(yellowOutlineIndex, (newIndex: Number, oldIndex: Number) => {
 const ourServicesItems = ["Growth Strategy", "Digital Marketing", "Video & Photography", "Branding & Creative Design", "Websites & Apps", "Event Management", "Media Buying"];
 const ourServicesItemsHighlightedSection = ref(-1);
 
-const onMouseOverServiceItem = (index: Number) => {
+const onMouseOverServiceItem = (index: number) => {
   ourServicesItemsHighlightedSection.value = index;
 };
 
-const onMouseLeaveServiceItem = (index: Number) => {
-  if (ourServicesItemsHighlightedSection !== -1) {
+const onMouseLeaveServiceItem = (index: number) => {
+  if (ourServicesItemsHighlightedSection.value !== -1) {
     ourServicesItemsHighlightedSection.value = -1;
   }
 };
@@ -560,7 +560,9 @@ const currentLightBulbTextIndex = ref(0);
 
 useHead({
   title: "Light Up 7 | Brand Activation Agency",
-  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+  meta: [{ name: "description", content: "As a brand activation and marketing agency, we take brand experiences to new heights. Learn more about LU7, our work and how we can transform your business." },
+    {name: "keywords", content: "brand activation agency"}
+  ],
 });
 
 onBeforeMount(() => {
@@ -576,7 +578,7 @@ onMounted(() => {
       gsap.to("#intro-video", {
         opacity: 0,
         onComplete: () => {
-          document.getElementById("intro-video").style.display = "none";
+          document.getElementById("intro-video")!.style.display = "none";
           localStorage.setItem("home-intro-video-played", "true");
         },
       });

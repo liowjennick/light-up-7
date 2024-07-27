@@ -43,8 +43,7 @@ const formateDate = (dateISO = '') => new Date(dateISO).toLocaleDateString('en-U
 
 useHead({
   title: news_data.value?.title ?? '',
-  description: news_data.value?.description ?? '',
-  meta: [{ name: "description", content: news_data.value?.title }]
+  meta: [{ name: "description", content: news_data.value?.description }]
 });
 
 

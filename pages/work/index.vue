@@ -4,29 +4,19 @@
       <div class="light-background-triangle" />
       <div class="light-bulb-container">
         <div class="black-circle" />
-        <img
-          class="bulb"
-          src="../../assets/images/work/light-bulb.png"
-        />
-        <img
-          class="bulb-glow"
-          src="../../assets/images/work/light-bulb-glow.png"
-        />
-        <img
-          class="glow-line"
-          :class="{ active: initialAnimationComplete }"
-          src="../../assets/images/work/light-beam-line.png"
-        />
+        <img class="bulb" src="../../assets/images/work/light-bulb.png" />
+        <img class="bulb-glow" src="../../assets/images/work/light-bulb-glow.png" />
+        <img class="glow-line" :class="{ active: initialAnimationComplete }"
+          src="../../assets/images/work/light-beam-line.png" />
       </div>
       <h1 class="page-title">WORK</h1>
 
       <div id="sliding-button">
-        <div
-          class="sliding-button-description"
-          :class="{ 'project-active': displayMode === DisplayMode.Projects }"
-        >
-          <p class="clients font-orange text-center just-sans font-20 font-weight-200">swipe right to see our past works</p>
-          <p class="projects font-orange text-center just-sans font-20 font-weight-200">swipe left to see our clients</p>
+        <div class="sliding-button-description" :class="{ 'project-active': displayMode === DisplayMode.Projects }">
+          <p class="clients font-orange text-center just-sans font-20 font-weight-200">swipe right to see our past works
+          </p>
+          <p class="projects font-orange text-center just-sans font-20 font-weight-200">swipe left to see our clients
+          </p>
         </div>
 
         <div class="sliding-button-container">
@@ -41,16 +31,10 @@
               <img src="../../assets/images/work/projects-slider-icon.png" />
             </div>
 
-            <p
-              class="font-weight-200"
-              v-if="displayMode === DisplayMode.Clients"
-            >
+            <p class="font-weight-200" v-if="displayMode === DisplayMode.Clients">
               our clients
             </p>
-            <p
-              class="font-weight-200"
-              v-if="displayMode === DisplayMode.Projects"
-            >
+            <p class="font-weight-200" v-if="displayMode === DisplayMode.Projects">
               our projects
             </p>
             <div class="slider-circle">
@@ -63,35 +47,18 @@
 
     <div id="client-list-section">
       <div class="light-background" />
-      <div
-        class="client-project-slider-container"
-        :class="{ 'project-active': displayMode === DisplayMode.Projects }"
-      >
+      <div class="client-project-slider-container" :class="{ 'project-active': displayMode === DisplayMode.Projects }">
         <div class="work-section-container">
           <div class="section-container">
             <div class="client-logo-container">
               <!-- <img class="client-bulb-image" src="../../assets/images/work/clients-logo/petronas-logo.png" /> -->
               <!-- class="client-generic-bulb" -->
-              <img
-                class="client-generic-bulb"
-                src="../../assets/images/work/bulb-outline-yellow.png"
-              />
-              <img
-                :class="{ active: activeClientBulbImage === client.slug }"
-                v-for="(client, i) in clientsCarouselLogo"
-                :key="i"
-                class="client-bulb-image"
-                :src="`/images/work/bulb-logo/${client.slug}.png`"
-              />
+              <img class="client-generic-bulb" src="../../assets/images/work/bulb-outline-yellow.png" />
+              <img :class="{ active: activeClientBulbImage === client.slug }" v-for="(client, i) in clientsCarouselLogo"
+                :key="i" class="client-bulb-image" :src="`/images/work/bulb-logo/${client.slug}.png`" />
 
-              <img
-                class="client-text-outline-image"
-                src="../../assets/images/work/bulb-clients-outline.png"
-              />
-              <img
-                class="client-text-white-image"
-                src="../../assets/images/work/bulb-clients-white.png"
-              />
+              <img class="client-text-outline-image" src="../../assets/images/work/bulb-clients-outline.png" />
+              <img class="client-text-white-image" src="../../assets/images/work/bulb-clients-white.png" />
 
               <!-- <h1 class="client-large-name">clients</h1>
               <h1 class="client-back-name">clients</h1> -->
@@ -103,13 +70,8 @@
             </div> -->
 
             <div class="client-list-image-container">
-              <div
-                @mouseover="activeClientBulbImage = client.slug"
-                @mouseleave="activeClientBulbImage = -1"
-                class="client-image-container"
-                :key="i"
-                v-for="(client, i) in clientsCarouselLogo"
-              >
+              <div @mouseover="activeClientBulbImage = client.slug" @mouseleave="activeClientBulbImage = -1"
+                class="client-image-container" :key="i" v-for="(client, i) in clientsCarouselLogo">
                 <img :src="`/images/work/clients-carousel-logo/${client.image_src}`" />
               </div>
             </div>
@@ -119,11 +81,7 @@
         <div class="projects-section-container">
           <div class="section-container">
             <div class="project-list-banner-container">
-              <div
-                class="project-banner-item"
-                v-for="(item, i) in ProjectData"
-                :key="i"
-              >
+              <div class="project-banner-item" v-for="(item, i) in ProjectData" :key="i">
                 <NuxtLink :to="`work/${item.slug}`">
                   <img :src="`/images/work/projects/${item.slug}/${item.banner_image_src}`" />
                 </NuxtLink>
@@ -145,8 +103,10 @@ import { setCookie, getCookie } from "../../utils/cookies";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
 useHead({
-  title: "Light Up 7 | Brand Activation Agency",
-  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+  title: "Our Work | Light Up 7",
+  meta: [{ name: "description", content: "By being one of Malaysia’s leading advertising agency, our work has elevated brands across industries to soar even higher. View Light Up 7's past projects here." },
+  { name: "keywords", content: "advertising agency malaysia" }
+  ],
 });
 
 const initialAnimationComplete = ref(false);
@@ -158,7 +118,7 @@ enum DisplayMode {
 
 const displayMode = ref(DisplayMode.Clients);
 
-const activeClientBulbImage = ref("");
+const activeClientBulbImage = ref<string|number>("");
 
 const clientsCarouselLogo = ref([
   {
@@ -394,7 +354,7 @@ onMounted(() => {
 
   // SLIDING BUTTON
   const sliderButtonWidth = 60;
-  const sliderMaxDragDistance = document.querySelector(".sliding-button")?.clientWidth - sliderButtonWidth;
+  const sliderMaxDragDistance = document.querySelector(".sliding-button")!.clientWidth - sliderButtonWidth;
 
   // INITIAL SECTION OF SLIDING BUTTON
   const sectionCookie = getCookie("work-section");
@@ -421,18 +381,21 @@ onMounted(() => {
     onDrag: function (e) {
       // PROGRESS BAR OPACITY FOLLOW
       const element = document.querySelector(".slider-circle");
-      const style = window.getComputedStyle(element);
-      const matrix = new WebKitCSSMatrix(style.transform);
-      console.log(matrix.m41);
-      gsap.to(".slider-progress-background", {
-        duration: 0,
-        opacity: 0.2,
-        width: matrix.m41 + sliderButtonWidth,
-      });
+      if (element != null){
+        const style = window.getComputedStyle(element);
+        const matrix = new WebKitCSSMatrix(style.transform);
+        console.log(matrix.m41);
+        gsap.to(".slider-progress-background", {
+          duration: 0,
+          opacity: 0.2,
+          width: matrix.m41 + sliderButtonWidth,
+        });
+      }
     },
     onDragEnd: function (e) {
       const element = document.querySelector(".slider-circle");
-      const style = window.getComputedStyle(element);
+      if (element != null){
+        const style = window.getComputedStyle(element);
       const matrix = new WebKitCSSMatrix(style.transform);
       const dragDistance = matrix.m41;
 
@@ -468,7 +431,8 @@ onMounted(() => {
         displayMode.value = DisplayMode.Clients;
         setCookie("work-section", displayMode.value, 2);
       }
-    },
+    }
+  }
   });
 });
 </script>

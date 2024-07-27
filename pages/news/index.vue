@@ -204,8 +204,10 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 const news: any[] = reactive(NewsData);
 
 useHead({
-  title: "Light Up 7 | Brand Activation Agency",
-  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+  title: "Our News | Light Up 7",
+  meta: [{ name: "description", content: "The latest news, updates and insights from Light Up 7, an advertising agency in Kuala Lumpur, specialising in brand activation experiences. Read more here. " },
+    {name: "keywords", content: "advertising agency in kuala lumpur"}
+  ],
 });
 
 const currentPage: Ref<number> = ref(1);
