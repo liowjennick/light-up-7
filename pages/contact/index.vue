@@ -100,8 +100,10 @@ import Phone from '~/assets/svg/phone.vue'
 
 gsap.registerPlugin(ScrollTrigger)
 useHead({
-  title: "Light Up 7 | Brand Activation Agency",
-  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+  title: "Contact Us | Light Up 7",
+  meta: [{ name: "description", content: "Are you looking for a marketing agency to take your brand to the next level? If you’re ready to light up with Light Up 7, contact us here." },
+    {name: "keywords", content: "looking for marketing agency"}
+  ],
   script: [
     {
       type: "text/javascript",

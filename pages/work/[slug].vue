@@ -235,7 +235,7 @@
     </div>
     <div class="full-screen-center-content w-full" style="margin-top: 40px">
       <a href="/work">
-        <button @click="viewPastWork" class="orange-outlined-button">view past work</button>
+        <button class="orange-outlined-button">view past work</button>
       </a>
     </div>
   </div>
@@ -246,11 +246,13 @@ import { useRoute } from "vue-router";
 import projectData from "../../public/data/projects_data.js";
 
 const route = useRoute();
-const project_data = ref(projectData.find((item, i) => item.slug === route.params.slug));
+const project_data = ref<any>(projectData.find((item, i) => item.slug === route.params.slug));
 
 useHead({
   title: project_data.value.title,
-  meta: [{ name: "description", content: project_data.value.title }],
+  meta: [{ name: "description", content: project_data.value.title },
+  { name: "keywords", content: "advertising agency malaysia" }
+  ],
 });
 </script>
 

@@ -32,8 +32,8 @@
           <div style="width: 10%; z-index: 1" class="full-screen-center-content">
             <img class="item-icon-orange" v-if="activeCircleFollowIndex !== i"
               :src="`/images/services/list-icons/icons/orange/${item.slug}-orange.png`" />
-            <img class="item-icon" v-if="activeCircleFollowIndex === i"
-              :src="`/images/services/list-icons/icons/white/${item.slug}.png`" />
+            <LottieAnimation autoplay
+            loop class="item-icon" v-if="activeCircleFollowIndex === i" :animation-data="item.lottie" />
           </div>
           <div class="full-screen-start-center" style="z-index: 1; flex-direction: column; flex: 1; color: white">
             <h2>{{ item.title }}</h2>
@@ -51,17 +51,27 @@
     </div>
   </div>
 </template>
+
 <script setup lang="ts">
 import gsap from "gsap";
 import arrowUpRight from "@/assets/svg/arrow-up-right.svg";
-import { Growth, Digital, Brand, Event, Media, Video, Website } from "@/assets/svg";
+import Growth from "@/assets/images/services/lottie/growth-strategy-hover.json"
+import Digital from "@/assets/images/services/lottie/digital-marketing-hover.json"
+import Media from "@/assets/images/services/lottie/media-buying-hover.json"
+import Branding from "@/assets/images/services/lottie/branding-creative-hover.json"
+import Website from "@/assets/images/services/lottie/website-apps-hover.json"
+import Video from "@/assets/images/services/lottie/video-photography-hover.json"
+import Event from "@/assets/images/services/lottie/event-management-hover.json"
 import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
+import { LottieAnimation } from "lottie-web-vue";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
 useHead({
-  title: "Light Up 7 | Brand Activation Agency",
-  meta: [{ name: "description", content: "Light Up 7 | Brand Activation Agency" }],
+  title: "Our Services | Light Up 7",
+  meta: [{ name: "description", content: "We offer creative, production and marketing services for your brand to shine bright. View our services as a brand activation and creative agency in Malaysia." },
+    {name: "keywords", content: "creative agency malaysia"}
+  ],
 });
 
 const activeCircleFollowIndex = ref(-1);
@@ -76,36 +86,43 @@ const servicesItem = ref([
     title: "Growth Strategy",
     description: "Propel your business with a tactical plan optimised to achieve your desired goals.",
     slug: "growth-strategy",
+    lottie: Growth
   },
   {
     title: "Digital Marketing",
     description: "Stay ahead on the digital front with a host of approaches, integrated to meet your business needs",
     slug: "digital-marketing",
+    lottie: Digital
   },
   {
     title: "Video & Photography",
     description: "A picture is worth a thousand words. Tell your brand story with captivating images and engaging videos.",
     slug: "video-photography",
+    lottie: Video
   },
   {
     title: "Branding & Creative Design",
     description: "With a little sparkle and some zing, your new brand identity is ready to take on the world.",
     slug: "branding-creative",
+    lottie: Branding
   },
   {
     title: "Websites & Apps",
     description: "Your business' first point of contact can leave a lasting impression. Build your best brand website with us!",
     slug: "website-apps",
+    lottie: Website
   },
   {
     title: "Event Management",
     description: "From conceptualising all the way to d-day handling, our event management team is poised to bring it all to life.",
     slug: "event-management",
+    lottie: Event
   },
   {
     title: "Media Buying",
     description: "Put your brand in front of the right audience at the right time and place. Let us help you optimise your digital presence.",
     slug: "media-buying",
+    lottie: Media
   },
 ]);
 
@@ -237,6 +254,7 @@ onMounted(() => {
   mouseMoveTimer();
 });
 </script>
+
 <style lang="sass" scoped>
 @import "../../assets/sass/responsive.sass"
 @import "../../assets/sass/fonts.sass"
@@ -250,11 +268,11 @@ onMounted(() => {
       text-decoration: none
       overflow: hidden
       &:hover
-          background-color: #DC9F41
+          background-color: #d8a54b
           .service-item
-            path[fill="#DC9F41"]
+            path[fill="#d8a54b"]
               fill: white
-            path[stroke="#DC9F41"]
+            path[stroke="#d8a54b"]
               stroke: white
             // .cta-btn-parent
             //   background-color: black
@@ -275,7 +293,7 @@ onMounted(() => {
           width: 70px
           height: 70px
           border-radius: 100%
-          background-color: #DC9F41
+          background-color: #d8a54b
           transition: all .2s linear
           +large-mobile
             display: none
@@ -354,7 +372,7 @@ onMounted(() => {
   z-index: 0
 
 .item-icon
-  width: 50px
+  width: 100px
 .item-icon-orange
   width: 50px
 </style>
