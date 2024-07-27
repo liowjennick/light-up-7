@@ -1,90 +1,42 @@
 <template>
   <div id="careers">
     <!-- Banner -->
-    <div
-      id="careers-banner-animation"
-      class="section-container full-screen-center-content"
-      style="height: 100vh"
-    >
+    <div id="careers-banner-animation" class="section-container full-screen-center-content" style="height: 100vh">
       <div class="banner">
-        <img
-          class="careers-banner"
-          src="../../assets/images/careers/careers-1.png"
-          alt="Careers"
-        />
-        <img
-          class="computer-unglow"
-          :src="ComputerUnglow"
-          alt="Unglow computer"
-        />
-        <img
-          class="cursor-glow"
-          src="../../assets/images/careers/glow-cursor.png"
-          alt="Glow cursor"
-        />
-        <img
-          class="computer-glow"
-          src="../../assets/images/careers/glow-computer-1.png"
-          alt="glow computer"
-        />
-        <img
-          class="star"
-          src="../../assets/images/news/star.png"
-        />
-        <img
-          class="star-2"
-          src="../../assets/images/news/star.png"
-        />
+        <img class="careers-banner" src="../../assets/images/careers/careers-1.png" alt="Careers" />
+        <img class="computer-unglow" :src="ComputerUnglow" alt="Unglow computer" />
+        <img class="cursor-glow" src="../../assets/images/careers/glow-cursor.png" alt="Glow cursor" />
+        <img class="computer-glow" src="../../assets/images/careers/glow-computer-1.png" alt="glow computer" />
+        <img class="star" src="../../assets/images/news/star.png" />
+        <img class="star-2" src="../../assets/images/news/star.png" />
       </div>
       <div class="arrow-down-container">
-        <img
-          class="arrow-down"
-          src="../../assets/images/work/right-caret.png"
-        />
+        <img class="arrow-down" src="../../assets/images/work/right-caret.png" />
       </div>
     </div>
     <!-- Staff pics -->
-    <div
-      class="section-container full-screen-center-content"
-      style="flex-direction: column; margin-block: 24px"
-    >
-      <div
-        class="w-full mobile-container team-member-row"
-        style="border-bottom: 1px solid white"
-      >
+    <div class="section-container full-screen-center-content" style="flex-direction: column; margin-block: 24px">
+      <div class="w-full mobile-container team-member-row" style="border-bottom: 1px solid white">
         <div class="team-member-image-container">
           <div class="bulb-mask">
-            <img
-              :src="currentImageUrl"
-              class="fade-in-out"
-            />
+            <img :src="currentImageUrl" class="fade-in-out" />
           </div>
 
-          <img
-            class="mask-outline"
-            src="../../assets/images/careers/bulb-mask-outline.png"
-          />
+          <img class="mask-outline" src="../../assets/images/careers/bulb-mask-outline.png" />
         </div>
         <div class="team-member-text-container">
-          <h2
-            class="font-orange font-weight-600 font-30"
-            style="margin-bottom: 16px"
-          >
+          <h2 class="font-orange font-weight-600 font-25">
             Join us in lighting up the world!
           </h2>
           <p class="font-white">
-            All great things start with a spark—and at Light Up 7, we believe in fanning the embers of creativity and success in each team member.<br /><br />
-            We are a proudly all-in and in-house team that provides support and avenues for you to bring your aspirations and visions to life.<br /><br />
+            All great things start with a spark—and at Light Up 7, we believe in fanning the embers of creativity and
+            success in each team member.<br /><br />
+            We are a proudly all-in and in-house team that provides support and avenues for you to bring your
+            aspirations and visions to life.<br /><br />
             When you're ready to light up your career, Light Up 7 is ready for you.
           </p>
-          <div
-            class="full-screen-center-content w-full"
-            style="margin-top: 40px"
-          >
-            <button
-              @click="scrollToExplore"
-              class="orange-outlined-button"
-            >
+          <div class="full-screen-center-content w-full">
+            <button @click="scrollToExplore" class="orange-outlined-button">
               be part of LU7!
             </button>
           </div>
@@ -92,42 +44,22 @@
       </div>
     </div>
     <!-- Company values -->
-    <div
-      class="section-container full-screen-start-center"
-      style="flex-direction: column; gap: 32px; margin-block: 64px"
-    >
-      <h2 class="font-orange">How we continue to shine</h2>
-      <div
-        class="full-screen-center-around mobile-container"
-        style="gap: 48px"
-      >
-        <div
-          v-for="(mottoIcon, key) in mottoIcons"
-          :key="key"
-          class="full-screen-center-between"
-          style="flex-direction: column; gap: 16px"
-        >
+    <div class="section-container full-screen-start-center"
+      style="flex-direction: column; gap: 32px; margin-block: 64px">
+      <h2 class="font-orange font-25">How we continue to shine</h2>
+      <div class="full-screen-center-around mobile-container" style="gap: 48px">
+        <div v-for="(mottoIcon, key) in mottoIcons" :key="key" class="full-screen-center-between"
+          style="flex-direction: column; gap: 16px">
           <div>
-            <LottieAnimation
-              class="company-value-icon"
-              autoplay
-              loop
-              :animation-data="mottoIcon.url"
-            />
+            <LottieAnimation class="company-value-icon" autoplay loop :animation-data="mottoIcon.url" />
           </div>
           <div>
-            <p
-              class="font-white"
-              style="font-size: 20px; text-align: center"
-            >
+            <p class="font-white" style="font-size: 20px; text-align: center">
               {{ mottoIcon.title }}
             </p>
           </div>
           <div>
-            <p
-              class="font-white"
-              style="text-align: center"
-            >
+            <p class="font-white" style="text-align: center">
               {{ mottoIcon.text }}
             </p>
           </div>
@@ -137,37 +69,18 @@
     <!-- Company pics -->
     <div style="margin-block: 24px">
       <div class="section-container">
-        <h2
-          class="font-orange"
-          style="margin-bottom: 24px"
-        >
+        <h2 class="font-orange font-25" style="margin-bottom: 24px">
           Our team at work (and play!)
         </h2>
       </div>
-      <div
-        class="bg-orange-25 full-screen-center-between mobile-container"
-        style="gap: 16px; padding-block: 24px"
-      >
-        <div
-          class="section-container full-screen-center-between mobile-container"
-          style="gap: 16px; padding-block: 24px"
-        >
-          <div
-            v-for="(company, key) in companyPics"
-            :key="key"
-            class="overlay-parent"
-          >
-            <img
-              :src="company.url"
-              :alt="company.alt"
-              style="width: 100%"
-            />
+      <div class="bg-orange-25 full-screen-center-between mobile-container" style="gap: 16px; padding-block: 24px">
+        <div class="section-container full-screen-center-between mobile-container"
+          style="gap: 16px; padding-block: 24px">
+          <div v-for="(company, key) in companyPics" :key="key" class="overlay-parent">
+            <img :src="company.url" :alt="company.alt" style="width: 100%" />
             <!-- overlay text -->
             <div class="overlay-child">
-              <p
-                class="font-white"
-                v-html="company.text"
-              ></p>
+              <p class="font-white" v-html="company.text"></p>
             </div>
           </div>
         </div>
@@ -177,51 +90,27 @@
       </div>
     </div>
     <!-- Vacancies -->
-    <div
-      class="section-container"
-      id="vacancies-section"
-      style="margin-block: 24px"
-    >
-      <h2 class="font-orange">ready to explore a new path?</h2>
+    <div class="section-container" id="vacancies-section" style="margin-block: 24px">
+      <h2 class="font-orange font-30">ready to explore a new path?</h2>
       <h4 class="font-white">check out your dream role here.</h4>
       <!-- filter tabs -->
       <div class="full-screen-center-content tab-parent-container">
-        <div
-          class="full-screen-center-content tab-container btn-group"
-          style="flex-wrap: wrap; row-gap: 8px"
-        >
-          <button
-            v-for="vacancyTab in vacancyTabs"
-            :key="vacancyTab"
-            class="tab-button"
-            :name="vacancyTab"
-            @click=""
-          >
+        <div class="full-screen-center-content tab-container btn-group" style="flex-wrap: wrap; row-gap: 8px">
+          <button v-for="vacancyTab in vacancyTabs" :key="vacancyTab" class="tab-button" :name="vacancyTab" @click="">
             {{ vacancyTab }}
           </button>
         </div>
       </div>
       <!-- vacancy grid -->
       <div class="vacancy-container">
-        <div
-          v-for="(recent, key) in recentJobs"
-          :key="key"
-          class="vacancy-item"
-        >
+        <div v-for="(recent, key) in recentJobs" :key="key" class="vacancy-item">
           <div>
-            <p
-              class="font-white"
-              style="font-size: 24px"
-            >
+            <p class="font-white" style="font-size: 24px">
               {{ recent.title }}
             </p>
           </div>
-          <a
-            class="orange-outlined-button vacancy-btn"
-            style="font-family: 'JustSans'"
-            :href="recent.url"
-            >apply now!</a
-          >
+          <a class="orange-outlined-button vacancy-btn" style="font-family: 'JustSans'" :href="recent.url">apply
+            now!</a>
         </div>
       </div>
     </div>
@@ -246,7 +135,7 @@ gsap.registerPlugin(ScrollTrigger);
 useHead({
   title: "Career | Light Up 7",
   meta: [{ name: "description", content: "Work at one of the top advertising companies in Malaysia! At Light Up 7, we welcome passionate and creative individuals from all backgrounds. Learn more here." },
-    {name: "keywords", content: "top advertising company in malaysia"}
+  { name: "keywords", content: "top advertising company in malaysia" }
   ],
 });
 
@@ -264,41 +153,35 @@ let currentImageIndex = ref(0);
 const currentImageUrl = computed(() => {
   return staffPics[currentImageIndex.value];
 });
-const fadeOutCurrentImage = () => {
-  gsap.fromTo(
-    ".fade-in-out",
-    { opacity: 1 },
-    {
-      opacity: 0,
-      y: 40,
-      duration: 1.5,
-      ease: "power2.in",
-    }
-  );
-};
-const fadeInNewImage = () => {
-  currentImageIndex.value = getRandomIndex(staffPics.length);
-  gsap.fromTo(".fade-in-out", { opacity: 0, y: 40 }, { opacity: 1, y: 40, duration: 1.5, ease: "power2.out", onComplete: onComplete1 });
-};
-function getRandomIndex(max: number) {
+const fadeOutCurrentImage = () => gsap.fromTo(
+  ".fade-in-out",
+  { opacity: 1 },
+  {
+    opacity: 0,
+    y: 40,
+    duration: 1.5,
+    ease: "power2.in",
+  }
+);
+const fadeInNewImage = () => gsap.fromTo(".fade-in-out", { opacity: 0, y: 40 }, { opacity: 1, y: 40, duration: 1.5, ease: "power2.out", onComplete: onTransitionEnd });
+function getRandomIndex(max: number, prev: number) {
   let rand = Math.floor(Math.random() * max);
+  while (rand == prev)
+    rand = getRandomIndex(max, prev)
   return rand;
 }
-const onTransitionEnd = () => {
+function onTransitionEnd() {
   setTimeout(() => {
     fadeOutCurrentImage();
     setTimeout(() => {
+      currentImageIndex.value = getRandomIndex(staffPics.length, currentImageIndex.value);
       fadeInNewImage();
     }, 1500); // Adjust delay between fade out and fade in
   }, 1500);
 };
-const onComplete1: gsap.Callback = () => {
-  setTimeout(() => {
-    onTransitionEnd();
-  }, 4500);
-};
 
 onMounted(() => {
+  onTransitionEnd()
   let bannerTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: "#careers",
@@ -556,15 +439,24 @@ const recentJobs = [
   align-items: center
   padding: 0 80px
   box-sizing: border-box
+  gap: 80px
+  +desktop
+    gap: 40px
+    padding: 0
   +large-mobile
     display: block
-    padding: 0
   .team-member-text-container
+    display: flex
+    flex-direction: column
+    gap: 16px
     flex: 4
-    padding-left: 80px
+    +desktop
+      flex: 3
     +large-mobile
       padding-left: 0px
       padding-bottom: 80px
+    button
+      margin-top: 24px
   .team-member-image-container
     flex: 1
     position: relative
