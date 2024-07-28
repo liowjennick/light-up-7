@@ -372,7 +372,8 @@ onMounted(() => {
   z-index: 0
 
 .item-icon
-  width: 100px
+  width: 90px
+  position: absolute
 .item-icon-orange
   width: 50px
 </style>

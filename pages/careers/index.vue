@@ -177,7 +177,7 @@ function onTransitionEnd() {
       currentImageIndex.value = getRandomIndex(staffPics.length, currentImageIndex.value);
       fadeInNewImage();
     }, 1500); // Adjust delay between fade out and fade in
-  }, 1500);
+  }, 1000);
 };
 
 onMounted(() => {
