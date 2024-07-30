@@ -471,8 +471,7 @@
 
           <div class="bulb-text-container">
             <p
-              class="font-white just-sans font-32"
-              :class="{ active: lightUpYourIdeasBulbActive }"
+              class="font-white just-sans font-32 active"
             >
               <b id="bulb-text">{{ lightBulbTextList[currentLightBulbTextIndex] }}</b>
             </p>
@@ -571,7 +570,90 @@ onBeforeMount(() => {
   }
 })
 
+const mousePosition = ref({
+  x: 0,
+  y: 0,
+});
+
+const onMouseMoveFunction = (e: MouseEvent) => {
+  const pageX = e.clientX;
+  const pageY = e.clientY;
+
+  mousePosition.value = {
+    x: pageX,
+    y: pageY,
+  };
+};
+
+const mouseMoveTimer = () => {
+  setTimeout(() => {
+    const mouseX = mousePosition.value.x;
+    const mouseY = mousePosition.value.y;
+
+    const xOffset = document.querySelector(".bulb-text-container")?.getBoundingClientRect().right || 0;
+    const yOffset = document.querySelector(`.bulb-text-container`)?.getBoundingClientRect().bottom || 0;
+
+    const currentX = document.querySelector(`.cta-circle`)?.getBoundingClientRect().right || 0;
+    const currentY = document.querySelector(`.cta-cirlce`)?.getBoundingClientRect().bottom || 0;
+
+    let destinationX = mouseX - xOffset + 155;
+    let destinationY = mouseY - yOffset - 65;
+
+    const minX = 0 - 50;
+    const maxX = 0 + 50;
+    const minY = 0 - 20;
+    const maxY = 0 + 60;
+
+    if (destinationX < minX) {
+      destinationX = minX;
+    }
+
+    if (destinationX > maxX) {
+      destinationX = maxX;
+    }
+
+    if (destinationY < minY) {
+      destinationY = minY;
+    }
+
+    if (destinationY > maxY) {
+      destinationY = maxY;
+    }
+
+    // TODO REMOVE HARD
+    const differenceX = Math.abs(mouseX - currentX + 70);
+    const differenceY = Math.abs(currentY - mouseY);
+
+    gsap.to(`.cta-circle`, {
+      x: destinationX,
+      y: destinationY,
+      scaleX: Math.min(1 + differenceX / 300, 1.1),
+      scaleY: Math.min(1 + differenceY / 200, 1.1),
+      duration: 1,
+    });
+
+    mouseMoveTimer()
+  }, 100)
+}
+
+const angle = (cx: number, cy: number, ex: number, ey: number) => {
+  var dy = ey - cy;
+  var dx = ex - cx;
+  var theta = Math.atan2(dy, dx); // range (-PI, PI]
+  theta *= 180 / Math.PI; // rads to degs, range (-180, 180]
+  return theta;
+};
+const angle360 = (cx: number, cy: number, ex: number, ey: number) => {
+  var theta = angle(cx, cy, ex, ey); // range (-180, 180]
+  if (theta < 0) theta = 360 + theta; // range [0, 360)
+  return theta;
+};
+
 onMounted(() => {
+  // ADD MOUSE X Y LISTENER
+  document.addEventListener("mousemove", onMouseMoveFunction);
+  mouseMoveTimer();
+
   // INTRO VIDEO END
   setTimeout(() => {
     if (document.getElementById("intro-video")) {
@@ -1250,13 +1332,17 @@ onMounted(() => {
         position: absolute
         top: 35%
         left: 50%
+        text-align: center
         transform: translate(-50%, -50%)
         opacity: 1
         transition: 0.4s all
+        width: 100%
         +desktop
           top: 30%
         p
           opacity: 0
+          margin-top: 10px
+          width: 100%
           &.active
             opacity: 1
           +desktop
@@ -1315,11 +1401,12 @@ onMounted(() => {
         left: 50%
         top: 120%
         transform: translateX(-50%)
-        display: none
+        opacity: 0
+        display: flex
         &:hover
-          box-shadow: 0 0 8px yellow
+          // box-shadow: 0 0 8px yellow
         &.active
-          display: flex
+          opacity: 1
         .arrow-container
           img
             width: 50px

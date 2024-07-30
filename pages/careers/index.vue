@@ -105,7 +105,7 @@
       <div class="vacancy-container">
         <div v-for="(recent, key) in recentJobs" :key="key" class="vacancy-item">
           <div>
-            <p class="font-white" style="font-size: 24px">
+            <p class="font-white" style="font-size: 20px">
               {{ recent.title }}
             </p>
           </div>
