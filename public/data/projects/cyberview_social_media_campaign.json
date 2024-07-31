@@ -1,44 +1,47 @@
 {
-    "slug": "cyberview-social-media-campaign",
-    "banner_image_src": "banner.png",
-    "banner_description": "Create awareness of Cyberjaya's location & compelling 'reasons-to-believe' for tech businesses and investments to land in Cyberjaya, plus attracting foreign investors and companies to invest in Cybeview as a Tech Hub Developer.",
-    "banner_description_color": "white",
-    "contents": [
-      {
-        "company_logo_src": "cyberview.png",
-        "workscope_tags": ["Social Media Marketing"],
-        "title": "Cyberview Social Media Campaign",
-        "subtitle": "Create awareness of Cyberjaya's location & compelling 'reasons-to-believe' for tech businesses and investments to land in Cyberjaya, plus attracting foreign investors and companies to invest in Cybeview as a Tech Hub Developer.",
-        "challenge_result_title": "Position Cyberjaya as one of the most influential global the hubs & a investment location for tech co.",
-        "challenge_description": "Create awareness on Cyberjaya's location & compelling 'reasons-to-believe' for tech businesses and investments to be in Cyberjaya and to attract foreign investors and companies to invest in Cybeview.",
-        "results_description": "Generating millions of impressions across 6 different countries, and hundreds of leads driving investors interest on Cyberjaya and Cyberview's products.",
-        "outcome_description": "",
-        "deliverables": ["360 Digital Marketing", "Media PR", "Programmatic Marketing", "Omni-Channel Marketing", "Creative Content"],
-        "featured_media_src": [
-            {
-                "src": ["image-1.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 100
-            }
-        ],
-        "media_gallery": [
-          [
-            {
-              "src": ["image-2.png"],
-              "is_video": false,
-              "caption": "",
-              "width_percent": 100
-            },
-            {
-              "src": ["image-3.png"],
-              "is_video": false,
-              "caption": "",
-              "width_percent": 100
-            }
-          ]
+  "slug": "cyberview-social-media-campaign",
+  "banner_image_src": "banner.png",
+  "banner_description": "Create awareness of Cyberjaya's location & compelling 'reasons-to-believe' for tech businesses and investments to land in Cyberjaya, plus attracting foreign investors and companies to invest in Cybeview as a Tech Hub Developer.",
+  "banner_description_color": "white",
+  "keywords": "brand strategy",
+  "title": "Cyberview – Social Media Campaign | Light Up 7",
+  "description": "Through an innovative brand strategy, we presented Cyberjaya's compelling reasons to believe for tech businesses & investors, generating interest.",
+  "contents": [
+    {
+      "company_logo_src": "cyberview.png",
+      "workscope_tags": ["Social Media Marketing"],
+      "title": "Cyberview Social Media Campaign",
+      "subtitle": "Create awareness of Cyberjaya's location & compelling 'reasons-to-believe' for tech businesses and investments to land in Cyberjaya, plus attracting foreign investors and companies to invest in Cybeview as a Tech Hub Developer.",
+      "challenge_result_title": "Position Cyberjaya as one of the most influential global the hubs & a investment location for tech co.",
+      "challenge_description": "Create awareness on Cyberjaya's location & compelling 'reasons-to-believe' for tech businesses and investments to be in Cyberjaya and to attract foreign investors and companies to invest in Cybeview.",
+      "results_description": "Generating millions of impressions across 6 different countries, and hundreds of leads driving investors interest on Cyberjaya and Cyberview's products.",
+      "outcome_description": "",
+      "deliverables": ["360 Digital Marketing", "Media PR", "Programmatic Marketing", "Omni-Channel Marketing", "Creative Content"],
+      "featured_media_src": [
+        {
+          "src": ["image-1.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 100
+        }
+      ],
+      "media_gallery": [
+        [
+          {
+            "src": ["image-2.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 100
+          },
+          {
+            "src": ["image-3.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 100
+          }
         ]
-      }
-    ]
-  }
+      ]
+    }
+  ]
+}

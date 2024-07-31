@@ -1,44 +1,47 @@
 {
-    "slug": "ahh-yum-digital-marketing-suite",
-    "banner_image_src": "banner.png",
-    "banner_description": "Being a newcomer in the saturated world of eateries, Ahh-Yum needed not only unique flavours in design but also a solid brand story that can be tasted through its digital presence.",
-    "banner_description_color": "black",
-    "contents": [
-      {
-        "company_logo_src": "ahh-yum.png",
-        "workscope_tags": ["Social Media Marketing"],
-        "title": "Ahh-Yum Digital Marketing Suite",
-        "subtitle": "Being a newcomer in the saturated world of eateries, Ahh-Yum needed not only unique flavours in design but also a solid brand story that can be tasted through its digital presence.",
-        "challenge_result_title": "Reintroducing Malaysia's favourite convenience store with exciting new offerings",
-        "challenge_description": "Creating conversation in a over-saturated market during Ramadan required a strategic approach.",
-        "results_description": "",
-        "outcome_description": "The campaign featured four highly shareable content pieces, accumulating an impressive 5 million views and 58k interactions (likes, shares, comments and saves). By skillfully portraying the mouthwatering essence of the food, the activation effectively promoted the Iftar Buffet and ignited enthusiasm among social media users.",
-        "deliverables": ["Video Production", "Photography", "Content Strategy", "Creative Execution", "Media Buy"],
-        "featured_media_src": [
-            {
-                "src": ["image-1.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 100
-            }
-        ],
-        "media_gallery": [
-          [
-            {
-              "src": ["image-2.png"],
-              "is_video": false,
-              "caption": "",
-              "width_percent": 100
-            },
-            {
-              "src": ["image-3.png"],
-              "is_video": false,
-              "caption": "",
-              "width_percent": 100
-            }
-          ]
+  "slug": "ahh-yum-digital-marketing-suite",
+  "banner_image_src": "banner.png",
+  "banner_description": "Being a newcomer in the saturated world of eateries, Ahh-Yum needed not only unique flavours in design but also a solid brand story that can be tasted through its digital presence.",
+  "banner_description_color": "black",
+  "keywords": "branding identity",
+  "title": "Ahh-Yum  – Digital Marketing Suite | Light Up 7",
+  "description": "Spotlighting the unique flavours of Ahh-Yum with our next-level digital marketing suite, enhancing branding identity while gaining millions of engagements.",
+  "contents": [
+    {
+      "company_logo_src": "ahh-yum.png",
+      "workscope_tags": ["Social Media Marketing"],
+      "title": "Ahh-Yum Digital Marketing Suite",
+      "subtitle": "Being a newcomer in the saturated world of eateries, Ahh-Yum needed not only unique flavours in design but also a solid brand story that can be tasted through its digital presence.",
+      "challenge_result_title": "Reintroducing Malaysia's favourite convenience store with exciting new offerings",
+      "challenge_description": "Creating conversation in a over-saturated market during Ramadan required a strategic approach.",
+      "results_description": "",
+      "outcome_description": "The campaign featured four highly shareable content pieces, accumulating an impressive 5 million views and 58k interactions (likes, shares, comments and saves). By skillfully portraying the mouthwatering essence of the food, the activation effectively promoted the Iftar Buffet and ignited enthusiasm among social media users.",
+      "deliverables": ["Video Production", "Photography", "Content Strategy", "Creative Execution", "Media Buy"],
+      "featured_media_src": [
+        {
+          "src": ["image-1.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 100
+        }
+      ],
+      "media_gallery": [
+        [
+          {
+            "src": ["image-2.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 100
+          },
+          {
+            "src": ["image-3.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 100
+          }
         ]
-      }
-    ]
-  }
+      ]
+    }
+  ]
+}

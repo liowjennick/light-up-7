@@ -1,56 +1,59 @@
 {
-    "slug": "innoex-highlight-video",
-    "banner_image_src": "banner.png",
-    "banner_description": "Creation of an event-highlight video that tells the story of how perseverance and drive for innovation shapes Cyberjaya today and for the future to come.",
-    "banner_description_color": "white",
-    "contents": [
-      {
-        "company_logo_src": "cyberview.png",
-        "workscope_tags": ["Video Production"],
-        "title": "Innoex Highlight Video",
-        "subtitle": "Creation of an event-highlight video that tells the story of how perseverance and drive for innovation shapes Cyberjaya today and for the future to come.",
-        "challenge_result_title": "An Inspiring Story about Perseverance and Innovation In The Heart of a Global Tech Hub",
-        "challenge_description": "Creation of an event-highlight video that tells the story of how perseverance and drive for innovation shapes Cyberjaya today and for the future to come.",
-        "results_description": "Successfully developed a cinematic video that touches the hearts of many while highlighting the innovation expo through visual storytelling paired with an inspiring script.",
-        "outcome_description": "",
-        "deliverables": ["Scriptwriting", "Storyboarding", "Production", "Editing", "Voice-Over"],
-        "featured_media_src": [
-            {
-                "src": "https://www.youtube.com/embed/qvgRcMOXzZw",
-                "is_video": false,
-                "is_youtube_video": true,
-                "caption": "",
-                "width_percent": 100
-            }
-        ],
-        "media_gallery": [
-          [
-            {
-              "src": ["image-1.png"],
-              "is_video": false,
-              "caption": "",
-              "width_percent": 50
-            },
-            {
-              "src": ["image-2.png"],
-              "is_video": false,
-              "caption": "",
-              "width_percent": 50
-            },
-            {
-                "src": ["image-3.png"],
-                "is_video": false,
-                "caption": "",
-                "width_percent": 50
-              },
-              {
-                "src": ["image-4.png"],
-                "is_video": false,
-                "caption": "",
-                "width_percent": 50
-              }
-          ]
+  "slug": "innoex-highlight-video",
+  "banner_image_src": "banner.png",
+  "banner_description": "Creation of an event-highlight video that tells the story of how perseverance and drive for innovation shapes Cyberjaya today and for the future to come.",
+  "banner_description_color": "white",
+  "keywords": "media production",
+  "title": "InnoEx 2023 – Event Highlight Video | Light Up 7",
+  "description": "Through our exceptional media production, we captured the inaugral Cyberview expo, InnoEx, with captivating and moving visual storytelling.",
+  "contents": [
+    {
+      "company_logo_src": "cyberview.png",
+      "workscope_tags": ["Video Production"],
+      "title": "Innoex Highlight Video",
+      "subtitle": "Creation of an event-highlight video that tells the story of how perseverance and drive for innovation shapes Cyberjaya today and for the future to come.",
+      "challenge_result_title": "An Inspiring Story about Perseverance and Innovation In The Heart of a Global Tech Hub",
+      "challenge_description": "Creation of an event-highlight video that tells the story of how perseverance and drive for innovation shapes Cyberjaya today and for the future to come.",
+      "results_description": "Successfully developed a cinematic video that touches the hearts of many while highlighting the innovation expo through visual storytelling paired with an inspiring script.",
+      "outcome_description": "",
+      "deliverables": ["Scriptwriting", "Storyboarding", "Production", "Editing", "Voice-Over"],
+      "featured_media_src": [
+        {
+          "src": "https://www.youtube.com/embed/qvgRcMOXzZw",
+          "is_video": false,
+          "is_youtube_video": true,
+          "caption": "",
+          "width_percent": 100
+        }
+      ],
+      "media_gallery": [
+        [
+          {
+            "src": ["image-1.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 50
+          },
+          {
+            "src": ["image-2.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 50
+          },
+          {
+            "src": ["image-3.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 50
+          },
+          {
+            "src": ["image-4.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 50
+          }
         ]
-      }
-    ]
-  }
+      ]
+    }
+  ]
+}

@@ -1,45 +1,48 @@
 {
-    "slug": "malaysia-next-chicken-chop",
-    "banner_image_src": "banner.png",
-    "banner_description": "Showcase the best of Knorr Professional products for chicken chop proprietors all over Malaysia with creative visuals, engaging content and a competition to spotlight the best chicken chops in Malaysia.",
-    "banner_description_color": "white",
-    "contents": [
-      {
-        "company_logo_src": "unilever.png",
-        "workscope_tags": ["Video Production"],
-        "title": "Malaysia's Next Chicken Chop",
-        "subtitle": "Showcase the best of Knorr Professional products for chicken chop proprietors all over Malaysia with creative visuals, engaging content and a competition to spotlight the best chicken chops in Malaysia.",
-        "challenge_result_title": "Elevating Flavours One Pack At A Time Together With Knorr Professional",
-        "challenge_description": "To showcase the top 3 Chicken Chops in Malaysia, our video production team travelled to 3 different states to find these hidden gems. With the 3 shops having their own distinct style, our team had to ensure the shots taken were aesthetically pleasing.",
-        "results_description": "Successfully crafting a mouthwatering video, we also showcased how Knorr Professional was business owners' go to brand when it comes to making the best chicken chops.",
-        "outcome_description": "",
-        "deliverables": ["Script Writing", "Storyboarding", "Production", "Video"],
-        "featured_media_src": [
-            {
-                "src": ["image-1.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 100
-            }
-        ],
-        "media_gallery": [
-          [
-            {
-              "src": "https://www.youtube.com/embed/-Wak15_dWaE",
-              "is_video": false,
-              "caption": "",
-              "is_youtube_video": true,
-              "width_percent": 100
-            },
-            {
-              "src": ["image-2.png"],
-              "is_video": false,
-              "caption": "",
-              "width_percent": 100
-            }
-          ]
+  "slug": "malaysia-next-chicken-chop",
+  "banner_image_src": "banner.png",
+  "banner_description": "Showcase the best of Knorr Professional products for chicken chop proprietors all over Malaysia with creative visuals, engaging content and a competition to spotlight the best chicken chops in Malaysia.",
+  "banner_description_color": "white",
+  "keywords": "social media campaigns",
+  "title": "Kickin’ Chicken Chop – Knorr Malaysia Campaign | Light Up 7",
+  "description": "Spotlighting Knorr Professional as the go-to brand for chicken chop proprietors through compelling social media campaigns & an engaging mouthwatering video.",
+  "contents": [
+    {
+      "company_logo_src": "unilever.png",
+      "workscope_tags": ["Video Production"],
+      "title": "Malaysia's Next Chicken Chop",
+      "subtitle": "Showcase the best of Knorr Professional products for chicken chop proprietors all over Malaysia with creative visuals, engaging content and a competition to spotlight the best chicken chops in Malaysia.",
+      "challenge_result_title": "Elevating Flavours One Pack At A Time Together With Knorr Professional",
+      "challenge_description": "To showcase the top 3 Chicken Chops in Malaysia, our video production team travelled to 3 different states to find these hidden gems. With the 3 shops having their own distinct style, our team had to ensure the shots taken were aesthetically pleasing.",
+      "results_description": "Successfully crafting a mouthwatering video, we also showcased how Knorr Professional was business owners' go to brand when it comes to making the best chicken chops.",
+      "outcome_description": "",
+      "deliverables": ["Script Writing", "Storyboarding", "Production", "Video"],
+      "featured_media_src": [
+        {
+          "src": ["image-1.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 100
+        }
+      ],
+      "media_gallery": [
+        [
+          {
+            "src": "https://www.youtube.com/embed/-Wak15_dWaE",
+            "is_video": false,
+            "caption": "",
+            "is_youtube_video": true,
+            "width_percent": 100
+          },
+          {
+            "src": ["image-2.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 100
+          }
         ]
-      }
-    ]
-  }
+      ]
+    }
+  ]
+}
