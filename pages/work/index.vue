@@ -82,9 +82,13 @@
           <div class="section-container">
             <div class="project-list-banner-container">
               <div class="project-banner-item" v-for="(item, i) in ProjectData" :key="i">
-                <NuxtLink :to="`work/${item.slug}`">
-                  <img :src="`/images/work/projects/${item.slug}/${item.banner_image_src}`" />
-                </NuxtLink>
+                <a href="`work/${item.slug}`">
+                  <img class="banner-image" :src="`/images/work/banners/${item.slug}-banner.png`" />
+                  <div class="banner-content-container">
+                    <img class="banner-logo" :src="`/images/work/banners/${item.slug}-banner-logo.png`" />
+                    <p :style="{ color: item.banner_description_color }" class="banner-description">{{ item.banner_description }}</p>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -789,8 +793,32 @@ onMounted(() => {
       margin-bottom: 20px
       a
         display: block
-        img
+        position: relative
+        .banner-image
           width: 100%
+        .banner-content-container
+          position: absolute
+          top: 50%
+          width: 40%
+          left: 5%
+          transform: translateY(-50%)
+        .banner-logo
+          width: 60%
+          display: block
+          margin: 0 auto
+        .banner-description
+          width: 100%
+          text-decoration: none
+          font-weight: 200
+          margin-top: 5%
+          +large-desktop
+            font-size: 0.9em
+          +desktop
+            font-size: 0.8em
+          +large-mobile
+            font-size: 0.6em
+          +mobile
+            font-size: 0.4em
 
 @keyframes glow-line-expand
   0%
