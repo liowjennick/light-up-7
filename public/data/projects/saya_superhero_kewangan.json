@@ -1,111 +1,113 @@
 {
-    "slug": "superhero-kewangan",
-    "banner_image_src": "banner.png",
-    "banner_description": "Educate and retain the attention of children visitors to learn about currency and financial safety for the kids section in Financial Education Network’s (FEN) Karnival Celik Kewangan Johor, a financial literacy carnival touring all over Malaysia.",
-    "banner_description_color": "white",
-    "contents": [
-      {
-        "company_logo_src": "bnm.png",
-        "workscope_tags": ["Creative Content", "Event Exhibition"],
-        "title": "Saya Superhero Kewangan (KCKJ Kids Corner)",
-        "subtitle": "Educate and retain the attention of children visitors to learn about currency and financial safety for the kids section in Financial Education Network's (FEN) Karnival Celik Kewangan Johor, a financial literacy carnival touring all over Malaysia.",
-        "challenge_result_title": "Engaging Young Minds with an Interactive Content at KCKJ Kids Corner",
-        "challenge_description": "To educate and retain the attention of children visitors to learn about currency and financial safety for the kids section in Financial Education Network's (FEN) Karnival Celik Kewangan Johor, a financial literacy carnival touring all over Malaysia.",
-        "results_description": "",
-        "outcome_description": "Through interactive displays and games driven by Si Kijang, MAG's mascot, visitors young and old get to have fun and learn while they visit the Kids' Corner. The exhibition fosters a fun and accessible approach to learning meaningful lessons about currency and being mindful of avoiding scams.",
-        "deliverables": ["Ideation", "Gamification", "3D VR Animation", "AR Design", "Interactive Content"],
-        "featured_media_src": [
-            {
-                "src": ["featured-image-1.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 100
-            },
-            {
-                "src": ["featured-image-2.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 50
-            },
-            {
-                "src": ["featured-image-3.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 50
-            }
+  "slug": "superhero-kewangan",
+  "banner_image_src": "banner.png",
+  "banner_description": "Educate and retain the attention of children visitors to learn about currency and financial safety for the kids section in Financial Education Network’s (FEN) Karnival Celik Kewangan Johor, a financial literacy carnival touring all over Malaysia.",
+  "banner_description_color": "white",
+  "keywords": "2d animation company in malaysia",
+  "title": "Saya Superhero Kewangan – Gamified Exhibition | Light Up 7",
+  "description": "We take financial literacy learning to the next level with our expertise in creating interactive displays & games as Malaysia’s renowned 2D animation company.",
+  "contents": [
+    {
+      "company_logo_src": "bnm.png",
+      "workscope_tags": ["Creative Content", "Event Exhibition"],
+      "title": "Saya Superhero Kewangan (KCKJ Kids Corner)",
+      "subtitle": "Educate and retain the attention of children visitors to learn about currency and financial safety for the kids section in Financial Education Network's (FEN) Karnival Celik Kewangan Johor, a financial literacy carnival touring all over Malaysia.",
+      "challenge_result_title": "Engaging Young Minds with an Interactive Content at KCKJ Kids Corner",
+      "challenge_description": "To educate and retain the attention of children visitors to learn about currency and financial safety for the kids section in Financial Education Network's (FEN) Karnival Celik Kewangan Johor, a financial literacy carnival touring all over Malaysia.",
+      "results_description": "",
+      "outcome_description": "Through interactive displays and games driven by Si Kijang, MAG's mascot, visitors young and old get to have fun and learn while they visit the Kids' Corner. The exhibition fosters a fun and accessible approach to learning meaningful lessons about currency and being mindful of avoiding scams.",
+      "deliverables": ["Ideation", "Gamification", "3D VR Animation", "AR Design", "Interactive Content"],
+      "featured_media_src": [
+        {
+          "src": ["featured-image-1.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 100
+        },
+        {
+          "src": ["featured-image-2.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 50
+        },
+        {
+          "src": ["featured-image-3.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 50
+        }
+      ],
+      "media_gallery": [
+        [
+          {
+            "src": "https://www.youtube.com/embed/wq85VpwO4AA",
+            "is_video": false,
+            "is_youtube_video": true,
+            "caption": "VR Roller Coaster Ride",
+            "width_percent": 72
+          },
+          {
+            "src": ["image-1.png"],
+            "full_width": false,
+            "is_video": false,
+            "caption": "Interactive AR",
+            "width_percent": 28
+          }
         ],
-        "media_gallery": [
-          [
-            {
-              "src": "https://www.youtube.com/embed/wq85VpwO4AA",
-              "is_video": false,
-              "is_youtube_video": true,
-              "caption": "VR Roller Coaster Ride",
-              "width_percent": 72
-
-            },
-            {
-              "src": ["image-1.png"],
-              "full_width": false,
-              "is_video": false,
-              "caption": "Interactive AR",
-              "width_percent": 28
-            }
-          ],
-          [
-            {
-                "src": ["image-2.png"],
-                "full_width": true,
-                "is_video": false,
-                "caption": "Spot the counterfeit notes and save victims from being scammed to be the hero of the day!",
-                "width_percent": 100
-            }
-          ]
+        [
+          {
+            "src": ["image-2.png"],
+            "full_width": true,
+            "is_video": false,
+            "caption": "Spot the counterfeit notes and save victims from being scammed to be the hero of the day!",
+            "width_percent": 100
+          }
         ]
-      },
-      {
-        "company_logo_src": "",
-        "workscope_tags": null,
-        "title": "",
-        "subtitle": "",
-        "challenge_result_title": "Creating Attractive Exhibition Booths to Make Financial Literacy Fun!",
-        "challenge_description": "To create an immersive and entertaining exhibitions for the final chapter of LATeracy at the Borneo Cultures Museum in Kuching, Sarawak and Karnival Celik Kewangan Johor in AEON Kulaijaya.",
-        "results_description": "",
-        "outcome_description": "By utilising 3D animation tools, we were able to create engaging booth structures and layouts all the while ensuring the brand identity of MAG shines through the engaging exhibition. These structures are durably made and withstood the entire exhibition durations.",
-        "deliverables": ["Fabrication", "Design + Printing", "Interactive Content", "Copywriting", "Gamification"],
-        "featured_media_src": [
-            {
-                "src": ["featured-image-4.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 60.6
-            },
-            {
-                "src": ["featured-image-5.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 39.4
-            },
-            {
-                "src": ["featured-image-6.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 26.5
-            },
-            {
-                "src": ["featured-image-7.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 73.5
-            }
-        ]
-      }
-    ]
-  }
+      ]
+    },
+    {
+      "company_logo_src": "",
+      "workscope_tags": null,
+      "title": "",
+      "subtitle": "",
+      "challenge_result_title": "Creating Attractive Exhibition Booths to Make Financial Literacy Fun!",
+      "challenge_description": "To create an immersive and entertaining exhibitions for the final chapter of LATeracy at the Borneo Cultures Museum in Kuching, Sarawak and Karnival Celik Kewangan Johor in AEON Kulaijaya.",
+      "results_description": "",
+      "outcome_description": "By utilising 3D animation tools, we were able to create engaging booth structures and layouts all the while ensuring the brand identity of MAG shines through the engaging exhibition. These structures are durably made and withstood the entire exhibition durations.",
+      "deliverables": ["Fabrication", "Design + Printing", "Interactive Content", "Copywriting", "Gamification"],
+      "featured_media_src": [
+        {
+          "src": ["featured-image-4.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 60.6
+        },
+        {
+          "src": ["featured-image-5.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 39.4
+        },
+        {
+          "src": ["featured-image-6.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 26.5
+        },
+        {
+          "src": ["featured-image-7.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 73.5
+        }
+      ]
+    }
+  ]
+}
