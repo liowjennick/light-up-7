@@ -1,6 +1,8 @@
 {
     "slug": "innoex-highlight-video",
     "banner_image_src": "banner.png",
+    "banner_description": "Creation of an event-highlight video that tells the story of how perseverance and drive for innovation shapes Cyberjaya today and for the future to come.",
+    "banner_description_color": "white",
     "contents": [
       {
         "company_logo_src": "cyberview.png",

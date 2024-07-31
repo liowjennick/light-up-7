@@ -1,6 +1,8 @@
 {
     "slug": "7-eleven-social-media-marketing",
     "banner_image_src": "banner.png",
+    "banner_description": "Creating content that is consistently engaging for an audience already very familiar with 7-Eleven. On top of that, generating excitement over new offerings, and products, incorporating new trends and conversations to remain relevant as a convenience store.",
+    "banner_description_color": "white",
     "contents": [
       {
         "company_logo_src": "7-eleven.png",

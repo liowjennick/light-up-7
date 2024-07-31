@@ -7,8 +7,8 @@
         <img class="computer-unglow" :src="ComputerUnglow" alt="Unglow computer" />
         <img class="cursor-glow" src="../../assets/images/careers/glow-cursor.png" alt="Glow cursor" />
         <img class="computer-glow" src="../../assets/images/careers/glow-computer-1.png" alt="glow computer" />
-        <img class="star" src="../../assets/images/news/star.png" />
-        <img class="star-2" src="../../assets/images/news/star.png" />
+        <!-- <img class="star" src="../../assets/images/news/star.png" />
+        <img class="star-2" src="../../assets/images/news/star.png" /> -->
       </div>
       <div class="arrow-down-container">
         <img class="arrow-down" src="../../assets/images/work/right-caret.png" />
@@ -195,6 +195,7 @@ onMounted(() => {
   bannerTimeline
     .to(".computer-unglow", {
       bottom: "77%",
+      opacity: 1
     })
     .to([".computer-glow", ".cursor-glow", ".careers-banner"], {
       opacity: 1,
@@ -335,7 +336,7 @@ const recentJobs = [
     transform: translateX(-50%)
     // height: 100%
     width: 23%
-    opacity: 1
+    opacity: 0
   .computer-glow
     position: absolute
     bottom: 5%

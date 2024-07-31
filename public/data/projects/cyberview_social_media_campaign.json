@@ -1,6 +1,8 @@
 {
     "slug": "cyberview-social-media-campaign",
     "banner_image_src": "banner.png",
+    "banner_description": "Create awareness of Cyberjaya's location & compelling 'reasons-to-believe' for tech businesses and investments to land in Cyberjaya, plus attracting foreign investors and companies to invest in Cybeview as a Tech Hub Developer.",
+    "banner_description_color": "white",
     "contents": [
       {
         "company_logo_src": "cyberview.png",

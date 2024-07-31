@@ -1,6 +1,8 @@
 {
     "slug": "superhero-kewangan",
     "banner_image_src": "banner.png",
+    "banner_description": "Educate and retain the attention of children visitors to learn about currency and financial safety for the kids section in Financial Education Network’s (FEN) Karnival Celik Kewangan Johor, a financial literacy carnival touring all over Malaysia.",
+    "banner_description_color": "white",
     "contents": [
       {
         "company_logo_src": "bnm.png",

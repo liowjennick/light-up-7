@@ -1,6 +1,8 @@
 {
     "slug": "laterasi-kewangan-sarawak",
     "banner_image_src": "banner.png",
+    "banner_description": "Create an immersive and entertaining experience for the final LATeracy exhibition located in the Borneo Cultures Museum in Kuching, Sarawak, incorporating interactive displays, games and activities inspired by Lat's illustrations and kampung life to teach lessons on financial literacy.",
+    "banner_description_color": "black",
     "contents": [
       {
         "company_logo_src": "bnm.png",

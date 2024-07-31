@@ -1,6 +1,8 @@
 {
     "slug": "ktmb-corporate-video",
     "banner_image_src": "banner.png",
+    "banner_description": "The cinematic shots of KTMB's assets, futuristic animations and heartwarming portraits of people whose life depends on KTMB successfully showcase the brand's reliability and connectivity across Malaysia.",
+    "banner_description_color": "white",
     "contents": [
       {
         "company_logo_src": "ktmb.png",

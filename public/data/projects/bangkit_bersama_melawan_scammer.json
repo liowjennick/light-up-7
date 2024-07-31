@@ -1,6 +1,8 @@
 {
     "slug": "bangkit-bersama-melawan-scammer",
     "banner_image_src": "banner.png",
+    "banner_description": "Develop a video to educate the public on the dangers and modus operandi of scammers while also invoking unity during Merdeka and Hari Malaysia, urging Malaysians to stand together and fight against this common threat.",
+    "banner_description_color": "black",
     "contents": [
       {
         "company_logo_src": "bnm.png",
