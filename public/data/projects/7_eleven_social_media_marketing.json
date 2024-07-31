@@ -1,57 +1,60 @@
 {
-    "slug": "7-eleven-social-media-marketing",
-    "banner_image_src": "banner.png",
-    "banner_description": "Creating content that is consistently engaging for an audience already very familiar with 7-Eleven. On top of that, generating excitement over new offerings, and products, incorporating new trends and conversations to remain relevant as a convenience store.",
-    "banner_description_color": "white",
-    "contents": [
-      {
-        "company_logo_src": "7-eleven.png",
-        "workscope_tags": ["Social Media Marketing"],
-        "title": "7-Eleven Social Media Marketing",
-        "subtitle": "Creating content that is consistently engaging for an audience already very familiar with 7-Eleven. On top of that, generating excitement over new offerings, and products, incorporating new trends and conversations to remain relevant as a convenience store.",
-        "challenge_result_title": "Reintroducing Malaysia's favourite convenience store with exciting new offerings",
-        "challenge_description": "Creating content that is not only consistent but also engaging with an audience that is already very familiar with 7-Eleven. Also creating excitement over new offerings, products and even jumping on new trends to stay relevant.",
-        "results_description": "We reached over 22,401 accounts and over 23,622 comments for our first livestream game event (Pictionary) as well as over 250 entries for our Chinese New Year AR game. This shows that our endeavours to create an engaged and attentive audience has paid off, paired with a steadily increasing follower count.",
-        "outcome_description": "",
-        "deliverables": ["Live Video Engagement", "Social Media Management", "Content Strategy", "360 Digital Marketing", "Creative Execution"],
-        "featured_media_src": [
-            {
-                "src": ["image-1.png"],
-                "is_video":false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 50
-            },
-            {
-                "src": ["image-2.png", "image-3.png"],
-                "is_video":false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 50
-            }
-        ],
-        "media_gallery": [
-          [
-            {
-              "src": ["image-4.png"],
-              "is_video": false,
-              "caption": "",
-              "width_percent": 100
-            },
-            {
-              "src": ["image-5.png"],
-              "is_video": false,
-              "caption": "",
-              "width_percent": 100
-            },
-            {
-                "src": ["image-6.png"],
-                "is_video": false,
-                "caption": "",
-                "width_percent": 100
-              }
-          ]
+  "slug": "7-eleven-social-media-marketing",
+  "banner_image_src": "banner.png",
+  "banner_description": "Creating content that is consistently engaging for an audience already very familiar with 7-Eleven. On top of that, generating excitement over new offerings, and products, incorporating new trends and conversations to remain relevant as a convenience store.",
+  "banner_description_color": "white",
+  "keywords": "social media management",
+  "title": "7-Eleven – Social Media Marketing | Light Up 7",
+  "description": "We keep things fresh & trendy over on 7-Eleven's socials with our pioneering social media management services to engage with a wide audience.",
+  "contents": [
+    {
+      "company_logo_src": "7-eleven.png",
+      "workscope_tags": ["Social Media Marketing"],
+      "title": "7-Eleven Social Media Marketing",
+      "subtitle": "Creating content that is consistently engaging for an audience already very familiar with 7-Eleven. On top of that, generating excitement over new offerings, and products, incorporating new trends and conversations to remain relevant as a convenience store.",
+      "challenge_result_title": "Reintroducing Malaysia's favourite convenience store with exciting new offerings",
+      "challenge_description": "Creating content that is not only consistent but also engaging with an audience that is already very familiar with 7-Eleven. Also creating excitement over new offerings, products and even jumping on new trends to stay relevant.",
+      "results_description": "We reached over 22,401 accounts and over 23,622 comments for our first livestream game event (Pictionary) as well as over 250 entries for our Chinese New Year AR game. This shows that our endeavours to create an engaged and attentive audience has paid off, paired with a steadily increasing follower count.",
+      "outcome_description": "",
+      "deliverables": ["Live Video Engagement", "Social Media Management", "Content Strategy", "360 Digital Marketing", "Creative Execution"],
+      "featured_media_src": [
+        {
+          "src": ["image-1.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 50
+        },
+        {
+          "src": ["image-2.png", "image-3.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 50
+        }
+      ],
+      "media_gallery": [
+        [
+          {
+            "src": ["image-4.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 100
+          },
+          {
+            "src": ["image-5.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 100
+          },
+          {
+            "src": ["image-6.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 100
+          }
         ]
-      }
-    ]
-  }
+      ]
+    }
+  ]
+}

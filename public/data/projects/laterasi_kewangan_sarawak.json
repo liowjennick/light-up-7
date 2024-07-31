@@ -1,133 +1,136 @@
 {
-    "slug": "laterasi-kewangan-sarawak",
-    "banner_image_src": "banner.png",
-    "banner_description": "Create an immersive and entertaining experience for the final LATeracy exhibition located in the Borneo Cultures Museum in Kuching, Sarawak, incorporating interactive displays, games and activities inspired by Lat's illustrations and kampung life to teach lessons on financial literacy.",
-    "banner_description_color": "black",
-    "contents": [
-      {
-        "company_logo_src": "bnm.png",
-        "workscope_tags": ["Animation", "Event Exhibition"],
-        "title": "LATerasi Kewangan Sarawak",
-        "subtitle": "Create an immersive and entertaining experience for the final LATeracy exhibition located in the Borneo Cultures Museum in Kuching, Sarawak, incorporating interactive displays, games and activities inspired by Lat's illustrations and kampung life to teach lessons on financial literacy.",
-        "challenge_result_title": "The Launch of BNM's LATeracy Exhibition in Kuching, Sarawak",
-        "challenge_description": "To produce a launch video that creates excitement for BNM's final LATeracy exhibition in Kuching while also showcasing the past exhibitions that have happened throughout Malaysia.",
-        "results_description": "A launch gimmick that begins with the Premier of Sarawak initiating the sequence by completing a Mat drawing, to which it comes to life, jumps from a TV to an LED screen, and travels across Malaysia highlighting all the LATeracy exhibitions that have happened. To which he finally arrives in Kuching, where celebratory fireworks and cheering launches the event.",
-        "outcome_description": "",
-        "deliverables": ["Scriptwriting", "Storyboarding", "2D Animation", "Music & SFX", "Launch Gimmick"],
-        "featured_media_src": [
-            {
-                "src": ["image-1.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 31.2
-            },
-            {
-                "src": ["image-2.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 68.8
-            },
-            {
-                "src": ["image-3.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 77.2
-            },
-            {
-                "src": ["image-4.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 22.8
-            }
-        ],
-        "media_gallery": [
-          [
-            {
-              "src": "https://www.youtube.com/embed/RIV9qSEbJAw",
-              "is_video": false,
-              "caption": "",
-              "is_youtube_video": true,
-              "width_percent": 100
-            }
-          ]
+  "slug": "laterasi-kewangan-sarawak",
+  "banner_image_src": "banner.png",
+  "banner_description": "Create an immersive and entertaining experience for the final LATeracy exhibition located in the Borneo Cultures Museum in Kuching, Sarawak, incorporating interactive displays, games and activities inspired by Lat's illustrations and kampung life to teach lessons on financial literacy.",
+  "banner_description_color": "black",
+  "keywords": "event organizer malaysia",
+  "title": "LATerasi Kewangan Sarawak – BNM Exhibition | Light Up 7",
+  "description": "Inspired by Lat’s nostalgic illustrations, we ensure BNM’s financial literacy exhibition is immersive & meets our standards as Malaysia’s best event organiser.",
+  "contents": [
+    {
+      "company_logo_src": "bnm.png",
+      "workscope_tags": ["Animation", "Event Exhibition"],
+      "title": "LATerasi Kewangan Sarawak",
+      "subtitle": "Create an immersive and entertaining experience for the final LATeracy exhibition located in the Borneo Cultures Museum in Kuching, Sarawak, incorporating interactive displays, games and activities inspired by Lat's illustrations and kampung life to teach lessons on financial literacy.",
+      "challenge_result_title": "The Launch of BNM's LATeracy Exhibition in Kuching, Sarawak",
+      "challenge_description": "To produce a launch video that creates excitement for BNM's final LATeracy exhibition in Kuching while also showcasing the past exhibitions that have happened throughout Malaysia.",
+      "results_description": "A launch gimmick that begins with the Premier of Sarawak initiating the sequence by completing a Mat drawing, to which it comes to life, jumps from a TV to an LED screen, and travels across Malaysia highlighting all the LATeracy exhibitions that have happened. To which he finally arrives in Kuching, where celebratory fireworks and cheering launches the event.",
+      "outcome_description": "",
+      "deliverables": ["Scriptwriting", "Storyboarding", "2D Animation", "Music & SFX", "Launch Gimmick"],
+      "featured_media_src": [
+        {
+          "src": ["image-1.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 31.2
+        },
+        {
+          "src": ["image-2.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 68.8
+        },
+        {
+          "src": ["image-3.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 77.2
+        },
+        {
+          "src": ["image-4.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 22.8
+        }
+      ],
+      "media_gallery": [
+        [
+          {
+            "src": "https://www.youtube.com/embed/RIV9qSEbJAw",
+            "is_video": false,
+            "caption": "",
+            "is_youtube_video": true,
+            "width_percent": 100
+          }
         ]
-      },
-      {
-        "company_logo_src": "",
-        "workscope_tags": [],
-        "title": "",
-        "subtitle": "",
-        "challenge_result_title": "The Launch of BNM's LATeracy Exhibition in Kuching, Sarawak",
-        "challenge_description": "To create an immersive and entertaining experience for the final LATeracy exhibition located in the Borneo Cultures Museum in Kuching, Sarawak.",
-        "results_description": "Through interactive displays, games and activities inspired by Lat's illustrations and kampung life, the exhibition fosters a fun and accessible approach to teaching actionable money management lessons.",
-        "outcome_description": "",
-        "deliverables": ["Fabrication", "Design + Printing", "Interactive Content", "Copywriting", "Gamification"],
-        "featured_media_src": [
-            {
-                "src": ["image-5.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 76.2
-            },
-            {
-                "src": ["image-6.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 23.8
-            },
-            {
-                "src": ["image-7.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 28
-            },
-            {
-                "src": ["image-8.png"],
-                "is_video": false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 72
-            }
-        ],
-        "media_gallery": [
-          [
-            {
-              "src": ["image-9.png"],
-              "is_video": false,
-              "caption": "",
-              "is_youtube_video": false,
-              "width_percent": 50
-            },
-            {
-                "src": ["image-10.png"],
-                "is_video": false,
-                "caption": "",
-                "is_youtube_video": false,
-                "width_percent": 50
-              },
-              {
-                "src": ["image-11.png"],
-                "is_video": false,
-                "caption": "",
-                "is_youtube_video": false,
-                "width_percent": 50
-              },
-              {
-                "src": ["image-12.png"],
-                "is_video": false,
-                "caption": "",
-                "is_youtube_video": false,
-                "width_percent": 50
-              }
-          ]
+      ]
+    },
+    {
+      "company_logo_src": "",
+      "workscope_tags": [],
+      "title": "",
+      "subtitle": "",
+      "challenge_result_title": "The Launch of BNM's LATeracy Exhibition in Kuching, Sarawak",
+      "challenge_description": "To create an immersive and entertaining experience for the final LATeracy exhibition located in the Borneo Cultures Museum in Kuching, Sarawak.",
+      "results_description": "Through interactive displays, games and activities inspired by Lat's illustrations and kampung life, the exhibition fosters a fun and accessible approach to teaching actionable money management lessons.",
+      "outcome_description": "",
+      "deliverables": ["Fabrication", "Design + Printing", "Interactive Content", "Copywriting", "Gamification"],
+      "featured_media_src": [
+        {
+          "src": ["image-5.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 76.2
+        },
+        {
+          "src": ["image-6.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 23.8
+        },
+        {
+          "src": ["image-7.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 28
+        },
+        {
+          "src": ["image-8.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 72
+        }
+      ],
+      "media_gallery": [
+        [
+          {
+            "src": ["image-9.png"],
+            "is_video": false,
+            "caption": "",
+            "is_youtube_video": false,
+            "width_percent": 50
+          },
+          {
+            "src": ["image-10.png"],
+            "is_video": false,
+            "caption": "",
+            "is_youtube_video": false,
+            "width_percent": 50
+          },
+          {
+            "src": ["image-11.png"],
+            "is_video": false,
+            "caption": "",
+            "is_youtube_video": false,
+            "width_percent": 50
+          },
+          {
+            "src": ["image-12.png"],
+            "is_video": false,
+            "caption": "",
+            "is_youtube_video": false,
+            "width_percent": 50
+          }
         ]
-      }
-    ]
-  }
+      ]
+    }
+  ]
+}

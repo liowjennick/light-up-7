@@ -1,44 +1,47 @@
 {
-    "slug": "saya-sayang-saya-unicef",
-    "banner_image_src": "banner.png",
-    "banner_description": "Identifying the right tone of voice to approach specific sensitivities about online child sexual abuse, and being mindful of the importance of being inclusive of audiences from various locales across Malaysia when discussing delicate topics.",
-    "banner_description_color": "white",
-    "contents": [
-      {
-        "company_logo_src": "unicef.png",
-        "workscope_tags": ["Social Media Marketing"],
-        "title": "#SayaSayangSaya, a UNICEF Malaysia Campaign",
-        "subtitle": "Creating content that is consistently engaging for an audience already very familiar with 7-Eleven. On top of that, generating excitement over new offerings, and products, incorporating new trends and conversations to remain relevant as a convenience store.",
-        "challenge_result_title": "Empowering Malaysian Youth: Unveiling OCSEA and Embracing Self-Love",
-        "challenge_description": "Identifying the right tone of voice to be more mindful of specific sensitivities and to be more inclusive of the audiences from various locales across Malaysia when discussing delicate topics.",
-        "results_description": "Through consultation with UNICEF's Youth Advocate, the team successfully created a strong online presence, garnering over 236,020 social media interactions. Several IG Live sessions and a podcast with various organisations and key youth advocates were also held, further boosting the campaign's awareness.",
-        "outcome_description": "",
-        "deliverables": ["Long-Form Article Writing", "Social Media Management", "Content Strategy", "Creative Execution", "360 Digital Marketing"],
-        "featured_media_src": [
-            {
-                "src": ["image-1.png"],
-                "is_video":false,
-                "is_youtube_video": false,
-                "caption": "",
-                "width_percent": 100
-            }
-        ],
-        "media_gallery": [
-          [
-            {
-              "src": ["image-2.png"],
-              "is_video": false,
-              "caption": "",
-              "width_percent": 100
-            },
-            {
-              "src": ["image-3.png"],
-              "is_video": false,
-              "caption": "",
-              "width_percent": 100
-            }
-          ]
+  "slug": "saya-sayang-saya-unicef",
+  "banner_image_src": "banner.png",
+  "banner_description": "Identifying the right tone of voice to approach specific sensitivities about online child sexual abuse, and being mindful of the importance of being inclusive of audiences from various locales across Malaysia when discussing delicate topics.",
+  "banner_description_color": "white",
+  "keywords": "branding and design",
+  "title": "#SayaSayangSaya – UNICEF Malaysia Campaign | Light Up 7",
+  "description": "We established a strong online presence for UNICEF Malaysia with exceptional branding and design approaches, boosting awareness for OCSEA.",
+  "contents": [
+    {
+      "company_logo_src": "unicef.png",
+      "workscope_tags": ["Social Media Marketing"],
+      "title": "#SayaSayangSaya, a UNICEF Malaysia Campaign",
+      "subtitle": "Creating content that is consistently engaging for an audience already very familiar with 7-Eleven. On top of that, generating excitement over new offerings, and products, incorporating new trends and conversations to remain relevant as a convenience store.",
+      "challenge_result_title": "Empowering Malaysian Youth: Unveiling OCSEA and Embracing Self-Love",
+      "challenge_description": "Identifying the right tone of voice to be more mindful of specific sensitivities and to be more inclusive of the audiences from various locales across Malaysia when discussing delicate topics.",
+      "results_description": "Through consultation with UNICEF's Youth Advocate, the team successfully created a strong online presence, garnering over 236,020 social media interactions. Several IG Live sessions and a podcast with various organisations and key youth advocates were also held, further boosting the campaign's awareness.",
+      "outcome_description": "",
+      "deliverables": ["Long-Form Article Writing", "Social Media Management", "Content Strategy", "Creative Execution", "360 Digital Marketing"],
+      "featured_media_src": [
+        {
+          "src": ["image-1.png"],
+          "is_video": false,
+          "is_youtube_video": false,
+          "caption": "",
+          "width_percent": 100
+        }
+      ],
+      "media_gallery": [
+        [
+          {
+            "src": ["image-2.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 100
+          },
+          {
+            "src": ["image-3.png"],
+            "is_video": false,
+            "caption": "",
+            "width_percent": 100
+          }
         ]
-      }
-    ]
-  }
+      ]
+    }
+  ]
+}

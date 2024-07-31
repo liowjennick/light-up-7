@@ -3,6 +3,9 @@
   "banner_image_src": "banner.png",
   "banner_description": "To identify a gap within previous Raya ads and develop a unique video that would make PNB & ASNB stand out, evoke emotions and spark introspection, urging viewers to reflect on their relationships and forgiveness.",
   "banner_description_color": "white",
+  "keywords": "film production",
+  "title": "Balang Kuih Abah – PNB & ASNB Raya Ad | Light Up 7",
+  "description": "In the spirit of Raya, we inspire Malaysians to forgive & seek forgiveness with the art of film production with an ad about bridging generational gaps.",
   "contents": [
     {
       "company_logo_src": "pnb.png",
@@ -15,13 +18,13 @@
       "outcome_description": "",
       "deliverables": ["Script + Storyboard", "Production", "Video Editing", "Music Scoring", "Voice-Over"],
       "featured_media_src": [
-          {
-              "src": "https://www.youtube.com/embed/eSfTpl1HyzE",
-              "is_video": false,
-              "is_youtube_video": true,
-              "caption": "",
-              "width_percent": 100
-          }
+        {
+          "src": "https://www.youtube.com/embed/eSfTpl1HyzE",
+          "is_video": false,
+          "is_youtube_video": true,
+          "caption": "",
+          "width_percent": 100
+        }
       ],
       "media_gallery": [
         [
