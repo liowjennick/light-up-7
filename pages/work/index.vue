@@ -81,8 +81,8 @@
         <div class="projects-section-container">
           <div class="section-container">
             <div class="project-list-banner-container">
-              <div class="project-banner-item" v-for="(item, i) in ProjectData" :key="i">
-                <a href="`work/${item.slug}`">
+              <div class="project-banner-item" :class="`banner-item-${i}`" v-for="(item, i) in ProjectData" :key="i">
+                <a :href="`work/${item.slug}`">
                   <img class="banner-image" :src="`/images/work/banners/${item.slug}-banner.png`" />
                   <div class="banner-content-container">
                     <img class="banner-logo" :src="`/images/work/banners/${item.slug}-banner-logo.png`" />
@@ -103,6 +103,7 @@ import gsap from "gsap";
 import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
 import ProjectData from "../../public/data/projects_data.js";
 import { setCookie, getCookie } from "../../utils/cookies";
+import SplitType from "split-type"
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
@@ -343,17 +344,66 @@ onMounted(() => {
 
   // PROJECT SCROLL IN WHEN SCROLLING
   document.querySelectorAll(".project-banner-item").forEach((item, i) => {
-    gsap.from(item, {
+    const logoElement = document.querySelector(`.banner-item-${i} .banner-logo`)
+    const bannerElement = document.querySelector(`.banner-item-${i} .banner-image`)
+
+    gsap.from(`.banner-item-${i} .banner-logo`, {
       opacity: 0,
-      x: "100%",
-      duration: 0.5,
+      scale: 0.5,
+      y: 20,
       scrollTrigger: {
         trigger: item,
-        start: "top center",
-        end: "center center",
+        scrub: 1,
+        start: `top-=400 center`,
+        end: `bottom center`,
         toggleActions: "play play play reverse",
-      },
-    });
+      }
+    })
+
+    gsap.from(`.banner-item-${i} .banner-image`, {
+      opacity: 0,
+      scale: 0.75,
+      y: 20,
+      scrollTrigger: {
+        trigger: item,
+        scrub: 1,
+        start: `top-=500 center`,
+        end: `bottom center`,
+        toggleActions: "play play play reverse",
+      }
+    })
+
+    const textSplit = new SplitType(`.banner-item-${i} .banner-description`)
+    console.log(textSplit)
+    const textIncrements = 200 / textSplit.chars.length
+    console.log(textIncrements)
+    textSplit.chars.map((char, j) => {
+      gsap.from(char, {
+        opacity: 0,
+        duration: 1,
+        scale: 0,
+        y: -20,
+        scrollTrigger: {
+          trigger: item,
+          scrub: 1,
+          start: `top-=${200 - (textIncrements * j)} center`,
+          end: `center center`,
+          toggleActions: "play play play reverse",
+        }
+      })
+    })
+
+    // gsap.from(item, {
+    //   opacity: 0,
+    //   x: "100%",
+    //   duration: 0.5,
+    //   scrollTrigger: {
+    //     trigger: item,
+    //     start: "top center",
+    //     end: "center center",
+    //     toggleActions: "play play play reverse",
+    //   },
+    // });
   });
 
   // SLIDING BUTTON
@@ -789,6 +839,7 @@ onMounted(() => {
         display: block
         margin: 0 auto
   .project-list-banner-container
+    padding-bottom: 180px
     .project-banner-item
       margin-bottom: 20px
       a
