@@ -19,7 +19,7 @@
       <div class="contact-info-container">
         <p
           style="margin-bottom: 8px"
-          class="font-orange font-weight-200 font-20"
+          class="font-orange font-weight-200 font-16"
         >
           ready to light up?
         </p>
@@ -29,8 +29,8 @@
         >
           let’s talk
         </p>
-        <p class="font-orange font-26 font-weight-200">our offices</p>
-        <p class="font-white font-20 font-weight-200">
+        <p class="font-orange font-20 font-weight-200">our offices</p>
+        <p class="font-white font-16 font-weight-200">
           <br />
           Kuala Lumpur<br /><br />
           1st Floor, West Wing, <br />
@@ -51,24 +51,24 @@
         <a
           target="_blank"
           href="https://www.google.com/maps/place/Light+Up+7/@3.1498933,101.6651169,17z/data=!3m2!4b1!5s0x31cc49ab0e0f7ac3:0xcaf3484f21fd43ab!4m6!3m5!1s0x31cc4c5fabb47ffb:0x52e9e06c169d79dc!8m2!3d3.1498933!4d101.6651169!16s%2Fg%2F11b6gchlp_?entry=ttu"
-          class="orange-outlined-button font-weight-200 font-20"
+          class="orange-outlined-button font-weight-200 font-16"
           style="margin-block: 32px 24px; text-decoration: none; width: 160px; text-align: center"
         >
           view map
         </a>
-        <p class="font-orange font-26 font-weight-200">new business & inquiries</p>
-        <p class="font-white font-20 font-weight-200">
+        <p class="font-orange font-20 font-weight-200">new business & inquiries</p>
+        <p class="font-white font-16 font-weight-200">
           info@lightup7.com
           <br /><br />
           +6011-11578977 <br />
           +603-8605 3561
         </p>
         <br /><br />
-        <p class="font-orange font-26 font-weight-200">Careers</p>
-        <p class="font-white font-20 font-weight-200">jobs@lightup7.com</p>
+        <p class="font-orange font-20 font-weight-200">Careers</p>
+        <p class="font-white font-16 font-weight-200">jobs@lightup7.com</p>
         <a
           href="/careers"
-          class="orange-outlined-button font-20 font-weight-200"
+          class="orange-outlined-button font-16 font-weight-200"
           style="margin-top: 32px; text-decoration: none; width: 160px; text-align: center"
         >
           view openings
@@ -193,7 +193,7 @@
             data-action="submit"
             style="width: 240px"
           >
-            <span class="font-20 font-weight-200">submit form</span>
+            <span class="font-16 font-weight-200">submit form</span>
           </button>
         </div>
       </div>
@@ -329,7 +329,7 @@ async function submitForm(token: string) {
       flex-direction: column
       gap: 20px
       label
-        font-size: 20px
+        font-size: 18px
         font-weight: 200
       +mobile
         gap: 6px

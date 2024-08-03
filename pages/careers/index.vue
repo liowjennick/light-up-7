@@ -68,7 +68,7 @@
             We are a proudly all-in and in-house team that provides support and avenues for you to bring your aspirations and visions to life.<br /><br />
             When you're ready to light up your career, Light Up 7 is ready for you.
           </p>
-          <div class="full-screen-center-content w-full">
+          <div class="w-full">
             <button
               @click="scrollToExplore"
               class="orange-outlined-button"
@@ -560,7 +560,7 @@ const recentJobs = [
     button
       margin-top: 24px
   .team-member-image-container
-    flex: 1
+    flex: 1.5
     position: relative
     +large-mobile
       width: 100%
