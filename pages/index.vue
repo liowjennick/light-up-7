@@ -57,15 +57,27 @@
           <p class="fifth">time.</p>
         </div>
       </div>
-
     </div>
     <!-- YELLOW OUTLINE TEXT SECTION -->
-    <div id="outline-container" class="section-container">
+    <div
+      id="outline-container"
+      class="section-container"
+    >
       <div class="indicator-container-list">
-        <div class="indicator-button" :class="{ active: yellowOutlineIndex === i }" v-for="i in 3" :key="i" />
+        <div
+          class="indicator-button"
+          :class="{ active: yellowOutlineIndex === i }"
+          v-for="i in 3"
+          :key="i"
+        />
       </div>
 
-      <img class="arrow-down" src="../assets/images/work/right-caret.png" />
+      <LottieAnimation
+        class="arrow-down"
+        autoplay
+        loop
+        :animation-data="ArrowDownJSON"
+      />
 
       <!-- FIRST -->
       <div
@@ -75,7 +87,6 @@
         <div class="full-screen-center-content">
           <div class="flex-row">
             <div class="yellow-outline-text-container">
-
               <img
                 class="background"
                 src="../assets/images/home/quarter-circle-black-background.png"
@@ -188,14 +199,16 @@
       style="background-color: black"
     ></div> -->
 
-
-    <div id="video-section" class="full-screen-section-container section-container full-screen-center-content">
-      
+    <div
+      id="video-section"
+      class="full-screen-section-container section-container full-screen-center-content"
+    >
       <iframe
         width="100%"
-        height="100%" 
+        height="100%"
         src="https://www.youtube.com/embed/CCRH-ITDix0?autoplay=1"
-        title="THIS IS LIGHT UP 7!" frameborder="0"
+        title="THIS IS LIGHT UP 7!"
+        frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
@@ -203,7 +216,10 @@
       >
       </iframe>
 
-      <div class="hero-video-container" v-if="!showHeroVideo">
+      <div
+        class="hero-video-container"
+        v-if="!showHeroVideo"
+      >
         <video
           id="hero-video"
           autoplay
@@ -218,7 +234,10 @@
         </video>
 
         <div class="play-button-container">
-          <img @click="showHeroVideo = true" src="../assets/images/home/play-button.png" />
+          <img
+            @click="showHeroVideo = true"
+            src="../assets/images/home/play-button.png"
+          />
         </div>
       </div>
     </div>
@@ -289,72 +308,102 @@
       />
       <div class="section-container mb-20">
         <p class="font-orange font-20 font-weight-200 just-sans mb-10">our distinguished clients:</p>
-        <p class="font-white font-30 font-weight-200 just-sans mb-40"> trusted by local and global names across industries.</p>
+        <p class="font-white font-30 font-weight-200 just-sans mb-40">trusted by local and global names across industries.</p>
       </div>
 
       <div class="clients-list-container mb-40">
         <div class="section-container">
-          <a href="/work/balang-kuih-abah" class="client-item">
+          <a
+            href="/work/balang-kuih-abah"
+            class="client-item"
+          >
             <img
               class="client-logo"
               src="../assets/images/home/logo/pnb-logo.png"
             />
           </a>
-          <a href="/work/hotlink-music-video" class="client-item">
+          <a
+            href="/work/hotlink-music-video"
+            class="client-item"
+          >
             <img
               class="client-logo"
               src="../assets/images/home/logo/hotlink.png"
             />
           </a>
 
-          <a href="/work/ktmb-corporate-video" class="client-item">
+          <a
+            href="/work/ktmb-corporate-video"
+            class="client-item"
+          >
             <img
               class="client-logo"
               src="../assets/images/home/logo/ktm-logo.png"
             />
           </a>
-          <a href="/work/innoex-highlight-video" class="client-item">
+          <a
+            href="/work/innoex-highlight-video"
+            class="client-item"
+          >
             <img
               class="client-logo"
               src="../assets/images/home/logo/cyberview-logo.png"
             />
           </a>
-          <a href="/work/7-eleven-social-media-marketing" class="client-item">
+          <a
+            href="/work/7-eleven-social-media-marketing"
+            class="client-item"
+          >
             <img
               class="client-logo"
               src="../assets/images/home/logo/7-eleven.png"
             />
           </a>
 
-          <a href="/work/ahh-yum-digital-marketing-suite" class="client-item">
+          <a
+            href="/work/ahh-yum-digital-marketing-suite"
+            class="client-item"
+          >
             <img
               class="client-logo"
               src="../assets/images/home/logo/ahh-yum.png"
             />
           </a>
 
-          <a href="/work/bangkit-bersama-melawan-scammer" class="client-item">
+          <a
+            href="/work/bangkit-bersama-melawan-scammer"
+            class="client-item"
+          >
             <img
               class="client-logo"
               src="../assets/images/home/logo/bank-negara.png"
             />
           </a>
 
-          <a href="/work/malaysia-next-chicken-chop" class="client-item">
+          <a
+            href="/work/malaysia-next-chicken-chop"
+            class="client-item"
+          >
             <img
               class="client-logo"
               src="../assets/images/home/logo/unilever.png"
             />
           </a>
 
-          <a href="/work/saya-sayang-saya-unicef" class="client-item">
+          <a
+            href="/work/saya-sayang-saya-unicef"
+            class="client-item"
+          >
             <img
               class="client-logo"
               src="../assets/images/home/logo/unicef.png"
             />
           </a>
 
-          <a href="/work/superhero-kewangan" class="client-item">
+          <a
+            href="/work/superhero-kewangan"
+            class="client-item"
+          >
             <img
               class="client-logo"
               src="../assets/images/home/logo/art-gallery.png"
@@ -363,7 +412,10 @@
         </div>
       </div>
 
-      <a href="/work" class="cta-button-row">
+      <a
+        href="/work"
+        class="cta-button-row"
+      >
         <div class="cta-button">
           <p class="font-orange font-18">view more</p>
         </div>
@@ -461,7 +513,10 @@
           />
           <div class="large-bulb-pull-image">
             <p class="font-white just-sans">pull me</p>
-            <img :class="{ idle: bulbPullIdle }" src="../assets/images/home/light-up-your-idea-large-bulb-pull.png" />
+            <img
+              :class="{ idle: bulbPullIdle }"
+              src="../assets/images/home/light-up-your-idea-large-bulb-pull.png"
+            />
           </div>
 
           <div class="pull-me-text-container">
@@ -470,9 +525,7 @@
           </div>
 
           <div class="bulb-text-container">
-            <p
-              class="font-white just-sans font-32 active"
-            >
+            <p class="font-white just-sans font-32 active">
               <b id="bulb-text">{{ lightBulbTextList[currentLightBulbTextIndex] }}</b>
             </p>
 
@@ -495,12 +548,14 @@
 <script setup lang="ts">
 import gsap from "gsap";
 import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
-import { setCookie, getCookie } from "../utils/cookies"
+import { setCookie, getCookie } from "../utils/cookies";
+import { LottieAnimation } from "lottie-web-vue";
+import ArrowDownJSON from "@/assets/images/home/arrow-down-lottie.json";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
 // VIDEO
-const showHeroVideo = ref(false)
+const showHeroVideo = ref(false);
 
 // YELLOW OUTLINE SCROLL
 var firstOutlineTimeline: gsap.core.Timeline;
@@ -548,27 +603,33 @@ const onMouseLeaveServiceItem = (index: number) => {
   }
 };
 
-const hideIntroVideo = ref(false)
+const hideIntroVideo = ref(false);
 
-const bulbPullIdle = ref(true)
+const bulbPullIdle = ref(true);
 const lightUpYourIdeasBulbActive = ref(false);
 const bulbInitialY = ref(0);
 
-const lightBulbTextList = ref(["brand", "message", "growth"])
+const lightBulbTextList = ref(["brand", "message", "growth"]);
 const currentLightBulbTextIndex = ref(0);
 
 useHead({
   title: "Light Up 7 | Brand Activation Agency",
-  meta: [{ name: "description", content: "As a brand activation and marketing agency, we take brand experiences to new heights. Learn more about LU7, our work and how we can transform your business." },
-    {name: "keywords", content: "brand activation agency"}
+  meta: [
+    { name: "description", content: "As a brand activation and marketing agency, we take brand experiences to new heights. Learn more about LU7, our work and how we can transform your business." },
+    { name: "keywords", content: "brand activation agency" },
   ],
 });
 
 onBeforeMount(() => {
-  if (localStorage.getItem("home-intro-video-played") === "true") {
-    hideIntroVideo.value = true
+  const cookieName = "home-intro-video-played";
+  const homeIntroVideoCookieValue = getCookie(cookieName);
+
+  if (homeIntroVideoCookieValue && homeIntroVideoCookieValue === "true") {
+    hideIntroVideo.value = true;
+  } else {
+    setCookie(cookieName, "true", 0.5);
   }
-})
+});
 
 const mousePosition = ref({
   x: 0,
@@ -632,9 +693,9 @@ const mouseMoveTimer = () => {
       duration: 1,
     });
 
-    mouseMoveTimer()
-  }, 100)
-}
+    mouseMoveTimer();
+  }, 100);
+};
 
 const angle = (cx: number, cy: number, ex: number, ey: number) => {
   var dy = ey - cy;
@@ -665,27 +726,25 @@ onMounted(() => {
         },
       });
     }
-  }, 8000)
+  }, 8000);
 
-
-  const lightBulbTextTimeline = gsap.timeline({repeat: -1, repeatDelay: 2})
+  const lightBulbTextTimeline = gsap.timeline({ repeat: -1, repeatDelay: 2 });
   lightBulbTextTimeline
     .to("#bulb-text", {
       opacity: 0,
       y: -100,
       onComplete: () => {
         if (currentLightBulbTextIndex.value + 1 > lightBulbTextList.value.length - 1) {
-          currentLightBulbTextIndex.value = 0
+          currentLightBulbTextIndex.value = 0;
         } else {
-          currentLightBulbTextIndex.value += 1
+          currentLightBulbTextIndex.value += 1;
         }
-      }
+      },
     })
     .to("#bulb-text", {
       opacity: 1,
-      y: 0
-    })
-
+      y: 0,
+    });
 
   // OUTLINE SECTION SCROLL TRIGGER
   ScrollTrigger.create({
@@ -878,7 +937,7 @@ onMounted(() => {
     bounds: { minY: 0, maxY: bulbMaxDragY },
     overshootTolerance: 1,
     onDragStart: function (e) {
-      bulbPullIdle.value = false
+      bulbPullIdle.value = false;
       bulbInitialY.value = this.target.getBoundingClientRect().top;
     },
     onDragEnd: function (e) {
@@ -893,9 +952,9 @@ onMounted(() => {
         ease: "bounce",
         onComplete: () => {
           setTimeout(() => {
-            bulbPullIdle.value = true
-          }, 100)
-        }
+            bulbPullIdle.value = true;
+          }, 100);
+        },
       });
     },
   });
@@ -993,13 +1052,16 @@ onMounted(() => {
           &.first
             flex: 6
           &.second
-            flex: 4
+            flex: 5
+            text-align: center
           &.third
             flex: 2.7
+            text-align: center
           &.fourth
-            flex: 1.5
+            flex: 2.2
+            text-align: center
           &.fifth
-            flex: 6
+            flex: 5
 
 
   .large-logo-container
@@ -1080,13 +1142,11 @@ onMounted(() => {
     position: absolute
   .arrow-down
     position: absolute
-    transform: rotate(90deg) translateY(-50%)
+    transform: translateX(-50%)
     transform-origin: center center
-    bottom: 25px
+    bottom: 20px
     left: 50%
-    width: 30px
-    --webkit-animation: arrow-down-move 2s ease-out infinite alternate
-    animation: arrow-down-move 2s ease-out infinite alternate
+    width: 120px
   .flex-row
     display: flex
     // opacity: 0
@@ -1488,7 +1548,7 @@ onMounted(() => {
       cursor: pointer
       img
         width: 100px
-  
+
 
 @keyframes arrow-down-move
   0%

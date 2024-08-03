@@ -2,90 +2,199 @@
   <div id="contact-page">
     <div class="header-container">
       <div class="contact-header full-screen-center-content">
-        <img class="banner-image" src="../../assets/images/contact/contact-banner.svg" />
-        <img src="../../assets/images/contact/contact-header.png" id="contact-header-title" />
-        <div class="black-screen">
-        </div>
+        <img
+          class="banner-image"
+          src="../../assets/images/contact/contact-banner.svg"
+        />
+        <img
+          src="../../assets/images/contact/contact-header.png"
+          id="contact-header-title"
+        />
+        <div class="black-screen"></div>
         <!-- <PhoneLine class="phone-line" />
         <Phone class="phone" /> -->
       </div>
     </div>
     <div class="section-container contact-body">
       <div class="contact-info-container">
-        <p style="margin-bottom: 8px" class="font-orange">ready to light up?</p>
-        <p style="margin-bottom: 30px; font-weight: 900; font-size: 74px; line-height: 1em;" class="font-orange">let’s
-          talk</p>
-        <p class="font-orange">our office</p>
-        <p class="font-white">LIGHT UP 7 SDN. BHD. <br>
-          1st Floor, West Wing, <br>
-          Bangunan ECM Libra, <br>
-          No. 8 Jalan Damansara Endah, <br>
-          Damansara Heights, <br>
+        <p
+          style="margin-bottom: 8px"
+          class="font-orange font-weight-200 font-20"
+        >
+          ready to light up?
+        </p>
+        <p
+          style="margin-bottom: 30px; font-weight: 900; font-size: 74px; line-height: 1em"
+          class="font-orange"
+        >
+          let’s talk
+        </p>
+        <p class="font-orange font-26 font-weight-200">our offices</p>
+        <p class="font-white font-20 font-weight-200">
+          <br />
+          Kuala Lumpur<br /><br />
+          1st Floor, West Wing, <br />
+          Bangunan ECM Libra, <br />
+          No. 8 Jalan Damansara Endah, <br />
+          Damansara Heights, <br />
           50490 Kuala Lumpur, Malaysia
-          <br><br>
-          Business Hours <br>
-          9.00 am – 6.00 pm | Monday – Friday <br>
+          <br />
+          <br />
+          Sydney<br /><br />
+          81-83 Campbell Street, <br />
+          Surry Hills, New South Wales,<br />
+          2010 Australia<br />
+          <br />
+          9.00 am – 6.00 pm | Monday – Friday <br />
           Weekends & Public Holidays – Closed
         </p>
-        <a target="_blank"
+        <a
+          target="_blank"
           href="https://www.google.com/maps/place/Light+Up+7/@3.1498933,101.6651169,17z/data=!3m2!4b1!5s0x31cc49ab0e0f7ac3:0xcaf3484f21fd43ab!4m6!3m5!1s0x31cc4c5fabb47ffb:0x52e9e06c169d79dc!8m2!3d3.1498933!4d101.6651169!16s%2Fg%2F11b6gchlp_?entry=ttu"
-          class="orange-outlined-button" style="margin-block: 32px 24px; text-decoration: none;">
+          class="orange-outlined-button font-weight-200 font-20"
+          style="margin-block: 32px 24px; text-decoration: none; width: 160px; text-align: center"
+        >
           view map
         </a>
-        <p style="font-size: 20px;" class="font-orange">new business & inquiries</p>
-        <p class="font-white">
+        <p class="font-orange font-26 font-weight-200">new business & inquiries</p>
+        <p class="font-white font-20 font-weight-200">
           info@lightup7.com
-          <br><br>
-          +6011-11578977 <br>
+          <br /><br />
+          +6011-11578977 <br />
           +603-8605 3561
         </p>
-        <p style="font-size: 20px; margin-top: 20px" class="font-orange">Careers</p>
-        <p class="font-white">jobs@lightup7.com</p>
-        <a href="/careers" class="orange-outlined-button" style="margin-top: 32px; text-decoration: none;">
+        <br /><br />
+        <p class="font-orange font-26 font-weight-200">Careers</p>
+        <p class="font-white font-20 font-weight-200">jobs@lightup7.com</p>
+        <a
+          href="/careers"
+          class="orange-outlined-button font-20 font-weight-200"
+          style="margin-top: 32px; text-decoration: none; width: 160px; text-align: center"
+        >
           view openings
         </a>
       </div>
       <div class="contact-form-container">
-        <p style="font-size: 36px; margin-bottom: 32px" class="font-orange">Contact Form</p>
+        <p
+          style="font-size: 36px; margin-bottom: 32px"
+          class="font-orange font-weight-200"
+        >
+          Contact Form
+        </p>
         <div class="contact-form-item">
-          <label for="name" class="font-white">your name</label>
-          <input type="text" v-model="formValues.name" id="name" class="font-white contact-form-text" />
+          <label
+            for="name"
+            class="font-white"
+            >your name</label
+          >
+          <input
+            type="text"
+            v-model="formValues.name"
+            id="name"
+            class="font-white contact-form-text"
+          />
         </div>
         <div class="contact-form-item">
-          <label for="business_name" class="font-white">business name</label>
-          <input type="text" v-model="formValues.business_name" id="business_name"
-            class="font-white contact-form-text" />
+          <label
+            for="business_name"
+            class="font-white"
+            >business name</label
+          >
+          <input
+            type="text"
+            v-model="formValues.business_name"
+            id="business_name"
+            class="font-white contact-form-text"
+          />
         </div>
         <div class="contact-form-item">
-          <label for="email" class="font-white">email</label>
-          <input type="text" v-model="formValues.email" id="email" class="font-white contact-form-text" />
+          <label
+            for="email"
+            class="font-white"
+            >email</label
+          >
+          <input
+            type="text"
+            v-model="formValues.email"
+            id="email"
+            class="font-white contact-form-text"
+          />
         </div>
         <div class="contact-form-item">
-          <label for="phone" class="font-white">phone</label>
-          <input type="text" v-model="formValues.phone" id="phone" class="font-white contact-form-text" />
+          <label
+            for="phone"
+            class="font-white"
+            >phone</label
+          >
+          <input
+            type="text"
+            v-model="formValues.phone"
+            id="phone"
+            class="font-white contact-form-text"
+          />
         </div>
         <div class="contact-form-item">
-          <label for="company_website" class="font-white">company website</label>
-          <input type="text" v-model="formValues.company_website" id="company_website"
-            class="font-white contact-form-text" />
+          <label
+            for="company_website"
+            class="font-white"
+            >company website</label
+          >
+          <input
+            type="text"
+            v-model="formValues.company_website"
+            id="company_website"
+            class="font-white contact-form-text"
+          />
         </div>
         <div class="contact-form-item">
-          <label for="business_industry" class="font-white">business industry</label>
-          <input type="text" v-model="formValues.business_industry" id="business_industry"
-            class="font-white contact-form-text" />
+          <label
+            for="business_industry"
+            class="font-white"
+            >business industry</label
+          >
+          <input
+            type="text"
+            v-model="formValues.business_industry"
+            id="business_industry"
+            class="font-white contact-form-text"
+          />
         </div>
         <div class="contact-form-item">
-          <label for="interest" class="font-white">interest</label>
-          <input type="text" v-model="formValues.interest" id="interest" class="font-white contact-form-text" />
+          <label
+            for="interest"
+            class="font-white"
+            >interest</label
+          >
+          <input
+            type="text"
+            v-model="formValues.interest"
+            id="interest"
+            class="font-white contact-form-text"
+          />
         </div>
         <div class="contact-form-item">
-          <label for="tell_us_more" class="font-white">tell us more</label>
-          <textarea id="tell_us_more" v-model="formValues.tell_us_more" class="font-white contact-form-text"></textarea>
+          <label
+            for="tell_us_more"
+            class="font-white"
+            >tell us more</label
+          >
+          <textarea
+            id="tell_us_more"
+            v-model="formValues.tell_us_more"
+            class="font-white contact-form-text"
+          ></textarea>
         </div>
 
         <div>
-          <button class="orange-outlined-button g-recaptcha" data-sitekey="6LeVjccUAAAAALn5Y5sSEv3fwy_MAq8gxXR0e9J3"
-            data-callback="onSubmit" data-action='submit'>submit form</button>
+          <button
+            class="orange-outlined-button g-recaptcha"
+            data-sitekey="6LeVjccUAAAAALn5Y5sSEv3fwy_MAq8gxXR0e9J3"
+            data-callback="onSubmit"
+            data-action="submit"
+            style="width: 240px"
+          >
+            <span class="font-20 font-weight-200">submit form</span>
+          </button>
         </div>
       </div>
     </div>
@@ -93,33 +202,34 @@
 </template>
 
 <script setup lang="ts">
-import gsap from 'gsap';
-import { ScrollTrigger, CustomEase } from 'gsap/all';
-import PhoneLine from '~/assets/svg/phone-line.vue';
-import Phone from '~/assets/svg/phone.vue'
+import gsap from "gsap";
+import { ScrollTrigger, CustomEase } from "gsap/all";
+import PhoneLine from "~/assets/svg/phone-line.vue";
+import Phone from "~/assets/svg/phone.vue";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 useHead({
   title: "Contact Us | Light Up 7",
-  meta: [{ name: "description", content: "Are you looking for a marketing agency to take your brand to the next level? If you’re ready to light up with Light Up 7, contact us here." },
-    {name: "keywords", content: "looking for marketing agency"}
+  meta: [
+    { name: "description", content: "Are you looking for a marketing agency to take your brand to the next level? If you’re ready to light up with Light Up 7, contact us here." },
+    { name: "keywords", content: "looking for marketing agency" },
   ],
   script: [
     {
       type: "text/javascript",
       async: true,
       defer: true,
-      src: `https://www.google.com/recaptcha/api.js`
-    }
-  ]
-})
+      src: `https://www.google.com/recaptcha/api.js`,
+    },
+  ],
+});
 
-const grecaptchaWidget = ref(null)
+const grecaptchaWidget = ref(null);
 
 onMounted(() => {
   window.onSubmit = (token: string) => {
-    submitForm(token)
-  }
+    submitForm(token);
+  };
 
   gsap.from(".banner-image", {
     x: "-150vw",
@@ -129,10 +239,10 @@ onMounted(() => {
       start: "top center",
       end: "bottom center",
       scrub: 1,
-      toggleActions: "play reverse play reverse"
-    }
-  })
-})
+      toggleActions: "play reverse play reverse",
+    },
+  });
+});
 
 const formValues = ref({
   name: "",
@@ -142,21 +252,21 @@ const formValues = ref({
   company_website: "",
   business_industry: "",
   interest: "",
-  tell_us_more: ""
-})
+  tell_us_more: "",
+});
 
 async function submitForm(token: string) {
-  console.log(token)
-  const consumer_key = "ck_b5c2220b7a8a191bf1e459f792ded895c4f4d6d2"
-  const consumer_secret = "cs_323064df8c1c4dd7f14239a0420906cf3bad4dc7"
+  console.log(token);
+  const consumer_key = "ck_b5c2220b7a8a191bf1e459f792ded895c4f4d6d2";
+  const consumer_secret = "cs_323064df8c1c4dd7f14239a0420906cf3bad4dc7";
 
-  console.log("Basic " + btoa(`${consumer_key}:${consumer_secret}`))
+  console.log("Basic " + btoa(`${consumer_key}:${consumer_secret}`));
 
   const response = await fetch("https://lightup7.com/wp-json/gf/v2/forms/2/submissions", {
     method: "POST",
     headers: {
-      "Authorization": "Basic " + btoa(`${consumer_key}:${consumer_secret}`),
-      "Content-Type": "application/json"
+      Authorization: "Basic " + btoa(`${consumer_key}:${consumer_secret}`),
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       input_1: formValues.value.name,
@@ -167,12 +277,12 @@ async function submitForm(token: string) {
       input_6: formValues.value.business_industry,
       input_7: formValues.value.interest,
       // "tell_us_more": formValues.value.tell_us_more,
-      input_8: token
-    })
-  })
+      input_8: token,
+    }),
+  });
 
-  const response_data = response.json()
-  console.log(response_data)
+  const response_data = response.json();
+  console.log(response_data);
 }
 </script>
 
@@ -218,6 +328,9 @@ async function submitForm(token: string) {
       // width: 100%
       flex-direction: column
       gap: 20px
+      label
+        font-size: 20px
+        font-weight: 200
       +mobile
         gap: 6px
         label
