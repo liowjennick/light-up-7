@@ -25,7 +25,7 @@
         <img
           class="computer-glow"
           src="../../assets/images/careers/glow-computer-1.png"
-          alt="glow computer"
+          alt="Glow computer"
         />
         <!-- <img class="star" src="../../assets/images/news/star.png" />
         <img class="star-2" src="../../assets/images/news/star.png" /> -->
@@ -51,12 +51,14 @@
         <div class="team-member-image-container">
           <div class="bulb-mask">
             <img
+              alt="Team Member"
               :src="currentImageUrl"
               class="fade-in-out"
             />
           </div>
 
           <img
+            alt="Bulb Mask Outline"
             class="mask-outline"
             src="../../assets/images/careers/bulb-mask-outline.png"
           />

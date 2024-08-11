@@ -16,7 +16,13 @@ export default defineNuxtConfig({
       failOnError: false,
     },
   },
-
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: "en",
+      }
+    }
+  },
   build: {
     transpile: ["gsap"],
   },

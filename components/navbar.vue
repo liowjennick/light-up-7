@@ -5,7 +5,7 @@
       <div class="navbar-contents">
         <div class="logo-container">
           <a href="/">
-            <img src="../assets/images/light-up-7-logo.png" />
+            <img alt="Light Up 7 Logo" src="../assets/images/light-up-7-logo.png" />
           </a>
         </div>
 

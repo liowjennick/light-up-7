@@ -9,6 +9,7 @@
       <!-- Animation here -->
       <div class="banner-title-container">
         <img
+          alt="News Banner Title"
           class="banner-title"
           src="../../assets/images/news/banner-title.png"
         />
@@ -93,6 +94,7 @@
         <div class="section-container full-screen-start-start divider-child news-row">
           <div class="thumbnail-container">
             <img
+              :alt="thumb.title"
               :src="`/images/news/${thumb.thumbnail_src}`"
               style="width: 100%"
             />
@@ -121,6 +123,7 @@
               <div class="read-more">read more</div>
               <div style="height: 16px">
                 <img
+                  alt="Double Chevron"
                   :src="double_chevron"
                   style="height: 100%"
                 />

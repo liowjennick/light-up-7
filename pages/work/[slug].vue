@@ -3,7 +3,7 @@
     <div class="content-container">
       <div class="section-container">
         <div class="project-section-container" v-for="(item, i) in project_data.contents" :key="i">
-          <img class="company-logo mb-20" :src="`/images/work/projects/${route.params.slug}/${item.company_logo_src}`"
+          <img alt="Work Logo" class="company-logo mb-20" :src="`/images/work/projects/${route.params.slug}/${item.company_logo_src}`"
             v-if="item.company_logo_src" />
 
           <div class="mb-30">
@@ -38,7 +38,7 @@
               <template v-else>
                 <div :style="{ width: image.width_percent + '%' }" class="image-container">
                   <div class="image-item-container" v-for="(src, l) in image.src" :key="l">
-                    <img :src="`/images/work/projects/${route.params.slug}/${src}`" />
+                    <img alt="Work Image" :src="`/images/work/projects/${route.params.slug}/${src}`" />
                     <p class="caption just-sans font-white text-center" v-if="image.caption">
                       {{ image.caption }}
                     </p>
@@ -84,7 +84,7 @@
                 <template v-else>
                   <div :style="{ width: image.width_percent + '%' }" class="image-container">
                     <div class="image-item-container" v-for="(src, l) in image.src" :key="l">
-                      <img :src="`/images/work/projects/${route.params.slug}/${src}`" />
+                      <img alt="Work Image" :src="`/images/work/projects/${route.params.slug}/${src}`" />
                       <p class="caption just-sans font-white text-center" v-if="image.caption">
                         {{ image.caption }}
                       </p>
@@ -121,7 +121,7 @@
               <template v-else>
                 <div :style="{ width: image.width_percent + '%' }" class="image-container">
                   <div class="image-item-container" v-for="(src, l) in image.src" :key="l">
-                    <img :src="`/images/work/projects/${route.params.slug}/${src}`" />
+                    <img alt="Work Image Caption" :src="`/images/work/projects/${route.params.slug}/${src}`" />
                     <p class="caption just-sans font-white text-center" v-if="image.caption">
                       {{ image.caption }}
                     </p>

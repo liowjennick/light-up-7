@@ -38,7 +38,7 @@
         <div class="text-background-row third">
           <p class="first">the</p>
           <div class="large-logo-container">
-            <img src="../assets/images/home/logo-large-header.png" />
+            <img alt="Light up 7 Logo" src="../assets/images/home/logo-large-header.png" />
           </div>
           <p class="second">Asia-</p>
         </div>
@@ -88,11 +88,13 @@
           <div class="flex-row">
             <div class="yellow-outline-text-container">
               <img
+                alt="Quarter Circle"
                 class="background"
                 src="../assets/images/home/quarter-circle-black-background.png"
               />
               <div class="yellow-outline-image-container">
                 <img
+                  alt="Illuminate Brands"
                   class="yellow-outline-text"
                   src="../assets/images/home/illuminate-brands-yellow-outline.png"
                 />
@@ -146,6 +148,7 @@
           <div class="flex-row">
             <div class="yellow-outline-text-container">
               <img
+                alt="Star"
                 class="background"
                 src="../assets/images/home/star-black-background.png"
               />
@@ -154,6 +157,7 @@
                 src="../assets/images/home/double-star.png"
               /> -->
               <img
+                alt="Spark Creavity"
                 class="yellow-outline-text"
                 src="../assets/images/home/spark-creativity-yellow-outline.png"
               />
@@ -174,6 +178,7 @@
           <div class="flex-row">
             <div class="yellow-outline-text-container">
               <img
+                alt="Circle"
                 class="background"
                 src="../assets/images/home/circle-black-background.png"
               />
@@ -182,6 +187,7 @@
                 src="../assets/images/home/double-circle.png"
               /> -->
               <img
+                alt="Visible Marketing"
                 class="yellow-outline-text"
                 src="../assets/images/home/visible-marketing-yellow-outline.png"
               />
@@ -235,6 +241,7 @@
 
         <div class="play-button-container">
           <img
+            alt="Play Button"
             @click="showHeroVideo = true"
             src="../assets/images/home/play-button.png"
           />
@@ -267,11 +274,13 @@
       <div class="bulb-container">
         <div class="bulb-image-container">
           <img
+            alt="Bulb Base"
             class="bulb-base"
             src="../assets/images/home/our-services-bulb-base.png"
           />
 
           <img
+            alt="Our Services"
             class="bulb-base-background"
             src="../assets/images/home/our-services-bulb-background.png"
             :class="{ active: ourServicesItemsHighlightedSection !== -1 }"
@@ -279,6 +288,7 @@
 
           <div
             class="bulb-image-text-container"
+            :alt="`Bulb ${i}`"
             v-for="(item, i) in ourServicesItems"
             :key="i"
             :data-bulb-number="i"
@@ -287,10 +297,12 @@
             :class="{ active: ourServicesItemsHighlightedSection === i }"
           >
             <img
+              alt="Bulb"
               class="bulb"
               src="../assets/images/home/our-services-bulb.png"
             />
             <img
+              alt="Bulb Glow"
               class="bulb-glow"
               src="../assets/images/home/our-services-bulb-glow.png"
             />
@@ -303,6 +315,7 @@
     <!-- DISTINGUISHED CLIENTS SECTION -->
     <div id="distinguished-clients-section">
       <img
+        alt="Plug"
         class="plug-to-right one"
         src="../assets/images/home/client-section-plug-to-right.png"
       />
@@ -318,6 +331,7 @@
             class="client-item"
           >
             <img
+              alt="PNB Logo"
               class="client-logo"
               src="../assets/images/home/logo/pnb-logo.png"
             />
@@ -327,6 +341,7 @@
             class="client-item"
           >
             <img
+              alt="Hotlink Logo"
               class="client-logo"
               src="../assets/images/home/logo/hotlink.png"
             />
@@ -337,6 +352,7 @@
             class="client-item"
           >
             <img
+              alt="KTM Logo"
               class="client-logo"
               src="../assets/images/home/logo/ktm-logo.png"
             />
@@ -346,6 +362,7 @@
             class="client-item"
           >
             <img
+              alt="Cyberview Logo"
               class="client-logo"
               src="../assets/images/home/logo/cyberview-logo.png"
             />
@@ -355,6 +372,7 @@
             class="client-item"
           >
             <img
+              alt="7 Eleven Logo"
               class="client-logo"
               src="../assets/images/home/logo/7-eleven.png"
             />
@@ -365,6 +383,7 @@
             class="client-item"
           >
             <img
+              alt="Ahh Yum Logo"
               class="client-logo"
               src="../assets/images/home/logo/ahh-yum.png"
             />
@@ -375,6 +394,7 @@
             class="client-item"
           >
             <img
+              alt="BNM Logo"
               class="client-logo"
               src="../assets/images/home/logo/bank-negara.png"
             />
@@ -385,6 +405,7 @@
             class="client-item"
           >
             <img
+              alt="Unilever Logo"
               class="client-logo"
               src="../assets/images/home/logo/unilever.png"
             />
@@ -395,6 +416,7 @@
             class="client-item"
           >
             <img
+              alt="Unicef Logo"
               class="client-logo"
               src="../assets/images/home/logo/unicef.png"
             />
@@ -405,6 +427,7 @@
             class="client-item"
           >
             <img
+              alt="Art Gallery Logo"
               class="client-logo"
               src="../assets/images/home/logo/art-gallery.png"
             />
@@ -422,6 +445,7 @@
       </a>
 
       <img
+        alt="Plug"
         class="plug-to-left"
         src="../assets/images/home/client-section-plug-to-left.png"
       />
@@ -435,12 +459,14 @@
         <div class="section-container">
           <div class="award-item">
             <img
+              alt="Award SME 100 Logo"
               class="client-logo"
               src="../assets/images/home/award-sme-100.png"
             />
           </div>
           <div class="award-item">
             <img
+              alt="Award the Bizz Hybrid Logo"
               class="client-logo"
               src="../assets/images/home/award-the-bizz-hybrid.png"
             />
@@ -448,36 +474,42 @@
 
           <div class="award-item">
             <img
+              alt="BNM Logo"
               class="client-logo"
               src="../assets/images/home/client-logo-bank-negara.png"
             />
           </div>
           <div class="award-item">
             <img
+              alt="Award Agency of the Year 2022 Logo"
               class="client-logo"
               src="../assets/images/home/award-agency-of-the-year-2022.png"
             />
           </div>
           <div class="award-item">
             <img
+              alt="Google Partner Logo"
               class="client-logo"
               src="../assets/images/home/award-google-partner.png"
             />
           </div>
           <div class="award-item">
             <img
+              alt="Award Trusted Malaysia Logo"
               class="client-logo"
               src="../assets/images/home/award-trusted-malaysia.png"
             />
           </div>
           <div class="award-item">
             <img
+              alt="Awards Products Nation Logo"
               class="client-logo"
               src="../assets/images/home/award-products-nation.png"
             />
           </div>
           <div class="award-item">
             <img
+              alt="Award Best in Malaysia Logo"
               class="client-logo"
               src="../assets/images/home/award-best-in-malaysia.png"
             />
@@ -486,6 +518,7 @@
       </div>
 
       <img
+        alt="Plug"
         class="plug-to-right two"
         src="../assets/images/home/client-section-plug-to-right.png"
       />
@@ -503,10 +536,12 @@
 
         <div class="bulb-container">
           <img
+            alt="Large Bulb"
             class="large-bulb"
             src="../assets/images/home/light-up-your-idea-large-bulb.png"
           />
           <img
+            alt="Large Bulb Glow"
             class="large-bulb-glow"
             :class="{ active: lightUpYourIdeasBulbActive }"
             src="../assets/images/home/light-up-your-idea-large-bulb-glow.png"
@@ -514,6 +549,7 @@
           <div class="large-bulb-pull-image">
             <p class="font-white just-sans">pull me</p>
             <img
+              alt="Light Up your Idea Pull String"
               :class="{ idle: bulbPullIdle }"
               src="../assets/images/home/light-up-your-idea-large-bulb-pull.png"
             />
@@ -535,7 +571,7 @@
               :class="{ active: lightUpYourIdeasBulbActive }"
             >
               <div class="arrow-container">
-                <img src="../assets/images/home/arrow-diagonal.png" />
+                <img alt="Arrow Diagonal" src="../assets/images/home/arrow-diagonal.png" />
               </div>
             </a>
           </div>

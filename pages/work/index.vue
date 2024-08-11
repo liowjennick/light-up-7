@@ -4,9 +4,9 @@
       <div class="light-background-triangle" />
       <div class="light-bulb-container">
         <div class="black-circle" />
-        <img class="bulb" src="../../assets/images/work/light-bulb.png" />
-        <img class="bulb-glow" src="../../assets/images/work/light-bulb-glow.png" />
-        <img class="glow-line" :class="{ active: initialAnimationComplete }"
+        <img alt="Bulb" class="bulb" src="../../assets/images/work/light-bulb.png" />
+        <img alt="Bulb Glow" class="bulb-glow" src="../../assets/images/work/light-bulb-glow.png" />
+        <img alt="Bulb Glow Line" class="glow-line" :class="{ active: initialAnimationComplete }"
           src="../../assets/images/work/light-beam-line.png" />
       </div>
       <h1 class="page-title">WORK</h1>
@@ -24,11 +24,11 @@
             <div class="slider-progress-background" />
 
             <div class="icon-container-work">
-              <img src="../../assets/images/work/work-slider-icon.png" />
+              <img alt="Work Slider Icon" src="../../assets/images/work/work-slider-icon.png" />
             </div>
 
             <div class="icon-container-projects">
-              <img src="../../assets/images/work/projects-slider-icon.png" />
+              <img alt="Project Slider Icon" src="../../assets/images/work/projects-slider-icon.png" />
             </div>
 
             <p class="font-weight-200" v-if="displayMode === DisplayMode.Clients">
@@ -38,7 +38,7 @@
               our projects
             </p>
             <div class="slider-circle">
-              <img src="../../assets/images/work/right-caret.png" />
+              <img alt="Right Caret" src="../../assets/images/work/right-caret.png" />
             </div>
           </div>
         </div>
@@ -53,12 +53,12 @@
             <div class="client-logo-container">
               <!-- <img class="client-bulb-image" src="../../assets/images/work/clients-logo/petronas-logo.png" /> -->
               <!-- class="client-generic-bulb" -->
-              <img class="client-generic-bulb" src="../../assets/images/work/bulb-outline-yellow.png" />
-              <img :class="{ active: activeClientBulbImage === client.slug }" v-for="(client, i) in clientsCarouselLogo"
+              <img alt="Bulb Outline" class="client-generic-bulb" src="../../assets/images/work/bulb-outline-yellow.png" />
+              <img :alt="client.slug" :class="{ active: activeClientBulbImage === client.slug }" v-for="(client, i) in clientsCarouselLogo"
                 :key="i" class="client-bulb-image" :src="`/images/work/bulb-logo/${client.slug}.png`" />
 
-              <img class="client-text-outline-image" src="../../assets/images/work/bulb-clients-outline.png" />
-              <img class="client-text-white-image" src="../../assets/images/work/bulb-clients-white.png" />
+              <img alt="Bulb Client Outline" class="client-text-outline-image" src="../../assets/images/work/bulb-clients-outline.png" />
+              <img alt="Bulb Client White" class="client-text-white-image" src="../../assets/images/work/bulb-clients-white.png" />
 
               <!-- <h1 class="client-large-name">clients</h1>
               <h1 class="client-back-name">clients</h1> -->
@@ -72,7 +72,7 @@
             <div class="client-list-image-container">
               <div @mouseover="activeClientBulbImage = client.slug" @mouseleave="activeClientBulbImage = -1"
                 class="client-image-container" :key="i" v-for="(client, i) in clientsCarouselLogo">
-                <img :src="`/images/work/clients-carousel-logo/${client.image_src}`" />
+                <img alt="Client Image" :src="`/images/work/clients-carousel-logo/${client.image_src}`" />
               </div>
             </div>
           </div>
@@ -83,9 +83,9 @@
             <div class="project-list-banner-container">
               <div class="project-banner-item" :class="`banner-item-${i}`" v-for="(item, i) in ProjectData" :key="i">
                 <a :href="`work/${item.slug}`">
-                  <img class="banner-image" :src="`/images/work/banners/${item.slug}-banner.png`" />
+                  <img :alt="item.slug + ' Banner'" class="banner-image" :src="`/images/work/banners/${item.slug}-banner.png`" />
                   <div class="banner-content-container">
-                    <img class="banner-logo" :src="`/images/work/banners/${item.slug}-banner-logo.png`" />
+                    <img :alt="item.slug + ' Banner Logo'" class="banner-logo" :src="`/images/work/banners/${item.slug}-banner-logo.png`" />
                     <p :style="{ color: item.banner_description_color }" class="banner-description">{{ item.banner_description }}</p>
                   </div>
                 </a>

@@ -3,10 +3,12 @@
     <div class="header-container">
       <div class="contact-header full-screen-center-content">
         <img
+          alt="Contact Banner"
           class="banner-image"
           src="../../assets/images/contact/contact-banner.svg"
         />
         <img
+          alt="Contact Title"
           src="../../assets/images/contact/contact-header.png"
           id="contact-header-title"
         />
@@ -27,7 +29,7 @@
           style="margin-bottom: 30px; font-weight: 900; font-size: 74px; line-height: 1em"
           class="font-orange"
         >
-          let’s talk
+          let's talk
         </p>
         <p class="font-orange font-20 font-weight-200">our offices</p>
         <p class="font-white font-16 font-weight-200">

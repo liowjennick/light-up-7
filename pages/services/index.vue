@@ -11,14 +11,14 @@
     <div class="full-screen-section-container section-container full-screen-center-content"
       id="services-banner-section">
       <div class="page-title-container">
-        <img src="../../assets/images/services/services-title.png" />
+        <img alt="Services Title" src="../../assets/images/services/services-title.png" />
       </div>
 
       <div class="yellow-shadow-container" />
 
       <div class="yellow-shadow-container-bottom">
         <div class="icon-container">
-          <img src="../../assets/images/services/icons/icon-group.png" />
+          <img alt="Icon Group" src="../../assets/images/services/icons/icon-group.png" />
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
         <div class="divider-child full-screen-center-content service-item section-container"
           style="gap: 60px; padding: 35px 40px">
           <div style="width: 10%; z-index: 1" class="full-screen-center-content">
-            <img class="item-icon-orange" v-if="activeCircleFollowIndex !== i"
+            <img :alt="`${item.slug} Icon`" class="item-icon-orange" v-if="activeCircleFollowIndex !== i"
               :src="`/images/services/list-icons/icons/orange/${item.slug}-orange.png`" />
             <LottieAnimation autoplay
             loop class="item-icon" v-if="activeCircleFollowIndex === i" :animation-data="item.lottie" />

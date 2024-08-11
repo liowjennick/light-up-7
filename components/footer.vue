@@ -2,7 +2,7 @@
   <div id="footer-container">
     <div class="section-container">
       <div class="logo-image-container">
-        <img src="../assets/images/light-up-7-logo-with-bulb.png" />
+        <img alt="Light Up 7 Logo" src="../assets/images/light-up-7-logo-with-bulb.png" />
         <p class="font-light-gray just-sans text-center font-weight-100">201401020933 (1097019-X)</p>
       </div>
 
@@ -38,7 +38,7 @@
               target="_blank"
               class="social-media-item"
             >
-              <img src="../assets/images/social-media-logo/instagram-logo.png" />
+              <img alt="Instagram Logo" src="../assets/images/social-media-logo/instagram-logo.png" />
             </a>
             <!-- <p class="font-light-gray just-sans font-weight-100">instagram</p> -->
           </div>
@@ -49,7 +49,7 @@
               target="_blank"
               class="social-media-item"
             >
-              <img src="../assets/images/social-media-logo/facebook-logo.png" />
+              <img alt="Facebook Logo" src="../assets/images/social-media-logo/facebook-logo.png" />
             </a>
             <!-- <p class="font-light-gray just-sans font-weight-100">facebook</p> -->
           </div>
@@ -60,7 +60,7 @@
               target="_blank"
               class="social-media-item"
             >
-              <img src="../assets/images/social-media-logo/linkedin-logo.png" />
+              <img alt="Linkedin Logo" src="../assets/images/social-media-logo/linkedin-logo.png" />
             </a>
             <!-- <p class="font-light-gray just-sans font-weight-100">linkedin</p> -->
           </div>
@@ -71,7 +71,7 @@
               target="_blank"
               class="social-media-item"
             >
-              <img src="../assets/images/social-media-logo/youtube-logo.png" />
+              <img alt="Youtube Logo" src="../assets/images/social-media-logo/youtube-logo.png" />
             </a>
             <!-- <p class="font-light-gray just-sans font-weight-100">youtube</p> -->
           </div>
