@@ -11,6 +11,7 @@
           alt="Contact Title"
           src="../../assets/images/contact/contact-header.png"
           id="contact-header-title"
+          class="section-container"
         />
         <div class="black-screen"></div>
         <!-- <PhoneLine class="phone-line" />
