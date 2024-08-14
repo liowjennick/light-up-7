@@ -21,6 +21,10 @@
       class="full-screen-section-container section-container full-screen-center-content"
       id="home-banner-section"
     >
+      <NuxtParticles
+        id="tsparticles"
+        url="/particles/particlesjs-config.json"
+      />
       <div class="background-text-container">
         <!-- <img src="../assets/images/home/header-background.png" /> -->
         <div class="text-background-row first">
@@ -653,7 +657,7 @@ useHead({
   meta: [
     { name: "description", content: "As a brand activation and marketing agency, we take brand experiences to new heights. Learn more about LU7, our work and how we can transform your business." },
     { name: "keywords", content: "brand activation agency" },
-  ],
+  ]
 });
 
 onBeforeMount(() => {
@@ -955,12 +959,12 @@ onMounted(() => {
   });
 
   // PULL ARROW ANIMATE
-  gsap.to(".pull-me-text-container img", {
-    y: 10,
-    duration: 1,
-    yoyo: true,
-    repeat: -1,
-  });
+  // gsap.to(".pull-me-text-container img", {
+  //   y: 10,
+  //   duration: 1,
+  //   yoyo: true,
+  //   repeat: -1,
+  // });
 
   // const bulbInitialY = document.querySelector(".large-bulb-pull-image")?.getBoundingClientRect().y
   const bulbMaxDragY = 60;
@@ -997,7 +1001,7 @@ onMounted(() => {
 });
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 @import "../assets/sass/responsive.sass"
 @import "../assets/sass/fonts.sass"
 @import "../assets/sass/animations.sass"
@@ -1018,6 +1022,7 @@ onMounted(() => {
 
 #home-banner-section
   background-color: black
+  overflow: hidden
   .background-text-container
     position: relative
     transition: 1s all
@@ -1026,6 +1031,7 @@ onMounted(() => {
     height: 80%
     display: flex
     flex-direction: column
+    z-index: 10
     +desktop
       height: 70%
     .text-background-row
@@ -1584,6 +1590,26 @@ onMounted(() => {
       cursor: pointer
       img
         width: 100px
+
+#tsparticles
+  position: absolute !important
+  width: 100vw
+  height: 100vh
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  padding: 0
+  margin: 0
+  z-index: 0
+  // height: 100vh
+  // width: 100%
+  // display: flex
+  // overflow: hidden
+  // position: absolute
+  // canvas
+  //   width: 100%
+  //   height: 100%
 
 
 @keyframes arrow-down-move
