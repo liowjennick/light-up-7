@@ -291,6 +291,10 @@
       class="full-screen-section-container"
     >
       <div class="section-container">
+        <img
+          src="../../assets/images/about/multi-award-winning-agency.png"
+          class="large-mobile"
+        />
         <div class="address-container">
           <p class="font-white font-20 just-sans font-weight-200">Light Up 7 Bags 4 Awards at</p>
           <p class="font-white font-20 just-sans font-weight-200">Prestigious Agency of the Year</p>
@@ -309,8 +313,9 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable, MotionPathPlugin);
 
 useHead({
   title: "About Us | Light Up 7",
-  meta: [{ name: "description", content: "Light Up 7's 10 years of being as a full-service agency has set us apart in the market as an industry leader. Learn about our journey here." },
-    {name: "keywords", content: "full service agency"}
+  meta: [
+    { name: "description", content: "Light Up 7's 10 years of being as a full-service agency has set us apart in the market as an industry leader. Learn about our journey here." },
+    { name: "keywords", content: "full service agency" },
   ],
 });
 
@@ -542,21 +547,33 @@ onMounted(() => {
     background-size: 100%
     background-repeat: no-repeat
     background-position: center center
-    +desktop
-      background-size: auto 100%
+    background-size: auto 100%
+    +large-mobile
+      background-image: none
+    img
+      width: 100%
     .section-container
       position: relative
       height: 100%
       width: 100%
+      +large-mobile
+        padding: 0
       .address-container
         position: absolute
         bottom: 40px
         left: 40px
+        +large-mobile
+          position: relative
+          display: block
+          bottom: 0
+          left: 0
+          margin-top: 10px
+          padding: 0 20px
 
   #team-section
     .team-image-container
       background-image: url("../../assets/images/about/about-team.png")
-      background-size: 100%
+      background-size: auto 100%
       margin-top: 10%
       background-repeat: no-repeat
       background-position: center center
@@ -566,7 +583,7 @@ onMounted(() => {
     .team-caption-container
       text-align: center
       max-width: 850px
-      padding-top: 30px
+      padding-top: 10px
       padding-bottom: 10px
       display: block
       margin: 0 auto

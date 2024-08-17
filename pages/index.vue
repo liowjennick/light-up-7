@@ -42,7 +42,10 @@
         <div class="text-background-row third">
           <p class="first">the</p>
           <div class="large-logo-container">
-            <img alt="Light up 7 Logo" src="../assets/images/home/logo-large-header.png" />
+            <img
+              alt="Light up 7 Logo"
+              src="../assets/images/home/logo-large-header.png"
+            />
           </div>
           <p class="second">Asia-</p>
         </div>
@@ -575,7 +578,10 @@
               :class="{ active: lightUpYourIdeasBulbActive }"
             >
               <div class="arrow-container">
-                <img alt="Arrow Diagonal" src="../assets/images/home/arrow-diagonal.png" />
+                <img
+                  alt="Arrow Diagonal"
+                  src="../assets/images/home/arrow-diagonal.png"
+                />
               </div>
             </a>
           </div>
@@ -657,7 +663,7 @@ useHead({
   meta: [
     { name: "description", content: "As a brand activation and marketing agency, we take brand experiences to new heights. Learn more about LU7, our work and how we can transform your business." },
     { name: "keywords", content: "brand activation agency" },
-  ]
+  ],
 });
 
 onBeforeMount(() => {
@@ -1158,7 +1164,8 @@ onMounted(() => {
       display: flex
       bottom: 10%
       left: 50%
-      // transform: translateX(-50%)
+      right: unset
+      transform: translateX(-50%)
       top: unset
     .indicator-button
       width: 12px
