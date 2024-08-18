@@ -38,7 +38,7 @@ const formValues = ref({
   <div id="career-details">
     <div class="bg-orange-25 jd-title-container">
       <div class="section-container">
-        <p class="font-orange jd-title">{{jobDescription.title}}</p>
+        <p class="font-orange jd-title">{{ jobDescription.title }}</p>
         <p v-html="jobDescription.description">
         </p>
       </div>
@@ -82,7 +82,8 @@ const formValues = ref({
           <li>Highly dependable, respectful and consistently works to uphold company ethics and standards.</li>
           <li>Minimum of 1 year of working experience in related field.</li>
         </ul>
-        <p style="font-size: 20px; font-weight: 900; margin-top: 30px">This is a full-time position with a competitive salary plus
+        <p style="font-size: 20px; font-weight: 900; margin-top: 30px">This is a full-time position with a competitive
+          salary plus
           benefits.</p>
       </div>
     </div>
@@ -91,7 +92,8 @@ const formValues = ref({
         <div class="section-container form-body">
           <div style="margin-bottom: 32px">
             <p style="font-size: 36px; margin-bottom: 8px" class="font-orange">Apply now:</p>
-            <p>Fill up the form below or email <a href="mailto:jobs@lightup7.com" class="font-white mail-to">jobs@lightup7.com</a> <br>
+            <p>Fill up the form below or email <a href="mailto:jobs@lightup7.com"
+                class="font-white mail-to">jobs@lightup7.com</a> <br>
               Please attach your updated resume & portfolio.</p>
           </div>
           <div class="parent">
@@ -211,6 +213,13 @@ const formValues = ref({
     width: 100%
     .button-container
       display: flex
+      +mobile
+        flex-direction: column
+        gap: 16px
+        align-items: center
+        a
+          width: 130px
+          text-align: center
       a
         margin: 0 10px
 .jd-title-container
@@ -248,7 +257,7 @@ const formValues = ref({
   +large-mobile
     padding: 0 60px
   +mobile
-    padding: 0 20px
+    padding: 0
   .form-body
     flex: 1
     padding: 60px 90px
