@@ -22,7 +22,7 @@
       </div>
     </div>
     <!-- Quick Nav -->
-    <div class="full-screen-center-around section-container">
+    <div class="full-screen-center-around section-container quick-nav">
       <a v-for="nav in navs" :href="`/${nav.slug}`" :key="nav.slug" class="orange-outlined-button">
         {{ nav.text }}
       </a>
@@ -377,6 +377,14 @@ const navs = reactive([
 @import "../../assets/sass/animations.sass"
 @import "../../assets/sass/layout.sass"
 @import "../../assets/sass/inputs.sass"
+
+.quick-nav
+  +mobile
+    flex-direction: column
+    gap: 16px
+    a
+      width: 130px
+      text-align: center
 
 .header-container
   padding-top: 150px
