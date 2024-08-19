@@ -13,29 +13,22 @@
           class="banner-title"
           src="../../assets/images/news/banner-title.png"
         />
-        <div class="banner-megaphone-container">
-          <!-- <img src="../../assets/images/news/banner-glow-megaphone.png" /> -->
-          <LottieAnimation
-            autoplay
-            loop
-            :animation-data="NewsLoudspeaker"
-            class="loudspeaker"
+
+        <div class="paperplane-face-right-container">
+          <img
+            alt="paperplane-right"
+            src="../../assets/images/news/paperplane-face-right.png"
           />
         </div>
-        <!-- <div class="banner-megaphone-dim-container">
-          <img src="../../assets/images/news/banner-megaphone-dim.png" />
-        </div> -->
-        <div class="banner-message-bubble-container">
-          <!-- <img src="../../assets/images/news/banner-message-bubble.png" /> -->
-          <LottieAnimation
-            autoplay
-            loop
-            :animation-data="NewsDialog"
-            class="dialog"
+
+        <div class="paperplane-face-left-container">
+          <img
+            alt="paperplane-left"
+            src="../../assets/images/news/paperplane-face-left.png"
           />
         </div>
-        <div class="star-1-container">
-          <!-- <img src="../../assets/images/news/star.png" /> -->
+
+        <!-- <div class="star-1-container">
           <LottieAnimation
             autoplay
             loop
@@ -44,14 +37,13 @@
           />
         </div>
         <div class="star-2-container">
-          <!-- <img src="../../assets/images/news/star.png" /> -->
           <LottieAnimation
             autoplay
             loop
             :animation-data="NewsStar"
             class="star-2"
           />
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- Header -->
@@ -233,22 +225,47 @@ onMounted(() => {
   // INTRO ANIMATION
   // MEGAPHONE DIM
   // LIGHT UP
-  gsap.to(".banner-title-container .banner-title", {
-    duration: 1,
-    opacity: 1,
-    delay: 1.2,
-    ease: "sine.inOut",
-  });
-  gsap.to(".banner-message-bubble-container", {
-    duration: 0.5,
-    opacity: 1,
-    delay: 1.4,
-  });
-  gsap.to(".banner-megaphone-container", {
-    duration: 0.5,
-    opacity: 1,
-    delay: 1.4,
-  });
+  // gsap.to(".banner-title-container .banner-title", {
+  //   duration: 1,
+  //   opacity: 1,
+  //   delay: 1.2,
+  //   ease: "sine.inOut",
+  // });
+  // gsap.to(".banner-message-bubble-container", {
+  //   duration: 0.5,
+  //   opacity: 1,
+  //   delay: 1.4,
+  // });
+  // gsap.to(".banner-megaphone-container", {
+  //   duration: 0.5,
+  //   opacity: 1,
+  //   delay: 1.4,
+  // });
+  let bannerTimeline = gsap.timeline({
+    scrollTrigger: {
+      pin: true,
+      trigger: "#news-banner-section ",
+      start: "top top",
+      end: "+=1000",
+      scrub: 1,
+      toggleActions: "play reverse play reverse",
+      onLeave: () => {
+        gsap.to(".banner-title-container .banner-title", {
+          duration: 0.2,
+          opacity: 1,
+        })
+      }
+    }
+  })
+
+  bannerTimeline
+    .addLabel("first")
+    .to(".paperplane-face-right-container", {
+      left: "15%"
+    }, "first")
+    .to(".paperplane-face-left-container", {
+      right: "0%"
+    }, "first")
 });
 </script>
 
@@ -291,7 +308,7 @@ onMounted(() => {
 
 #news-banner-section
     .banner-title-container
-        width: 80%
+        width: 70%
         position: relative
         z-index: 0
         .banner-title
@@ -382,4 +399,24 @@ onMounted(() => {
         +desktop
             margin-bottom: 20px
     .news-content-container
+
+.paperplane-face-right-container
+  position: absolute
+  bottom: -20px
+  left: -25%
+  width: 25%
+  +large-mobile
+    left: -150%
+  img
+    width: 100%
+
+.paperplane-face-left-container
+  position: absolute
+  top: -40px
+  right: -30%
+  width: 40%
+  +large-mobile
+    right: -150%
+  img
+    width: 100%
 </style>
