@@ -264,7 +264,9 @@
       <div class="bullet-container">
         <p class="font-orange font-20 font-weight-200 just-sans mb-20">our services</p>
         <div class="services-list-container">
-          <div
+          <a
+            :href="'/services/' + item.slug"
+            target="_blank"
             class="services-item pb-8 pt-8"
             :key="i"
             v-for="(item, i) in ourServicesItems"
@@ -273,8 +275,8 @@
             :class="{ active: ourServicesItemsHighlightedSection === i }"
           >
             <p class="bullet font-white font-18 font-weight-200 just-sans">0{{ i + 1 }}.</p>
-            <p class="text font-white font-18 font-weight-200 just-sans">{{ item }}</p>
-          </div>
+            <p class="text font-white font-18 font-weight-200 just-sans">{{ item.display_text }}</p>
+          </a>
         </div>
       </div>
 
@@ -293,7 +295,9 @@
             :class="{ active: ourServicesItemsHighlightedSection !== -1 }"
           />
 
-          <div
+          <a
+            :href="'/services/' + item.slug"
+            target="_blank"
             class="bulb-image-text-container"
             :alt="`Bulb ${i}`"
             v-for="(item, i) in ourServicesItems"
@@ -313,8 +317,8 @@
               class="bulb-glow"
               src="../assets/images/home/our-services-bulb-glow.png"
             />
-            <p class="font-white bulb-text just-sans">{{ item }}</p>
-          </div>
+            <p class="font-white bulb-text just-sans">{{ item.display_text }}</p>
+          </a>
         </div>
       </div>
     </div>
@@ -636,7 +640,29 @@ watch(yellowOutlineIndex, (newIndex: Number, oldIndex: Number) => {
 });
 
 // OUR SERVICES
-const ourServicesItems = ["Growth Strategy", "Digital Marketing", "Video & Photography", "Branding & Creative Design", "Websites & Apps", "Event Management", "Media Buying"];
+const ourServicesItems = [{
+  display_text: "Growth Strategy",
+  slug: "growth-strategy",
+}, {
+  display_text: "Digital Marketing",
+  slug: "digital-marketing"
+}, {
+  display_text: "Video & Photography",
+  slug: "video-photography"
+}, {
+  display_text: "Branding & Creative Design",
+  slug: "branding-creative"
+}, {
+  display_text: "Websites & Apps",
+  slug: "website-apps"
+}, {
+  display_text: "Event Management",
+  slug: "event-management"
+}, {
+  display_text: "Media Buying",
+  slug: "media-buying"
+}];
+
 const ourServicesItemsHighlightedSection = ref(-1);
 
 const onMouseOverServiceItem = (index: number) => {
@@ -1260,6 +1286,7 @@ onMounted(() => {
     .services-list-container
       .services-item
         display: flex
+        text-decoration: none
         p
           transition: 0.2s all
           +desktop

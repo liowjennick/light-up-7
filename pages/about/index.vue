@@ -547,7 +547,7 @@ onMounted(() => {
     background-size: 100%
     background-repeat: no-repeat
     background-position: center center
-    background-size: auto 100%
+    background-size: 100%
     +large-mobile
       background-image: none
     img
@@ -573,7 +573,7 @@ onMounted(() => {
   #team-section
     .team-image-container
       background-image: url("../../assets/images/about/about-team.png")
-      background-size: auto 100%
+      background-size: 100%
       margin-top: 10%
       background-repeat: no-repeat
       background-position: center center

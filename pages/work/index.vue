@@ -6,8 +6,74 @@
         <div class="black-circle" />
         <img alt="Bulb" class="bulb" src="../../assets/images/work/light-bulb.png" />
         <img alt="Bulb Glow" class="bulb-glow" src="../../assets/images/work/light-bulb-glow.png" />
-        <img alt="Bulb Glow Line" class="glow-line" :class="{ active: initialAnimationComplete }"
-          src="../../assets/images/work/light-beam-line.png" />
+        <!-- <img alt="Bulb Glow Line" class="glow-line" :class="{ active: initialAnimationComplete }"
+          src="../../assets/images/work/light-beam-line.png" /> -->
+
+        <div class="draw-glow-line-container">
+          <div class="glow-line-1-container glow">
+            <div class="line-1 white"/>
+            <div class="line-2"/>
+            <div class="line-3 white"/>
+            <div class="line-4"/>
+            <div class="line-5 white"/>
+          </div>
+
+          <div class="glow-line-2-container glow">
+            <div class="line-1 white"/>
+            <div class="line-2"/>
+            <div class="line-3 white"/>
+            <div class="line-4"/>
+            <div class="line-5 white"/>
+          </div>
+
+          <div class="glow-line-3-container glow">
+            <div class="line-1 white"/>
+            <div class="line-2"/>
+            <div class="line-3 white"/>
+            <div class="line-4"/>
+            <div class="line-5 white"/>
+          </div>
+
+          <div class="glow-line-4-container glow">
+            <div class="line-1 white"/>
+            <div class="line-2"/>
+            <div class="line-3 white"/>
+            <div class="line-4"/>
+            <div class="line-5 white"/>
+          </div>
+
+          <div class="glow-line-5-container glow">
+            <div class="line-1 white"/>
+            <div class="line-2"/>
+            <div class="line-3 white"/>
+            <div class="line-4"/>
+            <div class="line-5 white"/>
+          </div>
+
+          <div class="glow-line-6-container glow">
+            <div class="line-1 white"/>
+            <div class="line-2"/>
+            <div class="line-3 white"/>
+            <div class="line-4"/>
+            <div class="line-5 white"/>
+          </div>
+
+          <div class="glow-line-7-container glow">
+            <div class="line-1 white"/>
+            <div class="line-2"/>
+            <div class="line-3 white"/>
+            <div class="line-4"/>
+            <div class="line-5 white"/>
+          </div>
+
+          <div class="glow-line-8-container glow">
+            <div class="line-1 white"/>
+            <div class="line-2"/>
+            <div class="line-3 white"/>
+            <div class="line-4"/>
+            <div class="line-5 white"/>
+          </div>
+        </div>
       </div>
       <h1 class="page-title">WORK</h1>
 
@@ -57,8 +123,8 @@
               <img :alt="client.slug" :class="{ active: activeClientBulbImage === client.slug }" v-for="(client, i) in clientsCarouselLogo"
                 :key="i" class="client-bulb-image" :src="`/images/work/bulb-logo/${client.slug}.png`" />
 
-              <img alt="Bulb Client Outline" class="client-text-outline-image" src="../../assets/images/work/bulb-clients-outline.png" />
-              <img alt="Bulb Client White" class="client-text-white-image" src="../../assets/images/work/bulb-clients-white.png" />
+              <img alt="Bulb Client Outline" class="client-text-outline-image" src="../../assets/images/work/clients-title-white-inner.png" />
+              <!-- <img alt="Bulb Client White" class="client-text-white-image" src="../../assets/images/work/bulb-clients-white.png" /> -->
 
               <!-- <h1 class="client-large-name">clients</h1>
               <h1 class="client-back-name">clients</h1> -->
@@ -289,6 +355,17 @@ const clientsCarouselLogo = ref([
 ]);
 
 onMounted(() => {
+  gsap.to([".glow-line-1-container", ".glow-line-2-container", ".glow-line-3-container", ".glow-line-4-container", ".glow-line-5-container", ".glow-line-6-container", ".glow-line-7-container", ".glow-line-8-container"], {
+    width: "30%",
+    scrollTrigger: {
+      trigger: "light-bulb-section",
+      scrub: 1,
+      start: "top top",
+      end: "center center",
+      toggleActions: "play play play reverse",
+    }
+  })
+
   // INIT ANIMATION
   gsap.to(".bulb-glow", {
     duration: 1,
@@ -769,11 +846,19 @@ onMounted(() => {
             opacity: 1
         .client-text-outline-image
           position: absolute
-          width: 115%
-          top: 53.9%
-          left: 51.3%
+          width: 129.4%
+          top: 57.3%
+          left: 51.5%
           transform: translate(-50%, -50%)
           z-index: 10
+          +large-mobile
+            width: 130%
+            top: 58.2%
+            left: 51.4%
+          +mobile
+            width: 140.2%
+            top: 58.0%
+            left: 51.7%
         .client-text-white-image
           position: absolute
           width: 118%
@@ -870,6 +955,210 @@ onMounted(() => {
             font-size: 0.6em
           +mobile
             font-size: 0.4em
+
+.draw-glow-line-container
+  position: absolute
+  top: 85%
+  left: 50%
+  width: 100%
+  pointer-event: none
+  .glow-line-1-container
+    display: flex
+    width: 0%
+    height: 1px
+    bottom: 0
+    left: 0
+    transform: rotate(155deg) translateX(100px)
+    transform-origin: top left
+    .line-1
+      flex: 4
+    .line-2
+      flex: 2
+    .line-3
+      flex: 4
+    .line-4
+      flex: 2
+    .line-5
+      flex: 2
+    .white
+      background-color: white
+      box-shadow: 0 0px 10px 0.5px white
+      --webkit-animation: line-glow 1s ease-in-out infinite alternate
+      animation: line-glow 1s ease-in-out infinite alternate
+
+  .glow-line-2-container
+    display: flex
+    width: 0%
+    height: 1px
+    bottom: 0
+    left: 0
+    transform: rotate(140deg) translateX(100px)
+    transform-origin: top left
+    .line-1
+      flex: 2
+    .line-2
+      flex: 2
+    .line-3
+      flex: 2
+    .line-4
+      flex: 1
+    .line-5
+      flex: 2
+    .white
+      background-color: white
+      box-shadow: 0 0px 10px 0.5px white
+      --webkit-animation: line-glow 1s ease-in-out infinite alternate
+      animation: line-glow 1s ease-in-out infinite alternate
+
+  .glow-line-3-container
+    display: flex
+    width: 0%
+    height: 1px
+    bottom: 0
+    left: 0
+    transform: rotate(125deg) translateX(100px)
+    transform-origin: top left
+    .line-1
+      flex: 2
+    .line-2
+      flex: 1
+    .line-3
+      flex: 2
+    .line-4
+      flex: 2
+    .line-5
+      flex: 1
+    .white
+      background-color: white
+      box-shadow: 0 0px 10px 0.5px white
+      --webkit-animation: line-glow 1s ease-in-out infinite alternate
+      animation: line-glow 1s ease-in-out infinite alternate
+
+  .glow-line-4-container
+    display: flex
+    width: 0%
+    height: 1px
+    bottom: 0
+    left: 0
+    transform: rotate(110deg) translateX(100px)
+    transform-origin: top left
+    .line-1
+      flex: 1
+    .line-2
+      flex: 1
+    .line-3
+      flex: 2
+    .line-4
+      flex: 2
+    .line-5
+      flex: 1.5
+    .white
+      background-color: white
+      box-shadow: 0 0px 10px 0.5px white
+      --webkit-animation: line-glow 1s ease-in-out infinite alternate
+      animation: line-glow 1s ease-in-out infinite alternate
+
+  .glow-line-5-container
+    display: flex
+    width: 0%
+    height: 1px
+    bottom: 0
+    left: 0
+    transform: rotate(20deg) translateX(100px)
+    transform-origin: top left
+    .line-1
+      flex: 4
+    .line-2
+      flex: 2
+    .line-3
+      flex: 4
+    .line-4
+      flex: 2
+    .line-5
+      flex: 2
+    .white
+      background-color: white
+      box-shadow: 0 0px 10px 0.5px white
+      --webkit-animation: line-glow 1s ease-in-out infinite alternate
+      animation: line-glow 1s ease-in-out infinite alternate
+
+  .glow-line-6-container
+    display: flex
+    width: 0%
+    height: 1px
+    bottom: 0
+    left: 0
+    transform: rotate(35deg) translateX(100px)
+    transform-origin: top left
+    .line-1
+      flex: 2
+    .line-2
+      flex: 2
+    .line-3
+      flex: 2
+    .line-4
+      flex: 1
+    .line-5
+      flex: 2
+    .white
+      background-color: white
+      box-shadow: 0 0px 10px 0.5px white
+      --webkit-animation: line-glow 1s ease-in-out infinite alternate
+      animation: line-glow 1s ease-in-out infinite alternate
+
+  .glow-line-7-container
+    display: flex
+    width: 0%
+    height: 1px
+    bottom: 0
+    left: 0
+    transform: rotate(50deg) translateX(100px)
+    transform-origin: top left
+    .line-1
+      flex: 2
+    .line-2
+      flex: 1
+    .line-3
+      flex: 3
+    .line-4
+      flex: 2
+    .line-5
+      flex: 1
+    .white
+      background-color: white
+      box-shadow: 0 0px 10px 0.5px white
+      --webkit-animation: line-glow 1s ease-in-out infinite alternate
+      animation: line-glow 1s ease-in-out infinite alternate
+
+  .glow-line-8-container
+    display: flex
+    width: 0%
+    height: 1px
+    bottom: 0
+    left: 0
+    transform: rotate(65deg) translateX(100px)
+    transform-origin: top left
+    .line-1
+      flex: 1
+    .line-2
+      flex: 1
+    .line-3
+      flex: 2
+    .line-4
+      flex: 2
+    .line-5
+      flex: 1.5
+    .white
+      background-color: white
+      box-shadow: 0 0px 10px 0.5px white
+      --webkit-animation: line-glow 1s ease-in-out infinite alternate
+      animation: line-glow 1s ease-in-out infinite alternate
+
+@keyframes line-glow
+  0%
+    box-shadow: 0 0px 20px 1px white
+  100%
+    box-shadow: 0 0px 10px 0.5px white
 
 @keyframes glow-line-expand
   0%

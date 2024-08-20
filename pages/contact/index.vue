@@ -1,19 +1,34 @@
 <template>
   <div id="contact-page">
-    <div class="header-container full-screen-center-content">
-      <img alt="Contact Banner" class="banner-image" src="../../assets/images/contact/contact-banner.svg" />
-      <img alt="Contact Title" src="../../assets/images/contact/contact-header.png" id="contact-header-title"
-        class="section-container" />
-      <div class="black-screen"></div>
-      <!-- <PhoneLine class="phone-line" />
+    <div class="header-container">
+      <div class="contact-header full-screen-center-content">
+        <img
+          alt="Contact Banner"
+          class="banner-image"
+          src="../../assets/images/contact/contact-banner.svg"
+        />
+        <img
+          alt="Contact Title"
+          src="../../assets/images/contact/contact-header.png"
+          id="contact-header-title"
+        />
+        <div class="black-screen"></div>
+        <!-- <PhoneLine class="phone-line" />
         <Phone class="phone" /> -->
+      </div>
     </div>
     <div class="section-container contact-body">
       <div class="contact-info-container">
-        <p style="margin-bottom: 8px" class="font-orange font-weight-200 font-16">
+        <p
+          style="margin-bottom: 8px"
+          class="font-orange font-weight-200 font-16"
+        >
           ready to light up?
         </p>
-        <p style="margin-bottom: 30px; font-weight: 900; font-size: 74px; line-height: 1em" class="font-orange">
+        <p
+          style="margin-bottom: 30px; font-weight: 900; font-size: 74px; line-height: 1em"
+          class="font-orange"
+        >
           let's talk
         </p>
         <p class="font-orange font-20 font-weight-200">our offices</p>
@@ -35,10 +50,12 @@
           9.00 am – 6.00 pm | Monday – Friday <br />
           Weekends & Public Holidays – Closed
         </p>
-        <a target="_blank"
+        <a
+          target="_blank"
           href="https://www.google.com/maps/place/Light+Up+7/@3.1498933,101.6651169,17z/data=!3m2!4b1!5s0x31cc49ab0e0f7ac3:0xcaf3484f21fd43ab!4m6!3m5!1s0x31cc4c5fabb47ffb:0x52e9e06c169d79dc!8m2!3d3.1498933!4d101.6651169!16s%2Fg%2F11b6gchlp_?entry=ttu"
           class="orange-outlined-button font-weight-200 font-16"
-          style="margin-block: 32px 24px; text-decoration: none; width: 160px; text-align: center">
+          style="margin-block: 32px 24px; text-decoration: none; width: 160px; text-align: center"
+        >
           view map
         </a>
         <p class="font-orange font-20 font-weight-200">new business & inquiries</p>
@@ -51,54 +68,133 @@
         <br /><br />
         <p class="font-orange font-20 font-weight-200">Careers</p>
         <p class="font-white font-16 font-weight-200">jobs@lightup7.com</p>
-        <a href="/careers" class="orange-outlined-button font-16 font-weight-200"
-          style="margin-top: 32px; text-decoration: none; width: 160px; text-align: center">
+        <a
+          href="/careers"
+          class="orange-outlined-button font-16 font-weight-200"
+          style="margin-top: 32px; text-decoration: none; width: 160px; text-align: center"
+        >
           view openings
         </a>
       </div>
       <div class="contact-form-container">
-        <p style="font-size: 36px; margin-bottom: 32px" class="font-orange font-weight-200">
+        <p
+          style="font-size: 36px; margin-bottom: 32px"
+          class="font-orange font-weight-200"
+        >
           Contact Form
         </p>
         <div class="contact-form-item">
-          <label for="name" class="font-white">your name</label>
-          <input type="text" v-model="formValues.name" id="name" class="font-white contact-form-text" />
+          <label
+            for="name"
+            class="font-white"
+            >your name</label
+          >
+          <input
+            type="text"
+            v-model="formValues.name"
+            id="name"
+            class="font-white contact-form-text"
+          />
         </div>
         <div class="contact-form-item">
-          <label for="business_name" class="font-white">business name</label>
-          <input type="text" v-model="formValues.business_name" id="business_name"
-            class="font-white contact-form-text" />
+          <label
+            for="business_name"
+            class="font-white"
+            >business name</label
+          >
+          <input
+            type="text"
+            v-model="formValues.business_name"
+            id="business_name"
+            class="font-white contact-form-text"
+          />
         </div>
         <div class="contact-form-item">
-          <label for="email" class="font-white">email</label>
-          <input type="text" v-model="formValues.email" id="email" class="font-white contact-form-text" />
+          <label
+            for="email"
+            class="font-white"
+            >email</label
+          >
+          <input
+            type="text"
+            v-model="formValues.email"
+            id="email"
+            class="font-white contact-form-text"
+          />
         </div>
         <div class="contact-form-item">
-          <label for="phone" class="font-white">phone</label>
-          <input type="text" v-model="formValues.phone" id="phone" class="font-white contact-form-text" />
+          <label
+            for="phone"
+            class="font-white"
+            >phone</label
+          >
+          <input
+            type="text"
+            v-model="formValues.phone"
+            id="phone"
+            class="font-white contact-form-text"
+          />
         </div>
         <div class="contact-form-item">
-          <label for="company_website" class="font-white">company website</label>
-          <input type="text" v-model="formValues.company_website" id="company_website"
-            class="font-white contact-form-text" />
+          <label
+            for="company_website"
+            class="font-white"
+            >company website</label
+          >
+          <input
+            type="text"
+            v-model="formValues.company_website"
+            id="company_website"
+            class="font-white contact-form-text"
+          />
         </div>
         <div class="contact-form-item">
-          <label for="business_industry" class="font-white">business industry</label>
-          <input type="text" v-model="formValues.business_industry" id="business_industry"
-            class="font-white contact-form-text" />
+          <label
+            for="business_industry"
+            class="font-white"
+            >business industry</label
+          >
+          <input
+            type="text"
+            v-model="formValues.business_industry"
+            id="business_industry"
+            class="font-white contact-form-text"
+          />
         </div>
         <div class="contact-form-item">
-          <label for="interest" class="font-white">interest</label>
-          <input type="text" v-model="formValues.interest" id="interest" class="font-white contact-form-text" />
+          <label
+            for="interest"
+            class="font-white"
+            >interest</label
+          >
+          <input
+            type="text"
+            v-model="formValues.interest"
+            id="interest"
+            class="font-white contact-form-text"
+          />
         </div>
         <div class="contact-form-item">
-          <label for="tell_us_more" class="font-white">tell us more</label>
-          <textarea id="tell_us_more" v-model="formValues.tell_us_more" class="font-white contact-form-text"></textarea>
+          <label
+            for="tell_us_more"
+            class="font-white"
+            >tell us more</label
+          >
+          <textarea
+            id="tell_us_more"
+            v-model="formValues.tell_us_more"
+            class="font-white contact-form-text"
+          ></textarea>
         </div>
 
         <div>
-          <button class="orange-outlined-button g-recaptcha" data-sitekey="6LeVjccUAAAAALn5Y5sSEv3fwy_MAq8gxXR0e9J3"
-            data-callback="onSubmit" data-action="submit" style="width: 240px">
+          <button
+            class="orange-outlined-button g-recaptcha"
+            data-sitekey="6LeVjccUAAAAALn5Y5sSEv3fwy_MAq8gxXR0e9J3"
+            data-callback="onSubmit"
+            data-action="submit"
+            style="width: 240px"
+          >
             <span class="font-16 font-weight-200">submit form</span>
           </button>
         </div>
@@ -140,7 +236,7 @@ onMounted(() => {
   gsap.from(".banner-image", {
     x: "-150vw",
     scrollTrigger: {
-      pin: true,
+      ease: "power3.inOut",
       trigger: ".header-container",
       start: "top center",
       end: "bottom center",
@@ -254,13 +350,16 @@ async function submitForm(token: string) {
           padding: 8px 10px
 .header-container
   height: 100vh
+
+.contact-header
   position: relative
+  height: 100%
 
 #contact-header-title
   position: absolute
   width: 75%
   height: auto
-  top: 0%
+  top: 50%
   left: 50%
   transform: translate(-50%, -50%)
   z-index: 5
@@ -293,7 +392,7 @@ async function submitForm(token: string) {
 .banner-image
   width: 100%
   position: absolute
-  top: 0%
-  left: 50%
-  transform: translate(-50%, -50%)
+  bottom: 0%
+  +large-mobile
+    top: 50%
 </style>
