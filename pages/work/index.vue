@@ -634,15 +634,17 @@ onMounted(() => {
           opacity: 0
           // animation: glow-line-expand 1s ease-out infinite alternate
     .page-title
-      color: none
+      z-index: 100
+      color: #261F10
       text-align: center
       font-family: "JustSans"
       // text-shadow: 0 0 3px white, 0 0 5px white, 0 0 20px white
       text-shadow: 0 0 5px white, 0 0 5px white, 0 0 20px white
       font-size: 80px
-      --webkit-animation: text-glow 1s ease-in-out infinite alternate
-      animation: text-glow 1s ease-in-out infinite alternate
+      // --webkit-animation: text-glow 1s ease-in-out infinite alternate
+      // animation: text-glow 1s ease-in-out infinite alternate
       margin-bottom: 10px
+      position: relative
       opacity: 0
     #sliding-button
       opacity: 0
@@ -962,14 +964,15 @@ onMounted(() => {
   left: 50%
   width: 100%
   pointer-event: none
+  z-index: 0
   .glow-line-1-container
     display: flex
     width: 0%
     height: 1px
     bottom: 0
     left: 0
-    transform: rotate(155deg) translateX(100px)
-    transform-origin: top left
+    transform: rotate(159.5deg) translateX(100px)
+    transform-origin: bottom left
     .line-1
       flex: 4
     .line-2
@@ -992,8 +995,8 @@ onMounted(() => {
     height: 1px
     bottom: 0
     left: 0
-    transform: rotate(140deg) translateX(100px)
-    transform-origin: top left
+    transform: rotate(144.5deg) translateX(100px)
+    transform-origin: bottom left
     .line-1
       flex: 2
     .line-2
@@ -1016,8 +1019,8 @@ onMounted(() => {
     height: 1px
     bottom: 0
     left: 0
-    transform: rotate(125deg) translateX(100px)
-    transform-origin: top left
+    transform: rotate(129.5deg) translateX(100px)
+    transform-origin: bottom left
     .line-1
       flex: 2
     .line-2
@@ -1040,8 +1043,8 @@ onMounted(() => {
     height: 1px
     bottom: 0
     left: 0
-    transform: rotate(110deg) translateX(100px)
-    transform-origin: top left
+    transform: rotate(114.5deg) translateX(100px)
+    transform-origin: bottom left
     .line-1
       flex: 1
     .line-2
