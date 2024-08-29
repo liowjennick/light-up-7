@@ -557,8 +557,10 @@
             :class="{ active: lightUpYourIdeasBulbActive }"
             src="../assets/images/home/light-up-your-idea-large-bulb-glow.png"
           />
+          <p class="font-white just-sans pull-me-text">pull me</p>
+
           <div class="large-bulb-pull-image">
-            <p class="font-white just-sans">pull me</p>
+            <p class="font-white just-sans pull-me-text-desktop">pull me</p>
             <img
               alt="Light Up your Idea Pull String"
               :class="{ idle: bulbPullIdle }"
@@ -938,12 +940,12 @@ onMounted(() => {
     .pause();
 
   // VIDEO PIN
-  ScrollTrigger.create({
-    trigger: "#video-section",
-    start: "top top",
-    end: "bottom+=600 bottom",
-    pin: true,
-  });
+  // ScrollTrigger.create({
+  //   trigger: "#video-section",
+  //   start: "top top",
+  //   end: "bottom+=600 bottom",
+  //   pin: true,
+  // });
 
   // SERVICES PIN
   ScrollTrigger.create({
@@ -1188,7 +1190,7 @@ onMounted(() => {
     transform: translateY(-50%)
     +desktop
       display: flex
-      bottom: 10%
+      bottom: 12%
       left: 50%
       right: unset
       transform: translateX(-50%)
@@ -1222,6 +1224,7 @@ onMounted(() => {
     bottom: 20px
     left: 50%
     width: 120px
+    z-index: -1
   .flex-row
     display: flex
     // opacity: 0
@@ -1296,6 +1299,7 @@ onMounted(() => {
             color: $orange
         .bullet
           padding-right: 20px
+          width: 20px
         .text
           flex: 1
   .bulb-container
@@ -1388,11 +1392,16 @@ onMounted(() => {
     .section-container
       display: flex
       align-items: center
+      +large-mobile
+        flex-wrap: wrap
+        justify-content: space-evenly
       .client-item
         flex: 1
-        margin: 0 10px
-        padding: 20px 0
+        // margin: 0 10px
+        // padding: 20px 0
         transition: 0.2s all
+        +large-mobile
+          flex: 0 0 20.5%
         &:hover
           transform: scale(1.1)
         img
@@ -1422,8 +1431,13 @@ onMounted(() => {
     background-color: rgba(255, 205, 89, 0.25)
     .section-container
       display: flex
+      +large-mobile
+        flex-wrap: wrap
+        justify-content: space-evenly
       .award-item
         flex: 1
+        +large-mobile
+          flex: 0 0 24.5%
         img
           width: 100%
 
@@ -1488,10 +1502,13 @@ onMounted(() => {
         left: 50%
         transform: translateX(-50%)
         overflow-y: clip
-        p
+        .pull-me-text-desktop
           position: absolute
           right: -40px
           top: 20px
+          display: initial
+          +large-mobile
+            display: none
         img
           width: 20px
           transform: translateY(-50%)
@@ -1644,6 +1661,16 @@ onMounted(() => {
   // canvas
   //   width: 100%
   //   height: 100%
+
+.pull-me-text
+
+  display: none
+  +large-mobile
+    display: initial
+    position: absolute
+    bottom: -40px
+    left: 55%
+    transform: translateX(50%)
 
 
 @keyframes arrow-down-move

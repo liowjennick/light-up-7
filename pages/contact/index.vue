@@ -76,7 +76,7 @@
           view openings
         </a>
       </div>
-      <div class="contact-form-container">
+      <!-- <div class="contact-form-container">
         <p
           style="font-size: 36px; margin-bottom: 32px"
           class="font-orange font-weight-200"
@@ -198,7 +198,9 @@
             <span class="font-16 font-weight-200">submit form</span>
           </button>
         </div>
-      </div>
+      </div> -->
+
+      <component is="script" src="https://www.cognitoforms.com/f/seamless.js" data-key="KYyGeNiZ80OLqp3g9SCdyQ" data-form="2" async />
     </div>
   </div>
 </template>
@@ -302,7 +304,7 @@ async function submitForm(token: string) {
   justify-content: center
   padding: 48px
   +large-mobile
-    flex-direction: column-reverse
+    flex-direction: column
     gap: 40px
   +mobile
     gap: 20px

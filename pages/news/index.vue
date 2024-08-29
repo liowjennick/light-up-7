@@ -246,7 +246,7 @@ onMounted(() => {
       pin: true,
       trigger: "#news-banner-section ",
       start: "top top",
-      end: "+=1000",
+      end: "+=500",
       scrub: 1,
       toggleActions: "play reverse play reverse",
       onLeave: () => {

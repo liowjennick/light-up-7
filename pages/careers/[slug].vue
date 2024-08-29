@@ -87,7 +87,11 @@ const formValues = ref({
           benefits.</p>
       </div>
     </div>
+
     <div class="form-container">
+      <component is="script" src="https://www.cognitoforms.com/f/seamless.js" data-key="KYyGeNiZ80OLqp3g9SCdyQ" data-form="5" async />
+    </div>
+    <!-- <div class="form-container">
       <div class="full-screen-start-start">
         <div class="section-container form-body">
           <div style="margin-bottom: 32px">
@@ -178,7 +182,7 @@ const formValues = ref({
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="full-screen-center-start links-container">
       <div class="section-container">
         <div class="button-container">
