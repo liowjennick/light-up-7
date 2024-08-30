@@ -9,7 +9,6 @@ import { default as Staff32 } from './staff-pic-3-1.png';
 import { default as Staff33 } from './staff-pic-3-2.png';
 import { default as Staff41 } from './staff-pic-4-0.png';
 import { default as Staff42 } from './staff-pic-4-1.png';
-import { default as Staff43 } from './staff-pic-4-2.png';
 import { default as Staff51 } from './staff-pic-5-0.png';
 import { default as Staff52 } from './staff-pic-5-1.png';
 import { default as Staff53 } from './staff-pic-5-2.png';
@@ -17,7 +16,6 @@ import { default as Staff61 } from './staff-pic-6-0.png';
 import { default as Staff62 } from './staff-pic-6-1.png';
 import { default as Staff63 } from './staff-pic-6-2.png';
 import { default as Staff71 } from './staff-pic-7-0.png';
-import { default as Staff72 } from './staff-pic-7-1.png';
 import { default as Staff73 } from './staff-pic-7-2.png';
 
-export default [Staff11, Staff12, Staff13, Staff21, Staff22, Staff23, Staff31, Staff32, Staff33, Staff41, Staff42, Staff43, Staff51, Staff52, Staff53, Staff61, Staff62, Staff63, Staff71, Staff72, Staff73];
+export default [Staff11, Staff12, Staff13, Staff21, Staff22, Staff23, Staff31, Staff32, Staff33, Staff41, Staff42, Staff51, Staff52, Staff53, Staff61, Staff62, Staff63, Staff71, Staff73];

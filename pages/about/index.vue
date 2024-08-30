@@ -73,7 +73,7 @@
             </svg>
 
             <div class="text-container first">
-              <p class="font-white font-14 just-sans">Established in 2014, Light Up 7 grew out of the emergent need that the world was headed towards a new era. Everything was getting digitised. Fast.</p>
+              <p class="font-white just-sans">Established in 2014, Light Up 7 grew out of the emergent need that the world was headed towards a new era. Everything was getting digitised. Fast.</p>
             </div>
 
             <svg
@@ -131,8 +131,8 @@
             </svg>
 
             <div class="text-container second">
-              <p class="font-white font-14 just-sans mb-20">Since then, brands everywhere have embraced this change but then another challenge emerged. Technology and online spaces can seem to change and evolve overnight.</p>
-              <p class="font-white font-14 just-sans">They realise the importance of a strong partner to be part of this dynamic, sometimes fickle, landscape.</p>
+              <p class="font-white just-sans mb-20">Since then, brands everywhere have embraced this change but then another challenge emerged. Technology and online spaces can seem to change and evolve overnight.</p>
+              <p class="font-white just-sans">They realise the importance of a strong partner to be part of this dynamic, sometimes fickle, landscape.</p>
             </div>
 
             <svg
@@ -190,8 +190,8 @@
             </svg>
 
             <div class="text-container third">
-              <p class="font-white font-14 just-sans mb-20">Here's where we've cut our teeth and become an industry leader.</p>
-              <p class="font-white font-14 just-sans">Having worked with leading brands across multiple industries, Light Up 7 has come a long way in honing our expertise in being a provider of creative solutions. Our team of strategists, marketers, designers, video specialists and event managers bring their years of experience to collaborate with client partners, ensuring successes and wins on each project.</p>
+              <p class="font-white just-sans mb-20">Here's where we've cut our teeth and become an industry leader.</p>
+              <p class="font-white just-sans">Having worked with leading brands across multiple industries, Light Up 7 has come a long way in honing our expertise in being a provider of creative solutions. Our team of strategists, marketers, designers, video specialists and event managers bring their years of experience to collaborate with client partners, ensuring successes and wins on each project.</p>
             </div>
 
             <svg
@@ -249,7 +249,7 @@
             </svg>
 
             <div class="text-container fourth">
-              <p class="font-white font-14 just-sans">Our partnerships have allowed us to create gold-standard experiences that have driven substantial revenue and growth for some of the most beloved and recognisable brands in the APAC region.</p>
+              <p class="font-white just-sans">Our partnerships have allowed us to create gold-standard experiences that have driven substantial revenue and growth for some of the most beloved and recognisable brands in the APAC region.</p>
             </div>
 
             <!-- <svg :class="{ active: journeyAnimationIndex >= 9 }" id="svg5" width="377" height="264" viewBox="0 0 377 264" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -282,7 +282,7 @@
         <!-- <img src="../../assets/images/about/about-team.png" /> -->
       </div>
       <div class="team-caption-container section-container">
-        <p class="font-white font-16 just-sans">At our agency, we shed light on your brand's potential, guiding you towards success with our expertise, innovation and unparalleled creativity.</p>
+        <p class="font-white just-sans">At our agency, we shed light on your brand's potential, guiding you towards success with our expertise, innovation and unparalleled creativity.</p>
       </div>
     </div>
 
@@ -550,6 +550,8 @@ onMounted(() => {
     background-size: 100%
     +large-mobile
       background-image: none
+      height: 100%
+      margin-bottom: 80px
     img
       width: 100%
     .section-container

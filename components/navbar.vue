@@ -71,8 +71,9 @@ onMounted(() => {
   // background: red
   padding: 5px
   .opacity-background
-    background-color: #474747
-    opacity: 0
+    // background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(80,86,94,0) 100%)
+    background: grey
+    opacity: 0.2
     position: absolute
     width: 100%
     height: 100%

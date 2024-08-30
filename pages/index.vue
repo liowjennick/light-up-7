@@ -482,12 +482,11 @@
               src="../assets/images/home/award-the-bizz-hybrid.png"
             />
           </div>
-
           <div class="award-item">
             <img
-              alt="BNM Logo"
+              alt="Golden Bull Award 2024"
               class="client-logo"
-              src="../assets/images/home/client-logo-bank-negara.png"
+              src="../assets/images/home/golden-bull-award-2024.png"
             />
           </div>
           <div class="award-item">
@@ -1431,11 +1430,15 @@ onMounted(() => {
     background-color: rgba(255, 205, 89, 0.25)
     .section-container
       display: flex
+      padding-top: 20px
+      padding-bottom: 20px
       +large-mobile
         flex-wrap: wrap
         justify-content: space-evenly
       .award-item
         flex: 1
+        display: flex
+        align-items: center
         +large-mobile
           flex: 0 0 24.5%
         img
