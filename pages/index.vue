@@ -13,6 +13,9 @@
             type="video/mp4"
           />
         </video>
+        <div @click="skipIntro" class="skip-button-container">
+          <p>Skip Video</p>
+        </div>
       </template>
     </ClientOnly>
 
@@ -698,6 +701,12 @@ useHead({
     { name: "keywords", content: "brand activation agency" },
   ],
 });
+
+const skipIntro = () => {
+  const cookieName = "home-intro-video-played";
+  hideIntroVideo.value = true;
+  setCookie(cookieName, "true", 0.5);
+}
 
 onBeforeMount(() => {
   const cookieName = "home-intro-video-played";
@@ -1704,6 +1713,34 @@ onMounted(() => {
         box-shadow: 0 0 20px $orange
         p
           color: white
+
+.skip-button-container
+  border: 1px solid $orange
+  border-radius: 24px
+  font-family: "JustSans"
+  padding: 10px 80px
+  display: inline-flex
+  cursor: pointer
+  transition: 0.2s all
+  position: fixed
+  right: 80px
+  bottom: 25px
+  background-color: black
+  z-index: 101
+  +large-mobile
+    right: 50%
+    transform: translateX(50%)
+    bottom: 40px
+  p
+    color: $orange
+    text-align: center
+  &:hover
+    background-color: $orange
+    box-shadow: 0 0 20px $orange
+    p
+      color: white
+
+
 
 
 @keyframes arrow-down-move
