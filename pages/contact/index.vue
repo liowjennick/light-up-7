@@ -16,6 +16,14 @@
         <!-- <PhoneLine class="phone-line" />
         <Phone class="phone" /> -->
       </div>
+      <div class="arrow-down-container">
+        <LottieAnimation
+          class="arrow-down"
+          autoplay
+          loop
+          :animation-data="ArrowDownJSON"
+        />
+      </div>
     </div>
     <div class="section-container contact-body">
       <div class="contact-info-container">
@@ -210,6 +218,8 @@ import gsap from "gsap";
 import { ScrollTrigger, CustomEase } from "gsap/all";
 import PhoneLine from "~/assets/svg/phone-line.vue";
 import Phone from "~/assets/svg/phone.vue";
+import ArrowDownJSON from "@/assets/images/home/arrow-down-lottie.json";
+import { LottieAnimation } from "lottie-web-vue";
 
 gsap.registerPlugin(ScrollTrigger);
 useHead({
@@ -352,19 +362,23 @@ async function submitForm(token: string) {
           padding: 8px 10px
 .header-container
   height: 100vh
+  position: relative
 
 .contact-header
   position: relative
   height: 100%
+  z-index: 1
 
 #contact-header-title
   position: absolute
-  width: 75%
+  width: 60%
   height: auto
   top: 50%
   left: 50%
   transform: translate(-50%, -50%)
   z-index: 5
+  +large-mobile
+    width: 65%
 .phone-line
   transform: translate(-4.5%, 5%)
   height: 100%
@@ -397,4 +411,16 @@ async function submitForm(token: string) {
   bottom: 0%
   +large-mobile
     top: 50%
+
+.arrow-down-container
+  position: absolute
+  bottom: 14%
+  left: 50%
+  z-index: 0
+.arrow-down
+  position: absolute
+  transform-origin: center center
+  transform: translateX(-50%)
+  left: 50%
+  width: 120px
 </style>

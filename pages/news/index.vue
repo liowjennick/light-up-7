@@ -4,7 +4,7 @@
     <div
       id="news-banner-section"
       class="section-container full-screen-center-content full-screen-section-container"
-      style="padding-top: 120px"
+      style="padding-top: 120px;"
     >
       <!-- Animation here -->
       <div class="banner-title-container">
@@ -44,6 +44,15 @@
             class="star-2"
           />
         </div> -->
+      </div>
+
+      <div class="arrow-down-container">
+        <LottieAnimation
+          class="arrow-down"
+          autoplay
+          loop
+          :animation-data="ArrowDownJSON"
+        />
       </div>
     </div>
     <!-- Header -->
@@ -193,6 +202,7 @@ import GlobeRotateJSON from "@/assets/images/news/lottie/globe-lottie.json";
 import NewsStar from "@/assets/images/news/lottie/NewsHeader_Stars.json";
 import NewsDialog from "@/assets/images/news/lottie/NewsHeader_Dialog.json";
 import NewsLoudspeaker from "@/assets/images/news/lottie/NewsHeader_Loudspeaker.json";
+import ArrowDownJSON from "@/assets/images/home/arrow-down-lottie.json";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
@@ -307,59 +317,60 @@ onMounted(() => {
             border-bottom: 1px solid #ffffff40
 
 #news-banner-section
-    .banner-title-container
-        width: 70%
-        position: relative
-        z-index: 0
-        .banner-title
-            opacity: 0.4
-            width: 100%
-    .banner-megaphone-container
-        width: 35%
-        position: absolute
-        top: -25%
-        left: -12%
-        z-index: -1
-        opacity: 0.4
-        img
-            width: 100%
-    .banner-megaphone-dim-container
-        width: 12%
-        position: absolute
-        top: 9%
-        left: -4.4%
-        opacity: 0.4
-        img
-            width: 100%
-            transform-origin: bottom right
-    .banner-message-bubble-container
-        width: 30%
-        position: absolute
-        bottom: -12%
-        right: -12%
-        opacity: 0.4
-        z-index: -1
-        img
-            width: 100%
-    .star-1-container
-        position: absolute
-        width: 15%
-        right: 0
-        top: 0
-        z-index: -1
-        img
-            width: 100%
-            -webkit-transform: scaleX(-1)
-            transform: scaleX(-1)
-    .star-2-container
-        position: absolute
-        width: 15%
-        left: -5%
-        bottom: -5%
-        transform: scaleX(-1)
-        z-index: -1
-        img
-            width: 100%
+  position: relative
+  .banner-title-container
+      width: 70%
+      position: relative
+      z-index: 0
+      .banner-title
+          opacity: 0.4
+          width: 100%
+  .banner-megaphone-container
+      width: 35%
+      position: absolute
+      top: -25%
+      left: -12%
+      z-index: -1
+      opacity: 0.4
+      img
+          width: 100%
+  .banner-megaphone-dim-container
+      width: 12%
+      position: absolute
+      top: 9%
+      left: -4.4%
+      opacity: 0.4
+      img
+          width: 100%
+          transform-origin: bottom right
+  .banner-message-bubble-container
+      width: 30%
+      position: absolute
+      bottom: -12%
+      right: -12%
+      opacity: 0.4
+      z-index: -1
+      img
+          width: 100%
+  .star-1-container
+      position: absolute
+      width: 15%
+      right: 0
+      top: 0
+      z-index: -1
+      img
+          width: 100%
+          -webkit-transform: scaleX(-1)
+          transform: scaleX(-1)
+  .star-2-container
+      position: absolute
+      width: 15%
+      left: -5%
+      bottom: -5%
+      transform: scaleX(-1)
+      z-index: -1
+      img
+          width: 100%
 .lottie-globe-rotate
     width: 600px
     display: block
@@ -419,4 +430,14 @@ onMounted(() => {
     right: -150%
   img
     width: 100%
+
+.arrow-down-container
+  position: absolute
+  bottom: 14%
+.arrow-down
+  position: absolute
+  transform-origin: center center
+  transform: translateX(-50%)
+  left: 50%
+  width: 120px
 </style>

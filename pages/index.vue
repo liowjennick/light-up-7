@@ -140,7 +140,7 @@
               </div>
             </div>
             <div class="text-container">
-              <p class="font-white font-14 font-weight-200 just-sans">Make the best parts of your business <b>shine bright</b> with our strategy, branding and growth services.</p>
+              <p class="font-white font-weight-200 just-sans">Make the best parts of your business <b>shine bright</b> with our strategy, branding and growth services.</p>
             </div>
           </div>
         </div>
@@ -170,7 +170,7 @@
               />
             </div>
             <div class="text-container">
-              <p class="font-white font-14 font-weight-200 just-sans">We specialise in <b>bringing ideas to life</b>, spanning from design and video production to event planning, all to <b>ignite transformative branding experiences</b>.</p>
+              <p class="font-white font-weight-200 just-sans">We specialise in <b>bringing ideas to life</b>, spanning from design and video production to event planning, all to <b>ignite transformative branding experiences</b>.</p>
             </div>
           </div>
         </div>
@@ -200,7 +200,7 @@
               />
             </div>
             <div class="text-container">
-              <p class="font-white font-14 font-weight-200 just-sans">Seeking effective marketing solutions? Look no further! Our custom-made digital strategies <b>deliver results tailored to your audience</b>.</p>
+              <p class="font-white font-weight-200 just-sans">Seeking effective marketing solutions? Look no further! Our custom-made digital strategies <b>deliver results tailored to your audience</b>.</p>
             </div>
           </div>
         </div>
@@ -264,9 +264,7 @@
       <div class="bullet-container">
         <p class="font-orange font-20 font-weight-200 just-sans mb-20">our services</p>
         <div class="services-list-container">
-          <a
-            :href="'/services/' + item.slug"
-            target="_blank"
+          <div
             class="services-item pb-8 pt-8"
             :key="i"
             v-for="(item, i) in ourServicesItems"
@@ -276,6 +274,16 @@
           >
             <p class="bullet font-white font-18 font-weight-200 just-sans">0{{ i + 1 }}.</p>
             <p class="text font-white font-18 font-weight-200 just-sans">{{ item.display_text }}</p>
+          </div>
+
+          <a
+            href="/work"
+            class="cta-button-row"
+            style="margin-top: 40px"
+          >
+            <div class="cta-button">
+              <p class="font-orange font-18">view our services</p>
+            </div>
           </a>
         </div>
       </div>
@@ -295,9 +303,7 @@
             :class="{ active: ourServicesItemsHighlightedSection !== -1 }"
           />
 
-          <a
-            :href="'/services/' + item.slug"
-            target="_blank"
+          <div
             class="bulb-image-text-container"
             :alt="`Bulb ${i}`"
             v-for="(item, i) in ourServicesItems"
@@ -318,7 +324,7 @@
               src="../assets/images/home/our-services-bulb-glow.png"
             />
             <p class="font-white bulb-text just-sans">{{ item.display_text }}</p>
-          </a>
+          </div>
         </div>
       </div>
     </div>
@@ -1042,13 +1048,12 @@ onMounted(() => {
 @import "../assets/sass/reset.sass"
 
 #homepage
-  background-color: black
   padding-top: 0px
 
 #intro-video
   width: 100vw
   height: 100vh
-  background: black
+  // background: black
   position: fixed
   z-index: 100
   opacity: 1
@@ -1081,7 +1086,7 @@ onMounted(() => {
         +desktop
           font-size: 60px
         +large-mobile
-          font-size: 50px
+          font-size: 40px
         +mobile
           font-size: 40px
         &:hover
@@ -1182,6 +1187,8 @@ onMounted(() => {
   position: relative
   height: 100vh
   background-color: black
+  +desktop
+    padding: 0 !important
   .indicator-container-list
     position: absolute
     right: 20px
@@ -1273,8 +1280,9 @@ onMounted(() => {
 
 #our-services-section
   background-color: black
-  +desktop
-    padding-top: 50%
+  +large-mobile
+    padding-top: 40%
+    padding-bottom: 40%
     flex-direction: column-reverse
   .bullet-container
     flex: 2
@@ -1304,8 +1312,8 @@ onMounted(() => {
   .bulb-container
     flex: 3
     transform: translateY(25%)
-    +desktop
-      flex: 1
+    +large-mobile
+      flex: 2
       transform: translateY(0)
     .bulb-image-container
       position: relative
@@ -1674,6 +1682,28 @@ onMounted(() => {
     bottom: -40px
     left: 55%
     transform: translateX(50%)
+
+.services-list-container
+  .cta-button-row
+    display: flex
+    justify-content: flex-start
+    text-decoration: none
+    .cta-button
+      border: 1px solid $orange
+      border-radius: 24px
+      font-family: "JustSans"
+      text-align: center
+      padding: 10px 40px
+      display: inline-flex
+      cursor: pointer
+      transition: 0.2s all
+      p
+        transition: 0.2s all
+      &:hover
+        background-color: $orange
+        box-shadow: 0 0 20px $orange
+        p
+          color: white
 
 
 @keyframes arrow-down-move

@@ -185,7 +185,8 @@
             :key="vacancyTab"
             class="tab-button"
             :name="vacancyTab"
-            @click=""
+            @click="filterItem(vacancyTab)"
+            :class="{ active: vacancyTab === currentActiveFilter }"
           >
             {{ vacancyTab }}
           </button>
@@ -194,7 +195,7 @@
       <!-- vacancy grid -->
       <div class="vacancy-container">
         <div
-          v-for="(recent, key) in recentJobs"
+          v-for="(recent, key) in currentDisplayedJobs"
           :key="key"
           class="vacancy-item"
         >
@@ -209,7 +210,7 @@
           <a
             class="orange-outlined-button vacancy-btn"
             style="font-family: 'JustSans'"
-            :href="recent.url"
+            :href="`/careers/${recent.slug}`"
             >apply now!</a
           >
         </div>
@@ -346,33 +347,95 @@ const companyPics = Companys.map((comp, key) => ({
   alt: `Company pic ${key + 1}`,
 }));
 
+const currentActiveFilter = ref("all")
+
+const filterItem = (slug) => {
+  currentActiveFilter.value = slug
+  if (slug !== "all") {
+    const newJobArray = []
+
+    recentJobs.map((item, j) => {
+      let found = false
+      item.category.map((category_filter, k) => {
+        if (category_filter === slug && !found) {
+          newJobArray.push(item)
+          found = true
+        }
+      })
+    })
+
+    currentDisplayedJobs.value = newJobArray
+  } else {
+    currentDisplayedJobs.value = recentJobs
+  }
+}
+
 const vacancyTabs = ["all", "finance/accounting", "events", "internship", "client services", "content", "creative", "video", "web"];
 const recentJobs = [
   {
     title: "Event Manager",
-    url: "/careers/1",
+    slug: "event-manager",
+    category: ["events"]
   },
   {
     title: "Finance and Accounting Executive",
-    url: "/careers/1",
+    slug: "finance-accounting-executive",
+    category: ["finance/accounting"]
   },
   {
     title: "Internship",
-    url: "/careers/1",
+    slug: "internship",
+    category: ["internship"]
   },
   {
     title: "Project Manager",
-    url: "/careers/1",
+    slug: "project-manager",
+    category: ["finance/accounting"]
   },
   {
     title: "Video Production Manager",
-    url: "/careers/1",
+    slug: "video-production-manager",
+    category: ["video", "creative"]
   },
   {
     title: "Senior Digital Designer",
-    url: "/careers/1",
+    slug: "senior-digital-designer",
+    category: ["creative", "content"]
   },
 ];
+
+const currentDisplayedJobs = ref([
+  {
+    title: "Event Manager",
+    slug: "event-manager",
+    category: ["events"]
+  },
+  {
+    title: "Finance and Accounting Executive",
+    slug: "finance-accounting-executive",
+    category: ["finance/accounting"]
+  },
+  {
+    title: "Internship",
+    slug: "internship",
+    category: ["internship"]
+  },
+  {
+    title: "Project Manager",
+    slug: "project-manager",
+    category: ["finance/accounting"]
+  },
+  {
+    title: "Video Production Manager",
+    slug: "video-production-manager",
+    category: ["video", "creative"]
+  },
+  {
+    title: "Senior Digital Designer",
+    slug: "senior-digital-designer",
+    category: ["creative", "content"]
+  },
+]);
 </script>
 
 <style lang="sass" scoped>
@@ -486,7 +549,7 @@ const recentJobs = [
   position: absolute
   width: 100%
   height: 98%
-  background-color: rgba(0, 0, 0, 70%)
+  background-color: rgba(0, 0, 0, 60%)
   top: 50%
   left:50%
   transform: translate(-50%, -51%)
@@ -524,6 +587,9 @@ const recentJobs = [
     padding-inline: 24px
     &:hover
       text-shadow: 0 0 10px white
+    &.active
+      text-shadow: 0 0px 0px 10px white
+      background-color: rgba(255, 255, 255, 0.14)
     +desktop
       padding-inline: 12px
     +large-mobile

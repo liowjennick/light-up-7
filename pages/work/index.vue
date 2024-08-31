@@ -149,11 +149,11 @@
             <div class="project-list-banner-container">
               <div class="project-banner-item" :class="`banner-item-${i}`" v-for="(item, i) in ProjectData" :key="i">
                 <a :href="`work/${item.slug}`">
-                  <img :alt="item.slug + ' Banner'" class="banner-image" :src="`/images/work/banners/${item.slug}-banner.png`" />
-                  <div class="banner-content-container">
-                    <img :alt="item.slug + ' Banner Logo'" class="banner-logo" :src="`/images/work/banners/${item.slug}-banner-logo.png`" />
-                    <p :style="{ color: item.banner_description_color }" class="banner-description">{{ item.banner_description }}</p>
-                  </div>
+                  <img :alt="item.slug + ' Banner'" class="banner-image" :src="`/images/work/projects/${item.slug}/banner.png`" />
+                  <!-- <div class="banner-content-container"> -->
+                    <!-- <img :alt="item.slug + ' Banner Logo'" class="banner-logo" :src="`/images/work/banners/${item.slug}-banner-logo.png`" /> -->
+                    <!-- <p :style="{ color: item.banner_description_color }" class="banner-description">{{ item.banner_description }}</p> -->
+                  <!-- </div> -->
                 </a>
               </div>
             </div>
@@ -450,25 +450,25 @@ onMounted(() => {
       }
     })
 
-    const textSplit = new SplitType(`.banner-item-${i} .banner-description`)
-    console.log(textSplit)
-    const textIncrements = 200 / textSplit.chars.length
-    console.log(textIncrements)
-    textSplit.chars.map((char, j) => {
-      gsap.from(char, {
-        opacity: 0,
-        duration: 1,
-        scale: 0,
-        y: -20,
-        scrollTrigger: {
-          trigger: item,
-          scrub: 1,
-          start: `top-=${200 - (textIncrements * j)} center`,
-          end: `center center`,
-          toggleActions: "play play play reverse",
-        }
-      })
-    })
+    // const textSplit = new SplitType(`.banner-item-${i} .banner-description`)
+    // console.log(textSplit)
+    // const textIncrements = 200 / textSplit.chars.length
+    // console.log(textIncrements)
+    // textSplit.chars.map((char, j) => {
+    //   gsap.from(char, {
+    //     opacity: 0,
+    //     duration: 1,
+    //     scale: 0,
+    //     y: -20,
+    //     scrollTrigger: {
+    //       trigger: item,
+    //       scrub: 1,
+    //       start: `top-=${200 - (textIncrements * j)} center`,
+    //       end: `center center`,
+    //       toggleActions: "play play play reverse",
+    //     }
+    //   })
+    // })
 
     // gsap.from(item, {
     //   opacity: 0,

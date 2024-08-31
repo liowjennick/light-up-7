@@ -1,26 +1,17 @@
 <script setup lang="ts">
+import { useRoute } from "vue-router"
 import { ref } from 'vue'
+import jobsData from '~/public/data/jobs_data';
 
 const { params } = useRoute()
 
-const jobDescription = ref({
-  title: "Finance & Accounting Executive",
-  description: `We are searching for a highly organized and detail-oriented finance & accounting assistant to join our
-          finance
-          team. Extensive knowledge of general accounting and bookkeeping practices is essential. You will assist with
-          the
-          day-to-day tasks in our finance department. You will play an integral role in maintaining the company’s
-          account
-          information.
-          <br><br>
-          We work with clients to provide creative solutions to grow their business through media advertising and fun
-          projects. Working closely with the finance manager, you will manage, process and troubleshoot various accounts
-          and transactions. Ultimately, you will help sustain, monitor our company’s financial health and ensure our
-          resources are utilized beneficially.`
-})
+const route = useRoute()
+const career_details = jobsData
+const career_details_data = ref(career_details.find((item) => item.slug === route.params.slug))
+
 useHead({
-  title: `Our Careers – ${jobDescription.value.title} | Light Up 7`,
-  meta: [{ name: "description", content: jobDescription.value.description.split('.')[0] }],
+  title: `Our Careers – ${career_details_data.value.title} | Light Up 7`,
+  // meta: [{ name: "description", content: career_details_data.responsibilities.length > 0 ? career_details_data.responsibilities[0] : career_details_data.value.title }],
 });
 const formValues = ref({
   name: "",
@@ -38,51 +29,26 @@ const formValues = ref({
   <div id="career-details">
     <div class="bg-orange-25 jd-title-container">
       <div class="section-container">
-        <p class="font-orange jd-title">{{ jobDescription.title }}</p>
-        <p v-html="jobDescription.description">
-        </p>
+        <p class="font-orange jd-title">{{ career_details_data.title }}</p>
+        <div class="description-html" v-html="career_details_data.description_html">
+        </div>
       </div>
     </div>
-    <div class="jd-respo-container">
+    <div class="jd-respo-container" v-if="career_details_data.responsibilities && career_details_data.responsibilities.length > 0">
       <div class="section-container">
         <p class="font-orange" style="font-size: 32px;">Responsibilities:</p>
         <ul style="list-style: outside disc; padding-left: 28px;">
-          <li>Manage data, records, and reports by checking for errors and verifying accuracy of financial information.
-          </li>
-          <li>Prepare receipts, invoices, for entry into data sheets.</li>
-          <li>Assist in preparation of financial statements and reports.</li>
-          <li>Assist in creating and setting budgets.</li>
-          <li>Update and maintain financial records.</li>
-          <li>Prepare spreadsheets for data entry, including budgets, accounting information, etc.</li>
-          <li>Take direction from and report to the financial manager.</li>
-          <li>Manage day-to-day accounting tasks such as data entry, billing, invoicing and payments.</li>
-          <li>Provide stellar customer service to our clients and be informed on all company policy and practices
-            (including data privacy).</li>
-          <li>Review and audit financial statements/reports, ensures that all calculations and data entries are correct.
-          </li>
-          <li>Adhere to current accounting/finance standards and regulations.</li>
+          <li :key="i" v-for="(responsibility, i) in career_details_data.responsibilities">{{ responsibility }}</li>
         </ul>
       </div>
     </div>
-    <div class="jd-req-container">
+    <div class="jd-req-container" v-if="career_details_data.desired_skills && career_details_data.desired_skills.length > 0">
       <div class="section-container">
         <p class="font-orange" style="font-size: 32px;">Desired Skills & Experience:</p>
         <ul style="list-style: outside disc; padding-left: 28px;">
-          <li>Candidates must possess at least Diploma/Bachelor’s Degree/Post Graduate Diploma/Professional Degree in
-            Finance, Accounting or any related field</li>
-          <li>Mathematical and accounting acuity.</li>
-          <li>Professional demeanor, self-motivated, thrives under pressure, proactive and able to work independently.
-          </li>
-          <li>Knowledgeable in basic accounting/bookkeeping practices and processes</li>
-          <li>Computer knowledge, experience using Microsoft Suite (Word, Excel etc.) and other accounting/data input
-            software.</li>
-          <li>Excellent communication and interpersonal skills.</li>
-          <li>Strong organizational and time-management skills.</li>
-          <li>Thrives working both independently and collaboratively.</li>
-          <li>Highly dependable, respectful and consistently works to uphold company ethics and standards.</li>
-          <li>Minimum of 1 year of working experience in related field.</li>
+          <li :key="i" v-for="(skill, i) in career_details_data.desired_skills">{{ skill }}</li>
         </ul>
-        <p style="font-size: 20px; font-weight: 900; margin-top: 30px">This is a full-time position with a competitive
+        <p style="font-size: 20px; font-weight: 900; margin-top: 80px;">This is a full-time position with a competitive
           salary plus
           benefits.</p>
       </div>
@@ -256,7 +222,7 @@ const formValues = ref({
   +mobile
     padding-inline: 30px
 .form-container
-  padding: 0 60px
+  padding: 0px 60px
   margin: 0
   +large-mobile
     padding: 0 60px
@@ -334,4 +300,8 @@ li
   width: 47.5%
   +large-mobile
     width: 100%
+
+.description-html
+  p
+    margin-bottom: 20px
 </style>

@@ -5,7 +5,7 @@
       <div class="navbar-contents">
         <div class="logo-container">
           <a href="/">
-            <img alt="Light Up 7 Logo" src="../assets/images/light-up-7-logo.png" />
+            <img alt="Light Up 7 Logo" src="../assets/images/home/logo-large-header.png" />
           </a>
         </div>
 
@@ -108,7 +108,7 @@ onMounted(() => {
         justify-content: center
       .nav-item
         transition: 0.2s all
-        padding: 40px 40px
+        padding: 30px 40px
         text-decoration: none
         display: block
         // font-family: "JustSans"

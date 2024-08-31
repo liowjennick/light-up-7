@@ -21,6 +21,15 @@
           <img alt="Icon Group" src="../../assets/images/services/icons/icon-group.png" />
         </div>
       </div>
+
+      <!-- <div class="arrow-down-container">
+        <LottieAnimation
+          class="arrow-down"
+          autoplay
+          loop
+          :animation-data="ArrowDownJSON"
+        />
+      </div> -->
     </div>
     <!-- Services List -->
     <div class="full-screen-center-content hover-services" style="flex-direction: column">
@@ -33,7 +42,7 @@
             <img :alt="`${item.slug} Icon`" class="item-icon-orange" v-if="activeCircleFollowIndex !== i"
               :src="`/images/services/list-icons/icons/orange/${item.slug}-orange.png`" />
             <LottieAnimation autoplay
-            loop class="item-icon" v-if="activeCircleFollowIndex === i" :animation-data="item.lottie" />
+            loop class="item-icon" :animation-data="item.lottie" />
           </div>
           <div class="full-screen-start-center" style="z-index: 1; flex-direction: column; flex: 1; color: white">
             <h2>{{ item.title }}</h2>
@@ -64,6 +73,7 @@ import Video from "@/assets/images/services/lottie/video-photography-hover.json"
 import Event from "@/assets/images/services/lottie/event-management-hover.json"
 import { ScrollTrigger, ScrollToPlugin, Draggable } from "gsap/all";
 import { LottieAnimation } from "lottie-web-vue";
+import ArrowDownJSON from "@/assets/images/home/arrow-down-lottie.json";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
@@ -268,20 +278,23 @@ onMounted(() => {
       text-decoration: none
       overflow: hidden
       &:hover
-          background-color: #d8a54b
-          .service-item
-            path[fill="#d8a54b"]
-              fill: white
-            path[stroke="#d8a54b"]
-              stroke: white
-            // .cta-btn-parent
-            //   background-color: black
-            //   transform: translate(-75%, 50%)
-            //   .hover-text
-            //     visibility: visible
-            //     color: $orange
-            //   .cta-btn-child
-            //     transform: translate(115%, -145%)
+        background-color: #d8a54b
+        .service-item
+          path[fill="#d8a54b"]
+            fill: white
+          path[stroke="#d8a54b"]
+            stroke: white
+        .item-icon
+          display: initial
+          position: absolute
+          // .cta-btn-parent
+          //   background-color: black
+          //   transform: translate(-75%, 50%)
+          //   .hover-text
+          //     visibility: visible
+          //     color: $orange
+          //   .cta-btn-child
+          //     transform: translate(115%, -145%)
       .divider-child
         border-top: 1px solid #ffffff40
       .service-item
@@ -374,6 +387,18 @@ onMounted(() => {
 .item-icon
   width: 90px
   position: absolute
+  display: none
+
 .item-icon-orange
   width: 50px
+
+.arrow-down-container
+  position: absolute
+  bottom: 14%
+.arrow-down
+  position: absolute
+  transform-origin: center center
+  transform: translateX(-50%)
+  left: 50%
+  width: 120px
 </style>

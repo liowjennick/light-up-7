@@ -2,10 +2,13 @@
 
 import newsData from "./public/data/news_data.js";
 import projectsData from "./public/data/projects_data.js";
+import jobsData from "./public/data/jobs_data.js";
 
 const generate_routes: string[] = [];
 newsData.map((item) => generate_routes.push(`/news/${item.slug}`));
 projectsData.map((item) => generate_routes.push(`/work/${item.slug}`));
+jobsData.map((item) => generate_routes.push(`/careers/${item.slug}`))
+
 
 export default defineNuxtConfig({
   devtools: { enabled: false },
