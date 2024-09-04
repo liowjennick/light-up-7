@@ -207,7 +207,6 @@
           </button>
         </div>
       </div> -->
-
       <component is="script" src="https://www.cognitoforms.com/f/seamless.js" data-key="KYyGeNiZ80OLqp3g9SCdyQ" data-form="2" async />
     </div>
   </div>
@@ -300,13 +299,19 @@ async function submitForm(token: string) {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 @import "../../assets/sass/responsive.sass"
 @import "../../assets/sass/fonts.sass"
 @import "../../assets/sass/animations.sass"
 @import "../../assets/sass/layout.sass"
 @import "../../assets/sass/reset.sass"
 @import "../../assets/sass/inputs.sass"
+
+form.cog-cognito
+  width: 100% !important
+  padding-top: 80px !important
+  +large-mobile
+    padding-top: 40px !important
 
 .contact-body
   display: flex
@@ -371,6 +376,7 @@ async function submitForm(token: string) {
 
 #contact-header-title
   position: absolute
+  max-width: 850px
   width: 60%
   height: auto
   top: 50%

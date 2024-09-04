@@ -1097,7 +1097,7 @@ onMounted(() => {
         +large-mobile
           font-size: 40px
         +mobile
-          font-size: 40px
+          font-size: 30px
         &:hover
           opacity: 0.3
           text-shadow: 0px 0px 8px white

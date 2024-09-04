@@ -14,7 +14,7 @@
       <LottieAnimation autoplay :animation-data="LineBulb" class="services-header" />
     </div>
     <!-- Service Details -->
-    <div class="service-detail-grid-2 section-container" :style="{ height: `${(serviceDetails.length + 1) * 90}px` }">
+    <div class="service-detail-grid-2 section-container" :style="{ height: `${(serviceDetails.length + 1) * 100}px` }">
       <div v-for="(detail, key) in serviceDetails" :key="key" class="full-screen-start-center service-detail-item"
         style="flex-direction: column;">
         <p>{{ detail.title }}</p>
