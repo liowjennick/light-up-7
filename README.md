@@ -1,75 +1,33 @@
-# Nuxt 3 Minimal Starter
-
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
 ## Setup
+### Github link: https://github.com/liowjennick/light-up-7
+Project is built using Nuxt 3, all pages are statically generated and hosted as static files. Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-Make sure to install the dependencies:
 
-```bash
-# npm
-npm install
+## How to setup the project?
+### Dependency
+- Node version v20.14.0
+- Nuxt 3
 
-# pnpm
-pnpm install
+### On the base directory
+- ```npm install```
+- ```npm run dev```
 
-# yarn
-yarn install
+### How to build and host the project?
+- On the base directory run ```npm run generate```
+- This will generate the output in ```/.output/public```
+- Copy and paste the entire folder content to the ftp server
 
-# bun
-bun install
-```
+### How to change jobs content / news content / projects content.
+- In ```/public/data/``` update the json file's fields accordingly based on the json structure.
+- For data not included, the content is within the page itself (index.vue)
 
-## Development Server
+### Where is the SEO located?
+- Inside each page (index.vue), look for the ```useHead()``` function.
 
-Start the development server on `http://localhost:3000`:
+### How to change favicon
+- replace the file in ```/public/favicon.ico```
 
-```bash
-# npm
-npm run dev
+### Where is the html located at?
+- Pages of the site is located under the ```/pages``` folder
+- Footer and navbar is located under ```/components``` folder
 
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
