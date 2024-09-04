@@ -13,7 +13,10 @@
             type="video/mp4"
           />
         </video>
-        <div @click="skipIntro" class="skip-button-container">
+        <div
+          @click="skipIntro"
+          class="skip-button-container"
+        >
           <p>Skip Video</p>
         </div>
       </template>
@@ -650,28 +653,36 @@ watch(yellowOutlineIndex, (newIndex: Number, oldIndex: Number) => {
 });
 
 // OUR SERVICES
-const ourServicesItems = [{
-  display_text: "Growth Strategy",
-  slug: "growth-strategy",
-}, {
-  display_text: "Digital Marketing",
-  slug: "digital-marketing"
-}, {
-  display_text: "Video & Photography",
-  slug: "video-photography"
-}, {
-  display_text: "Branding & Creative Design",
-  slug: "branding-creative"
-}, {
-  display_text: "Websites & Apps",
-  slug: "website-apps"
-}, {
-  display_text: "Event Management",
-  slug: "event-management"
-}, {
-  display_text: "Media Buying",
-  slug: "media-buying"
-}];
+const ourServicesItems = [
+  {
+    display_text: "Growth Strategy",
+    slug: "growth-strategy",
+  },
+  {
+    display_text: "Digital Marketing",
+    slug: "digital-marketing",
+  },
+  {
+    display_text: "Video & Photography",
+    slug: "video-photography",
+  },
+  {
+    display_text: "Branding & Creative Design",
+    slug: "branding-creative",
+  },
+  {
+    display_text: "Websites & Apps",
+    slug: "website-apps",
+  },
+  {
+    display_text: "Event Management",
+    slug: "event-management",
+  },
+  {
+    display_text: "Media Buying",
+    slug: "media-buying",
+  },
+];
 
 const ourServicesItemsHighlightedSection = ref(-1);
 
@@ -706,7 +717,7 @@ const skipIntro = () => {
   const cookieName = "home-intro-video-played";
   hideIntroVideo.value = true;
   setCookie(cookieName, "true", 0.5);
-}
+};
 
 onBeforeMount(() => {
   const cookieName = "home-intro-video-played";
@@ -806,11 +817,12 @@ onMounted(() => {
   // INTRO VIDEO END
   setTimeout(() => {
     if (document.getElementById("intro-video")) {
-      gsap.to("#intro-video", {
+      gsap.to(["#intro-video", ".skip-button-container"], {
         opacity: 0,
         onComplete: () => {
           document.getElementById("intro-video")!.style.display = "none";
           localStorage.setItem("home-intro-video-played", "true");
+          hideIntroVideo.value = true;
         },
       });
     }
