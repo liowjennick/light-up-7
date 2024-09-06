@@ -232,6 +232,8 @@ import Value1 from "@/assets/images/careers/lottie/Icon1_Celebrating Creativity_
 import Value2 from "@/assets/images/careers/lottie/Icon2_Doing Work That Matters.json";
 import Value3 from "@/assets/images/careers/lottie/Icon3_Always Growing.json";
 import ArrowDownJSON from "@/assets/images/home/arrow-down-lottie.json";
+import JobsData from "../../public/data/jobs_data.js";
+import jobsData from "../../public/data/jobs_data.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -371,71 +373,9 @@ const filterItem = (slug) => {
 }
 
 const vacancyTabs = ["all", "finance/accounting", "events", "internship", "client services", "content", "creative", "video", "web"];
-const recentJobs = [
-  {
-    title: "Event Manager",
-    slug: "event-manager",
-    category: ["events"]
-  },
-  {
-    title: "Finance and Accounting Executive",
-    slug: "finance-accounting-executive",
-    category: ["finance/accounting"]
-  },
-  {
-    title: "Internship",
-    slug: "internship",
-    category: ["internship"]
-  },
-  {
-    title: "Project Manager",
-    slug: "project-manager",
-    category: ["finance/accounting"]
-  },
-  {
-    title: "Video Production Manager",
-    slug: "video-production-manager",
-    category: ["video", "creative"]
-  },
-  {
-    title: "Senior Digital Designer",
-    slug: "senior-digital-designer",
-    category: ["creative", "content"]
-  },
-];
+const recentJobs = jobsData;
 
-const currentDisplayedJobs = ref([
-  {
-    title: "Event Manager",
-    slug: "event-manager",
-    category: ["events"]
-  },
-  {
-    title: "Finance and Accounting Executive",
-    slug: "finance-accounting-executive",
-    category: ["finance/accounting"]
-  },
-  {
-    title: "Internship",
-    slug: "internship",
-    category: ["internship"]
-  },
-  {
-    title: "Project Manager",
-    slug: "project-manager",
-    category: ["finance/accounting"]
-  },
-  {
-    title: "Video Production Manager",
-    slug: "video-production-manager",
-    category: ["video", "creative"]
-  },
-  {
-    title: "Senior Digital Designer",
-    slug: "senior-digital-designer",
-    category: ["creative", "content"]
-  },
-]);
+const currentDisplayedJobs = ref(recentJobs);
 </script>
 
 <style lang="sass" scoped>
