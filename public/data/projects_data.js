@@ -11,8 +11,10 @@ import KarnivalCelikKewanganJohor from "./projects/karnival_celik_kewangan_johor
 import BangkitBersamaMelawanScammer from "./projects/bangkit_bersama_melawan_scammer.json"
 import MalaysiaNextChickenChop from "./projects/malaysia_next_chicken_chop.json"
 import LaterasiKewanganSarawak from "./projects/laterasi_kewangan_sarawak.json"
+import NewProject from "./projects/new_project.json"
 
 const projectsData = [
+    NewProject,
     BalangKuihAbah,
     HotlinkMusicVideo,
     KTMBCorporateVideo,

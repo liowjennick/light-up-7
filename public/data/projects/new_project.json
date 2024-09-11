@@ -1,0 +1,48 @@
+{
+    "slug": "new-project",
+    "banner_image_src": "banner.png",
+    "banner_description": "Showcasing the endless rewards with Hotlink App by creating a video that transcends dimensions with combing 3D and 2D elements over live footage.",
+    "banner_description_color": "white",
+    "keywords": "production company",
+    "title": "New Project | Light Up 7",
+    "description": "A showcase of the Hotlink App in a dynamic & catchy music video, with added flair of our production company’s state-of-the-art 3D & 2D VFX.",
+    "contents": [
+      {
+        "company_logo_src": "unilever.png",
+        "workscope_tags": ["Video Production", "Animation"],
+        "title": "New Project",
+        "subtitle": "Showcasing the endless rewards with Hotlink App by creating a video that transcends dimensions with combing 3D and 2D elements over live footage.",
+        "challenge_result_title": "Showcasing the endless rewards with Hotlink App",
+        "challenge_description": "Creating a video that transcends dimension with the combination of 3D and 2D elements as well as live footage.",
+        "results_description": "Successfully integrating live footage with 3D and 2D elements seamlessly. 3D backgrounds with depth and realism, 2D elements add flair and dynamics. The video truly captured the endless benefits of downloading the Hotlink app.",
+        "outcome_description": "",
+        "deliverables": ["Creative Concept", "Production", "3D Animation", "Video Editing", "CGI + VFX"],
+        "featured_media_src": [
+          {
+            "src": "https://www.youtube.com/embed/26nk3P1Roew",
+            "is_video": false,
+            "is_youtube_video": true,
+            "caption": "",
+            "width_percent": 100
+          }
+        ],
+        "media_gallery": [
+          [
+            {
+              "src": ["image-1.png"],
+              "is_video": false,
+              "caption": "",
+              "width_percent": 54.2
+            },
+            {
+              "src": ["image-2.png"],
+              "is_video": false,
+              "caption": "",
+              "width_percent": 45.8
+            }
+          ]
+        ]
+      }
+    ]
+  }
+  
