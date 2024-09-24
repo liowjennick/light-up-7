@@ -13,12 +13,14 @@ jobsData.map((item) => generate_routes.push(`/careers/${item.slug}`))
 export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
+
   nitro: {
     static: true,
     prerender: {
       failOnError: false,
     },
   },
+
   app: {
     head: {
       htmlAttrs: {
@@ -26,6 +28,7 @@ export default defineNuxtConfig({
       }
     }
   },
+
   build: {
     transpile: ["gsap"],
   },
@@ -42,5 +45,6 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["vue3-carousel-nuxt", "nuxt-particles"]
+  modules: ["vue3-carousel-nuxt", "nuxt-particles"],
+  compatibilityDate: "2024-09-13"
 });

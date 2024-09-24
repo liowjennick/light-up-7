@@ -574,7 +574,7 @@ onMounted(() => {
 
   #team-section
     .team-image-container
-      background-image: url("../../assets/images/about/about-team.png")
+      background-image: url("../../assets/images/about/about-team.jpg")
       background-size: 100%
       margin-top: 10%
       background-repeat: no-repeat

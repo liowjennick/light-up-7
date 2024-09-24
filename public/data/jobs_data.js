@@ -1,17 +1,17 @@
-import EventManager from "../data/jobs/event-manager.json"
+import SeniorEventManager from "../data/jobs/senior-event-manager.json"
 import FinanceAccountingExecutive from "../data/jobs/finance-accounting-executive.json"
 import Internship from "../data/jobs/internship.json"
-import ProjectManager from "../data/jobs/project-manager.json"
+import JuniorProjectManager from "../data/jobs/junior-project-manager.json"
 import SeniorDigitalDesigner from "../data/jobs/senior-digital-designer.json"
-import VideoProductionManager from "../data/jobs/video-production-manager.json"
+import JuniorDigitalDesigner from "../data/jobs/junior-digital-designer.json"
 
 const jobsData = [
-    EventManager,
+    SeniorEventManager,
     FinanceAccountingExecutive,
     Internship,
-    ProjectManager,
+    JuniorProjectManager,
     SeniorDigitalDesigner,
-    VideoProductionManager
+    JuniorDigitalDesigner
 ]
 
 export default jobsData
