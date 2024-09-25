@@ -38,7 +38,7 @@ const formValues = ref({
       <div class="section-container">
         <p class="font-orange" style="font-size: 32px;">Responsibilities:</p>
         <ul style="list-style: outside disc; padding-left: 28px;">
-          <li :key="i" v-for="(responsibility, i) in career_details_data.responsibilities">{{ responsibility }}</li>
+          <li style="margin-bottom: 12px;" v-for="(responsibility, i) in career_details_data.responsibilities" :key="i" v-html="responsibility"></li>
         </ul>
       </div>
     </div>

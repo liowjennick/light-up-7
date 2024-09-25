@@ -204,7 +204,8 @@
               class="font-white"
               style="font-size: 20px"
             >
-              {{ recent.title }}
+            {{ recent.title }}
+             
             </p>
           </div>
           <a
@@ -376,6 +377,11 @@ const vacancyTabs = ["all", "finance/accounting", "events", "internship", "clien
 const recentJobs = jobsData;
 
 const currentDisplayedJobs = ref(recentJobs);
+
+//new code 
+const formatJobDescription = (recent) => {
+  return `${recent.title}<br>${recent.responsibilities.join('<br>')}`;
+};
 </script>
 
 <style lang="sass" scoped>

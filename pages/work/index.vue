@@ -79,7 +79,7 @@
 
       <div id="sliding-button">
         <div class="sliding-button-description" :class="{ 'project-active': displayMode === DisplayMode.Projects }">
-          <p class="clients font-orange text-center just-sans font-20 font-weight-200">swipe right to see our past works
+          <p class="clients font-orange text-center just-sans font-20 font-weight-200">swipe right to see our past work
           </p>
           <p class="projects font-orange text-center just-sans font-20 font-weight-200">swipe left to see our clients
           </p>
