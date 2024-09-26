@@ -350,109 +350,99 @@
       <div class="clients-list-container mb-40">
         <div class="section-container">
           <a
-            href="/work/balang-kuih-abah"
             class="client-item"
           >
             <img
-              alt="PNB Logo"
+              alt="Petronas Logo"
               class="client-logo"
-              src="../assets/images/home/logo/pnb-logo.png"
+              src="../assets/images/home/logo/client-logo-petronas.png"
             />
           </a>
           <a
-            href="/work/hotlink-music-video"
-            class="client-item"
-          >
-            <img
-              alt="Hotlink Logo"
-              class="client-logo"
-              src="../assets/images/home/logo/hotlink.png"
-            />
-          </a>
-
-          <a
-            href="/work/ktmb-corporate-video"
-            class="client-item"
-          >
-            <img
-              alt="KTM Logo"
-              class="client-logo"
-              src="../assets/images/home/logo/ktm-logo.png"
-            />
-          </a>
-          <a
-            href="/work/innoex-highlight-video"
             class="client-item"
           >
             <img
               alt="Cyberview Logo"
               class="client-logo"
-              src="../assets/images/home/logo/cyberview-logo.png"
-            />
-          </a>
-          <a
-            href="/work/7-eleven-social-media-marketing"
-            class="client-item"
-          >
-            <img
-              alt="7 Eleven Logo"
-              class="client-logo"
-              src="../assets/images/home/logo/7-eleven.png"
+              src="../assets/images/home/logo/client-logo-cyberview.png"
             />
           </a>
 
           <a
-            href="/work/ahh-yum-digital-marketing-suite"
-            class="client-item"
-          >
-            <img
-              alt="Ahh Yum Logo"
-              class="client-logo"
-              src="../assets/images/home/logo/ahh-yum.png"
-            />
-          </a>
-
-          <a
-            href="/work/bangkit-bersama-melawan-scammer"
             class="client-item"
           >
             <img
               alt="BNM Logo"
               class="client-logo"
-              src="../assets/images/home/logo/bank-negara.png"
+              src="../assets/images/home/logo/client-logo-bnm.png"
             />
           </a>
-
           <a
-            href="/work/malaysia-next-chicken-chop"
-            class="client-item"
-          >
-            <img
-              alt="Unilever Logo"
-              class="client-logo"
-              src="../assets/images/home/logo/unilever.png"
-            />
-          </a>
-
-          <a
-            href="/work/saya-sayang-saya-unicef"
             class="client-item"
           >
             <img
               alt="Unicef Logo"
               class="client-logo"
-              src="../assets/images/home/logo/unicef.png"
+              src="../assets/images/home/logo/client-logo-unicef.png"
+            />
+          </a>
+          <a
+            class="client-item"
+          >
+            <img
+              alt="Hotlink Logo"
+              class="client-logo"
+              src="../assets/images/home/logo/client-logo-hotlink.png"
             />
           </a>
 
           <a
-            href="/work/superhero-kewangan"
             class="client-item"
           >
             <img
-              alt="Art Gallery Logo"
+              alt="Unilever Logo"
               class="client-logo"
-              src="../assets/images/home/logo/art-gallery.png"
+              src="../assets/images/home/logo/client-logo-unilever.png"
+            />
+          </a>
+
+          <a
+            class="client-item"
+          >
+            <img
+              alt="PIDM Logo"
+              class="client-logo"
+              src="../assets/images/home/logo/client-logo-pidm.png"
+            />
+          </a>
+
+          <a
+            class="client-item"
+          >
+            <img
+              alt="Hitachi Logo"
+              class="client-logo"
+              src="../assets/images/home/logo/client-logo-hitachi.png"
+            />
+          </a>
+
+          <a
+            class="client-item"
+          >
+            <img
+              alt="Bursa Malaysia Logo"
+              class="client-logo"
+              src="../assets/images/home/logo/client-logo-bursa-malaysia.png"
+            />
+          </a>
+
+          <a
+            class="client-item"
+          >
+            <img
+              alt="KPJ Logo"
+              class="client-logo"
+              src="../assets/images/home/logo/client-logo-kpj.png"
             />
           </a>
         </div>

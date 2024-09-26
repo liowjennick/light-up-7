@@ -94,7 +94,7 @@ const setActiveFollowCircleIndex = (index: number) => {
 const servicesItem = ref([
   {
     title: "Growth Strategy",
-    description: "Propel your business with a tactical plan optimised to achieve your desired goals.",
+    description: "Propel your business with a tactical plan optimised to achieve your desired goals",
     slug: "growth-strategy",
     lottie: Growth
   },
@@ -106,13 +106,13 @@ const servicesItem = ref([
   },
   {
     title: "Video & Photography",
-    description: "A picture is worth a thousand words. Tell your brand story with captivating images and engaging videos.",
+    description: "A picture is worth a thousand words. Tell your brand story with captivating images and engaging videos",
     slug: "video-photography",
     lottie: Video
   },
   {
     title: "Branding & Creative Design",
-    description: "With a little sparkle and some zing, your new brand identity is ready to take on the world.",
+    description: "With a little sparkle and some zing, your new brand identity is ready to take on the world",
     slug: "branding-creative",
     lottie: Branding
   },
@@ -124,13 +124,13 @@ const servicesItem = ref([
   },
   {
     title: "Event Management",
-    description: "From conceptualising all the way to d-day handling, our event management team is poised to bring it all to life.",
+    description: "From conceptualising all the way to d-day handling, our event management team is poised to bring it all to life",
     slug: "event-management",
     lottie: Event
   },
   {
     title: "Media Buying",
-    description: "Put your brand in front of the right audience at the right time and place. Let us help you optimise your digital presence.",
+    description: "Put your brand in front of the right audience at the right time and place. Let us help you optimise your digital presence",
     slug: "media-buying",
     lottie: Media
   },

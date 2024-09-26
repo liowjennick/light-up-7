@@ -193,8 +193,8 @@ const activeClientBulbImage = ref<string|number>("");
 
 const clientsCarouselLogo = ref([
   {
-    image_src: "khazanah-nasional.png",
-    slug: "khazanah-nasional",
+    image_src: "petronas.png",
+    slug: "petronas",
   },
   {
     image_src: "cyberview.png",
@@ -205,8 +205,8 @@ const clientsCarouselLogo = ref([
     slug: "bnm",
   },
   {
-    image_src: "petronas.png",
-    slug: "petronas",
+    image_src: "paynet.png",
+    slug: "paynet",
   },
   {
     image_src: "7-eleven.png",
@@ -241,8 +241,8 @@ const clientsCarouselLogo = ref([
     slug: "tabung-haji",
   },
   {
-    image_src: "paynet.png",
-    slug: "paynet",
+    image_src: "kenanga.png",
+    slug: "kenanga",
   },
   {
     image_src: "kpj.png",
