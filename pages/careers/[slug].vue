@@ -55,7 +55,20 @@ const formValues = ref({
     </div>
 
     <div class="form-container">
-      <component is="script" src="https://www.cognitoforms.com/f/seamless.js" data-key="KYyGeNiZ80OLqp3g9SCdyQ" data-form="5" async />
+      <!--<component is="script" src="https://www.cognitoforms.com/f/seamless.js" data-key="KYyGeNiZ80OLqp3g9SCdyQ" data-form="5" async />
+      Conditionally render the form based on the type of career -->
+      <component v-if="career_details_data?.slug === 'internship'"
+                 is="script" 
+                 src="https://www.cognitoforms.com/f/seamless.js" 
+                 data-key="KYyGeNiZ80OLqp3g9SCdyQ" 
+                 data-form="6" 
+                 async />
+      <component v-else
+                 is="script" 
+                 src="https://www.cognitoforms.com/f/seamless.js" 
+                 data-key="KYyGeNiZ80OLqp3g9SCdyQ" 
+                 data-form="5" 
+                 async />
     </div>
     <!-- <div class="form-container">
       <div class="full-screen-start-start">
