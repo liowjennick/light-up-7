@@ -2,32 +2,34 @@
     "title": "Event Manager",
     "slug": "event-manager",
     "category": ["events"],
-    "description_html": "<p>We are searching for an enthusiastic Event Manager with a \"can-do\" attitude to assist our team in hosting virtual and physical events. The ideal candidate must possess exceptional organizational abilities, superb interpersonal skills, ability to multi-task and excellent time management.</p><p>  As an Event Manager, you will work closely with the Project Management team to host engaging events that will play a huge part in the success of our client’s campaigns, their brand identity and visibility. The noteworthy Event Manager will effectively deliver event objectives and manage the whole event process from start to finish.</p>",
+    "description_html": "<p>We are seeking a highly organized and dynamic Event Manager to oversee the planning, execution, and success of a variety of events. The Event Manager will be responsible for managing all event logistics, from conception to completion, ensuring that events run smoothly and meet the desired objectives. The ideal candidate is a proactive leader with strong communication and project management skills, capable of handling multiple tasks and deadlines.</p>",
     "responsibilities": [
-      "Responsible for planning, production and management of all events.",
-      "Acts as a key liaison between all parties including internal/external stakeholders in the event production and management process.",
-      "Responsible for all event logistics and coordination.",
-      "Actively coordinate and liaise with event management vendors (negotiating quotes and agreements)",
-      "Onsite event management on rehearsal and ensure smooth event proceedings.",
-      "Obtaining government and non-government event permits",
-      "Monitor and updating event progress to ensure client satisfaction.",
-      "Reporting status to management team for all events.",
-      "Resolve and troubleshoot issues that emerge during the event day proactively.",
-      "Propose, brainstorm and implement ideas to improve event services or quality",
-      "Assist with the preparation of event proceedings, collaterals, briefing notes, duty list and any documents related to event production.",
-      "Preparation of income and expenditure report and other applicable reports relating to each event.",
-      "Handling post-event reports and survey forms.",
-      "Ensuring each event is flawlessly executed.",
-      "To work on other agency projects when required."
-    ],
-    "desired_skills": [
-      "Candidate must possess at least Diploma/Advanced/Higher/Graduate Diploma, Bachelor's Degree/Post Graduate Diploma/Professional Degree in a related field",
-      "At least 4-6 years experience in handling virtual or physical events.",
-      "Experience in project management with a track record of successful events.",
-      "Problem-solving skills and out-of-the-box thinker.",
-      "Meticulous attention to detail.",
-      "Excellent communication skills in English and Bahasa Melayu (Chinese is a bonus).",
-      "Able to multi-task, work independently and work under pressure with minimum supervision.",
-      "Must be able to drive and have their own car as main means of transportation."
+     "<strong>Event Planning & Coordination:</strong><br> - Work with clients to understand their vision, objectives, and budget for the event.<br> - Develop detailed event plans including timelines, budgets, and logistics.<br> - Select and liaise with vendors (e.g., caterers, AV suppliers, venues) and negotiate contracts.<br> - Coordinate event setup, including staging, lighting, seating, and sound requirements.",
+  
+     "<strong>On-Site Management:</strong><br> - Oversee event day operations including registration, setup, catering, and breakdown.<br> - Ensure smooth event flow by addressing and resolving any on-site issues.<br> - Act as the primary point of contact for vendors, staff, and clients during events.",
+  
+     "<strong>Budget Management:</strong><br> - Prepare and manage event budgets, track expenses, and ensure financial objectives are met.<br> - Provide regular reports to stakeholders on the financial status of events.",
+  
+     "<strong>Marketing & Promotion:</strong><br> - Collaborate with marketing teams to develop promotional strategies for events.<br> - Assist in the creation of promotional materials (e.g., invitations, brochures, social media content).",
+  
+     "<strong>Post-Event Evaluation:</strong><br> - Gather feedback from clients, attendees, and team members to evaluate the event’s success.<br> - Prepare post-event reports detailing successes, lessons learned, and recommendations for future events.",
+  
+     "<strong>Team Management:</strong><br> - Lead and coordinate internal teams, including volunteers, support staff, and external vendors.<br> - Train and guide event staff to ensure everyone is aligned with the event objectives."
     ]
+
+
+,
+    "desired_skills": [
+     "Proven experience as an Event Manager or similar role.",
+     "Strong project management skills and ability to manage multiple events simultaneously.",
+     "Excellent communication and negotiation skills.",
+     "Ability to work well under pressure and handle last-minute changes.",
+     "Knowledge of event planning and marketing techniques.",
+     "Proficiency in Microsoft Office Suite (Word, Excel, PowerPoint) and Google Suite (Docs, Sheets, Slides).",
+     "Proficient in Adobe Illustrator for creating event floor plans and adjusting artwork for print.",
+     "Budgeting and financial management skills.",
+     "Proficiency in related event management software.",
+     "Flexibility to work evenings, weekends, or holidays as required."
+    ]
+
 }
