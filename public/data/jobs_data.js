@@ -12,7 +12,6 @@ const jobsData = [
     JuniorProjectManager,
     ArtDirector,
     SeniorGraphicDesigner,
-    JuniorGraphicDesigner,
     SeniorVideographerVideoEditor
 ]
 
