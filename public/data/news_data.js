@@ -3,9 +3,10 @@ import LU7PrestigiousAgencyAward2022 from "../data/news/lu7-prestigious-agency-a
 import MeetingFamiliesHalfwayRayaPnbAsnb from "../data/news/meeting-families-halfway-raya-pnb-asnb.json"
 
 const newsData = [
+    MeetingFamiliesHalfwayRayaPnbAsnb,
     SME100Awards,
-    LU7PrestigiousAgencyAward2022,
-    MeetingFamiliesHalfwayRayaPnbAsnb
+    LU7PrestigiousAgencyAward2022
+    
 ]
 
 export default newsData
