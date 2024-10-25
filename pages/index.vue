@@ -474,7 +474,7 @@
             <img
               alt="Award SME 100 Logo"
               class="client-logo"
-              src="../assets/images/home/award-sme-100.png"
+              src="../assets/images/home/award-sme-100-2022.png"
             />
           </div>
           <div class="award-item">
@@ -496,6 +496,27 @@
               alt="Award Agency of the Year 2022 Logo"
               class="client-logo"
               src="../assets/images/home/award-agency-of-the-year-2022.png"
+            />
+          </div>
+          <div class="award-item">
+            <img
+              alt="Award Agency of the Year 2024 Logo"
+              class="client-logo"
+              src="../assets/images/home/award-a+m.png"
+            />
+          </div>
+          <div class="award-item">
+            <img
+              alt="Markies Award Logo"
+              class="client-logo"
+              src="../assets/images/home/award-markies.png"
+            />
+          </div>
+          <div class="award-item">
+            <img
+              alt="Award Dragons Logo"
+              class="client-logo"
+              src="../assets/images/home/award-dragons-2024.png"
             />
           </div>
           <div class="award-item">
