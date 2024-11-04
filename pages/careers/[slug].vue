@@ -48,11 +48,15 @@ const formValues = ref({
         <ul style="list-style: outside disc; padding-left: 28px;">
           <li :key="i" v-for="(skill, i) in career_details_data.desired_skills">{{ skill }}</li>
         </ul>
-        <p style="font-size: 20px; font-weight: 900; margin-top: 80px;">This is a full-time position with a competitive
+       <!-- <p style="font-size: 20px; font-weight: 900; margin-top: 80px;">This is a full-time position with a competitive
           salary plus
-          benefits.</p>
+          benefits.</p> -->
+          <p v-if="career_details_data.slug !== 'internship' && career_details_data.slug !== 'motion-artist-internship'" 
+           style="font-size: 20px; font-weight: 900; margin-top: 80px;">
+           This is a full-time position with a competitive salary plus benefits.
+         </p>
+       </div>
       </div>
-    </div>
 
     <div class="form-container">
       <!--<component is="script" src="https://www.cognitoforms.com/f/seamless.js" data-key="KYyGeNiZ80OLqp3g9SCdyQ" data-form="5" async />
@@ -62,6 +66,12 @@ const formValues = ref({
                  src="https://www.cognitoforms.com/f/seamless.js" 
                  data-key="KYyGeNiZ80OLqp3g9SCdyQ" 
                  data-form="6" 
+                 async />
+      <component v-else-if="career_details_data?.slug === 'motion-artist-internship'"
+                 is="script" 
+                 src="https://www.cognitoforms.com/f/seamless.js" 
+                 data-key="KYyGeNiZ80OLqp3g9SCdyQ" 
+                 data-form="7" 
                  async />
       <component v-else
                  is="script" 

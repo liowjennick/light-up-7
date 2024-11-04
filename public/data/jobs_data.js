@@ -4,15 +4,15 @@ import JuniorProjectManager from "../data/jobs/junior-project-manager.json"
 import SeniorGraphicDesigner from "../data/jobs/senior-graphic-designer.json"
 import JuniorGraphicDesigner from "../data/jobs/junior-graphic-designer.json"
 import ArtDirector from "../data/jobs/art-director.json"
-import SeniorVideographerVideoEditor from "../data/jobs/senior-videographer-video-editor.json"
+import SeniorVideoEditor from "../data/jobs/senior-video-editor.json"
+import MotionArtistiInternship from "../data/jobs/motion-artist-internship.json"
 
 const jobsData = [
     Internship,
     EventManager,
-    JuniorProjectManager,
-    ArtDirector,
-    SeniorGraphicDesigner,
-    SeniorVideographerVideoEditor
+    SeniorVideoEditor,
+    MotionArtistiInternship
+
 ]
 
 export default jobsData
