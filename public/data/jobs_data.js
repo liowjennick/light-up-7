@@ -10,6 +10,8 @@ import MotionArtistiInternship from "../data/jobs/motion-artist-internship.json"
 const jobsData = [
     Internship,
     EventManager,
+    JuniorProjectManager,
+    ArtDirector,
     SeniorVideoEditor,
     MotionArtistiInternship
 
