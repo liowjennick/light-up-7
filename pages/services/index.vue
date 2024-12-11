@@ -94,44 +94,44 @@ const setActiveFollowCircleIndex = (index: number) => {
 const servicesItem = ref([
   {
     title: "Growth Strategy",
-    description: "Propel your business with a tactical plan optimised to achieve your desired goals",
+    description: "We ignite your brand’s potential with strategic plans designed to illuminate your path to growth and success.",
     slug: "growth-strategy",
     lottie: Growth
   },
   {
     title: "Digital Marketing",
-    description: "Stay ahead on the digital front with a host of approaches, integrated to meet your business needs",
+    description: "Spark meaningful connections with tailored digital strategies that keep your brand ahead in the ever-changing online landscape.",
     slug: "digital-marketing",
     lottie: Digital
   },
   {
     title: "Video & Photography",
-    description: "A picture is worth a thousand words. Tell your brand story with captivating images and engaging videos",
+    description: "Illuminate your brand’s story with stunning visuals and compelling videos that resonate with your audience.",
     slug: "video-photography",
     lottie: Video
   },
   {
     title: "Branding & Creative Design",
-    description: "With a little sparkle and some zing, your new brand identity is ready to take on the world",
+    description: "Transform your brand into a beacon of creativity with bold designs and innovative solutions that leave a lasting impression.",
     slug: "branding-creative",
     lottie: Branding
   },
   {
     title: "Websites & Apps",
-    description: "Your business' first point of contact can leave a lasting impression. Build your best brand website with us!",
+    description: "Shine brighter online with sleek, user-friendly websites and apps that captivate and engage seamlessly.",
     slug: "website-apps",
     lottie: Website
   },
   {
-    title: "Event Management",
-    description: "From conceptualising all the way to d-day handling, our event management team is poised to bring it all to life",
-    slug: "event-management",
+    title: "Event & Activations",
+    description: "Spark unforgettable experiences with dynamic events and activations that bring your brand’s vision to life and connect with audiences on a deeper level.",
+    slug: "event-and-activations",
     lottie: Event
   },
   {
-    title: "Media Buying",
-    description: "Put your brand in front of the right audience at the right time and place. Let us help you optimise your digital presence",
-    slug: "media-buying",
+    title: "Performance Marketing",
+    description: "Accelerate your brand’s growth with data-driven strategies designed to maximize ROI and deliver measurable results across every campaign.",
+    slug: "performance-marketing",
     lottie: Media
   },
 ]);

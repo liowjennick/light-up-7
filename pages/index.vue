@@ -36,38 +36,33 @@
         <div class="text-background-row first">
           <p class="first">A</p>
           <p class="second">brand</p>
-          <p class="third">activation</p>
         </div>
 
         <div class="text-background-row second">
-          <p class="first">agency</p>
-          <p class="second">lighting</p>
-          <p class="third">up</p>
+          
+          <p class="second">activation</p>
+          <p class="fourth">agency,</p>
         </div>
 
         <div class="text-background-row third">
-          <p class="first">the</p>
           <div class="large-logo-container">
             <img
               alt="Light up 7 Logo"
               src="../assets/images/home/logo-large-header.png"
             />
           </div>
-          <p class="second">Asia-</p>
         </div>
 
         <div class="text-background-row fourth">
-          <p class="first">Pacific</p>
-          <p class="second">region,</p>
-          <p class="third">one</p>
+          <p class="first">lighting</p>
+          <p class="first">up</p>
+          <p class="fourth">every</p>
         </div>
 
         <div class="text-background-row fifth">
-          <p class="first">bright</p>
-          <p class="second">idea</p>
-          <p class="third">at</p>
-          <p class="fourth">a</p>
-          <p class="fifth">time.</p>
+          <p class="second">brand</p>
+          <p class="third">we</p>
+          <p class="fourth">touch</p>
         </div>
       </div>
     </div>
@@ -146,7 +141,7 @@
               </div>
             </div>
             <div class="text-container">
-              <p class="font-white font-weight-200 just-sans">Make the best parts of your business <b>shine bright</b> with our strategy, branding and growth services.</p>
+              <p class="font-white font-weight-200 just-sans">Showcase the brilliance of your brand with our expert strategy, branding, and growth solutions, designed to make it shine.</p>
             </div>
           </div>
         </div>
@@ -176,7 +171,7 @@
               />
             </div>
             <div class="text-container">
-              <p class="font-white font-weight-200 just-sans">We specialise in <b>bringing ideas to life</b>, spanning from design and video production to event planning, all to <b>ignite transformative branding experiences</b>.</p>
+              <p class="font-white font-weight-200 just-sans">Transform ideas into reality with our innovative design, video production, and event services, delivering experiences that elevate your brand.</p>
             </div>
           </div>
         </div>
@@ -206,7 +201,7 @@
               />
             </div>
             <div class="text-container">
-              <p class="font-white font-weight-200 just-sans">Seeking effective marketing solutions? Look no further! Our custom-made digital strategies <b>deliver results tailored to your audience</b>.</p>
+              <p class="font-white font-weight-200 just-sans">Achieve measurable results with custom digital marketing strategies crafted to engage your audience and drive success.</p>
             </div>
           </div>
         </div>
@@ -283,7 +278,7 @@
           </div>
 
           <a
-            href="/work"
+            href="/services"
             class="cta-button-row"
             style="margin-top: 40px"
           >
@@ -344,7 +339,7 @@
       />
       <div class="section-container mb-20">
         <p class="font-orange font-20 font-weight-200 just-sans mb-10">our distinguished clients:</p>
-        <p class="font-white font-30 font-weight-200 just-sans mb-40">trusted by local and global names across industries.</p>
+        <p class="font-white font-30 font-weight-200 just-sans mb-40">trusted by local and global brands across industries.</p>
       </div>
 
       <div class="clients-list-container mb-40">
@@ -686,12 +681,12 @@ const ourServicesItems = [
     slug: "website-apps",
   },
   {
-    display_text: "Event Management",
-    slug: "event-management",
+    display_text: "Event & Activations",
+    slug: "event-and-activations",
   },
   {
-    display_text: "Media Buying",
-    slug: "media-buying",
+    display_text: "Performance Marketing",
+    slug: "performance-marketing",
   },
 ];
 

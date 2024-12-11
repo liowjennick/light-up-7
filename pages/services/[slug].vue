@@ -57,9 +57,9 @@ const getHeadMetadata = (slug: string): { title: string, meta: { name: string, c
         title: "Our Services – Digital Marketing | Light Up 7",
         meta: [{ name: "description", content: "Amplify your brand's voice and capture key audiences across digital platforms with Light Up 7's expertise. View our digital marketing services here." }, { name: "keywords", content: "digital marketing services" }]
       }
-    case "media-buying":
+    case "performance-marketing":
       return {
-        title: "Our Services – Media Buying | Light Up 7",
+        title: "Our Services – Performance Buying | Light Up 7",
         meta: [{ name: "description", content: "Stand out & make it big by putting your brand out there! Contact us & let's talk media buying to bring your brand towards a wider audience." }, { name: "keywords", content: "media buying" }]
       }
     case "branding-creative":
@@ -77,9 +77,9 @@ const getHeadMetadata = (slug: string): { title: string, meta: { name: string, c
         title: "Our Services – Video & Photography | Light Up 7",
         meta: [{ name: "description", content: "As an agency specialising in video production in KL, LU7's is well equipped to tell your brand's story through captivating visuals and videos. Learn more here." }, { name: "keywords", content: "video production kl" }]
       }
-    case "event-management":
+    case "event-and-activations":
       return {
-        title: "Our Services – Event Management | Light Up 7",
+        title: "Our Services – Event & Activations | Light Up 7",
         meta: [{ name: "description", content: "As the leading event organiser in Malaysia, we bring your events to life with our innovative solutions for a memorable brand experience. View our services here." }, { name: "keywords", content: "event organizer malaysia" }]
       }
     default:
@@ -110,7 +110,7 @@ function getIcon(slug: string) {
       return Growth
     case "digital-marketing":
       return Digital
-    case "media-buying":
+    case "performance-marketing":
       return Media
     case "branding-creative":
       return Branding
@@ -118,7 +118,7 @@ function getIcon(slug: string) {
       return Website
     case "video-photography":
       return Video
-    case "event-management":
+    case "event-and-activations":
       return Event
   }
 }
@@ -126,7 +126,7 @@ onMounted(() => {
   switch (params.slug) {
     case "growth-strategy":
       currentService.value.title = "Growth Strategy"
-      currentService.value.description = "Propel your business with a tactical plan optimised to achieve your desired goals."
+      currentService.value.description = "We ignite your brand’s potential with strategic plans designed to illuminate your path to growth and success."
       serviceDetails.value = [{
         title: 'Marketing Strategy & Consultation',
         description: 'Unlock your potential with personalised strategies to fuel growth and maximise your digital presence.'
@@ -154,7 +154,7 @@ onMounted(() => {
       break;
     case "digital-marketing":
       currentService.value.title = "Digital Marketing"
-      currentService.value.description = "Stay ahead on the digital front with a host of approaches, integrated to meet your business needs"
+      currentService.value.description = "Spark meaningful connections with tailored digital strategies that keep your brand ahead in the ever-changing online landscape."
       serviceDetails.value = [
         {
           title: "Social Media Management",
@@ -186,9 +186,9 @@ onMounted(() => {
         },
       ]
       break;
-    case "media-buying":
-      currentService.value.title = "Media Buying"
-      currentService.value.description = "Put your brand in front of the right audience at the right time and place. Let us help you optimise your digital presence."
+    case "performance-marketing":
+      currentService.value.title = "Performance Marketing"
+      currentService.value.description = "Accelerate your brand’s growth with data-driven strategies designed to maximize ROI and deliver measurable results across every campaign."
       serviceDetails.value = [
         {
           title: "Digital Advertising",
@@ -222,7 +222,7 @@ onMounted(() => {
       break;
     case "branding-creative":
       currentService.value.title = "Branding & Creative Design"
-      currentService.value.description = "With a little sparkle and some zing, your new brand identity is ready to take on the world."
+      currentService.value.description = "Transform your brand into a beacon of creativity with bold designs and innovative solutions that leave a lasting impression."
       serviceDetails.value = [
         {
           title: "Research & Strategy",
@@ -256,7 +256,7 @@ onMounted(() => {
       break;
     case "website-apps":
       currentService.value.title = "Websites & Apps"
-      currentService.value.description = "Your business’ first point of contact can leave a lasting impression. Build your best brand website with us! "
+      currentService.value.description = "Shine brighter online with sleek, user-friendly websites and apps that captivate and engage seamlessly."
       serviceDetails.value = [
         {
           title: "UI & UX Design",
@@ -290,7 +290,7 @@ onMounted(() => {
       break;
     case "video-photography":
       currentService.value.title = "Video & Phototgraphy"
-      currentService.value.description = "A picture is worth a thousand words. Tell your brand story with captivating images and engaging videos."
+      currentService.value.description = "Illuminate your brand’s story with stunning visuals and compelling videos that resonate with your audience."
       serviceDetails.value = [
         {
           title: "Video Production",
@@ -326,9 +326,9 @@ onMounted(() => {
         },
       ]
       break;
-    case "event-management":
-      currentService.value.title = "Event Management"
-      currentService.value.description = "From conceptualising all the way to d-day handling, our event management team is poised to bring it all to life. "
+    case "event-and-activations":
+      currentService.value.title = "Events & Activations"
+      currentService.value.description = "Spark unforgettable experiences with dynamic events and activations that bring your brand’s vision to life and connect with audiences on a deeper level. "
       serviceDetails.value = [
         {
           title: "Virtual / Physical / Hybrid Events",
@@ -349,6 +349,14 @@ onMounted(() => {
         {
           title: "Multi-camera Production (MCP)",
           description: "Our production team can help give your video a more dynamic edge with exciting angles for lasting impressions."
+        },
+        {
+          title: "Event Exhibitions",
+          description: "Create impactful exhibition experiences that showcase your brand, captivate audiences, and leave a lasting impression."
+        },
+        {
+          title: "Participant Management",
+          description: "Effortlessly manage your event attendees with our advanced QR registration system, ensuring a smooth and efficient experience from check-in to engagement."
         },
       ]
       break;

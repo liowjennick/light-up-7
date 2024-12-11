@@ -1,9 +1,8 @@
 <template>
   <div id="footer-container">
-    <div class="section-container">
-      <div class="logo-image-container">
+    <div class="section-container" >
+      <div class="logo-image-container" >
         <img alt="Light Up 7 Logo" src="../assets/images/light-up-7-logo-with-bulb.png" />
-        <p class="font-light-gray just-sans text-center font-weight-100">201401020933 (1097019-X)</p>
       </div>
 
       <!-- <div class="contact-column">
@@ -117,7 +116,7 @@
       img
         width: 150px
         display: block
-        margin: 0 10px 0px auto
+        margin: 0 150px 0px auto
         +desktop
           margin: 0 auto
     .contact-column

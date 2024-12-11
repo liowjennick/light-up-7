@@ -282,7 +282,7 @@
         <!-- <img src="../../assets/images/about/about-team.png" /> -->
       </div>
       <div class="team-caption-container section-container">
-        <p class="font-white just-sans">At our agency, we shed light on your brand's potential, guiding you towards success with our expertise, innovation and unparalleled creativity.</p>
+        <p class="font-white font-20 just-sans" style=" padding-top: 10px;">At our agency, we shed light on your brand's potential, guiding you towards success with our expertise, innovation and unparalleled creativity.</p>
       </div>
     </div>
 
@@ -296,9 +296,6 @@
           class="large-mobile"
         />
         <div class="address-container">
-          <p class="font-white font-20 just-sans font-weight-200">Light Up 7 Bags 4 Awards at</p>
-          <p class="font-white font-20 just-sans font-weight-200">Prestigious Agency of the Year</p>
-          <p class="font-white font-20 just-sans font-weight-200">and MARKIES Awards 2022</p>
         </div>
       </div>
     </div>

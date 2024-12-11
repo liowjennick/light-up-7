@@ -175,7 +175,7 @@ const formValues = ref({
     <div class="full-screen-center-start links-container">
       <div class="section-container">
         <div class="button-container">
-          <a class="orange-outlined-button" href="/contact">let’s get in touch!</a>
+          <a class="orange-outlined-button" href="/contact">ready to light up?</a>
           <a class="orange-outlined-button" href="/careers">other openings</a>
         </div>
       </div>
