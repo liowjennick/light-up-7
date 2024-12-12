@@ -537,6 +537,13 @@
           </div>
           <div class="award-item">
             <img
+              alt="Awards Leadership"
+              class="client-logo"
+              src="../assets/images/home/leadership-award.png"
+            />
+          </div>
+          <div class="award-item">
+            <img
               alt="Award Best in Malaysia Logo"
               class="client-logo"
               src="../assets/images/home/award-best-in-malaysia.png"
