@@ -78,7 +78,7 @@
       </div>
 
       <div class="copyright-column">
-        <p class="font-light-gray just-sans font-weight-100">© 2024 Light Up 7 | All rights reserved</p>
+        <p class="font-light-gray just-sans font-weight-100">© 2025 Light Up 7 Sdn Bhd | All rights reserved</p>
       </div>
     </div>
   </div>
