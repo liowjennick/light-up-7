@@ -102,9 +102,9 @@
               />
               <div class="yellow-outline-image-container">
                 <img
-                  alt="Illuminate Brands"
+                  alt="Light Up Your Brand"
                   class="yellow-outline-text"
-                  src="../assets/images/home/illuminate-brands-yellow-outline.png"
+                  src="../assets/images/home/light-up-your-brand.png"
                 />
                 <div
                   class="svg-floating-shapes"
@@ -197,7 +197,7 @@
               <img
                 alt="Visible Marketing"
                 class="yellow-outline-text"
-                src="../assets/images/home/visible-marketing-yellow-outline.png"
+                src="../assets/images/home/drive-results-that-matter.png"
               />
             </div>
             <div class="text-container">
