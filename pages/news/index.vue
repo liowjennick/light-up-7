@@ -86,11 +86,11 @@
       style="flex-direction: column"
     >
       <div
-        v-for="thumb in news"
-        :key="thumb.id"
-        style="width: 100%"
-        class="divider-parent"
-        :to="`/news/${thumb.id}`"
+      v-for="thumb in paginatedNews"
+      :key="thumb.id"
+      style="width: 100%"
+      class="divider-parent"
+      :to="`/news/${thumb.id}`"
       >
         <div class="section-container full-screen-start-start divider-child news-row">
           <div class="thumbnail-container">
@@ -141,9 +141,9 @@
     >
       <div class="full-screen-center-content paginate-group">
         <button
+          @click="switchPage(-1, $event)"
           class="full-screen-center-content"
           style="gap: 24px"
-          @click="switchPage(-1, $event)"
         >
           <div style="height: 24px">
             <img
@@ -154,22 +154,25 @@
           </div>
           <p class="font-white">Prev</p>
         </button>
+        <!-- Page Numbers -->
         <div class="full-screen-center-content">
           <button
             v-for="page in paginateLength"
             :key="page"
+            @click="switchPage(page, $event)"
             style="color: white; font-size: 24px"
             :class="{ 'current-page': currentPage == page }"
-            @click="switchPage(page, $event)"
             :value="page"
           >
             {{ page }}
           </button>
         </div>
+        <!-- Next Button -->
         <button
+        
+          @click="switchPage(0, $event)"
           class="full-screen-center-content"
           style="gap: 24px"
-          @click="switchPage(0, $event)"
         >
           <p class="font-white">Next</p>
           <div style="height: 24px">
@@ -208,6 +211,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable);
 
 const news: any[] = reactive(NewsData);
 
+
 useHead({
   title: "Our News | Light Up 7",
   meta: [{ name: "description", content: "The latest news, updates and insights from Light Up 7, an advertising agency in Kuala Lumpur, specialising in brand activation experiences. Read more here. " },
@@ -216,7 +220,13 @@ useHead({
 });
 
 const currentPage: Ref<number> = ref(1);
-const paginateLength = computed(() => (news.length % 4 > 0 ? Math.floor(news.length / 4) + 1 : Math.floor(news.length / 4)));
+const itemsPerPage = 4;
+const paginatedNews = computed(() => {
+  const startIndex = (currentPage.value - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  return news.slice(startIndex, endIndex); // Only show items for the current page
+});
+const paginateLength = computed(() => Math.ceil(news.length / itemsPerPage));
 const switchPage = (page: number, e: Event) => {
   switch (true) {
     case page == 0 && currentPage.value < paginateLength.value:
@@ -226,7 +236,7 @@ const switchPage = (page: number, e: Event) => {
       currentPage.value--;
       break;
     case page > 0:
-      currentPage.value = Number((e.target as HTMLButtonElement).value);
+      currentPage.value = page;
       break;
   }
 };
