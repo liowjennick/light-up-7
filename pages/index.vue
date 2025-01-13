@@ -9,7 +9,7 @@
           playsinline
         >
           <source
-            src="../assets/images/home/light-up-7-intro-video-2.mp4"
+            src="../assets/images/home/light-up-7-intro-video-3.mp4"
             type="video/mp4"
           />
         </video>
