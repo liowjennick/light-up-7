@@ -73,13 +73,6 @@ const formValues = ref({
                  data-key="KYyGeNiZ80OLqp3g9SCdyQ" 
                  data-form="7" 
                  async />
-      <component v-else-if="career_details_data?.slug === 'event-manager'"
-                 is="iframe" 
-                 src="https://forms.monday.com/forms/embed/046ec475b0adad2dbd9f18cd8dc927c9?r=use1" 
-                 width="100%" 
-                 height="1000" 
-                 style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);"
-                 async />
       <component v-else
                  is="script" 
                  src="https://www.cognitoforms.com/f/seamless.js" 
@@ -251,9 +244,14 @@ const formValues = ref({
     padding-inline: 60px
   +mobile
     padding-inline: 30px
+
 .form-container
-  padding: 0px 60px
+  padding: 0px 0px
   margin: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  width:100%
   +large-mobile
     padding: 0 60px
   +mobile
@@ -280,6 +278,7 @@ const formValues = ref({
         &:hover &:focus &:active 
           transition: background-color 5000s ease-in-out 0s
           -webkit-text-fill-color: white !important
+    
 
 
 #career-details
