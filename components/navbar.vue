@@ -84,6 +84,17 @@ onMounted(() => {
     top: 0
     left: 0
     transition: 0.2s all
+  .flag-icon 
+    padding:0
+    margin: 0
+    display: flex
+    align-items: center
+  .flag-icon img
+    width: auto
+    height: 15px
+    display: block
+    margin-top: 3px
+    padding-left: 40px
   .navbar-contents
     display: flex
     align-items: center
