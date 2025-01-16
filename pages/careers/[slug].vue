@@ -246,12 +246,8 @@ const formValues = ref({
     padding-inline: 30px
 
 .form-container
-  padding: 0px 0px
+  padding: 0px 60px
   margin: 0
-  display: flex
-  justify-content: center
-  align-items: center
-  width:100%
   +large-mobile
     padding: 0 60px
   +mobile
