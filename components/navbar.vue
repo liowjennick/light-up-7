@@ -29,8 +29,11 @@
             <p>contact</p>
           </a>
           <a class="nav-item flag-icon" href="https://www.lightup7.com.au/">
-            <img src="../assets/images/home/australia.svg" alt="Flag Icon"/>
+            <img src="../assets/images/home/malaysia.svg" alt="Flag Icon" href="https://www.lightup7.com/"/>
+            <p>|</p>
+            <img src="../assets/images/home/australia.svg" alt="Flag Icon" href="https://www.lightup7.com.au/"/>
           </a>
+          
         </div>
       </div>
     </div>
@@ -84,17 +87,28 @@ onMounted(() => {
     top: 0
     left: 0
     transition: 0.2s all
-  .flag-icon 
-    padding:0
-    margin: 0
+  .flag-icon
     display: flex
     align-items: center
+    justify-content: center
+    gap: 8px
+    
   .flag-icon img
     width: auto
     height: 15px
-    display: block
-    margin-top: 3px
-    padding-left: 40px
+    display: inline-block
+    vertical-align: middle
+    padding-left: 10px
+    padding-right: 10px
+  
+  .flag-icon p
+    margin: 0
+    padding-left: 10px
+    padding-right: 10px
+    font-size: 18px
+    line-height: 1
+    display: inline-block
+
   .navbar-contents
     display: flex
     align-items: center

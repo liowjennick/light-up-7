@@ -123,7 +123,7 @@ const servicesItem = ref([
     lottie: Website
   },
   {
-    title: "Event & Activations",
+    title: "Events & Activations",
     description: "Spark unforgettable experiences with dynamic events and activations that bring your brand’s vision to life and connect with audiences on a deeper level.",
     slug: "event-and-activations",
     lottie: Event

@@ -116,7 +116,7 @@
       img
         width: 150px
         display: block
-        margin: 0 150px 0px auto
+        margin: 0 220px 0px auto
         +desktop
           margin: 0 auto
     .contact-column
@@ -128,11 +128,11 @@
       .top
         flex: 1
     .address-column
-      flex: 3
+      flex: 4
       +desktop
         margin-bottom: 20px
     .social-media-column
-      flex: 2
+      flex: 1
       display: flex
       justify-content: center
       align-items: center
