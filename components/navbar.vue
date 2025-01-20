@@ -28,10 +28,10 @@
           <a class="nav-item" href="/contact">
             <p>contact</p>
           </a>
-          <a class="nav-item flag-icon" >
-            <img src="../assets/images/home/malaysia.svg" alt="Flag Icon" href="https://www.lightup7.com/"/>
-            <p>|</p>
-            <img src="../assets/images/home/australia.svg" alt="Flag Icon" href="https://www.lightup7.com.au/"/>
+          <a  class="nav-item">
+            <a class="flag-icon" href="https://www.lightup7.com"><img src="../assets/images/home/malaysia.svg" alt="Flag Icon" /></a>
+            <a class="flag-icon" ><p>|</p></a>
+            <a class="flag-icon" href="https://www.lightup7.com.au/" ><img src="../assets/images/home/australia.svg" alt="Flag Icon" /></a>
           </a>
           
         </div>
@@ -108,6 +108,7 @@ onMounted(() => {
     font-size: 18px
     line-height: 1
     display: inline-block
+    color: white
 
   .navbar-contents
     display: flex
