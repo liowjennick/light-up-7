@@ -28,7 +28,7 @@
           <a class="nav-item" href="/contact">
             <p>contact</p>
           </a>
-          <a class="nav-item flag-icon" href="https://www.lightup7.com.au/">
+          <a class="nav-item flag-icon" >
             <img src="../assets/images/home/malaysia.svg" alt="Flag Icon" href="https://www.lightup7.com/"/>
             <p>|</p>
             <img src="../assets/images/home/australia.svg" alt="Flag Icon" href="https://www.lightup7.com.au/"/>
