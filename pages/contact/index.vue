@@ -206,8 +206,9 @@
             <span class="font-16 font-weight-200">submit form</span>
           </button>
         </div>
-      </div> -->
-      <component is="script" src="https://www.cognitoforms.com/f/seamless.js" data-key="KYyGeNiZ80OLqp3g9SCdyQ" data-form="2" async />
+      </div> 
+      <component is="script" src="https://www.cognitoforms.com/f/seamless.js" data-key="KYyGeNiZ80OLqp3g9SCdyQ" data-form="2" async />-->
+      <div class="iframe-container"><iframe src="https://forms.monday.com/forms/embed/16b20cbb8ea4b975970634c5145cb958?r=use1" width="750" height="1380" style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);"></iframe></div>
     </div>
   </div>
 </template>
@@ -219,6 +220,8 @@ import PhoneLine from "~/assets/svg/phone-line.vue";
 import Phone from "~/assets/svg/phone.vue";
 import ArrowDownJSON from "@/assets/images/home/arrow-down-lottie.json";
 import { LottieAnimation } from "lottie-web-vue";
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 useHead({
@@ -312,6 +315,36 @@ form.cog-cognito
   padding-top: 80px !important
   +large-mobile
     padding-top: 40px !important
+
+.iframe-container 
+  position: relative
+  width: 100%
+  overflow: hidden
+
+
+.iframe-container iframe 
+  width: 100%
+  border: 0
+
+/* Adjust height for mobile devices */
+@media (max-width: 767px) 
+  .iframe-container iframe 
+    height: 1300px
+  
+
+/* Adjust height for tablet devices */
+@media (min-width: 768px) and (max-width: 1023px) 
+  .iframe-container iframe 
+    height: 1300px
+  
+
+
+/* Adjust height for desktop devices */
+@media (min-width: 1024px) 
+  .iframe-container iframe 
+    height: 1380px
+  
+
 
 .contact-body
   display: flex
