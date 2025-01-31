@@ -65,7 +65,7 @@ const formValues = ref({
                  is="iframe" 
                  src="https://forms.monday.com/forms/embed/fa419826cc2e3e0c6c5aa7b1b5fabb7f?r=use1"
                  width="650"
-                 height="1600"
+                 height="2000"
                  style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25); border-radius: 8px;"
                  allowfullscreen
                  async />
@@ -73,7 +73,7 @@ const formValues = ref({
                  is="iframe" 
                  src="https://forms.monday.com/forms/embed/046ec475b0adad2dbd9f18cd8dc927c9?r=use1"
                  width="650"
-                 height="1600"
+                 height="2000"
                  style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25); border-radius: 8px;"
                  allowfullscreen
                  async />
@@ -254,7 +254,7 @@ const formValues = ref({
   +large-mobile
     padding: 0 60px
   +mobile
-    padding: 0
+    padding: 0 24px
   .form-body
     flex: 1
     max-width: 800px
