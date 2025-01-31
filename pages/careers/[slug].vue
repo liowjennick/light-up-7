@@ -62,22 +62,20 @@ const formValues = ref({
       <!--<component is="script" src="https://www.cognitoforms.com/f/seamless.js" data-key="KYyGeNiZ80OLqp3g9SCdyQ" data-form="5" async />
       Conditionally render the form based on the type of career -->
       <component v-if="career_details_data?.slug === 'internship'"
-                 is="script" 
-                 src="https://www.cognitoforms.com/f/seamless.js" 
-                 data-key="KYyGeNiZ80OLqp3g9SCdyQ" 
-                 data-form="6" 
-                 async />
-      <component v-else-if="career_details_data?.slug === 'motion-artist-internship'"
-                 is="script" 
-                 src="https://www.cognitoforms.com/f/seamless.js" 
-                 data-key="KYyGeNiZ80OLqp3g9SCdyQ" 
-                 data-form="7" 
+                 is="iframe" 
+                 src="https://forms.monday.com/forms/embed/fa419826cc2e3e0c6c5aa7b1b5fabb7f?r=use1"
+                 width="650"
+                 height="1600"
+                 style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25); border-radius: 8px;"
+                 allowfullscreen
                  async />
       <component v-else
-                 is="script" 
-                 src="https://www.cognitoforms.com/f/seamless.js" 
-                 data-key="KYyGeNiZ80OLqp3g9SCdyQ" 
-                 data-form="5" 
+                 is="iframe" 
+                 src="https://forms.monday.com/forms/embed/fa419826cc2e3e0c6c5aa7b1b5fabb7f?r=use1"
+                 width="650"
+                 height="1600"
+                 style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25); border-radius: 8px;"
+                 allowfullscreen
                  async />
     </div>
     <!-- <div class="form-container">
@@ -246,18 +244,27 @@ const formValues = ref({
     padding-inline: 30px
 
 .form-container
-  padding: 0px 60px
-  margin: 0
+  padding: 0px 
+  margin-top: 140px
+  margin-bottom: 140px
+  display: flex
+  justify-content: center
+  align-items: center
+  min-height: 100vh
   +large-mobile
     padding: 0 60px
   +mobile
     padding: 0
   .form-body
     flex: 1
+    max-width: 800px
     padding: 60px 90px
     border-radius: 60px 
     background-color: #FFCF6D35
     flex-direction: column
+    display: flex
+    justify-content: center
+    align-items: center
     +large-mobile
       padding: 30px 40px
     .form-input
