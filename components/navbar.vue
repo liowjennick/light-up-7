@@ -132,6 +132,9 @@ onMounted(() => {
       justify-content: center
       padding: 10px 0
 
+    .flag-icon img
+      height: 10px
+
     
 
   .navbar-contents
