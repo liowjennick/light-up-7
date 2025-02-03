@@ -316,7 +316,7 @@ onUnmounted(() => {
 });
 const mottoTitle = ["Celebrating Creativity", "Doing Work That Matters", "Always Growing, Never Stopping"];
 const mottoText = [
-  `We believe the greatest ideas comes from the experience of being
+  `We believe the greatest ideas come from the experience of being
               human. Whatever shape or form, your creativity will always have a
               seat at our table.`,
   `Joining Light Up 7 means being part of projects that make a
