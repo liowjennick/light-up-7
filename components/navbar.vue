@@ -1,25 +1,54 @@
 <template>
   <div id="navbar-container" :class="{ minimized: navbarMinimized }">
     <div class="section-container">
-  <div class="opacity-background"></div>
-  <div class="navbar-contents">
-    <div class="logo-container">
-      <a href="/">
-        <img alt="Light Up 7 Logo" src="../assets/images/home/logo-large-header.png" />
-      </a>
+      <div class="opacity-background"></div>
+      <div class="navbar-contents">
+        <div class="logo-container">
+          <a href="/">
+            <img alt="Light Up 7 Logo" src="../assets/images/home/logo-large-header.png" />
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="navigation-list-container">
+          <a class="nav-item" href="/services"><p>services</p></a>
+          <a class="nav-item" href="/work"><p>work</p></a>
+          <a class="nav-item" href="/about"><p>about</p></a>
+          <a class="nav-item" href="/news"><p>news</p></a>
+          <a class="nav-item" href="/careers"><p>careers</p></a>
+          <a class="nav-item" href="/contact"><p>contact</p></a>
+
+          <!-- Flags for Desktop View -->
+          <div class="desktop-flags">
+            <a class="flag-icon" href="https://www.lightup7.com">
+              <img src="../assets/images/home/malaysia.svg" alt="Malaysia Flag" />
+            </a>
+            <a class="flag-icon"><p>|</p></a>
+            <a class="flag-icon" href="https://www.lightup7.com.au/">
+              <img src="../assets/images/home/australia.svg" alt="Australia Flag" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Burger Menu Icon (Mobile Only) -->
+        <div class="burger-menu" @click="toggleMenu" :aria-expanded="isMenuOpen" aria-label="Menu">
+          <span v-if="!isMenuOpen">☰</span>
+          <span v-else>✕</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Navigation Links -->
-    <div class="navigation-list-container">
+    <!-- Mobile Menu (Hidden by Default) -->
+    <div class="mobile-menu" :class="{ open: isMenuOpen }">
       <a class="nav-item" href="/services"><p>services</p></a>
       <a class="nav-item" href="/work"><p>work</p></a>
       <a class="nav-item" href="/about"><p>about</p></a>
       <a class="nav-item" href="/news"><p>news</p></a>
       <a class="nav-item" href="/careers"><p>careers</p></a>
       <a class="nav-item" href="/contact"><p>contact</p></a>
-      
-      <!-- Flags for Desktop View -->
-      <div class="desktop-flags">
+
+      <!-- Flags for Mobile View -->
+      <div class="mobile-flags">
         <a class="flag-icon" href="https://www.lightup7.com">
           <img src="../assets/images/home/malaysia.svg" alt="Malaysia Flag" />
         </a>
@@ -29,25 +58,22 @@
         </a>
       </div>
     </div>
-  </div>
 
-  <!-- Flags for Mobile View -->
-  <div class="mobile-flags">
-    <a class="flag-icon" href="https://www.lightup7.com">
-      <img src="../assets/images/home/malaysia.svg" alt="Malaysia Flag" />
-    </a>
-    <a class="flag-icon"><p>|</p></a>
-    <a class="flag-icon" href="https://www.lightup7.com.au/">
-      <img src="../assets/images/home/australia.svg" alt="Australia Flag" />
-    </a>
-  </div>
-</div>
+    <!-- Overlay for Mobile Menu -->
+    <div class="overlay" :class="{ open: isMenuOpen }" @click="toggleMenu"></div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
+
 const navbarMinimized = ref(false);
 const previousScroll = ref(0);
+const isMenuOpen = ref(false); // State for mobile menu
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
 
 onMounted(() => {
   window.addEventListener("scroll", (event) => {
@@ -59,12 +85,11 @@ onMounted(() => {
       if (st > previousScroll.value) {
         navbarMinimized.value = true;
       } else {
-        navbarMinimized.value = false; 
+        navbarMinimized.value = false;
       }
 
-      previousScroll.value = st
+      previousScroll.value = st;
     }
-
   }, false);
 });
 </script>
@@ -113,7 +138,7 @@ onMounted(() => {
       font-size: 18px
       line-height: 1
       display: inline-block
-      color: white
+      color: black
 
   .desktop-flags
     display: flex
@@ -122,18 +147,69 @@ onMounted(() => {
   .mobile-flags
     display: none
 
+  .burger-menu
+    display: none
+    cursor: pointer
+    font-size: 24px
+    color: white
+
+  .mobile-menu
+    position: fixed
+    top: 0
+    left: -100%
+    width: 80%
+    height: 100vh
+    background: white
+    transition: left 0.3s ease-in-out
+    z-index: 1000
+    padding-top: 60px
+
+    &.open
+      left: 0
+
+    .nav-item
+      display: block
+      padding: 15px
+      color: black
+      text-decoration: none
+
+      p
+        color: black
+  
+  .overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    background: rgba(0, 0, 0, 0.5)
+    z-index: 999
+    display: none
+
+    &.open
+      display: block
+
   // Media Query for Mobile View
   @media (max-width: 768px)
     .desktop-flags
       display: none
 
-    .mobile-flags
+    .navigation-list-container
+      display: none !important
+    
+    .burger-menu
       display: flex
       justify-content: center
-      padding: 10px 0
+      padding-bottom: 10px
+
+    .mobile-flags
+      display: flex
+      justify-content: left
+      padding-top: 10px
+      padding-left: 8px
 
     .flag-icon img
-      height: 10px
+      height: 13px
 
     
 
