@@ -138,7 +138,7 @@ onMounted(() => {
       font-size: 18px
       line-height: 1
       display: inline-block
-      color: black
+      color: white
 
   .desktop-flags
     display: flex
@@ -159,7 +159,7 @@ onMounted(() => {
     left: -100%
     width: 80%
     height: 100vh
-    background: white
+    background: #1A1A1A
     transition: left 0.3s ease-in-out
     z-index: 1000
     padding-top: 60px
@@ -174,7 +174,7 @@ onMounted(() => {
       text-decoration: none
 
       p
-        color: black
+        color: white
   
   .overlay
     position: fixed
