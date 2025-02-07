@@ -13,7 +13,6 @@ const jobsData = [
     Internship,
     CreativeContentWriter,
     EventManager,
-    JuniorProjectManager,
     ArtDirector,
     SeniorVideoEditor,
     FinanceAccountingExecutive
