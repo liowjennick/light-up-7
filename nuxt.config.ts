@@ -45,6 +45,11 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["vue3-carousel-nuxt", "nuxt-particles"],
+  modules: ["vue3-carousel-nuxt", "nuxt-particles",'nuxt-gtag'],
+  gtag: {
+    id: 'G-LJ46954VPM',
+  },
   compatibilityDate: "2024-09-13"
+  
+
 });
