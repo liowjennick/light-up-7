@@ -204,6 +204,7 @@
         color: white
         font-size: 16px
         text-decoration: none
+        margin: 0 4px
 
       a:hover
         text-decoration: underline
@@ -212,8 +213,7 @@
       line-height: 25px
   .copyright-column
     display: flex
-    justify-content: center  // Center horizontally
-       
+    justify-content: center
     padding-bottom: 40px
 
    
