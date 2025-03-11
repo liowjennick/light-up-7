@@ -13,7 +13,7 @@
         <li><a href="https://www.lightup7.com/services/digital-marketing/">Digital Marketing</a></li>
         <li><a href="https://www.lightup7.com/services/video-photography/">Video & Photography</a></li>
         <li><a href="https://www.lightup7.com/services/branding-creative/">Branding & Creative Design</a></li>
-        <li><a href="https://www.lightup7.com/services/website-apps/"></a>Websites & Apps</li>
+        <li><a href="https://www.lightup7.com/services/website-apps/">Websites & Apps</a></li>
         <li><a href="https://www.lightup7.com/services/event-and-activations/">Events & Activations</a></li>
         <li><a href="https://www.lightup7.com/services/performance-marketing/">Perfomance Marketing</a></li>
 
