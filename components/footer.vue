@@ -188,11 +188,14 @@
     .bottom-links
       flex: 1
       gap: 20px 
+      justify-content: center
       align-items: center
       display: flex
       justify-content: flex-end
       +desktop
         display: block
+      +mobile
+        text-align: center 
       p
         text-align: right
         +desktop
