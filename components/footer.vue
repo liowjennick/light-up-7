@@ -77,10 +77,17 @@
         </div>
       </div>
 
-      <div class="copyright-column">
-        <p class="font-light-gray just-sans font-weight-100">© 2025 Light Up 7 Sdn Bhd | All rights reserved</p>
+      <div class="bottom-links">
+        <a href="https://www.lightup7.com/privacy-policy">Privacy Policy</a>
+        <span>|</span>
+        <a href="https://www.lightup7.com/terms-of-service">Terms of Service</a>
       </div>
     </div>
+    <div class="copyright-column">
+      
+      <p class="font-light-gray just-sans font-weight-100">© 2025 Light Up 7 Sdn Bhd | All rights reserved</p>
+    </div>
+    
   </div>
 </template>
 
@@ -178,8 +185,9 @@
             img
               height: 20px
               cursor: pointer
-    .copyright-column
+    .bottom-links
       flex: 1
+      gap: 20px 
       align-items: center
       display: flex
       justify-content: flex-end
@@ -189,7 +197,22 @@
         text-align: right
         +desktop
           text-align: center
+      a, span
+        color: white
+        font-size: 16px
+        text-decoration: none
+
+      a:hover
+        text-decoration: underline
     p
       font-size: 16px
       line-height: 25px
+  .copyright-column
+    display: flex
+    justify-content: center  // Center horizontally
+       
+    padding-bottom: 40px
+
+   
+
 </style>

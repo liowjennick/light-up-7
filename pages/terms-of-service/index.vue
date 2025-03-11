@@ -1,73 +1,74 @@
 <template>
-    <div class="content-container">
+    <div class="tos-container">
       <h1>Terms of Service</h1>
-      <p>Last Updated: March 2025</p>
+      <p>Welcome to Light Up 7. These Terms of Service govern your use of our website and services.</p>
   
-      <h2>1. Payment Terms</h2>
-      <p>
-        A 50% booking fee is required at least **12 hours before the event**. The remaining 
-        50% must be settled before the event starts.
-      </p>
+      <h2>1. Introduction</h2>
+      <p>By accessing our website and using our services, you agree to comply with our terms and policies.</p>
   
-      <h2>2. Surcharges</h2>
-      <p>
-        A **20% surcharge** applies for events scheduled on weekends or public holidays.
-      </p>
+      <h2>2. Services Offered</h2>
+      <p>Light Up 7 provides a range of digital marketing and creative services, including:</p>
+      <ul>
+        <li><a href="https://www.lightup7.com/services/growth-strategy/">Growth Strategy</a></li>
+        <li><a href="https://www.lightup7.com/services/digital-marketing/">Digital Marketing</a></li>
+        <li><a href="https://www.lightup7.com/services/video-photography/">Video & Photography</a></li>
+        <li><a href="https://www.lightup7.com/services/branding-creative/">Branding & Creative Design</a></li>
+        <li><a href="https://www.lightup7.com/services/website-apps/"></a>Websites & Apps</li>
+        <li><a href="https://www.lightup7.com/services/event-and-activations/">Events & Activations</a></li>
+        <li><a href="https://www.lightup7.com/services/performance-marketing/">Perfomance Marketing</a></li>
+
+      </ul>
   
-      <h2>3. Rehearsals</h2>
-      <p>
-        Rehearsals requested **a day before the event** will be charged an additional **30%**, 
-        limited to four (4) hours.
-      </p>
+      <h2>3. User Responsibilities</h2>
+      <p>You agree not to misuse our services, violate any laws, or infringe upon the rights of others.</p>
   
-      <h2>4. Additional Costs</h2>
-      <p>
-        Transportation and accommodation expenses apply for events held **outside Kuala Lumpur 
-        and Selangor**.
-      </p>
+      <h2>4. Payment and Billing</h2>
+      <p>For paid services, invoices will be issued based on the agreed terms. Late payments may result in service suspension.</p>
   
-      <h2>5. Cancellations</h2>
-      <p>
-        **No refunds** will be provided for any cancellations once the booking has been confirmed.
-      </p>
+      <h2>5. Intellectual Property</h2>
+      <p>All content, trademarks, and assets used on this site are owned by Light Up 7 unless otherwise stated.</p>
   
-      <h2>6. Liability</h2>
-      <p>
-        Clients are responsible for any damages to our equipment during the event and will be 
-        required to bear the repair or replacement costs.
-      </p>
+      <h2>6. Termination</h2>
+      <p>We reserve the right to terminate access to our services if users violate our terms.</p>
+  
+      <h2>7. Contact Information</h2>
+      <p>For any inquiries, please contact us at <a href="mailto:info@lightup7.com">info@lightup7.com</a>.</p>
     </div>
   </template>
   
-  <script setup>
-  useHead({
-    title: "Terms of Service - Light Up 7",
-    meta: [{ name: "description", content: "Terms and conditions for our services." }]
-  });
-  </script>
-  
   <style scoped>
-  .content-container {
+  .tos-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 160px 40px;
-    color: white;
+    padding: 120px 40px;
+    color: #fff;
+    text-align: left;
   }
-  
+
   h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
   }
+
   
   h2 {
     margin-top: 20px;
     font-size: 1.8rem;
-    color: #fbbf24;
+    color: #ffce6d;
   }
-  
+
   p {
     font-size: 1.2rem;
     line-height: 1.6;
+  }
+  
+  a {
+    color: #ffcc00;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
   }
   </style>
   
