@@ -241,7 +241,7 @@ import jobsData from "../../public/data/jobs_data.js";
 gsap.registerPlugin(ScrollTrigger);
 
 useHead({
-  title: "Career | Light Up 7",
+  title: "Join Our Team | Light Up 7",
   meta: [
     { name: "description", content: "Work at one of the top advertising companies in Malaysia! At Light Up 7, we welcome passionate and creative individuals from all backgrounds. Learn more here." },
     { name: "keywords", content: "top advertising company in malaysia" },
