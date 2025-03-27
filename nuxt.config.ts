@@ -14,6 +14,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
 
+
   nitro: {
     static: true,
     prerender: {
@@ -45,11 +46,15 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["vue3-carousel-nuxt", "nuxt-particles",'nuxt-gtag'],
-  gtag: {
-    id: 'G-LJ46954VPM',
-  },
-  compatibilityDate: "2024-09-13"
-  
+  modules: ["vue3-carousel-nuxt", "nuxt-particles","@nuxt/scripts"],
 
+  compatibilityDate: "2024-09-13",
+
+  scripts: {
+    registry: {
+      googleTagManager: {
+        id: 'GTM-MMHLDLV9'
+      }
+    }
+  }
 });
