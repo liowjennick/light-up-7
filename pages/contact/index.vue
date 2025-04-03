@@ -67,15 +67,14 @@
           view map
         </a>
         <p class="font-orange font-20 font-weight-200">new business & inquiries</p>
-        <p class="font-white font-16 font-weight-200">
-          info@lightup7.com
+        <a href="mailto:info@lightup7.com" class="font-white font-16 font-weight-200" style="text-decoration: none;">
+          info@lightup7.com</a>
           <br /><br />
-          +6011-11578977 <br />
-          +603-8605 3561
-        </p>
+          <a href="https://wa.me/601111578977" style="color: white; text-decoration: none;">+6011-11578977</a><br />
+          <a href="tel:+60386053561" style="color: white; text-decoration: none;">+603-8605 3561</a>
         <br /><br />
         <p class="font-orange font-20 font-weight-200">Careers</p>
-        <p class="font-white font-16 font-weight-200">jobs@lightup7.com</p>
+        <a href="mailto:jobs@lightup7.com" class="font-white font-16 font-weight-200" style="text-decoration: none;">jobs@lightup7.com</a>
         <a
           href="/careers"
           class="orange-outlined-button font-16 font-weight-200"
