@@ -7,11 +7,13 @@ import ArtDirector from "../data/jobs/art-director.json"
 import SeniorVideoEditor from "../data/jobs/senior-video-editor.json"
 import MotionArtistiInternship from "../data/jobs/motion-artist-internship.json"
 import CreativeContentWriter from "../data/jobs/creative-content-writer.json" 
-import FinanceAccountingExecutive from "../data/jobs/finance-accounting-executive.json"
+import FinanceAccountingExecutive from "../data/jobs/finance-accounting-executive.json" 
+import SeniorEventExecutive from "../data/jobs/senior-event-executive.json"
 
 const jobsData = [
     Internship,
     CreativeContentWriter,
+    SeniorEventExecutive,
     EventManager,
     ArtDirector,
     SeniorVideoEditor,
