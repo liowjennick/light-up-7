@@ -174,7 +174,7 @@
     >
       <h2 class="font-orange font-30">ready to explore a new path?</h2>
       <h4 class="font-white">check out your dream role here.</h4>
-      <h5 class="font-white" style="margin-top:6px; font-style: italic;">(updated on 14/4/2025)</h5>
+      <h5 class="font-white" style="margin-top:6px; font-style: italic;">(updated on 28/4/2025)</h5>
 
       <!-- filter tabs -->
       <div class="full-screen-center-content tab-parent-container">
