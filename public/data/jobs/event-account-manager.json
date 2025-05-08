@@ -1,7 +1,8 @@
 {
     "title": "Event Account Manager",
     "slug": "event-account-manager",
-    "custom_layout": true,
+    "category": ["events"],
+    "custom_layout": "true",
     "location": "Kuala Lumpur (Required to travel for events)",
     "about_company": "Light Up 7 is a full-service creative agency driven by innovation, strategy, and the pursuit of impactful brand experiences. As the parent company of Sevenue, we bring together cutting-edge marketing with immersive event execution, from high-profile corporate functions and media launches to large-scale conferences, exhibitions, and experiential activations. Through Sevenue, we specialize in planning and executing end-to-end event solutions that help brands connect meaningfully with their audience, both online and on-ground. Our combined teams offer powerful ideas, fast execution, and memorable results for some of Malaysia’s top brands and organizations.",
     "about_role": "We're looking for a skilled and client-focused Event Account Manager to lead the management of event projects from brief to execution. You’ll be the vital link between our clients and internal teams, ensuring project success through clear communication, timely execution, and unforgettable event experiences. This role is best suited for someone who thrives in a fast-paced environment, enjoys juggling multiple client accounts, and can confidently lead project timelines, proposals, and client communications, while partnering closely with our operations team who handles vendor sourcing and execution logistics.",

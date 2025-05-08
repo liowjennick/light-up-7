@@ -9,10 +9,14 @@ import MotionArtistiInternship from "../data/jobs/motion-artist-internship.json"
 import CreativeContentWriter from "../data/jobs/creative-content-writer.json" 
 import FinanceAccountingExecutive from "../data/jobs/finance-accounting-executive.json" 
 import SeniorEventExecutive from "../data/jobs/senior-event-executive.json"
-import EventAccountManager from "../data/jobs/event-account-manager.json"
+import EventAccountManager from "../data/jobs/event-account-manager.json"     
+import HRAdminExecutive from "../data/jobs/hr-admin-executive.json" 
+import BusinessDevelopmentExecutive from "../data/jobs/business-development-executive.json" 
 
 const jobsData = [
     Internship,
+    HRAdminExecutive,
+    BusinessDevelopmentExecutive,
     CreativeContentWriter,
     SeniorEventExecutive,
     EventManager,

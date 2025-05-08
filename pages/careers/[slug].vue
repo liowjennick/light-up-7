@@ -8,7 +8,7 @@ const route = useRoute()
 const career_details = jobsData
 const career_details_data = ref(career_details.find((item) => item.slug === route.params.slug))
 
-const isCustomLayout = ref(career_details_data.value?.slug === 'event-account-manager')
+const isCustomLayout = ref(career_details_data.value?.custom_layout === 'true')
 
 useHead({
   title: `Our Careers – ${career_details_data.value.title} | Light Up 7`,
@@ -40,7 +40,7 @@ const formValues = ref({
          </div>
         <div v-if="career_details_data.about_role">
           <p class="font-orange" style="font-size: 24px; margin-top: 24px">About the Role:</p>
-          <p>{{ career_details_data.about_role }}</p>
+          <p v-html="career_details_data.about_role"></p>
         </div>
       </div>
         </div>

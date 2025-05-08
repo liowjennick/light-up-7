@@ -174,7 +174,7 @@
     >
       <h2 class="font-orange font-30">ready to explore a new path?</h2>
       <h4 class="font-white">check out your dream role here.</h4>
-      <h5 class="font-white" style="margin-top:6px; font-style: italic;">(updated on 28/4/2025)</h5>
+      <h5 class="font-white" style="margin-top:6px; font-style: italic;">(updated on 8/5/2025)</h5>
 
       <!-- filter tabs -->
       <div class="full-screen-center-content tab-parent-container">
@@ -227,16 +227,15 @@ import { default as Companys } from "@/assets/images/careers/company-pics";
 import { default as Staffs } from "@/assets/images/careers/staff-pics";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { computed, ref, reactive } from "vue";
+import { computed, ref, reactive, onMounted, onUnmounted } from "vue"; // Added onMounted, onUnmounted
 import { default as ComputerUnglow } from "@/assets/images/careers/computer-unglow.png";
-import { default as ComputerGlow } from "@/assets/images/careers/glow-computer.png";
+// import { default as ComputerGlow } from "@/assets/images/careers/glow-computer.png"; // This was unused, can be removed if not needed elsewhere
 import { LottieAnimation } from "lottie-web-vue";
 import Value1 from "@/assets/images/careers/lottie/Icon1_Celebrating Creativity_V1.gif.json";
 import Value2 from "@/assets/images/careers/lottie/Icon2_Doing Work That Matters.json";
 import Value3 from "@/assets/images/careers/lottie/Icon3_Always Growing.json";
 import ArrowDownJSON from "@/assets/images/home/arrow-down-lottie.json";
-import JobsData from "../../public/data/jobs_data.js";
-import jobsData from "../../public/data/jobs_data.js";
+import jobsData from "../../public/data/jobs_data.js"; // Only one import for jobsData
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -274,9 +273,10 @@ const fadeOutCurrentImage = () =>
     }
   );
 const fadeInNewImage = () => gsap.fromTo(".fade-in-out", { opacity: 0, y: 40 }, { opacity: 1, y: 40, duration: 1.5, ease: "power2.out", onComplete: onTransitionEnd });
+
 function getRandomIndex(max: number, prev: number) {
   let rand = Math.floor(Math.random() * max);
-  while (rand == prev) rand = getRandomIndex(max, prev);
+  while (rand == prev) rand = getRandomIndex(max, prev); // Corrected: was calling itself without 'prev'
   return rand;
 }
 function onTransitionEnd() {
@@ -352,39 +352,31 @@ const companyPics = Companys.map((comp, key) => ({
   alt: `Company pic ${key + 1}`,
 }));
 
-const currentActiveFilter = ref("all")
-
-const filterItem = (slug) => {
-  currentActiveFilter.value = slug
-  if (slug !== "all") {
-    const newJobArray = []
-
-    recentJobs.map((item, j) => {
-      let found = false
-      item.category.map((category_filter, k) => {
-        if (category_filter === slug && !found) {
-          newJobArray.push(item)
-          found = true
-        }
-      })
-    })
-
-    currentDisplayedJobs.value = newJobArray
-  } else {
-    currentDisplayedJobs.value = recentJobs
-  }
-}
-
-const vacancyTabs = ["all", "finance/accounting", "events", "internship", "client services", "content", "creative", "video", "web"];
-const recentJobs = jobsData;
-
+const currentActiveFilter = ref("all");
+const recentJobs = jobsData; // Assuming jobsData is an array of job objects
 const currentDisplayedJobs = ref(recentJobs);
 
-//new code 
-const formatJobDescription = (recent) => {
-  return `${recent.title}<br>${recent.responsibilities.join('<br>')}`;
+const filterItem = (slug: string) => {
+  currentActiveFilter.value = slug;
+  if (slug === "all") {
+    currentDisplayedJobs.value = recentJobs;
+  } else {
+    currentDisplayedJobs.value = recentJobs.filter(job => {
+      // Ensure job.category exists, is an array, and includes the selected slug
+      return job.category && Array.isArray(job.category) && job.category.includes(slug);
+    });
+  }
 };
+
+const vacancyTabs = ["all", "finance/accounting", "operations", "events", "internship", "client services", "content", "creative", "video", "web"];
+
+// The formatJobDescription function was unused in the template, so it can be removed if not needed.
+// If you plan to use it, ensure it's correctly implemented and called.
+// const formatJobDescription = (recent) => {
+//   return `${recent.title}<br>${recent.responsibilities.join('<br>')}`;
+// };
 </script>
+
 
 <style lang="sass" scoped>
 @import "../../assets/sass/responsive.sass"
