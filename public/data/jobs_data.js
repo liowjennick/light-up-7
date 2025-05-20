@@ -11,11 +11,14 @@ import FinanceAccountingExecutive from "../data/jobs/finance-accounting-executiv
 import SeniorEventExecutive from "../data/jobs/senior-event-executive.json"
 import EventAccountManager from "../data/jobs/event-account-manager.json"     
 import HRAdminExecutive from "../data/jobs/hr-admin-executive.json" 
-import BusinessDevelopmentExecutive from "../data/jobs/business-development-executive.json" 
+import BusinessDevelopmentExecutive from "../data/jobs/business-development-executive.json"  
+import BusinessAdministrator from "../data/jobs/business-administrator.json"
+
 
 const jobsData = [
     Internship,
     HRAdminExecutive,
+    BusinessAdministrator,
     BusinessDevelopmentExecutive,
     CreativeContentWriter,
     SeniorEventExecutive,
