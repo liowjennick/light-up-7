@@ -368,7 +368,7 @@ const filterItem = (slug: string) => {
   }
 };
 
-const vacancyTabs = ["all", "finance/accounting", "operations", "events", "internship", "client services", "content", "creative", "video", "web"];
+const vacancyTabs = ["all", "finance/accounting", "operations", "events", "internship", "client services", "content", "creative", "video", "web", "technology"];
 
 // The formatJobDescription function was unused in the template, so it can be removed if not needed.
 // If you plan to use it, ensure it's correctly implemented and called.
