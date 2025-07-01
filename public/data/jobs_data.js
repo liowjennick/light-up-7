@@ -27,7 +27,6 @@ const jobsData = [
     SeniorEventExecutive,
     EventManager,
     ArtDirector,
-    SeniorVideoEditor,
     EventAccountManager
 
 ]
