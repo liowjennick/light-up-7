@@ -22,7 +22,6 @@ const jobsData = [
     AssetCoordinator,
     AccountsExecutive,
     BusinessAdministrator,
-    BusinessDevelopmentExecutive,
     CreativeContentWriter,
     SeniorEventExecutive,
     EventManager,
