@@ -14,13 +14,15 @@ import HRAdminExecutive from "../data/jobs/hr-admin-executive.json"
 import BusinessDevelopmentExecutive from "../data/jobs/business-development-executive.json"  
 import BusinessAdministrator from "../data/jobs/business-administrator.json"
 import AssetCoordinator from "../data/jobs/asset-coordinator.json"
-import AccountsExecutive from "../data/jobs/accounts-executive.json"
+import AccountsExecutive from "../data/jobs/accounts-executive.json" 
+import SeniorBusinessDevelopmentExecutive from "../data/jobs/senior-business-development-executive"
 
 const jobsData = [
     Internship,
     HRAdminExecutive,
     AssetCoordinator,
     AccountsExecutive,
+    SeniorBusinessDevelopmentExecutive,
     BusinessAdministrator,
     CreativeContentWriter,
     SeniorEventExecutive,
