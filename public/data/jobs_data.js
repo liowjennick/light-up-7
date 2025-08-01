@@ -11,22 +11,24 @@ import FinanceAccountingExecutive from "../data/jobs/finance-accounting-executiv
 import SeniorEventExecutive from "../data/jobs/senior-event-executive.json"
 import EventAccountManager from "../data/jobs/event-account-manager.json"     
 import HRAdminExecutive from "../data/jobs/hr-admin-executive.json" 
-import BusinessDevelopmentExecutive from "../data/jobs/business-development-executive.json"  
+import BusinessDevelopmentSpecialist from "../data/jobs/business-development-specialist.json"  
 import BusinessAdministrator from "../data/jobs/business-administrator.json"
-import AssetCoordinator from "../data/jobs/asset-coordinator.json"
+import AssetManagementSpecialist from "../data/jobs/asset-management-specialist.json"
 import AccountsExecutive from "../data/jobs/accounts-executive.json" 
-import SeniorBusinessDevelopmentExecutive from "../data/jobs/senior-business-development-executive"
+import SeniorBusinessDevelopmentExecutive from "../data/jobs/senior-business-development-executive.json" 
+import HeadofEvents from "../data/jobs/head-of-events.json"  
+import DigitalMarketingExecutive from "../data/jobs/digital-marketing-executive.json"
+
 
 const jobsData = [
     Internship,
-    HRAdminExecutive,
-    AssetCoordinator,
+    DigitalMarketingExecutive,
+    AssetManagementSpecialist,
     AccountsExecutive,
-    SeniorBusinessDevelopmentExecutive,
+    BusinessDevelopmentSpecialist,
     BusinessAdministrator,
-    CreativeContentWriter,
     SeniorEventExecutive,
-    EventManager,
+    HeadofEvents,
     ArtDirector,
     EventAccountManager
 

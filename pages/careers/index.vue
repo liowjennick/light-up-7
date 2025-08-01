@@ -174,7 +174,7 @@
     >
       <h2 class="font-orange font-30">ready to explore a new path?</h2>
       <h4 class="font-white">check out your dream role here.</h4>
-      <h5 class="font-white" style="margin-top:6px; font-style: italic;">(updated on 18/7/2025)</h5>
+      <h5 class="font-white" style="margin-top:6px; font-style: italic;">(updated on 1/8/2025)</h5>
 
       <!-- filter tabs -->
       <div class="full-screen-center-content tab-parent-container">
@@ -368,7 +368,7 @@ const filterItem = (slug: string) => {
   }
 };
 
-const vacancyTabs = ["all", "finance/accounting", "operations", "events", "internship", "client services", "content", "creative", "video", "web", "technology"];
+const vacancyTabs = ["all", "finance/accounting", "operations", "events", "marketing","internship", "client services", "content", "creative", "video", "web", "technology"];
 
 // The formatJobDescription function was unused in the template, so it can be removed if not needed.
 // If you plan to use it, ensure it's correctly implemented and called.
@@ -514,7 +514,7 @@ const vacancyTabs = ["all", "finance/accounting", "operations", "events", "inter
     margin-block: 12px
 .tab-container
   margin-block: 24px
-  padding: 12px
+  padding: 8px
   border: 1px solid $orange
   border-radius: 100px
   width: fit-content
