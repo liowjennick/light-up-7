@@ -18,6 +18,7 @@ import AccountsExecutive from "../data/jobs/accounts-executive.json"
 import SeniorBusinessDevelopmentExecutive from "../data/jobs/senior-business-development-executive.json" 
 import HeadofEvents from "../data/jobs/head-of-events.json"  
 import DigitalMarketingExecutive from "../data/jobs/digital-marketing-executive.json"
+import ProjectManager from "../data/jobs/project-manager.json"
 
 
 const jobsData = [
@@ -30,8 +31,8 @@ const jobsData = [
     SeniorEventExecutive,
     HeadofEvents,
     ArtDirector,
-    EventAccountManager
-
+    EventAccountManager,
+    ProjectManager
 ]
 
 export default jobsData
