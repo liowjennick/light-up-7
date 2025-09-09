@@ -23,6 +23,7 @@ import ProjectManager from "../data/jobs/project-manager.json"
 
 const jobsData = [
     Internship,
+    SeniorGraphicDesigner,
     DigitalMarketingExecutive,
     AssetManagementSpecialist,
     AccountsExecutive,
