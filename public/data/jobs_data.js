@@ -32,7 +32,8 @@ const jobsData = [
     HeadofEvents,
     ArtDirector,
     ProjectManager,
-    EventProductionManager
+    EventProductionManager,    
+    SeniorVideoEditor
 ]
 
 export default jobsData
