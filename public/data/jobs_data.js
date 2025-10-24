@@ -28,9 +28,10 @@ const jobsData = [
     DigitalMarketingExecutive,
     AssetManagementSpecialist,
     BusinessDevelopmentSpecialist,
-    HeadofEvents,
     ArtDirector,
-    EventProductionManager,    
+    EventAccountManager,
+    EventProductionManager, 
+    SeniorEventExecutive,   
     SeniorVideoEditor
 ]
 
