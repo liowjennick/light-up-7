@@ -5,6 +5,7 @@ import SeniorGraphicDesigner from "../data/jobs/senior-graphic-designer.json"
 import JuniorGraphicDesigner from "../data/jobs/junior-graphic-designer.json"
 import ArtDirector from "../data/jobs/art-director.json"
 import SeniorVideographer from "../data/jobs/senior-videographer.json"
+import SeniorVideoEditor from "../data/jobs/senior-video-editor.json"
 import MotionArtistiInternship from "../data/jobs/motion-artist-internship.json"
 import CreativeContentWriter from "../data/jobs/creative-content-writer.json" 
 import FinanceAccountingExecutive from "../data/jobs/finance-accounting-executive.json" 
@@ -25,14 +26,14 @@ import EventProductionManager from "../data/jobs/event-production-manager.json"
 const jobsData = [
     Internship,
     SeniorGraphicDesigner,
-    SeniorVideographer,
     DigitalMarketingExecutive,
     AssetManagementSpecialist,
     BusinessDevelopmentSpecialist,
     ArtDirector,
     EventAccountManager,
     EventProductionManager, 
-    SeniorEventExecutive,   
+    SeniorEventExecutive,
+    SeniorVideographer,   
     SeniorVideoEditor
 ]
 
