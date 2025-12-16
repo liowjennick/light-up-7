@@ -25,11 +25,6 @@ import EventProductionManager from "../data/jobs/event-production-manager.json"
 
 const jobsData = [
     Internship,
-    SeniorGraphicDesigner,
-    DigitalMarketingExecutive,
-    AssetManagementSpecialist,
-    BusinessDevelopmentSpecialist,
-    ArtDirector,
     EventAccountManager,
     EventProductionManager, 
     SeniorEventExecutive,
