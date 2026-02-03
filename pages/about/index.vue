@@ -251,7 +251,8 @@
             <div class="text-container fourth">
               <p class="font-white just-sans">Our partnerships have allowed us to create gold-standard experiences that have driven substantial revenue and growth for some of the most beloved and recognisable brands in the APAC region.</p>
             </div>
-
+             
+            
             <!-- <svg :class="{ active: journeyAnimationIndex >= 9 }" id="svg5" width="377" height="264" viewBox="0 0 377 264" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_955_2413)">
             <path d="M1 263.999L1.07 232.289C1.04 215.759 14.49 202.37 31.02 202.46L331.23 204.1C347.68 204.19 361.09 190.929 361.18 174.479L361.9 42.4795" stroke="white" stroke-width="2" stroke-miterlimit="10" class="svg-elem-1"></path>
@@ -273,7 +274,29 @@
         </div>
       </div>
     </div>
+    <!-- New Section -->
+     <div id="business-units-section" class="section-container">
+  <div class="business-title-container">
+    <h2 class="business-title">Our Business Units</h2>
+    <p class="business-subtitle">Discover how our expert teams could help.</p>
+  </div>
 
+  <div class="units-grid">
+    <div class="unit-card revenue-card" @mouseenter="hover7 = true" @mouseleave="hover7 = false">
+      <div class="image-wrapper">
+        <img :src="hover7 ? sev2 : sev1" alt="7EVENUE" class="unit-logo" />
+      </div>
+      <a href="https://sevenue.com/" target="_blank" class="unit-btn">Discover Us →</a>
+    </div>
+
+    <div class="unit-card vpkl-card" @mouseenter="hoverVP = true" @mouseleave="hoverVP = false">
+      <div class="image-wrapper">
+        <img :src="hoverVP ? vpkl2 : vpkl1" alt="VPKL" class="unit-logo" />
+      </div>
+      <a href="https://videoproductionkl.com/" target="_blank" class="unit-btn">Discover Us →</a>
+    </div>
+  </div>
+</div>
     <div
       id="team-section"
       class="full-screen-section-container"
@@ -298,11 +321,20 @@
         <div class="address-container">
         </div>
       </div>
-    </div>
-  </div>
+    </div></div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
+// Import the images so Vite recognizes them
+import sev1 from '../../assets/images/about/sevenue1.webp'
+import sev2 from '../../assets/images/about/sevenue2.webp'
+import vpkl1 from '../../assets/images/about/vpkl2.webp'
+import vpkl2 from '../../assets/images/about/vpkl1.webp'
+
+const hover7 = ref(false)
+const hoverVP = ref(false)
 import gsap from "gsap";
 import { ScrollTrigger, ScrollToPlugin, Draggable, MotionPathPlugin } from "gsap/all";
 
@@ -473,6 +505,95 @@ onMounted(() => {
 @import "../../assets/sass/animations"
 @import "../../assets/sass/fonts"
 
+// New Section code start
+#business-units-section
+  padding: 40px 30px
+  text-align: center
+  background: black
+
+  .business-title
+    color: #FFCE6D
+    font-family: "JustSans"
+    font-size: 48px
+    margin-top: 52px
+    margin-bottom: 12px
+
+  .business-subtitle
+    color: white
+    font-size: 18px
+    margin-bottom: 60px
+    opacity: 0.9
+
+  .units-grid
+    display: flex
+    justify-content: center
+    gap: 20px
+    max-width: 1000px
+    margin: 0 auto
+    +large-mobile
+      flex-direction: column
+
+  .unit-card
+    flex: 1
+    border-radius: 15px
+    padding: 10px
+    background: rgba(255, 255, 255, 0.02)
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    min-height: 220px
+    transition: all 0.3s ease
+    border: 1px solid rgba(255, 255, 255, 0.2) // Default border
+
+    .unit-btn
+      padding: 10px 40px
+      border-radius: 5px
+      text-decoration: none
+      font-size: 14px
+      font-weight: bold
+      transition: all 0.3s ease
+      border: none // Removed button border
+
+    // --- 7EVENUE STYLING ---
+    &.revenue-card
+      border: 2px solid #E31E24 // <--- RED BORDER BY DEFAULT
+      &:hover
+        background-color: #FF004E // Card BG
+        border-color: #FF004E     // Card Border
+        .unit-btn
+          background-color: #FFFFFF // Button becomes White
+          color: #FF004E           // Button Text becomes Red
+      .unit-btn
+        background-color: #E31E24
+        color: white
+
+    // --- VPKL STYLING ---
+    &.vpkl-card
+      border: 2px solid #D4AF37 // <--- GOLD BORDER BY DEFAULT
+      &:hover
+        background-color: #DEA242 // Card BG
+        border-color: #DEA242     // Card Border
+        .unit-btn
+          background-color: #0D2D2C // Button becomes Dark Green
+          color: white              // Button Text becomes White
+      .unit-btn
+        background-color: #D4AF37
+        color: white
+
+  .image-wrapper
+    width: 100%
+    height: 120px 
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-bottom: 18px // REDUCED SPACING: Now 32px under logo
+
+  .unit-logo
+    max-width: 320px
+    height: auto
+    object-fit: contain
+// New section code end
 #about-page
   background-color: black
   // h1

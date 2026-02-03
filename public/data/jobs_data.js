@@ -24,12 +24,7 @@ import EventProductionManager from "../data/jobs/event-production-manager.json"
 
 
 const jobsData = [
-    Internship,
-    EventAccountManager,
-    EventProductionManager, 
-    SeniorEventExecutive,
-    SeniorVideographer,   
-    SeniorVideoEditor
+    Internship
 ]
 
 export default jobsData
