@@ -353,7 +353,7 @@
     <div class="marquee-section">
     <div class="marquee-track">
       <div class="marquee-content" v-for="n in 2" :key="n">
-        <span v-for="i in 4" :key="i">BRAND AGENCY. <span class="filled">MULTIPLE AWARDS. </span>THINK BRAND-FIRST. <span class="filled">MULTIPLE AWARDS. </span></span>
+        <span v-for="i in 4" :key="i"> BRAND AGENCY. <span class="filled">MULTIPLE AWARDS. </span>THINK BRAND-FIRST. <span class="filled">MULTIPLE AWARDS. </span></span>
       </div>
     </div>
   </div>
