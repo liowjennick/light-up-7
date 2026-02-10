@@ -251,25 +251,63 @@
             <div class="text-container fourth">
               <p class="font-white just-sans">Our partnerships have allowed us to create gold-standard experiences that have driven substantial revenue and growth for some of the most beloved and recognisable brands in the APAC region.</p>
             </div>
-             
             
-            <!-- <svg :class="{ active: journeyAnimationIndex >= 9 }" id="svg5" width="377" height="264" viewBox="0 0 377 264" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_955_2413)">
-            <path d="M1 263.999L1.07 232.289C1.04 215.759 14.49 202.37 31.02 202.46L331.23 204.1C347.68 204.19 361.09 190.929 361.18 174.479L361.9 42.4795" stroke="white" stroke-width="2" stroke-miterlimit="10" class="svg-elem-1"></path>
-            <path d="M368.13 0.739766L364.36 0.699766L358.44 0.639766L354.67 0.599766L346.82 0.509766L346.76 5.80977L349.04 5.82977C349.85 5.82977 350.49 6.41977 350.49 7.12977L350.43 12.1698C350.38 16.4498 353.61 20.0798 358.06 21.2498L357.84 41.3498L363.71 41.4098L363.93 21.3098C368.4 20.2398 371.71 16.6698 371.75 12.3898L371.81 7.34977C371.81 6.63977 372.48 6.06977 373.28 6.07977L375.56 6.09977L375.62 0.799766L368.14 0.719766L368.13 0.739766Z" stroke="white" stroke-miterlimit="10" class="svg-elem-2"></path>
-            </g>
-            <defs>
-            <clipPath id="clip0_955_2413">
-            <rect width="376.11" height="264" fill="white" class="svg-elem-3"></rect>
-            </clipPath>
-            </defs>
+            <svg
+              id="svg5"
+              class="active"
+              width="778"
+              viewBox="0 0 778 210"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_955_2368_5)">
+                <g transform="translate(374, 0)">
+                  <path
+                    class="bulb-end-5 svg-elem-1"
+                    d="M7.98 200.52L11.75 200.54L17.67 200.57L21.44 200.59L29.29 200.63L29.32 195.33H27.04C26.23 195.31 25.58 194.73 25.59 194.03L25.62 188.99C25.64 184.71 22.4 181.09 17.94 179.95V178.64L20.18 178.65V176.84L17.96 176.83V175.89L20.2 175.9V174.09L17.98 174.08V173.14L20.22 173.15V171.34L18 171.33L18.06 159.84L12.19 159.81L12.13 171.3H9.9V173.1H12.13V174.05H9.9V175.85H12.13V176.8H9.9V178.6H12.13V179.92C7.66 181.02 4.38 184.6 4.35 188.88L4.32 193.92C4.32 194.63 3.66 195.2 2.85 195.2H0.53L0.5 200.49L7.98 200.53V200.52Z"
+                    stroke="white"
+                    stroke-miterlimit="10"
+                  ></path>
+                  <path
+                    class="bulb-end-5 svg-elem-2"
+                    d="M7.21484 200.516L11.2648 200.538L11.2276 207.417C11.2219 208.457 10.3774 209.293 9.33742 209.287L9.04742 209.286C8.00744 209.28 7.17199 208.436 7.17762 207.396L7.21484 200.516Z"
+                    stroke="white"
+                    stroke-miterlimit="10"
+                  ></path>
+                  <path
+                    class="bulb-end-5 svg-elem-3"
+                    d="M18.5544 200.577L22.6044 200.599L22.5672 207.479C22.5615 208.519 21.717 209.354 20.677 209.349L20.387 209.347C19.347 209.342 18.5116 208.497 18.5172 207.457L18.5544 200.577Z"
+                    stroke="white"
+                    stroke-miterlimit="10"
+                  ></path>
+                </g>
+                <path
+                  class="bulb-start-5 svg-elem-4"
+                  d="M755.28 0.739766L759.05 0.699766L764.97 0.639766L768.74 0.599766L776.59 0.509766L776.65 5.80977L774.37 5.82977C773.56 5.82977 772.92 6.41977 772.92 7.12977L772.98 12.1698C773.03 16.4498 769.8 20.0798 765.35 21.2498L765.57 41.3498L759.7 41.4098L759.48 21.3098C755.01 20.2398 751.7 16.6698 751.66 12.3898L751.6 7.34977C751.6 6.63977 750.93 6.06977 750.13 6.07977L747.85 6.09977L747.79 0.799766L755.27 0.719766L755.28 0.739766Z"
+                  stroke="white"
+                  stroke-miterlimit="10"
+                ></path>
+                <path
+                  id="line-5"
+                  d="M762.12 41.4199L762.23 56.8599C762.35 73.3899 748.98 86.8499 732.45 86.8499H407.05C397.28 86.8499 389.36 94.7699 389.36 104.54V159.85"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-miterlimit="10"
+                  class="svg-elem-5"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_955_2368_5">
+                  <rect
+                    width="777.16"
+                    height="209.85"
+                    fill="white"
+                    class="svg-elem-6"
+                  ></rect>
+                </clipPath>
+              </defs>
             </svg>
 
-            <img
-              :class="{ active: journeyAnimationIndex >= 9 }"
-              class="journey-end-bulb"
-              src="../../assets/images/about/about-small-bulb.png"
-            /> -->
           </div>
         </div>
       </div>
@@ -297,17 +335,21 @@
     </div>
   </div>
 </div>
-    <div
-      id="team-section"
-      class="full-screen-section-container"
-    >
-      <div class="team-image-container">
-        <!-- <img src="../../assets/images/about/about-team.png" /> -->
-      </div>
-      <div class="team-caption-container section-container">
-        <p class="font-white font-20 just-sans" style=" padding-top: 10px;">At our agency, we shed light on your brand's potential, guiding you towards success with our expertise, innovation and unparalleled creativity.</p>
-      </div>
+  <div id="team-section" class="full-screen-section-container">
+   <div class="team-image-container">
+    <!-- overlay -->
+    <div class="team-overlay"></div>
+
+    <!-- caption -->
+    <div class="team-caption-container section-container">
+      <p class="font-white font-20 just-sans">
+        At our agency, we shed light on your brand's potential, guiding you
+        towards success with our expertise, innovation and unparalleled creativity.
+      </p>
     </div>
+   </div>
+  </div>
+
 
     <div
       id="multi-award-section"
@@ -496,6 +538,47 @@ onMounted(() => {
       toggleActions: "play play play play",
     },
   });
+
+  // FIFTH LINE BULB START (Top Right)
+  gsap.from("#svg5 .svg-elem-4", {
+    scrollTrigger: {
+      trigger: "#svg5 .svg-elem-4",
+      toggleClass: {
+        className: "enabled",
+        targets: ["#svg5 .svg-elem-4"],
+      },
+      start: "top center",
+      end: "bottom+=2000 center",
+      toggleActions: "play play play play",
+    },
+  });
+
+  // FIFTH LINE
+  gsap.to("#line-5", {
+    strokeDashoffset: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: "#line-5",
+      scrub: 1,
+      start: "top center",
+      end: "bottom center",
+      toggleActions: "play reverse play reverse",
+    },
+  });
+
+  // FIFTH LINE BULB END (Bottom Left)
+  gsap.from("#svg5 .svg-elem-1", {
+    scrollTrigger: {
+      trigger: "#svg5 .svg-elem-1",
+      toggleClass: {
+        className: "enabled",
+        targets: ["#svg5 .svg-elem-1", "#svg5 .svg-elem-2", "#svg5 .svg-elem-3"],
+      },
+      start: "top center",
+      end: "bottom+=2000 center",
+      toggleActions: "play play play play",
+    },
+  });
 });
 </script>
 
@@ -515,7 +598,7 @@ onMounted(() => {
     color: #FFCE6D
     font-family: "JustSans"
     font-size: 48px
-    margin-top: 52px
+    margin-top: 4px
     margin-bottom: 12px
 
   .business-subtitle
@@ -692,6 +775,7 @@ onMounted(() => {
 
   #team-section
     .team-image-container
+      position: relative
       background-image: url("../../assets/images/about/about-team.jpg")
       background-size: 100%
       margin-top: 10%
@@ -700,13 +784,23 @@ onMounted(() => {
       height: 80%
       +desktop
         background-size: auto 100%
+    &::before
+      content: ""
+      position: absolute
+      inset: 0
+      background: rgba(0, 0, 0, 1)
+      z-index: 1 
     .team-caption-container
-      text-align: center
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      z-index: 2
+      font-size: 32px
+      line-height: 1.4
+      text-align: left
       max-width: 850px
-      padding-top: 10px
-      padding-bottom: 10px
-      display: block
-      margin: 0 auto
+      padding-left: 140px
+      padding-right: 40px
 
   #journey-section
     // width: 1500px
@@ -737,6 +831,7 @@ onMounted(() => {
         width: 50px
         display: block
         margin: 0 auto
+        margin-top: -10px
         opacity: 0
         transition: 1s all
         &.active
@@ -1073,35 +1168,64 @@ onMounted(() => {
 #svg5
   display: block
   margin: 0 auto
-  transform: translateX(50%)
+  width: 50%
   .svg-elem-1
-    stroke-dashoffset: 559.7233276367188px
-    stroke-dasharray: 559.7233276367188px
+    stroke-dashoffset: 158.80328369140625px
+    stroke-dasharray: 158.80328369140625px
     -webkit-transition: stroke-dashoffset 2s cubic-bezier(0.47, 0, 0.745, 0.715) 0s, fill 0.2s ease 0.8s
     transition: stroke-dashoffset 2s cubic-bezier(0.47, 0, 0.745, 0.715) 0s, fill 0.2s ease 0.8s
 
   &.active .svg-elem-1
-    stroke-dashoffset: 1119.4466552734375px
+    stroke-dashoffset: 0
 
   .svg-elem-2
-    stroke-dashoffset: 132.00856018066406px
-    stroke-dasharray: 132.00856018066406px
+    stroke-dashoffset: 26.007810592651367px
+    stroke-dasharray: 26.007810592651367px
     -webkit-transition: stroke-dashoffset 2s cubic-bezier(0.47, 0, 0.745, 0.715) 0s, fill 0.2s ease 0.9s
     transition: stroke-dashoffset 2s cubic-bezier(0.47, 0, 0.745, 0.715) 0s, fill 0.2s ease 0.9s
-
   &.active .svg-elem-2
-    stroke-dashoffset: 264.0171203613281px
+    stroke-dashoffset: 0
+
 
   .svg-elem-3
-    stroke-dashoffset: 1282.219970703125px
-    stroke-dasharray: 1282.219970703125px
-    fill: transparent
+    stroke-dashoffset: 26.008867263793945px
+    stroke-dasharray: 26.008867263793945px
     -webkit-transition: stroke-dashoffset 2s cubic-bezier(0.47, 0, 0.745, 0.715) 0s, fill 0.2s ease 1s
     transition: stroke-dashoffset 2s cubic-bezier(0.47, 0, 0.745, 0.715) 0s, fill 0.2s ease 1s
 
   &.active .svg-elem-3
-    stroke-dashoffset: 2564.43994140625px
+    stroke-dashoffset: 0
+
+  .svg-elem-4
+    stroke-dashoffset: 132.00880432128906px
+    stroke-dasharray: 132.00880432128906px
+    -webkit-transition: stroke-dashoffset 2s cubic-bezier(0.47, 0, 0.745, 0.715) 0s, fill 0.2s ease 1.1s
+    transition: stroke-dashoffset 2s cubic-bezier(0.47, 0, 0.745, 0.715) 0s, fill 0.2s ease 1.1s
+
+  &.active .svg-elem-4
+    stroke-dashoffset: 0
+
+  .svg-elem-5
+    stroke-dashoffset: 480px
+    stroke-dasharray: 480px
+
+  .svg-elem-6
+    stroke-dashoffset: 1976.02001953125px
+    stroke-dasharray: 1976.02001953125px
+    fill: transparent
+    -webkit-transition: stroke-dashoffset 2s cubic-bezier(0.47, 0, 0.745, 0.715) 0s, fill 0.2s ease 1.4s
+    transition: stroke-dashoffset 2s cubic-bezier(0.47, 0, 0.745, 0.715) 0s, fill 0.2s ease 1.4s
+
+  &.active .svg-elem-6
+    stroke-dashoffset: 0
     fill: rgb(255, 255, 255)
+
+  // OPACITY START
+  .svg-elem-1, .svg-elem-2, .svg-elem-3, .svg-elem-4
+    opacity: 0
+    transition: 1s opacity
+    &.enabled
+      opacity: 1
 
 
 @keyframes journey-yellow-background
