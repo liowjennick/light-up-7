@@ -342,28 +342,22 @@
 
     <!-- caption -->
     <div class="team-caption-container section-container">
-      <p class="font-white font-20 just-sans">
-        At our agency, we shed light on your brand's potential, guiding you
+      <p class="font-white just-sans">
+        we shed light on your brand's potential, guiding you
         towards success with our expertise, innovation and unparalleled creativity.
       </p>
     </div>
    </div>
   </div>
 
-
-    <div
-      id="multi-award-section"
-      class="full-screen-section-container"
-    >
-      <div class="section-container">
-        <img
-          src="../../assets/images/about/multi-award-winning-agency.png"
-          class="large-mobile"
-        />
-        <div class="address-container">
-        </div>
+    <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-content" v-for="n in 2" :key="n">
+        <span v-for="i in 4" :key="i">BRAND AGENCY. <span class="filled">MULTIPLE AWARDS.</span> THINK BRAND-FIRST. </span>
       </div>
-    </div></div>
+    </div>
+  </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -778,29 +772,50 @@ onMounted(() => {
       position: relative
       background-image: url("../../assets/images/about/about-team.jpg")
       background-size: 100%
-      margin-top: 10%
+      margin-top: 10vh
       background-repeat: no-repeat
       background-position: center center
-      height: 80%
+      height: 90%
       +desktop
         background-size: auto 100%
-    &::before
-      content: ""
+    .team-overlay
       position: absolute
       inset: 0
-      background: rgba(0, 0, 0, 1)
+      background: rgba(0, 0, 0, 0.5)
       z-index: 1 
     .team-caption-container
       position: absolute
       top: 50%
       transform: translateY(-50%)
       z-index: 2
-      font-size: 32px
+      font-size: 40px
       line-height: 1.4
       text-align: left
       max-width: 850px
-      padding-left: 140px
+      padding-left: 260px
       padding-right: 40px
+
+  .marquee-section
+    background: black
+    overflow: hidden
+    padding-bottom: 20px
+    .marquee-track
+      display: flex
+      width: fit-content
+      animation: marquee 110s linear infinite
+    .marquee-content
+      white-space: nowrap
+      span
+        font-family: "JustSans"
+        font-size: 72px
+        font-weight: 700
+        color: transparent
+        -webkit-text-stroke: 1px #FFCE6D
+        text-transform: uppercase
+        margin-right: 0
+        .filled
+          color: #FFCE6D
+          -webkit-text-stroke: 0
 
   #journey-section
     // width: 1500px
@@ -1233,4 +1248,10 @@ onMounted(() => {
     height: 0%
   100%
     height: 100%
+
+@keyframes marquee
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(-50%)
 </style>
