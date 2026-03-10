@@ -794,6 +794,10 @@ onMounted(() => {
       max-width: 850px
       padding-left: 260px
       padding-right: 40px
+      +large-mobile
+        font-size: 24px
+        padding: 0 40px
+        margin-top: 180px
 
   .marquee-section
     background: black
