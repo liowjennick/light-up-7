@@ -21,11 +21,12 @@ import HeadofEvents from "../data/jobs/head-of-events.json"
 import DigitalMarketingExecutive from "../data/jobs/digital-marketing-executive.json"
 import ProjectManager from "../data/jobs/project-manager.json" 
 import EventProductionManager from "../data/jobs/event-production-manager.json" 
-import SeniorGraphicDesignerVideoEditor from "../data/jobs/senior-videographer-video-editor"
+import SeniorVideographerVideoEditor from "../data/jobs/senior-videographer-video-editor"
+import VideographerVideoEditor from "../data/jobs/videographer-video-editor"
 
 const jobsData = [
     Internship,
-    SeniorGraphicDesignerVideoEditor
+    VideographerVideoEditor
 ]
 
 export default jobsData
