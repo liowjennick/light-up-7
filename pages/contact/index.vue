@@ -70,7 +70,7 @@
         <a href="mailto:info@lightup7.com" class="font-white font-16 font-weight-200" style="text-decoration: none;">
           info@lightup7.com</a>
           <br /><br />
-          <a href="https://wa.me/601111578977" style="color: white; text-decoration: none;">+6011-11578977</a><br />
+          <a href="https://wa.me/601119846276" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">+6011-19846276</a><br />
           <a href="tel:+60386053561" style="color: white; text-decoration: none;">+603-8605 3561</a>
         <br /><br />
         <p class="font-orange font-20 font-weight-200">Careers</p>
