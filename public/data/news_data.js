@@ -8,8 +8,10 @@ import Lu7PhuketEscapade from "../data/news/lu7-phuket-escapade.json"
 import Lu7isNowInAustralia from "../data/news/lu7-is-now-in-australia.json" 
 import LU7FeaturedInMalaysiakini from "../data/news/lu7-featured-in-malaysiakini.json" 
 import LifeAtLightUp7Unfiltered from "../data/news/life-at-lightup7-unfiltered.json" 
-import LU7CSRRefugeeSupport from "../data/news/lu7-ramadan-csr-refugee-support.json"
+import LU7CSRRefugeeSupport from "../data/news/lu7-ramadan-csr-refugee-support.json" 
+import VideoContent from "../data/news/why-every-brand-needs-video-content-2026.json"
 const newsData = [
+    VideoContent,
     LU7CSRRefugeeSupport,
     LU7FeaturedInMalaysiakini,
     LifeAtLightUp7Unfiltered,
