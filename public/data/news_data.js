@@ -11,7 +11,7 @@ import LifeAtLightUp7Unfiltered from "../data/news/life-at-lightup7-unfiltered.j
 import LU7CSRRefugeeSupport from "../data/news/lu7-ramadan-csr-refugee-support.json" 
 import VideoContent from "../data/news/why-every-brand-needs-video-content-2026.json"
 import EventTrends2026 from "../data/news/event-trends-2026.json" 
-import EventCaseStudy from "../data/news/corporate-roadshow-event-case-study.json" 
+import EventCaseStudy from "../data/news/corporate-roadshow-event-activation-malaysia-case-study.json" 
 
 const newsData = [
 
