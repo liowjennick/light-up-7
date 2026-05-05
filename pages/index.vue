@@ -440,6 +440,16 @@
               src="../assets/images/home/logo/client-logo-kpj.png"
             />
           </a>
+
+          <a
+            class="client-item"
+          >
+            <img
+              alt="MAS Logo"
+              class="client-logo"
+              src="../assets/images/home/logo/client-logo-mas.png"
+            />
+          </a>
         </div>
       </div>
 

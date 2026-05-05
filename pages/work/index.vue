@@ -352,6 +352,10 @@ const clientsCarouselLogo = ref([
     image_src: "ubermen.png",
     slug: "ubermen",
   },
+  {
+    image_src: "mas.png",
+    slug: "mas",
+  },
 ]);
 
 onMounted(() => {
