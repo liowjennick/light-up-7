@@ -249,10 +249,6 @@ const clientsCarouselLogo = ref([
     slug: "kpj",
   },
   {
-    image_src: "dubai-uae.png",
-    slug: "dubai-uae",
-  },
-  {
     image_src: "sime-darby.png",
     slug: "sime-darby",
   },
@@ -333,16 +329,16 @@ const clientsCarouselLogo = ref([
     slug: "malaysia-airports",
   },
   {
-    image_src: "beats-by-dr-dre.png",
-    slug: "beats-by-dr-dre",
+    image_src: "daikin.png",
+    slug: "daikin",
   },
   {
-    image_src: "pdi.png",
-    slug: "pdi",
+    image_src: "nadi.png",
+    slug: "nadi",
   },
   {
-    image_src: "leonardo.png",
-    slug: "leonardo",
+    image_src: "bp.png",
+    slug: "bp",
   },
   {
     image_src: "suria-klcc.png",
