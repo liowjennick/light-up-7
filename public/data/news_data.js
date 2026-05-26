@@ -12,9 +12,13 @@ import LU7CSRRefugeeSupport from "../data/news/lu7-ramadan-csr-refugee-support.j
 import VideoContent from "../data/news/why-every-brand-needs-video-content-2026.json"
 import EventTrends2026 from "../data/news/event-trends-2026.json" 
 import EventCaseStudy from "../data/news/corporate-roadshow-event-activation-malaysia-case-study.json" 
+import InteractiveEventTechnologyMalaysia from "../data/news/interactive-event-technology-malaysia.json"
+import TeleprompterSpeakerConfidence from "../data/news/teleprompter-speaker-confidence.json"
 
 const newsData = [
-
+    TeleprompterSpeakerConfidence,
+    InteractiveEventTechnologyMalaysia,
+    TeleprompterSpeakerConfidence,
     EventCaseStudy,
     EventTrends2026,
     VideoContent,
