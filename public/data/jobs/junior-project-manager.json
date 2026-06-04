@@ -1,36 +1,34 @@
 {
     "title": "Junior Project Manager",
     "slug": "junior-project-manager",
-    "category": ["client services"],
-    "description_html": "<p>Light Up 7 is looking for a Junior Project Manager to join our marketing team. At our fast-paced, progressive digital agency we work with large, well-known brands and growing businesses to deliver compelling, ROI-driven marketing campaigns that create significant results.</p><p>We are looking for a team player that is passionate about executing cutting edge campaigns and managing large high-profile projects.. The ideal candidate will have 1-2+ years of experience and strong critical thinking skills with an exceptional ability to collaborate in a fast-paced, team-oriented environment.</p><p>This is a full time position. We are looking for a responsible, dedicated, career-minded professional.</p>",
+    "category": [
+        "client services"
+    ],
+    "description_html": "<p>Light Up 7 is on the lookout for a Junior Project Manager to join our team! We are a fast-paced and forward-thinking digital agency partnering with well-known brands and ambitious businesses to create impactful, ROI-driven marketing campaigns that truly make a difference.</p><p>We’re looking to meet a proactive and detail-oriented team player who thrives in a lively, collaborative environment. You’ll play a key role in supporting the execution of innovative campaigns and managing end-to-end project coordination across multiple teams. If you’re eager to grow in project management, love bringing structure to creative ideas, and enjoy working in a fast-moving environment, this role is for you.</p><p>The ideal candidate brings 1–2 years of experience, strong critical thinking skills, and enjoys communicating and collaborating with teams across different functions.</p><p>Come build, grow, and make an impact with us, we’d love to have you on this journey!</p>",
     "responsibilities": [
-        "Fully understand the client objectives and project goals and articulate them clearly",
-        "Develop project plans and work with project teams to execute on plans",
-        "Monitor day-to-day activities of project teams and ensure work is progressing as planned",
-        "Manage schedules, budgets, assets, and overall project organization to ensure requirements and project deliverables dates are clearly communicated, understood, and executed upon",
-        "Manage resource assignments to the project, and proactively identify resource challenges",
-        "Actively monitor project risks and scope creep to foresee/identify potential problems and proactively identify solutions to address them in advance",
-        "Consistently identify needs that clients may not recognize and ensure approaches and solutions are linked to objectives and future needs",
-        "Consistently manage client expectations, ensure delivery of the highest quality service, and solicit and act on client feedback",
-        "Communicate and document project status to clients, team members, and management on a regular basis; escalate issues accordingly via the appropriate channels",
-        "Create and manage functional specs documentation along with project team members",
-        "Recap and create debriefs for every completed project; facilitate discussions on lessons learned and new knowledge gained; document properly and share",
-        "Prepare project documents such as SLAs, NDAs, execution plans, etc."
+        "Support the project team by understanding client objectives and project goals, and help translate them into clear action points.",
+        "Assist in developing project plans and coordinate with internal teams to ensure smooth execution of tasks.",
+        "Monitor daily project activities and follow up with team members to ensure work is progressing according to timelines.",
+        "Manage project schedules, budgets, assets, and documentation to ensure deliverables are clearly tracked and communicated.",
+        "Assist in coordinating resource assignments and proactively identify any potential resource challenges.",
+        "Monitor project risks and scope creep to foresee and identify potential issues, and propose solutions in advance.",
+        "Identify client needs and contribute ideas to ensure project outcomes align with objective and future opportunities.",
+        "Consistently manage client expectations, ensure delivery of high-quality service, and gather and act on client feedback.",
+        "Maintain regular communication with internal teams and clients, and assist in preparing project updates and status reports.",
+        "Support documentation of functional requirements, project specifications, and related material along with project team members.",
+        "Conduct project debriefs by capturing lessons learned, documenting key outcomes, and ensuring insights are properly recorded and shared with the team.",
+        "Prepare essential project documentation such as execution plans, SLAs, NDAs, and other required materials."
     ],
     "desired_skills": [
-        "1-2+ years Digital Agency Project Management Experience",
-        "Experience with managing projects, especially design, video, digital marketing and development of websites",
-        "Excellent verbal, written, presentation and interpersonal communication skills",
-        "Self-motivated, detail-oriented",
-        "Level-headed and positive attitude under pressure",
-        "A passion for learning new skills",
-        "Strong web and desktop skills - we use Microsoft Office, Adobe Creative Suite, Google Docs, and various web-based tools",
-        "Excellent Communication and Client Relations Skills",
-        "A keen interest in the digital industry",
-        "A desire to stay updated with the latest digital platforms and technology",
-        "Responsible, organised, with attention to detail",
-        "Outstanding communication skills, both oral and written",
-        "Required skill(s): Presentation Skills, Problem Solving Technique, Microsoft Office",
-        "Required language(s): English, Bahasa Malaysia"
+        "1-2 years of experience in digital agency project management or experience in managing projects, especially related to design, video, digital marketing and website development.",
+        "Strong interest in the creative digital industry and enthusiasm to grow within the field.",
+        "Good communication skills (verbal, written, presentation) with the ability to support client communication and relationship management.",
+        "Self-motivated, organised, detail-oriented, with developing problem-solving skills and a willingness to learn.",
+        "Able to remain level-headed and maintain a positive, solutions-oriented attitude under pressure.",
+        "Eager to continuously learn and develop new skills in a fast-paced digital environment.",
+        "Keen interest in staying updated with digital platforms, trends, and emerging technologies.",
+        "Passion for AI and emerging technologies, with a commitment to continuous learning and adaptation.",
+        "Strong proficiency in Microsoft Office Suite (Word, Excel, PowerPoint, Outlook), Google Workspace, and other web-based tools: knowledge of Adobe Creative Suite is an additional advantage.",
+        "Required language(s): English, Bahasa Malaysia."
     ]
 }

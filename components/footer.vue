@@ -84,8 +84,10 @@
       </div>
     </div>
     <div class="copyright-column">
-      
-      <p class="font-light-gray just-sans font-weight-100">© 2025 Light Up 7 Sdn Bhd | All rights reserved</p>
+      <p class="font-light-gray just-sans font-weight-100">Light Up 7 Sdn Bhd - 201401020933(1097019-X)</p>
+    </div>
+    <div class="copyright-column">
+       <p class="font-light-gray just-sans font-weight-100">© 2026 Light Up 7 Sdn Bhd | All rights reserved</p>
     </div>
     
   </div>
