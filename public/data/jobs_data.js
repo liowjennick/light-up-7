@@ -26,8 +26,6 @@ import VideographerVideoEditor from "../data/jobs/videographer-video-editor"
 
 const jobsData = [
     Internship,
-    ProjectManager,
-    JuniorProjectManager,
     VideographerVideoEditor,
     SeniorVideographerVideoEditor,
     DigitalMarketingExecutive

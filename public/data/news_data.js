@@ -13,9 +13,12 @@ import VideoContent from "../data/news/why-every-brand-needs-video-content-2026.
 import EventTrends2026 from "../data/news/event-trends-2026.json" 
 import EventCaseStudy from "../data/news/corporate-roadshow-event-activation-malaysia-case-study.json" 
 import InteractiveEventTechnologyMalaysia from "../data/news/interactive-event-technology-malaysia-qr-check-in-real-time-lead-capture.json"
-import TeleprompterSpeakerConfidence from "../data/news/how-teleprompters-build-speaker-confidence-ceo-speeches-live-broadcasts.json"
+import TeleprompterSpeakerConfidence from "../data/news/how-teleprompters-build-speaker-confidence-ceo-speeches-live-broadcasts.json" 
+import BrandActivationMalaysia from "../data/news/brand-activation-malaysia.json" 
 
 const newsData = [
+    
+    BrandActivationMalaysia,
     TeleprompterSpeakerConfidence,
     InteractiveEventTechnologyMalaysia,
     EventCaseStudy,
