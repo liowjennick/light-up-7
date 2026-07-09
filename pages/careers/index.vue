@@ -219,6 +219,15 @@
         </div>
       </div>
     </div>
+
+    <!-- Full Width Group Banner -->
+    <div class="group-banner-container">
+      <img
+        src="../../assets/images/careers/group-banner.png"
+        alt="Light Up 7 Group Banner"
+        class="group-banner-image"
+      />
+    </div>
   </div>
 </template>
 
@@ -622,4 +631,23 @@ const vacancyTabs = ["all", "finance/accounting", "operations", "events", "marke
     transform: translate(-50%, 10%) rotate(90deg)
   100%
     transform: translate(-50%, 0%) rotate(90deg)
+
+.group-banner-container
+  width: 100%
+  overflow: hidden
+  margin-top: 80px
+  display: flex
+  justify-content: center
+  align-items: center
+  +mobile
+    margin-top: 48px
+
+.group-banner-image
+  width: 100%
+  height: auto
+  display: block
+  object-fit: cover
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)
+  &:hover
+    transform: scale(1.02)
 </style>
