@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router"
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import jobsData from '~/public/data/jobs_data';
 
-const { params } = useRoute()
 const route = useRoute()
-const career_details = jobsData
-const career_details_data = ref(career_details.find((item) => item.slug === route.params.slug))
+const career_details_data = computed(() => {
+  return jobsData.find((item) => item.slug === route.params.slug)
+})
 
-const isCustomLayout = ref(career_details_data.value?.custom_layout === 'true')
+const isCustomLayout = computed(() => {
+  return career_details_data.value?.custom_layout === 'true'
+})
 
 useHead({
-  title: `Our Careers – ${career_details_data.value.title} | Light Up 7`,
+  title: () => `Our Careers – ${career_details_data.value?.title || 'Opportunity'} | Light Up 7`,
 });
 const formValues = ref({
   name: "",
@@ -26,7 +28,7 @@ const formValues = ref({
 </script>
 
 <template>
-  <div id="career-details">
+  <div id="career-details" v-if="career_details_data">
 
     <!-- NEW custom layout for Event Account Manager -->
     <template v-if="isCustomLayout">

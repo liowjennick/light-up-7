@@ -1,5 +1,5 @@
 <template>
-  <div id="project-item">
+  <div id="project-item" v-if="project_data">
     <div class="content-container">
       <div class="section-container">
         <div class="project-section-container" v-for="(item, i) in project_data.contents" :key="i">
@@ -143,15 +143,18 @@
 
 <script setup lang="ts">
 import { useRoute } from "vue-router";
+import { ref, computed } from "vue";
 import projectData from "../../public/data/projects_data.js";
 
 const route = useRoute();
-const project_data = ref<any>(projectData.find((item, i) => item.slug === route.params.slug));
+const project_data = computed(() => {
+  return projectData.find((item, i) => item.slug === route.params.slug);
+});
 
 useHead({
-  title: project_data.value.title,
-  meta: [{ name: "description", content: project_data.value.description },
-  { name: "keywords", content: project_data.value.keywords }
+  title: () => project_data.value?.title ?? '',
+  meta: [{ name: "description", content: () => project_data.value?.description },
+  { name: "keywords", content: () => project_data.value?.keywords }
   ],
 });
 </script>

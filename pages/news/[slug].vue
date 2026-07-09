@@ -1,5 +1,5 @@
 <template>
-  <div id="news-content">
+  <div id="news-content" v-if="news_data">
     <!-- News Header Image -->
     <div class="section-container">
       <img :src="`/images/news/${news_data.slug}/${news_data.page_content.banner_src}`" alt="News Header Thumbnail" style="width: 100%; height: auto;">
@@ -31,10 +31,14 @@ interface News {
   slug?: string
 }
 
+import { computed } from "vue"
+
 const route = useRoute()
 
 const news: News[] = reactive(newsData)
-const news_data: Ref<News | undefined> = ref(news.find((item) => item.slug === route.params.slug))
+const news_data = computed(() => {
+  return news.find((item) => item.slug === route.params.slug)
+})
 const formateDate = (dateISO = '') => new Date(dateISO).toLocaleDateString('en-US', {
   day: 'numeric',
   month: 'short',
@@ -42,11 +46,9 @@ const formateDate = (dateISO = '') => new Date(dateISO).toLocaleDateString('en-U
 })
 
 useHead({
-  title: news_data.value?.title ?? '',
-  meta: [{ name: "description", content: news_data.value?.description }]
+  title: () => news_data.value?.title ?? '',
+  meta: [{ name: "description", content: () => news_data.value?.description }]
 });
-
-
 </script>
 <style lang="sass">
 @import '../../assets/sass/responsive.sass'
