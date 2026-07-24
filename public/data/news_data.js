@@ -15,9 +15,12 @@ import EventCaseStudy from "../data/news/corporate-roadshow-event-activation-mal
 import InteractiveEventTechnologyMalaysia from "../data/news/interactive-event-technology-malaysia-qr-check-in-real-time-lead-capture.json"
 import TeleprompterSpeakerConfidence from "../data/news/how-teleprompters-build-speaker-confidence-ceo-speeches-live-broadcasts.json" 
 import BrandActivationMalaysia from "../data/news/brand-activation-malaysia.json" 
+import ZicoTrustVideoContentCaseStudy from "../data/news/zico-trust-video-content-case-study.json"
 
 const newsData = [
     
+    
+    ZicoTrustVideoContentCaseStudy,
     BrandActivationMalaysia,
     TeleprompterSpeakerConfidence,
     InteractiveEventTechnologyMalaysia,
