@@ -30,8 +30,6 @@ const jobsData = [
     SeniorEventExecutive,
     EventAccountManager,
     BusinessDevelopmentManager,
-    VideographerVideoEditor,
-    SeniorVideographerVideoEditor,
     DigitalMarketingExecutive
 ]
 
