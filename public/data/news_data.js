@@ -16,10 +16,11 @@ import InteractiveEventTechnologyMalaysia from "../data/news/interactive-event-t
 import TeleprompterSpeakerConfidence from "../data/news/how-teleprompters-build-speaker-confidence-ceo-speeches-live-broadcasts.json" 
 import BrandActivationMalaysia from "../data/news/brand-activation-malaysia.json" 
 import ZicoTrustVideoContentCaseStudy from "../data/news/zico-trust-video-content-case-study.json"
-
+import MIAConference2026CaseStudy from "../data/news/mia-conference-2026-case-study.json" 
 const newsData = [
     
     
+    MIAConference2026CaseStudy,
     ZicoTrustVideoContentCaseStudy,
     BrandActivationMalaysia,
     TeleprompterSpeakerConfidence,
